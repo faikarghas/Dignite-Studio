@@ -16,7 +16,7 @@ app.prepare()
     const server = express()
     server.use(compression());
     server.use(cookieParser());
-    // server.use(enforce.HTTPS({ trustProtoHeader: true }))
+    server.use(enforce.HTTPS({ trustProtoHeader: true }))
 
     server.get('*', (req, res) => {
         return handle(req, res)
