@@ -31,7 +31,7 @@ class project extends React.Component {
             speed: 500,
             slidesToShow: 1,
             slidesToScroll: 1
-          };
+        };
         return (
             <Layout>
                 <section className="section_first-project text-center">

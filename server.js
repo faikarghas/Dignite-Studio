@@ -16,7 +16,8 @@ app.prepare()
     const server = express()
     server.use(compression());
     server.use(cookieParser());
-    server.use(enforce.HTTPS({ trustProtoHeader: true }))
+    if( process.env.NODE_ENV === 'production' ) server.use(enforce.HTTPS({ trustProtoHeader: true }))
+
 
     server.get('*', (req, res) => {
         return handle(req, res)

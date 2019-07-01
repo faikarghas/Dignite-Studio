@@ -1,7 +1,15 @@
 import React from 'react'
+import Slider from "react-slick";
 
 import Layout from '../components/layout'
 
+var settings = {
+    dots: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    lazyLoad: true
+};
 const work = () => {
     return (
         <Layout>
@@ -10,38 +18,72 @@ const work = () => {
             </section>
             <section className="section_second-work">
                 <div className="container">
-                    <div className="row">
-                        <div className="box col-4">
-                            <img src="../static/image/Image2.png" />
-                            <div className="box-name">
-                                <h5>PROJECT NAME</h5>
+                    <Slider {...settings}>
+                        <div className="row" style={{display:'flex !important'}}>
+                            <div className="box col-4">
+                                <img src="../static/image/Image2.png" />
+                                <div className="box-name">
+                                    <h5>PROJECT NAME</h5>
+                                </div>
+                            </div>
+                            <div className="box col-4">
+                                <img src="../static/image/Image2.png" />
+                            </div>
+                            <div className="box col-4">
+                                <img src="../static/image/Image2.png" />
+                            </div>
+                            <div className="box col-4">
+                                <img src="../static/image/Image2.png" />
+                            </div>
+                            <div className="box col-4">
+                                <img src="../static/image/Image2.png" />
+                            </div>
+                            <div className="box col-4">
+                                <img src="../static/image/Image2.png" />
+                            </div>
+                            <div className="box col-4">
+                                <img src="../static/image/Image2.png" />
+                            </div>
+                            <div className="box col-4">
+                                <img src="../static/image/Image2.png" />
+                            </div>
+                            <div className="box col-4">
+                                <img src="../static/image/Image2.png" />
                             </div>
                         </div>
-                        <div className="box col-4">
-                            <img src="../static/image/Image2.png" />
+                        <div className="row" style={{display:'flex !important'}}>
+                            <div className="box col-4">
+                                <img src="../static/image/Image2.png" />
+                                <div className="box-name">
+                                    <h5>PROJECT NAME</h5>
+                                </div>
+                            </div>
+                            <div className="box col-4">
+                                <img src="../static/image/Image2.png" />
+                            </div>
+                            <div className="box col-4">
+                                <img src="../static/image/Image2.png" />
+                            </div>
+                            <div className="box col-4">
+                                <img src="../static/image/Image2.png" />
+                            </div>
+                            <div className="box col-4">
+                                <img src="../static/image/Image2.png" />
+                            </div>
+                            <div className="box col-4">
+                                <img src="../static/image/Image2.png" />
+                            </div>
+                            <div className="box col-4">
+                                <img src="../static/image/Image2.png" />
+                            </div>
+                            <div className="box col-4">
+                                <img src="../static/image/Image2.png" />
+                            </div>
+                            <div className="box col-4">
+                                <img src="../static/image/Image2.png" />
+                            </div>
                         </div>
-                        <div className="box col-4">
-                            <img src="../static/image/Image2.png" />
-                        </div>
-                        <div className="box col-4">
-                            <img src="../static/image/Image2.png" />
-                        </div>
-                        <div className="box col-4">
-                            <img src="../static/image/Image2.png" />
-                        </div>
-                        <div className="box col-4">
-                            <img src="../static/image/Image2.png" />
-                        </div>
-                        <div className="box col-4">
-                            <img src="../static/image/Image2.png" />
-                        </div>
-                        <div className="box col-4">
-                            <img src="../static/image/Image2.png" />
-                        </div>
-                        <div className="box col-4">
-                            <img src="../static/image/Image2.png" />
-                        </div>
-                    </div>
+                    </Slider>
                 </div>
             </section>
         </Layout>
