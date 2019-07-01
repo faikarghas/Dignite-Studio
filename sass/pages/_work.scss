@@ -28,8 +28,6 @@
 .slick-slide{
     .row{
         display: flex !important;
-        @include respond(phone){
-            margin: 0;
-        }
+        margin: 0;
     }
 }
