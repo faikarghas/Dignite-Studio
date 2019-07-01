@@ -1,0 +1,26 @@
+.section_first-work{
+    padding: 10rem 0 10rem 0;
+
+    h1{
+        font-size: 4.5rem;
+    }
+}
+
+.section_second-work{
+    .box{
+        position: relative;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+        padding: 0;
+        &-name{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 2rem;
+        }
+    }
+}

@@ -1,0 +1,145 @@
+.section_first-project{
+    padding: 10rem 0 10rem 0;
+    h1{
+        font-size: 3rem;
+        font-family: 'Brandon-grotesque-bold';
+    }
+    p{
+        margin: 6rem 0;
+    }
+}
+
+.section_second-project{
+    img{
+        @include respond(phone){
+            height: 40rem !important;
+        }
+    }
+}
+
+.section_third-project{
+    padding: 10rem 0;
+    h1{
+        margin-bottom: 4rem;
+    }
+}
+
+.section_fourth-project{
+    background: linear-gradient(#ffffff 50%,#464646 0);
+    height: 60rem;
+    img{
+        height: 45rem;
+        object-fit: contain;
+    }
+    .slick-dots {
+        bottom: -80px;
+        @include respond(phone){
+            bottom: -55px;
+        }
+    }
+    .slick-dots li.slick-active button:before {
+        opacity: .75;
+        color: #fff;
+    }
+    .slick-dots li button:before {
+        color: rgb(148, 148, 148);
+    }
+}
+
+.section_fifth-project{
+    padding: 10rem 0;
+    h1{
+        margin-bottom: 4rem;
+    }
+}
+
+.section_sixth-project{
+    background: linear-gradient(#ffffff 20%,#4646461e 0);
+    height: 70rem;
+    overflow: hidden;
+    position: relative;
+    @include respond(phone){
+        height: 50rem;
+    }
+    img{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 64rem;
+        box-shadow: 0 2px 4px rgba(3,27,78,.06);
+        @include respond(phone){
+            width: 45rem;
+        }
+    }
+}
+
+.section_seventh-project{
+    position: relative;
+    height: 65rem;
+    @include respond(phone){
+        height: 28rem;
+    }
+    .video-react .video-react-big-play-button {
+        height: 3em;
+        width: 3em;
+        border: .06666em solid #fff;
+        background-color: rgba(43, 51, 63, 0.096);
+        border-radius: 50px;
+    }
+    .video-react .video-react-big-play-button:before, .video-react .video-react-control:before {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        display: contents;
+    }
+    .video-react.video-react-4-3, .video-react.video-react-16-9, .video-react.video-react-fluid {
+        height: 100%;
+        padding: 0 !important;
+    }
+}
+
+.section_eighth-project{
+    padding: 10rem 0;
+    .quotes{
+        font-family: 'Brandon-grotesque-bold-italic';
+    }
+    ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        li{
+            list-style: none;
+            display: inline-block;
+            h1,p{
+                margin: 0;
+            }
+            .rounded {
+                border-radius: 15.25rem!important;
+                width: 5rem;
+            }
+        }
+        .client-name{
+            padding-left: 2rem;
+        }
+    }
+}
+
+.section_ninth-project{
+    padding: 10rem;
+    background-color: #FFBA00;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    a{
+        cursor: pointer;
+        color: white !important;
+        &:nth-child(1){
+            font-size: 2rem;
+        }
+        &:nth-child(2){
+            font-size: 3rem;
+        }
+    }
+}
+
