@@ -2,7 +2,8 @@
     padding: 10rem 0 10rem 0;
     h1{
         font-size: 3rem;
-        font-family: 'Brandon-grotesque-bold';
+        font-family: 'Brandon-grotesque-regular';
+        font-weight: 700;
     }
     p{
         margin: 6rem 0;
@@ -102,7 +103,9 @@
 .section_eighth-project{
     padding: 10rem 0;
     .quotes{
-        font-family: 'Brandon-grotesque-bold-italic';
+        font-family: 'Brandon-grotesque-regular';
+        font-weight: 700;
+        font-style: italic;
     }
     ul{
         display: flex;
