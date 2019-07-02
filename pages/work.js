@@ -12,6 +12,7 @@ var settings = {
 };
 const work = () => {
     return (
+        <GAwrapper>
         <Layout>
             <section className="section_first-work">
                 <h1 className="text-center">We design and build high-end digital products for all kind of <br/> clients and audiences.</h1>
@@ -87,6 +88,7 @@ const work = () => {
                 </div>
             </section>
         </Layout>
+        </GAwrapper>
     )
 }
 

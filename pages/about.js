@@ -1,9 +1,11 @@
 import React from 'react'
 
 import Layout from '../components/layout'
+import GAwrapper from '../lib/GAWarp';
 
 const about = () => {
     return (
+        <GAwrapper>
         <Layout>
             <section className="section_first-about">
                 <div className="container">
@@ -105,6 +107,7 @@ const about = () => {
                 </div>
             </section>
         </Layout>
+        </GAwrapper>
     )
 }
 

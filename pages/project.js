@@ -1,6 +1,8 @@
 import Layout from '../components/layout'
 import Slider from "react-slick";
 import { Player, BigPlayButton } from 'video-react';
+import GAwrapper from '../lib/GAWarp';
+
 import "../node_modules/video-react/dist/video-react.css";
 
 
@@ -33,6 +35,7 @@ class project extends React.Component {
             slidesToScroll: 1
         };
         return (
+            <GAwrapper>
             <Layout>
                 <section className="section_first-project text-center">
                     <h1 className="text-center mb-5">PROJECT NAME</h1>
@@ -93,6 +96,7 @@ class project extends React.Component {
                     <a>PROJECT NAME &nbsp; -></a>
                 </section>
             </Layout>
+            </GAwrapper>
         )
     }
 }

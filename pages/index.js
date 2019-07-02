@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 import Layout from '../components/layout'
+import GAwrapper from '../lib/GAWarp';
 
 class index extends React.Component{
     state = {
@@ -24,6 +25,7 @@ class index extends React.Component{
     render(){
         const {trans} = this.state
         return (
+            <GAwrapper>
             <Layout>
                 <section className="section_first-home width100">
                     <div className="container">
@@ -90,6 +92,7 @@ class index extends React.Component{
                     </div>
                 </section>
             </Layout>
+            </GAwrapper>
         )
     }
 }
