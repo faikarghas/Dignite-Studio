@@ -34,7 +34,7 @@ class index extends React.Component{
                     <div className="container box_allprojects" style={{WebkitTransform:`translate(-50%,${-trans}px)`,msTransform:`translate(-50%,${-trans}px)`,transform:`translate(-50%,${-trans}px)`}}>
                         <div className="row">
                             <div className="col-4 box1 p-0">
-                                <img src="../static/image/Image1.png" width="100%" height="100%"></img>
+                                {/* <img src="../static/image/Image1.png" width="100%" height="100%"></img> */}
                                 <Link href="/project">
                                     <div className="box-hover">
                                         <h2>PROJECT NAME</h2>
@@ -42,7 +42,7 @@ class index extends React.Component{
                                 </Link>
                             </div>
                             <div className="col-4 box1 p-0">
-                                <img src="../static/image/Image5.png" width="100%" height="100%"></img>
+                                {/* <img src="../static/image/Image5.png" width="100%" height="100%"></img> */}
                                 <Link href="/project">
                                     <div className="box-hover">
                                         <h2>PROJECT NAME</h2>
@@ -50,7 +50,7 @@ class index extends React.Component{
                                 </Link>
                             </div>
                             <div className="col-4 box1 p-0">
-                                <img src="../static/image/Image2.png" width="100%" height="100%"></img>
+                                {/* <img src="../static/image/Image2.png" width="100%" height="100%"></img> */}
                                 <Link href="/project">
                                     <div className="box-hover">
                                         <h2>PROJECT NAME</h2>
@@ -58,7 +58,7 @@ class index extends React.Component{
                                 </Link>
                             </div>
                             <div className="col-4 box1 p-0">
-                                <img src="../static/image/Image6.png" width="100%" height="100%"></img>
+                                {/* <img src="../static/image/Image6.png" width="100%" height="100%"></img> */}
                                 <Link href="/project">
                                     <div className="box-hover">
                                         <h2>PROJECT NAME</h2>
@@ -66,7 +66,7 @@ class index extends React.Component{
                                 </Link>
                             </div>
                             <div className="col-4 box1 p-0">
-                                <img src="../static/image/Image10.png" width="100%" height="100%"></img>
+                                {/* <img src="../static/image/Image10.png" width="100%" height="100%"></img> */}
                                 <Link href="/project">
                                     <div className="box-hover">
                                         <h2>PROJECT NAME</h2>
@@ -74,7 +74,7 @@ class index extends React.Component{
                                 </Link>
                             </div>
                             <div className="col-4 box1 p-0">
-                                <img src="../static/image/Image11.png" width="100%" height="100%"></img>
+                                {/* <img src="../static/image/Image11.png" width="100%" height="100%"></img> */}
                                 <Link href="/project">
                                     <div className="box-hover">
                                         <h2>PROJECT NAME</h2>
