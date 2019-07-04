@@ -71,22 +71,22 @@ class project extends React.Component{
                             <form onSubmit={this.onSubmitHandler}>
                                 <div className="form-row">
                                     <div className="form-group col-md-6">
-                                    <input type="text" className="form-control" id="inputEmail4" placeholder="Your Name" name="name" value={name} onChange={this.inputHandler} />
+                                    <input type="text" className="form-control" id="name" placeholder="Your Name" name="name" value={name} onChange={this.inputHandler} />
                                     </div>
                                     <div className="form-group col-md-6">
-                                    <input type="email" className="form-control" id="inputPassword4" placeholder="Your Email" name="email" value={email} onChange={this.inputHandler} />
+                                    <input type="email" className="form-control" id="email" placeholder="Your Email" name="email" value={email} onChange={this.inputHandler} />
                                     </div>
                                 </div>
                                 <div className="form-row">
                                     <div className="form-group col-md-6">
-                                    <input type="text" className="form-control" id="inputEmail4" placeholder="Company Name" name="companyName" value={companyName} onChange={this.inputHandler} />
+                                    <input type="text" className="form-control" id="companyName" placeholder="Company Name" name="companyName" value={companyName} onChange={this.inputHandler} />
                                     </div>
                                     <div className="form-group col-md-6">
-                                    <input type="number" className="form-control" id="inputPassword4" placeholder="Phone Number" name="phoneNumber" value={phoneNumber} onChange={this.inputHandler} />
+                                    <input type="number" className="form-control" id="phoneNumber" placeholder="Phone Number" name="phoneNumber" value={phoneNumber} onChange={this.inputHandler} />
                                     </div>
                                 </div>
                                 <div className="form-group">
-                                    <textarea  className="form-control" id="inputMessage" placeholder="Your Message" name="message" value={message} onChange={this.inputHandler}/>
+                                    <textarea  className="form-control" id="message" placeholder="Your Message" name="message" value={message} onChange={this.inputHandler}/>
                                 </div>
                                 <button type="submit" className="btn">Start Conversation</button>
                             </form>
