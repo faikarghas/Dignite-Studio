@@ -40,9 +40,12 @@
         border: none;
         color: white;
         font-size: 2rem;
+        &:hover{
+            background-color: rgb(255, 187, 0);
+        }
     }
     .btn-primary:hover {
-        background-color: #FFBA00;
+        background-color: rgb(71, 58, 22);
         border: none;
         color: white;
     }
