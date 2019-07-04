@@ -65,7 +65,7 @@ class Layout extends React.Component{
                 <Link href="/about"><li>ABOUT</li></Link>
                 <Link href="/work"><li>WORK</li></Link>
                 <li onClick={this.showModal}>HIRE US</li>
-                <a href="https://dignitestore.herokuapp.com/" target="_blank"><li>STORE</li></a>
+                <a href="https://dignitestore.herokuapp.com/" target="_blank" rel="noopener"><li>STORE</li></a>
             </ul>
 
         </div>
