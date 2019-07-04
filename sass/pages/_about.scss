@@ -17,7 +17,7 @@
                 margin-bottom: 5rem;
             }
         }
-        h1{
+        h2{
             font-size: 4.2rem;
             font-family: 'Brandon-grotesque-regular';
             font-weight: 700;
@@ -46,7 +46,7 @@
                 }
             }
         }
-        h1{
+        h2{
             font-size: 7rem;
             font-family: 'Brandon-grotesque-regular';
             font-weight: 700;
@@ -64,13 +64,15 @@
 
 .section_fourth-about{
     margin: 10rem;
+    padding: 5rem;
+
     .box{
         display: flex;
         align-items: center;
         &:nth-child(2){
             justify-content: center;
         }
-        h1{
+        h2{
             font-size: 7rem;
             font-family: 'Brandon-grotesque-regular';
             font-weight: 700;

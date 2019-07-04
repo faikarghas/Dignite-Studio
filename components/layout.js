@@ -60,22 +60,22 @@ class Layout extends React.Component{
 
         <div className={`menu ${activeMenu} ${overlaymenu} ${transMenu}`}>
             <ul>
-                <li onClick={this.closeMenu} className="closemenu" style={{cursor:'pointer'}}><img src="../static/image/Icon/Close-Menu.png" width="50px" height="50px"/></li>
-                <Link href="/"><li>HOME</li></Link>
-                <Link href="/about"><li>ABOUT</li></Link>
-                <Link href="/work"><li>WORK</li></Link>
-                <li onClick={this.showModal}>HIRE US</li>
-                <a href="https://dignitestore.herokuapp.com/" target="_blank" rel="noopener"><li>STORE</li></a>
+                <li onClick={this.closeMenu} className="closemenu" style={{cursor:'pointer'}}><img src="../static/image/Icon/Close-Menu.png" width="50px" height="50px" alt="icon-close"/></li>
+                <li><Link href="/">HOME</Link></li>
+                <li><Link href="/about">ABOUT</Link></li>
+                <li><Link href="/work">WORK</Link></li>
+                <li><a onClick={this.showModal}>HIRE US</a></li>
+                <li><a href="https://dignitestore.herokuapp.com/" target="_blank" rel="noopener">STORE</a></li>
             </ul>
 
         </div>
         <div className={`contents ${closeContents}`}>
           <div className="container header_menu">
               <ul>
-                  <Link href="/">
-                    <li style={{cursor:'pointer'}}><img src="../../static/image/logo.png" width="100px" height="100px"></img></li>
-                  </Link>
-                  <li onClick={this.openMenu} style={{cursor:'pointer'}}><img src="../static/image/Icon/MenuToggle.png" width="50px" height="20px"/></li>
+                  <li style={{cursor:'pointer'}}>
+                    <Link href="/"><img src="../../static/image/logo.png" width="100px" height="100px" alt="logo-dignite"></img></Link>
+                  </li>
+                  <li onClick={this.openMenu} style={{cursor:'pointer'}}><img src="../static/image/Icon/MenuToggle.png" width="50px" height="20px" alt="icon-toogle"/></li>
               </ul>
           </div>
             {this.props.children}
@@ -87,10 +87,10 @@ class Layout extends React.Component{
                         <p>hello@dignitestudio.com</p>
                         <a href="">(+62) 812 8783 1421</a>
                         <ul className="mt-5">
-                            <li><img src="../static/image/SocialIcon/Facebook.png"/></li>
-                            <li><img src="../static/image/SocialIcon/Instagram.png"/></li>
-                            <li><img src="../static/image/SocialIcon/LinkedIn.png"/></li>
-                            <li><img src="../static/image/SocialIcon/Whatsapp.png"/></li>
+                            <li><img src="../static/image/SocialIcon/Facebook.png" alt="icon-fb"/></li>
+                            <li><img src="../static/image/SocialIcon/Instagram.png" alt="icon-ig"/></li>
+                            <li><img src="../static/image/SocialIcon/LinkedIn.png" alt="icon-lk"/></li>
+                            <li><img src="../static/image/SocialIcon/Whatsapp.png" alt="icon-wa"/></li>
                         </ul>
                     </div>
                     <div className="col-6">

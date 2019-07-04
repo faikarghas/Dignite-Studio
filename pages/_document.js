@@ -4,7 +4,7 @@ export default class MyDocument extends Document {
 
     render() {
         return (
-            <html>
+            <html lang="en">
                 <Head>
                     <meta charSet="UTF-8" />
                     <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
@@ -12,7 +12,8 @@ export default class MyDocument extends Document {
                     <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
 
                     {/* OPEN GRAP */}
-
+                    <meta name="description" content="We craft experiences for your digital needs."/>
+                    <meta name="author" content="DIGNITE STUDIO"/>
                     {/* favicon */}
                     <link rel="shortcut icon" href="../static/image/logofavicon.ico" type="image/x-icon"/>
                     <link rel="icon" href="../static/favicon.ico" type="image/x-icon"></link>

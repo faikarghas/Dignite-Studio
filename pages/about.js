@@ -16,19 +16,19 @@ const about = () => {
                 <div className="container">
                     <div className="row">
                         <div className="box col-6 col-md-3">
-                            <h1 className="mb-5">Research</h1>
+                            <h2 className="mb-5">Research</h2>
                             <p>Illum mallem levares, quo optimum atque humanis simum virum, Cn. Tu autem negas fortem esse quem quam posse, qui dolorem m alum putet. Cupiditates non Epicuri divisione finiebat, sed sua satietate.</p>
                         </div>
                         <div className="box col-6 col-md-3">
-                            <h1 className="mb-5">Strategy</h1>
+                            <h2 className="mb-5">Strategy</h2>
                             <p>Illum mallem levares, quo optimum atque humanis simum virum, Cn. Tu autem negas fortem esse quem quam posse, qui dolorem m alum putet. Cupiditates non Epicuri divisione finiebat, sed sua satietate.</p>
                         </div>
                         <div className="box col-6 col-md-3">
-                            <h1 className="mb-5">Design</h1>
+                            <h2 className="mb-5">Design</h2>
                             <p>Illum mallem levares, quo optimum atque humanis simum virum, Cn. Tu autem negas fortem esse quem quam posse, qui dolorem m alum putet. Cupiditates non Epicuri divisione finiebat, sed sua satietate.</p>
                         </div>
                         <div className="box col-6 col-md-3">
-                            <h1 className="mb-5">Development</h1>
+                            <h2 className="mb-5">Development</h2>
                             <p>Illum mallem levares, quo optimum atque humanis simum virum, Cn. Tu autem negas fortem esse quem quam posse, qui dolorem m alum putet. Cupiditates non Epicuri divisione finiebat, sed sua satietate.</p>
                         </div>
                     </div>
@@ -38,7 +38,7 @@ const about = () => {
                 <div className="container">
                     <div className="row">
                         <div className="box col-6">
-                            <h1 className="mb-5">What<br/>We Do?</h1>
+                            <h2 className="mb-5">What<br/>We Do?</h2>
                         </div>
                         <div className="box col-6">
                             <ul className="text-center">
@@ -55,52 +55,24 @@ const about = () => {
                 <div className="container">
                     <div className="row">
                         <div className="box col-12 col-md-6">
-                            <h1 className="mb-5">Meet<br/>Our Team</h1>
+                            <h2 className="mb-5">Meet<br/>Our Team</h2>
                         </div>
                         <div className="box col-12 col-md-6">
                             <div className="row">
                                 <div className="box-photo col-5 p-0">
-                                    <img src="../static/image/Faikar.jpg" />
+                                    <img src="../static/image/Faikar.jpg" alt="photo"/>
                                     <div className="overlay-yellow">
                                         <p>Faikar Ghassan</p>
                                         <p>Web Developer</p>
                                     </div>
                                 </div>
                                 <div className="box-photo col-5 p-0">
-                                    <img src="../static/image/Tasya.jpg" />
+                                    <img src="../static/image/Tasya.jpg" alt="photo"/>
                                     <div className="overlay-yellow">
                                         <p>Mayesta Arientasya</p>
                                         <p>UI/UX Designer</p>
                                     </div>
                                 </div>
-                                {/* <div className="box-photo col-5 p-0">
-                                    <img src="../static/image/Person3.png" />
-                                    <div className="overlay-yellow">
-                                        <p>Mayesta Arientasya</p>
-                                        <p>UI/UX Designer</p>
-                                    </div>
-                                </div>
-                                <div className="box-photo col-5 p-0">
-                                    <img src="../static/image/Person4.png" />
-                                    <div className="overlay-yellow">
-                                        <p>Mayesta Arientasya</p>
-                                        <p>UI/UX Designer</p>
-                                    </div>
-                                </div>
-                                <div className="box-photo col-5 p-0">
-                                    <img src="../static/image/Person5.png" />
-                                    <div className="overlay-yellow">
-                                        <p>Mayesta Arientasya</p>
-                                        <p>UI/UX Designer</p>
-                                    </div>
-                                </div>
-                                <div className="box-photo col-5 p-0">
-                                    <img src="../static/image/Person6.png" />
-                                    <div className="overlay-yellow">
-                                        <p>Mayesta Arientasya</p>
-                                        <p>UI/UX Designer</p>
-                                    </div>
-                                </div> */}
                             </div>
                         </div>
                     </div>

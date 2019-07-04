@@ -23,66 +23,66 @@ const work = () => {
                     <Slider {...settings}>
                         <div className="row" style={{display:'flex !important'}}>
                             <div className="box col-4">
-                                <img src="../static/image/Image2.png" />
+                                <img src="../static/image/Image2.png" alt="project-img"/>
                                 <div className="box-name">
                                     <h5>PROJECT NAME</h5>
                                 </div>
                             </div>
                             <div className="box col-4">
-                                <img src="../static/image/Image2.png" />
+                                <img src="../static/image/Image2.png" alt="project-img"/>
                             </div>
                             <div className="box col-4">
-                                <img src="../static/image/Image2.png" />
+                                <img src="../static/image/Image2.png" alt="project-img"/>
                             </div>
                             <div className="box col-4">
-                                <img src="../static/image/Image2.png" />
+                                <img src="../static/image/Image2.png" alt="project-img"/>
                             </div>
                             <div className="box col-4">
-                                <img src="../static/image/Image2.png" />
+                                <img src="../static/image/Image2.png" alt="project-img"/>
                             </div>
                             <div className="box col-4">
-                                <img src="../static/image/Image2.png" />
+                                <img src="../static/image/Image2.png" alt="project-img"/>
                             </div>
                             <div className="box col-4">
-                                <img src="../static/image/Image2.png" />
+                                <img src="../static/image/Image2.png" alt="project-img"/>
                             </div>
                             <div className="box col-4">
-                                <img src="../static/image/Image2.png" />
+                                <img src="../static/image/Image2.png" alt="project-img"/>
                             </div>
                             <div className="box col-4">
-                                <img src="../static/image/Image2.png" />
+                                <img src="../static/image/Image2.png" alt="project-img"/>
                             </div>
                         </div>
                         <div className="row" style={{display:'flex !important'}}>
                             <div className="box col-4">
-                                <img src="../static/image/Image2.png" />
+                                <img src="../static/image/Image2.png" alt="project-img"/>
                                 <div className="box-name">
                                     <h5>PROJECT NAME</h5>
                                 </div>
                             </div>
                             <div className="box col-4">
-                                <img src="../static/image/Image2.png" />
+                                <img src="../static/image/Image2.png" alt="project-img"/>
                             </div>
                             <div className="box col-4">
-                                <img src="../static/image/Image2.png" />
+                                <img src="../static/image/Image2.png" alt="project-img"/>
                             </div>
                             <div className="box col-4">
-                                <img src="../static/image/Image2.png" />
+                                <img src="../static/image/Image2.png" alt="project-img"/>
                             </div>
                             <div className="box col-4">
-                                <img src="../static/image/Image2.png" />
+                                <img src="../static/image/Image2.png" alt="project-img"/>
                             </div>
                             <div className="box col-4">
-                                <img src="../static/image/Image2.png" />
+                                <img src="../static/image/Image2.png" alt="project-img"/>
                             </div>
                             <div className="box col-4">
-                                <img src="../static/image/Image2.png" />
+                                <img src="../static/image/Image2.png" alt="project-img"/>
                             </div>
                             <div className="box col-4">
-                                <img src="../static/image/Image2.png" />
+                                <img src="../static/image/Image2.png" alt="project-img"/>
                             </div>
                             <div className="box col-4">
-                                <img src="../static/image/Image2.png" />
+                                <img src="../static/image/Image2.png" alt="project-img"/>
                             </div>
                         </div>
                     </Slider>

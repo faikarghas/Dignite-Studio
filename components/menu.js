@@ -11,7 +11,7 @@ export default class menu extends Component {
                 <ul>
                     <li onClick={this.closeMenu} class="closemenu">X</li>
                     <li>HOME</li>
-                    <Link href="/about"><li>ABOUT</li></Link>
+                    <li><Link href="/about">ABOUT</Link></li>
                     <li>WORK</li>
                     <li>HIRE US</li>
                     <li>STORE</li>

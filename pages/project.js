@@ -45,25 +45,25 @@ class project extends React.Component {
                     </div>
                 </section>
                 <section className="section_second-project width100 p-0">
-                    <img  src="../static/image/Project1.png" width="100%"/>
+                    <img  src="../static/image/Project1.png" width="100%" alt="project-img"/>
                 </section>
                 <section className="section_third-project text-center">
-                    <h1>Challenge</h1>
+                    <h2>Challenge</h2>
                     <p>Illum mallem levares, quo optimum atque humanis simum virum, Cn. Tu autem negas fortem esse <br/> quem quam posse, qui dolorem m alum putet. Cupiditates non Epicuri divisione finiebat, sed sua satietate.</p>
                 </section>
                 <section className="section_fourth-project text-center">
                     <Slider {...settings}>
-                        <img src="../static/image/laptop.png" width="100%"/>
-                        <img src="../static/image/laptop.png" width="100%"/>
-                        <img src="../static/image/laptop.png" width="100%"/>
+                        <img src="../static/image/laptop.png" width="100%" alt="project-mockup"/>
+                        <img src="../static/image/laptop.png" width="100%" alt="project-mockup"/>
+                        <img src="../static/image/laptop.png" width="100%" alt="project-mockup"/>
                     </Slider>
                 </section>
                 <section className="section_fifth-project text-center">
-                    <h1>Solution</h1>
+                    <h2>Solution</h2>
                     <p>Illum mallem levares, quo optimum atque humanis simum virum, Cn. Tu autem negas fortem esse <br/> quem quam posse, qui dolorem m alum putet. Cupiditates non Epicuri divisione finiebat, sed sua satietate.</p>
                 </section>
                 <section className="section_sixth-project text-center">
-                    <img src="../static/image/Home.png" width="100%" style={{WebkitTransform:`translate(-50%,${-trans}px)`,msTransform:`translate(-50%,${-trans}px)`,transform:`translate(-50%,${-trans}px)`}}/>
+                    <img src="../static/image/Home.png" width="100%" style={{WebkitTransform:`translate(-50%,${-trans}px)`,msTransform:`translate(-50%,${-trans}px)`,transform:`translate(-50%,${-trans}px)`}} alt="project-mockup2"/>
                 </section>
                 <section className="section_seventh-project width100 p-0">
                     <Player 
@@ -82,11 +82,11 @@ class project extends React.Component {
                     <ul>
                         <li>
                             <div class="text-center">
-                                <img src="../static/image/Person3.png" class="rounded" alt="..."/>
+                                <img src="../static/image/Person3.png" class="rounded" alt="person-img"/>
                             </div>
                         </li>
                         <li className="client-name">
-                            <h1>Client Name</h1>
+                            <h2>Client Name</h2>
                             <p>Marketing Manager</p>
                         </li>
                     </ul>
