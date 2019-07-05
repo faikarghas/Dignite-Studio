@@ -37,7 +37,7 @@ app.prepare()
     // })
     spdy
       .createServer(spdyOptions, server)
-      .listen(3103, err => {
+      .listen(`${port}`, err => {
         if (err) throw err
       })
 
