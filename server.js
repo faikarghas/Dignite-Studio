@@ -13,12 +13,6 @@ const app       = next({dev});
 const handle    = app.getRequestHandler();
 
 
-// Spdy Setup
-const spdyOptions = {
-    key: fs.readFileSync( 'dignitekey.key' ),
-    cert: fs.readFileSync( 'www_dignitestudio_com.pem' )
-}
-
 app.prepare()
 .then(()=>{
     const server = express()
@@ -31,16 +25,10 @@ app.prepare()
         return handle(req, res)
     })
 
-    // server.listen(port, err =>{
-    //     if (err) throw err
-    //     console.log(`> Ready on ${port}`);
-    // })
-    spdy
-      .createServer(spdyOptions, server)
-      .listen(`${port}`, err => {
+    server.listen(port, err =>{
         if (err) throw err
-      })
-
+        console.log(`> Ready on ${port}`);
+    })
 })
 .catch(ex=>{
     console.error(ex.stack);
