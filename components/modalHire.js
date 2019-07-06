@@ -90,7 +90,7 @@ class project extends React.Component{
                                     <Form.Control as="textarea"  id="message" placeholder="Your Message" name="message" value={message} onChange={this.inputHandler}/>
                                 </Form.Group>
                                 <Button type="submit">
-                                    {this.state.Loading ? <Spinner animation="border" />: 'Start Conversation'}
+                                    {this.state.Loading ? <div class="lds-ring"><div></div><div></div><div></div><div></div></div>: 'Start Conversation'}
                                 </Button>
                             </Form>
                         </Col>
