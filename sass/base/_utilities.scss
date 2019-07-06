@@ -43,7 +43,9 @@
 
 .textHeaderHome{
   padding: 10rem 30rem 20rem 30rem;
-
+  @include respond(phone){
+    padding: 10rem 2rem 20rem 2rem;
+  }
   h1{
       font-size: 4.5rem;
   }
@@ -52,7 +54,9 @@
 
 .textHeader{
   padding: 10rem 30rem 10rem 30rem;
-
+  @include respond(phone){
+    padding: 10rem 2rem 10rem 2rem;
+  }
   h1{
       font-size: 4.5rem;
   }
