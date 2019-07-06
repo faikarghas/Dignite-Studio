@@ -1,12 +1,12 @@
-import React from 'react'
-
+import { Container,Row,Col,Form,Button } from 'react-bootstrap';
 class project extends React.Component{
     state = {
         name:'',
         email:'',
         companyName:'',
         phoneNumber:'',
-        message:''
+        message:'',
+        Loading:false
     }
 
     inputHandler = (evt) => {
@@ -18,6 +18,7 @@ class project extends React.Component{
     onSubmitHandler = (evt) => {
         evt.preventDefault()
         const {name,email,companyName,phoneNumber,message} = this.state
+        this.setState({Loading:true})
         fetch('https://api.dignitestudio.com/api/posthire',{
             method:'post',
             headers:{'Content-Type':'application/json'},
@@ -31,7 +32,7 @@ class project extends React.Component{
         })
         .then(res=>res.json())
         .then(res=>{
-            console.log(res);
+            this.setState({Loading:false})
             this.setState({
                 name:'',
                 email:'',
@@ -51,9 +52,9 @@ class project extends React.Component{
                 <div className="close-contact">
                     <img onClick={closeModal} src="../static/image/Icon/Close-Contact.png"/>
                 </div>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-5">
+                <Container>
+                    <Row>
+                        <Col xs={5}>
                             <h1 className="mb-5">Get in touch!</h1>
                             <h2>Have a project in mind? <br/>Let's talk.</h2>
                             <br/>
@@ -66,33 +67,35 @@ class project extends React.Component{
                             <br/>
                             <p>hello@dignitestudio.com</p>
                             <p>(+62) 812 8783 1421</p>
-                        </div>
-                        <div className="col-7">
-                            <form onSubmit={this.onSubmitHandler}>
-                                <div className="form-row">
-                                    <div className="form-group col-md-6">
-                                    <input type="text" className="form-control" id="name" placeholder="Your Name" name="name" value={name} onChange={this.inputHandler} />
-                                    </div>
-                                    <div className="form-group col-md-6">
-                                    <input type="email" className="form-control" id="email" placeholder="Your Email" name="email" value={email} onChange={this.inputHandler} />
-                                    </div>
-                                </div>
-                                <div className="form-row">
-                                    <div className="form-group col-md-6">
-                                    <input type="text" className="form-control" id="companyName" placeholder="Company Name" name="companyName" value={companyName} onChange={this.inputHandler} />
-                                    </div>
-                                    <div className="form-group col-md-6">
-                                    <input type="number" className="form-control" id="phoneNumber" placeholder="Phone Number" name="phoneNumber" value={phoneNumber} onChange={this.inputHandler} />
-                                    </div>
-                                </div>
-                                <div className="form-group">
-                                    <textarea  className="form-control" id="message" placeholder="Your Message" name="message" value={message} onChange={this.inputHandler}/>
-                                </div>
-                                <button type="submit" className="btn">Start Conversation</button>
-                            </form>
-                        </div>
-                  </div>
-                </div>
+                        </Col>
+                        <Col xs={7}>
+                            <Form onSubmit={this.onSubmitHandler}>
+                                <Form.Row>
+                                    <Form.Group as={Col} md='6'>
+                                        <Form.Control type="text" id="name" placeholder="Your Name" name="name" value={name} onChange={this.inputHandler} />
+                                    </Form.Group>
+                                    <Form.Group as={Col} md='6'>
+                                        <Form.Control type="email" id="email" placeholder="Your Email" name="email" value={email} onChange={this.inputHandler} />
+                                    </Form.Group>
+                                </Form.Row>
+                                <Form.Row>
+                                    <Form.Group as={Col} md='6'>
+                                        <Form.Control type="text" id="companyName" placeholder="Company Name" name="companyName" value={companyName} onChange={this.inputHandler} />
+                                    </Form.Group>
+                                    <Form.Group as={Col} md='6'>
+                                        <Form.Control type="number" id="phoneNumber" placeholder="Phone Number" name="phoneNumber" value={phoneNumber} onChange={this.inputHandler} />
+                                    </Form.Group>
+                                </Form.Row>
+                                <Form.Group>
+                                    <Form.Control as="textarea"  id="message" placeholder="Your Message" name="message" value={message} onChange={this.inputHandler}/>
+                                </Form.Group>
+                                <Button type="submit">
+                                    {this.state.Loading ? <Spinner animation="border" />: 'Start Conversation'}
+                                </Button>
+                            </Form>
+                        </Col>
+                  </Row>
+                </Container>
             </div>
         )
     }

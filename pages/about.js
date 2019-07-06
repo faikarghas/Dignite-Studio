@@ -1,4 +1,4 @@
-import Layout from '../components/layout'
+import Layout from '../components/layouts'
 import TextHeader from '../components/presentational/textHead'
 import GAwrapper from '../lib/GAWarp';
 

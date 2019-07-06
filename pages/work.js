@@ -1,10 +1,9 @@
-import React from 'react'
 import Slider from "react-slick"
+import { Container,Row,Col } from 'react-bootstrap'
 import GAwrapper from '../lib/GAWarp'
 
 import TextHeader from '../components/presentational/textHead'
-import Layout from '../components/layout'
-import { Container,Row,Col } from 'react-bootstrap'
+import Layout from '../components/layouts'
 
 import data from '../lib/copywriting/data.js'
 
@@ -45,15 +44,6 @@ const work = props => {
                             <Col className="box" xs={4} md={4} lg={4}>
                                 <img src="../static/image/Image2.png" alt="project-img"/>
                             </Col>
-                            <Col className="box" xs={4} md={4} lg={4}>
-                                <img src="../static/image/Image2.png" alt="project-img"/>
-                            </Col>
-                            <Col className="box" xs={4} md={4} lg={4}>
-                                <img src="../static/image/Image2.png" alt="project-img"/>
-                            </Col>
-                            <Col className="box" xs={4} md={4} lg={4}>
-                                <img src="../static/image/Image2.png" alt="project-img"/>
-                            </Col>
                         </Row>
                         <Row style={{display:'flex !important'}}>
                             <Col className="box" xs={4} md={4} lg={4}>
@@ -61,15 +51,6 @@ const work = props => {
                                 <div className="box-name">
                                     <h5>PROJECT NAME</h5>
                                 </div>
-                            </Col>
-                            <Col className="box" xs={4} md={4} lg={4}>
-                                <img src="../static/image/Image2.png" alt="project-img"/>
-                            </Col>
-                            <Col className="box" xs={4} md={4} lg={4}>
-                                <img src="../static/image/Image2.png" alt="project-img"/>
-                            </Col>
-                            <Col className="box" xs={4} md={4} lg={4}>
-                                <img src="../static/image/Image2.png" alt="project-img"/>
                             </Col>
                             <Col className="box" xs={4} md={4} lg={4}>
                                 <img src="../static/image/Image2.png" alt="project-img"/>

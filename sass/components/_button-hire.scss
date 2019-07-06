@@ -10,6 +10,10 @@
     border: none;
     cursor: pointer;
     color: #222222;
+    &:hover{
+        background-color: rgb(240, 177, 4);
+        color: white;
+    }
     h2{
         margin: 0;
     }

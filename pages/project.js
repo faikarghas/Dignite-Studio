@@ -1,4 +1,4 @@
-import Layout from '../components/layout'
+import Layout from '../components/layouts'
 import Slider from "react-slick";
 import { Player, BigPlayButton } from 'video-react';
 import GAwrapper from '../lib/GAWarp';
@@ -92,7 +92,7 @@ class project extends React.Component {
                     </ul>
                 </section>
                 <section className="section_ninth-project">
-                    <a>Next Project</a>
+                    <p>Next Project</p>
                     <a>PROJECT NAME &nbsp; -></a>
                 </section>
             </Layout>

@@ -40,7 +40,11 @@ class index extends React.Component{
         return (
             <GAwrapper>
             <Layout>
-                <TextHeader text={data.home.title} />
+                <section className="textHeaderHome width100">
+                    <Container>
+                        <h1 className="text-center">{data.home.title}</h1>
+                    </Container>
+                </section>
                 <section className="section_second-home width100 homeku">
                     <Container className="box_allprojects" style={{WebkitTransform:`translate(-50%,${-trans}px)`,msTransform:`translate(-50%,${-trans}px)`,transform:`translate(-50%,${-trans}px)`}}>
                         <Row>
