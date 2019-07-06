@@ -1,8 +1,12 @@
 import React from 'react'
-import Slider from "react-slick";
-import GAwrapper from '../lib/GAWarp';
+import Slider from "react-slick"
+import GAwrapper from '../lib/GAWarp'
 
+import TextHeader from '../components/presentational/textHead'
 import Layout from '../components/layout'
+import { Container,Row,Col } from 'react-bootstrap'
+
+import data from '../lib/copywriting/data.js'
 
 var settings = {
     dots: true,
@@ -11,82 +15,80 @@ var settings = {
     slidesToScroll: 1,
     lazyLoad: true
 };
-const work = () => {
+const work = props => {
     return (
         <GAwrapper>
         <Layout>
-            <section className="section_first-work">
-                <h1 className="text-center">We design and build high-end digital products for all kind of <br/> clients and audiences.</h1>
-            </section>
+            <TextHeader text={data.work.title} />
             <section className="section_second-work">
-                <div className="container">
+                <Container>
                     <Slider {...settings}>
-                        <div className="row" style={{display:'flex !important'}}>
-                            <div className="box col-4">
+                        <Row style={{display:'flex !important'}}>
+                            <Col className="box" xs={4} md={4} lg={4}>
                                 <img src="../static/image/Image2.png" alt="project-img"/>
                                 <div className="box-name">
                                     <h5>PROJECT NAME</h5>
                                 </div>
-                            </div>
-                            <div className="box col-4">
+                            </Col>
+                            <Col className="box" xs={4} md={4} lg={4}>
                                 <img src="../static/image/Image2.png" alt="project-img"/>
-                            </div>
-                            <div className="box col-4">
+                            </Col>
+                            <Col className="box" xs={4} md={4} lg={4}>
                                 <img src="../static/image/Image2.png" alt="project-img"/>
-                            </div>
-                            <div className="box col-4">
+                            </Col>
+                            <Col className="box" xs={4} md={4} lg={4}>
                                 <img src="../static/image/Image2.png" alt="project-img"/>
-                            </div>
-                            <div className="box col-4">
+                            </Col>
+                            <Col className="box" xs={4} md={4} lg={4}>
                                 <img src="../static/image/Image2.png" alt="project-img"/>
-                            </div>
-                            <div className="box col-4">
+                            </Col>
+                            <Col className="box" xs={4} md={4} lg={4}>
                                 <img src="../static/image/Image2.png" alt="project-img"/>
-                            </div>
-                            <div className="box col-4">
+                            </Col>
+                            <Col className="box" xs={4} md={4} lg={4}>
                                 <img src="../static/image/Image2.png" alt="project-img"/>
-                            </div>
-                            <div className="box col-4">
+                            </Col>
+                            <Col className="box" xs={4} md={4} lg={4}>
                                 <img src="../static/image/Image2.png" alt="project-img"/>
-                            </div>
-                            <div className="box col-4">
+                            </Col>
+                            <Col className="box" xs={4} md={4} lg={4}>
                                 <img src="../static/image/Image2.png" alt="project-img"/>
-                            </div>
-                        </div>
-                        <div className="row" style={{display:'flex !important'}}>
-                            <div className="box col-4">
+                            </Col>
+                        </Row>
+                        <Row style={{display:'flex !important'}}>
+                            <Col className="box" xs={4} md={4} lg={4}>
                                 <img src="../static/image/Image2.png" alt="project-img"/>
                                 <div className="box-name">
                                     <h5>PROJECT NAME</h5>
                                 </div>
-                            </div>
-                            <div className="box col-4">
+                            </Col>
+                            <Col className="box" xs={4} md={4} lg={4}>
                                 <img src="../static/image/Image2.png" alt="project-img"/>
-                            </div>
-                            <div className="box col-4">
+                            </Col>
+                            <Col className="box" xs={4} md={4} lg={4}>
                                 <img src="../static/image/Image2.png" alt="project-img"/>
-                            </div>
-                            <div className="box col-4">
+                            </Col>
+                            <Col className="box" xs={4} md={4} lg={4}>
                                 <img src="../static/image/Image2.png" alt="project-img"/>
-                            </div>
-                            <div className="box col-4">
+                            </Col>
+                            <Col className="box" xs={4} md={4} lg={4}>
                                 <img src="../static/image/Image2.png" alt="project-img"/>
-                            </div>
-                            <div className="box col-4">
+                            </Col>
+                            <Col className="box" xs={4} md={4} lg={4}>
                                 <img src="../static/image/Image2.png" alt="project-img"/>
-                            </div>
-                            <div className="box col-4">
+                            </Col>
+                            <Col className="box" xs={4} md={4} lg={4}>
                                 <img src="../static/image/Image2.png" alt="project-img"/>
-                            </div>
-                            <div className="box col-4">
+                            </Col>
+                            <Col className="box" xs={4} md={4} lg={4}>
                                 <img src="../static/image/Image2.png" alt="project-img"/>
-                            </div>
-                            <div className="box col-4">
+                            </Col>
+                            <Col className="box" xs={4} md={4} lg={4}>
                                 <img src="../static/image/Image2.png" alt="project-img"/>
-                            </div>
-                        </div>
+                            </Col>
+                        </Row>
                     </Slider>
-                </div>
+                </Container>
             </section>
         </Layout>
         </GAwrapper>

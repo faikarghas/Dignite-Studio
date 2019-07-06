@@ -1,7 +1,15 @@
 import Link from 'next/link'
 
-import Layout from '../components/layout'
-import GAwrapper from '../lib/GAWarp';
+import Layout from '../components/layouts'
+
+import GAwrapper from '../lib/GAWarp'
+
+import TextHeader from '../components/presentational/textHead'
+import BoxProject from '../components/presentational/boxProjectHome'
+
+import { Container,Row } from 'react-bootstrap';
+
+import data from '../lib/copywriting/data.js'
 
 class index extends React.Component{
     state = {
@@ -24,72 +32,26 @@ class index extends React.Component{
     }
     render(){
         const {trans} = this.state
+        const renderBox = data.home.Project.map(item=>{
+            return (
+                <BoxProject key={item.id} text={item.title}/>
+            )
+        })
         return (
             <GAwrapper>
             <Layout>
-                <section className="section_first-home width100">
-                    <div className="container">
-                        <h1 className="text-center">We craft experiences <br/> for your digital needs.</h1>
-                    </div>
-                </section>
+                <TextHeader text={data.home.title} />
                 <section className="section_second-home width100 homeku">
-                    <div className="container box_allprojects" style={{WebkitTransform:`translate(-50%,${-trans}px)`,msTransform:`translate(-50%,${-trans}px)`,transform:`translate(-50%,${-trans}px)`}}>
-                        <div className="row">
-                            <div className="col-4 box1 p-0">
-                                <img src="../static/image/Image1.png" width="100%" height="100%" alt="project-img"></img>
-                                <Link href="/project">
-                                    <div className="box-hover">
-                                        <h2>PROJECT NAME</h2>
-                                    </div>
-                                </Link>
-                            </div>
-                            <div className="col-4 box1 p-0">
-                                <img src="../static/image/Image5.png" width="100%" height="100%" alt="project-img"></img>
-                                <Link href="/project">
-                                    <div className="box-hover">
-                                        <h2>PROJECT NAME</h2>
-                                    </div>
-                                </Link>
-                            </div>
-                            <div className="col-4 box1 p-0">
-                                <img src="../static/image/Image2.png" width="100%" height="100%" alt="project-img"></img>
-                                <Link href="/project">
-                                    <div className="box-hover">
-                                        <h2>PROJECT NAME</h2>
-                                    </div>
-                                </Link>
-                            </div>
-                            <div className="col-4 box1 p-0">
-                                <img src="../static/image/Image6.png" width="100%" height="100%" alt="project-img"></img>
-                                <Link href="/project">
-                                    <div className="box-hover">
-                                        <h2>PROJECT NAME</h2>
-                                    </div>
-                                </Link>
-                            </div>
-                            <div className="col-4 box1 p-0">
-                                <img src="../static/image/Image10.png" width="100%" height="100%" alt="project-img"></img>
-                                <Link href="/project">
-                                    <div className="box-hover">
-                                        <h2>PROJECT NAME</h2>
-                                    </div>
-                                </Link>
-                            </div>
-                            <div className="col-4 box1 p-0">
-                                <img src="../static/image/Image11.png" width="100%" height="100%" alt="project-img"></img>
-                                <Link href="/project">
-                                    <div className="box-hover">
-                                        <h2>PROJECT NAME</h2>
-                                    </div>
-                                </Link>
-                            </div>
-                        </div>
+                    <Container className="box_allprojects" style={{WebkitTransform:`translate(-50%,${-trans}px)`,msTransform:`translate(-50%,${-trans}px)`,transform:`translate(-50%,${-trans}px)`}}>
+                        <Row>
+                            {renderBox}
+                        </Row>
                         <Link href="/work">
                             <div className="view_allpr">
                                 <a className="pr-4 pl-4">View all our projects</a>
                             </div>
                         </Link>
-                    </div>
+                    </Container>
                 </section>
             </Layout>
             </GAwrapper>
