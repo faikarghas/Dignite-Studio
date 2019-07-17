@@ -26,7 +26,8 @@ const work = props => {
                             <Col className="box" xs={4} md={4} lg={4}>
                                 <img src="../static/image/Image2.png" alt="project-img"/>
                                 <div className="box-name">
-                                    <h5>PROJECT NAME</h5>
+                                    <h2>Project Name</h2>
+                                    <h2>Web Development</h2>
                                 </div>
                             </Col>
                             <Col className="box" xs={4} md={4} lg={4}>

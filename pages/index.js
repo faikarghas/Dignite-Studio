@@ -34,7 +34,7 @@ class index extends React.Component{
         const {trans} = this.state
         const renderBox = data.home.Project.map(item=>{
             return (
-                <BoxProject key={item.id} text={item.title}/>
+                <BoxProject key={item.id} text={item.title} category={"Web Development and UI/UX"}/>
             )
         })
         return (

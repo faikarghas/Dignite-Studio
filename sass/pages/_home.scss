@@ -24,6 +24,11 @@
                 .box-hover{
                     visibility:visible;
                     opacity: 1;
+                    h2{
+                        &:first-child{
+                            font-weight: 700;
+                        }
+                    }
                 }
             }
             .box-hover{

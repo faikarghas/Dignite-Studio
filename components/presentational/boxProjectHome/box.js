@@ -8,6 +8,7 @@ const box = props => {
             <Link href="/project">
                 <div className="box-hover">
                     <h2>{props.text}</h2>
+                    <h2>{props.category}</h2>
                 </div>
             </Link>
         </Col>

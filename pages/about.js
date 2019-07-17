@@ -15,20 +15,20 @@ const about = () => {
                 <Container>
                     <Row>
                         <Col className="box" xs={6} md={3}>
-                            <h2 className="mb-5">Research</h2>
-                            <p>Illum mallem levares, quo optimum atque humanis simum virum, Cn. Tu autem negas fortem esse quem quam posse, qui dolorem m alum putet. Cupiditates non Epicuri divisione finiebat, sed sua satietate.</p>
-                        </Col>
-                        <Col className="box" xs={6} md={3}>
-                            <h2 className="mb-5">Strategy</h2>
-                            <p>Illum mallem levares, quo optimum atque humanis simum virum, Cn. Tu autem negas fortem esse quem quam posse, qui dolorem m alum putet. Cupiditates non Epicuri divisione finiebat, sed sua satietate.</p>
+                            <h2 className="mb-5">Ask</h2>
+                            <p>We start with a few simple questions. Through thoughtful consideration of your responses, we're able to craft the essential guidelines that will shape your brand's online experience.</p>
                         </Col>
                         <Col className="box" xs={6} md={3}>
                             <h2 className="mb-5">Design</h2>
-                            <p>Illum mallem levares, quo optimum atque humanis simum virum, Cn. Tu autem negas fortem esse quem quam posse, qui dolorem m alum putet. Cupiditates non Epicuri divisione finiebat, sed sua satietate.</p>
+                            <p>We make data-driven decisions based on your story while innovating every step of the way. From mobile to tablet to full wall projections, our digital creations are designed to make an impact on any medium.</p>
                         </Col>
                         <Col className="box" xs={6} md={3}>
-                            <h2 className="mb-5">Development</h2>
-                            <p>Illum mallem levares, quo optimum atque humanis simum virum, Cn. Tu autem negas fortem esse quem quam posse, qui dolorem m alum putet. Cupiditates non Epicuri divisione finiebat, sed sua satietate.</p>
+                            <h2 className="mb-5">Develop</h2>
+                            <p>Our people are artists - they can breathe life into designs and make digital products move in ways you never thought possible. The products and platforms we develop are modular, so they can easily evolve over time, extending their life cycle in an ever-changing digital landscape.</p>
+                        </Col>
+                        <Col className="box" xs={6} md={3}>
+                            <h2 className="mb-5">Support</h2>
+                            <p>We're here to help you. Reach out to us anytime, for anything you need. Ongoing technical support is part of the deal, so you can focus on growing your business—worry-free.</p>
                         </Col>
                     </Row>
                 </Container>
