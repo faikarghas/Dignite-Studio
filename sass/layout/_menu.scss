@@ -28,10 +28,10 @@
 
 .active{
     transform: translateX(0);
-    z-index: 9999;
+    z-index: 2;
 }
 .deactive{
-    z-index: 9999;
+    z-index: 2;
 }
 .contents{
     transition: all .7s ease-out;
@@ -58,7 +58,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 999;
+    z-index: 2;
     background-color: #918f8f9e;
 }
 
@@ -68,6 +68,6 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 888;
+    z-index: 1;
     background-color: #918f8f9e;
 }
