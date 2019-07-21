@@ -72,13 +72,13 @@ const about = () => {
                                         <p>UI/UX Designer & Digital Marketing</p>
                                     </div>
                                 </Col>
-                                <Col className="box-photo p-0" xs={5}>
+                                {/* <Col className="box-photo p-0" xs={5}>
                                     <img src="../static/image/egi.jpeg" alt="photo"/>
                                     <div className="overlay-yellow">
                                         <p>Egi Muharram</p>
                                         <p>Graphic Designer</p>
                                     </div>
-                                </Col>
+                                </Col> */}
                             </Row>
                         </Col>
                     </Row>
