@@ -1,6 +1,7 @@
 import Slider from "react-slick"
 import { Container,Row,Col } from 'react-bootstrap'
 import GAwrapper from '../lib/GAWarp'
+import Link from 'next/link'
 
 import TextHeader from '../components/presentational/textHead'
 import Layout from '../components/layouts'
@@ -23,6 +24,62 @@ const work = props => {
                 <Container>
                     <Slider {...settings}>
                         <Row style={{display:'flex !important'}}>
+                            <Link href="/project">
+                                <Col className="box" xs={4} md={4} lg={4}>
+                                        <img src="../static/image/Image2.png" alt="project-img"/>
+                                        <div className="box-name">
+                                            <h2>Project Name</h2>
+                                            <h2>Web Development</h2>
+                                        </div>
+                                </Col>
+                            </Link>
+                            <Link href="/project">
+                                <Col className="box" xs={4} md={4} lg={4}>
+                                    <img src="../static/image/Image2.png" alt="project-img"/>
+                                    <div className="box-name">
+                                        <h2>Project Name</h2>
+                                        <h2>Web Development</h2>
+                                    </div>
+                                </Col>
+                            </Link>
+                            <Link href="/project">
+                                <Col className="box" xs={4} md={4} lg={4}>
+                                    <img src="../static/image/Image2.png" alt="project-img"/>
+                                    <div className="box-name">
+                                        <h2>Project Name</h2>
+                                        <h2>Web Development</h2>
+                                    </div>
+                                </Col>
+                            </Link>
+                            <Link href="/project">
+                                <Col className="box" xs={4} md={4} lg={4}>
+                                    <img src="../static/image/Image2.png" alt="project-img"/>
+                                    <div className="box-name">
+                                        <h2>Project Name</h2>
+                                        <h2>Web Development</h2>
+                                    </div>
+                                </Col>
+                            </Link>
+                            <Link href="/project">
+                                <Col className="box" xs={4} md={4} lg={4}>
+                                    <img src="../static/image/Image2.png" alt="project-img"/>
+                                    <div className="box-name">
+                                        <h2>Project Name</h2>
+                                        <h2>Web Development</h2>
+                                    </div>
+                                </Col>
+                            </Link>
+                            <Link href="/project">
+                                <Col className="box" xs={4} md={4} lg={4}>
+                                    <img src="../static/image/Image2.png" alt="project-img"/>
+                                    <div className="box-name">
+                                        <h2>Project Name</h2>
+                                        <h2>Web Development</h2>
+                                    </div>
+                                </Col>
+                            </Link>
+                        </Row>
+                        <Row style={{display:'flex !important'}}>
                             <Col className="box" xs={4} md={4} lg={4}>
                                 <img src="../static/image/Image2.png" alt="project-img"/>
                                 <div className="box-name">
@@ -32,41 +89,38 @@ const work = props => {
                             </Col>
                             <Col className="box" xs={4} md={4} lg={4}>
                                 <img src="../static/image/Image2.png" alt="project-img"/>
-                            </Col>
-                            <Col className="box" xs={4} md={4} lg={4}>
-                                <img src="../static/image/Image2.png" alt="project-img"/>
-                            </Col>
-                            <Col className="box" xs={4} md={4} lg={4}>
-                                <img src="../static/image/Image2.png" alt="project-img"/>
-                            </Col>
-                            <Col className="box" xs={4} md={4} lg={4}>
-                                <img src="../static/image/Image2.png" alt="project-img"/>
-                            </Col>
-                            <Col className="box" xs={4} md={4} lg={4}>
-                                <img src="../static/image/Image2.png" alt="project-img"/>
-                            </Col>
-                        </Row>
-                        <Row style={{display:'flex !important'}}>
-                            <Col className="box" xs={4} md={4} lg={4}>
-                                <img src="../static/image/Image2.png" alt="project-img"/>
                                 <div className="box-name">
-                                    <h5>PROJECT NAME</h5>
+                                    <h2>Project Name</h2>
+                                    <h2>Web Development</h2>
                                 </div>
                             </Col>
                             <Col className="box" xs={4} md={4} lg={4}>
                                 <img src="../static/image/Image2.png" alt="project-img"/>
+                                <div className="box-name">
+                                    <h2>Project Name</h2>
+                                    <h2>Web Development</h2>
+                                </div>
                             </Col>
                             <Col className="box" xs={4} md={4} lg={4}>
                                 <img src="../static/image/Image2.png" alt="project-img"/>
+                                <div className="box-name">
+                                    <h2>Project Name</h2>
+                                    <h2>Web Development</h2>
+                                </div>
                             </Col>
                             <Col className="box" xs={4} md={4} lg={4}>
                                 <img src="../static/image/Image2.png" alt="project-img"/>
+                                <div className="box-name">
+                                    <h2>Project Name</h2>
+                                    <h2>Web Development</h2>
+                                </div>
                             </Col>
                             <Col className="box" xs={4} md={4} lg={4}>
                                 <img src="../static/image/Image2.png" alt="project-img"/>
-                            </Col>
-                            <Col className="box" xs={4} md={4} lg={4}>
-                                <img src="../static/image/Image2.png" alt="project-img"/>
+                                <div className="box-name">
+                                    <h2>Project Name</h2>
+                                    <h2>Web Development</h2>
+                                </div>
                             </Col>
                         </Row>
                     </Slider>
