@@ -9,7 +9,7 @@ import data from '../../lib/copywriting/data.js'
 import "../../node_modules/video-react/dist/video-react.css";
 
 
-class Project extends React.Component {
+class ProductDetail extends React.Component {
 
     static async getInitialProps(ctx){
         const { slug } = ctx.query
@@ -119,4 +119,4 @@ class Project extends React.Component {
     }
 }
 
-export default Project
+export default ProductDetail
