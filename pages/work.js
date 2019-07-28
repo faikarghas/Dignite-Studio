@@ -26,7 +26,7 @@ const work = props => {
                         <Row style={{display:'flex !important'}}>
                             {data.home.Project.map(item=>{
                                 return (
-                                    <Link href={`/project?slug=${item.slug}`} as={`/project/${item.slug}`}>
+                                    <Link href="/project/[slug]" as={`/project/${item.slug}`}>
                                         <Col className="box" xs={4} md={4} lg={4}  key={item.id}>
                                                 <img src={item.imgUrl} alt="project-img"/>
                                                 <div className="box-name">
