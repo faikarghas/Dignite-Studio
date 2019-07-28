@@ -27,6 +27,7 @@ const work = props => {
                             {data.home.Project.map(item=>{
                                 return (
                                     <Link as={`/project/${item.slug}`} href={`/project-detail?slug=${item.slug}`}>
+                                        <a>
                                         <Col className="box" xs={4} md={4} lg={4}  key={item.id}>
                                                 <img src={item.imgUrl} alt="project-img"/>
                                                 <div className="box-name">
@@ -34,6 +35,7 @@ const work = props => {
                                                     {/* <h2>{item.Category}</h2> */}
                                                 </div>
                                         </Col>
+                                        </a>
                                     </Link>
                                 )
                             })}

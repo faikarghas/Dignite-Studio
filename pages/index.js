@@ -42,13 +42,15 @@ class index extends React.Component{
                         {data.home.Project.map(item=>{
                             return (
                                 <Link as={`/project/${item.slug}`} href={`/project-detail?slug=${item.slug}`}>
+                                    <a>
                                     <Col className="box1 p-0" xs={4} key={item.id}>
-                                            <img src={item.imgUrl} width="100%" height="100%" alt="project-img"></img>
-                                            <div className="box-hover">
-                                                <h2>{item.title}</h2>
-                                                <h2>{item.Category}</h2>
-                                            </div>
+                                        <img src={item.imgUrl} width="100%" height="100%" alt="project-img"></img>
+                                        <div className="box-hover">
+                                            <h2>{item.title}</h2>
+                                            <h2>{item.Category}</h2>
+                                        </div>
                                     </Col>
+                                    </a>
                                 </Link>
 
                             )
