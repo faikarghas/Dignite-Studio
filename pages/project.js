@@ -10,16 +10,16 @@ import "../node_modules/video-react/dist/video-react.css";
 
 class project extends React.Component {
 
-    static async getInitialProps(ctx){
-        const { slug } = ctx.query
-        const res = await data.home
-        return {slug,res}
-    }
+    // static async getInitialProps(ctx){
+    //     const { slug } = ctx.query
+    //     const res = await data.home
+    //     return {slug,res}
+    // }
 
     state = {
         trans : 0,
-        data: this.props.res,
-        slug: this.props.slug
+        // data: this.props.res,
+        // slug: this.props.slug
     }
     componentDidMount(){
         window.addEventListener('scroll', this.handleScroll);
