@@ -10,17 +10,17 @@ import Layout from '../../components/layouts'
 
 class Project extends React.Component {
 
-    // static async getInitialProps(ctx){
-    //     const { slug } = ctx.query
-    //     const res = await data.home
-    //     return {slug,res}
-    // }
+    static async getInitialProps(ctx){
+        const { slug } = ctx.query
+        const res = await data.home
+        return {slug,res}
+    }
 
-    // state = {
-    //     trans : 0,
-    //     data: this.props.res,
-    //     slug: this.props.slug
-    // }
+    state = {
+        trans : 0,
+        data: this.props.res,
+        slug: this.props.slug
+    }
     // componentDidMount(){
     //     window.addEventListener('scroll', this.handleScroll);
     // }
@@ -111,7 +111,7 @@ class Project extends React.Component {
                     <p>Next Project</p>
                     <a>PROJECT NAME &nbsp; -></a>
                 </section> */}
-                <h1>TESST</h1>
+                <h1>{this.state.slug}</h1>
             </Layout>
         )
     }
