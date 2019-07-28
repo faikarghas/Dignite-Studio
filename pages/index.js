@@ -1,13 +1,11 @@
-import Link from 'next/link'
-
 import Layout from '../components/layouts'
 
 import GAwrapper from '../lib/GAWarp'
-
-import TextHeader from '../components/presentational/textHead'
-import BoxProject from '../components/presentational/boxProjectHome'
-
 import { Container,Row,Col } from 'react-bootstrap';
+
+import Link from 'next/link'
+
+
 
 import data from '../lib/copywriting/data.js'
 
@@ -34,7 +32,7 @@ class index extends React.Component{
         const {trans} = this.state
         const renderBox = data.home.Project.map(item=>{
             return (
-                <Link as={`/project-detail/${item.slug.toLowerCase()}`} href={`/project?slug=${item.slug.toLocaleLowerCase()}`} prefetch={false}>
+                <Link  href={`/project?slug=${item.slug.toLocaleLowerCase()}`} prefetch={false}>
                     <Col className="box1 p-0" xs={4}>
                             <img src={item.imgUrl} width="100%" height="100%" alt="project-img"></img>
                             <div className="box-hover">
