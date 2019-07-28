@@ -38,20 +38,20 @@ class ProductDetail extends React.Component {
 
     // }
     render(){
-        const {trans} = this.state
-        var settings = {
-            dots: true,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 3000,
-            pauseOnHover: false
-        };
-        const data = this.state.data.Project.filter((item)=>{
-            return item.slug === this.state.slug
-        })
+        // const {trans} = this.state
+        // var settings = {
+        //     dots: true,
+        //     infinite: true,
+        //     speed: 500,
+        //     slidesToShow: 1,
+        //     slidesToScroll: 1,
+        //     autoplay: true,
+        //     autoplaySpeed: 3000,
+        //     pauseOnHover: false
+        // };
+        // const data = this.state.data.Project.filter((item)=>{
+        //     return item.slug === this.state.slug
+        // })
         return (
             <GAwrapper>
             <Layout>
