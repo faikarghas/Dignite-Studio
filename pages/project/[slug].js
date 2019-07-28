@@ -5,9 +5,6 @@ import { Player, BigPlayButton } from 'video-react';
 import data from '../../lib/copywriting/data.js'
 
 
-import "../../node_modules/video-react/styles/scss/video-react.scss";
-
-
 class Project extends React.Component {
 
     static async getInitialProps(ctx){
