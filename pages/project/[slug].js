@@ -1,12 +1,12 @@
 import React from 'react'
-import Layout from '../components/layouts'
+import Layout from '../../components/layouts'
 import Slider from "react-slick";
 import { Player, BigPlayButton } from 'video-react';
-import GAwrapper from '../lib/GAWarp';
-import data from '../lib/copywriting/data.js'
+import GAwrapper from '../../lib/GAWarp';
+import data from '../../lib/copywriting/data.js'
 
 
-import "../node_modules/video-react/dist/video-react.css";
+import "../../node_modules/video-react/dist/video-react.css";
 
 
 class Project extends React.Component {
@@ -69,9 +69,9 @@ class Project extends React.Component {
                 </section>
                 <section className="section_fourth-project text-center">
                     <Slider {...settings}>
-                        {data[0].carouselImg.map(item=>{
+                        {data[0].carouselImg.map((item,i)=>{
                             return (
-                                <img src={item} width="100%" alt="project-mockup"/>
+                                <img key={i} src={item} width="100%" alt="project-mockup"/>
                             )
                         })}
                     </Slider>
