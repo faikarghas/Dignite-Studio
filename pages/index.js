@@ -5,8 +5,6 @@ import { Container,Row,Col } from 'react-bootstrap';
 
 import Link from 'next/link'
 
-
-
 import data from '../lib/copywriting/data.js'
 
 class index extends React.Component{
@@ -70,7 +68,7 @@ class index extends React.Component{
                             )
                         })}
                         </Row>
-                        <Link href="/work">
+                        <Link href="/project">
                             <div className="view_allpr">
                                 <a className="pr-4 pl-4">View all our projects</a>
                             </div>
