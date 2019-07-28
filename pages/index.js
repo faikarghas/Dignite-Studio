@@ -7,7 +7,7 @@ import GAwrapper from '../lib/GAWarp'
 import TextHeader from '../components/presentational/textHead'
 import BoxProject from '../components/presentational/boxProjectHome'
 
-import { Container,Row } from 'react-bootstrap';
+import { Container,Row,Col } from 'react-bootstrap';
 
 import data from '../lib/copywriting/data.js'
 
@@ -34,7 +34,15 @@ class index extends React.Component{
         const {trans} = this.state
         const renderBox = data.home.Project.map(item=>{
             return (
-                <BoxProject key={item.id} text={item.title} category={item.Category} imgUrl={item.imgUrl} slug={item.slug.toLowerCase()}/>
+                <Link as={`/project-detail/${item.slug}`} href={`/project?slug=${item.slug}`}>
+                    <Col className="box1 p-0" xs={4}>
+                        <img src={item.imgUrl} width="100%" height="100%" alt="project-img"></img>
+                            <div className="box-hover">
+                                <h2>{item.title}</h2>
+                                <h2>{item.Category}</h2>
+                            </div>
+                    </Col>
+                </Link>
             )
         })
         return (
