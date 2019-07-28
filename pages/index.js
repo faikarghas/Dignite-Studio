@@ -41,8 +41,7 @@ class index extends React.Component{
                         <Row>
                         {data.home.Project.map(item=>{
                             return (
-                                <Link as={`/project/${item.slug}`} href={`/projectDetail?slug=${item.slug}`}>
-                                    <a>
+                                <Link as={`/project/${item.slug}`} href={`/projectDetail?slug=${item.slug}`} prefetch={false}>
                                     <Col className="box1 p-0" xs={4} key={item.id}>
                                         <img src={item.imgUrl} width="100%" height="100%" alt="project-img"></img>
                                         <div className="box-hover">
@@ -50,7 +49,6 @@ class index extends React.Component{
                                             <h2>{item.Category}</h2>
                                         </div>
                                     </Col>
-                                    </a>
                                 </Link>
 
                             )
