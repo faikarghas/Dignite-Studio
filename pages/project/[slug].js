@@ -5,7 +5,7 @@ import { Player, BigPlayButton } from 'video-react';
 import data from '../../lib/copywriting/data.js'
 
 
-import "../../node_modules/video-react/dist/video-react.css";
+// import "../../node_modules/video-react/dist/video-react.css";
 
 
 class Project extends React.Component {
