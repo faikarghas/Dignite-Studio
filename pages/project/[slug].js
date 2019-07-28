@@ -1,11 +1,11 @@
 import React from 'react'
 import Layout from '../../components/layouts'
 import Slider from "react-slick";
-// import { Player, BigPlayButton } from 'video-react';
+import { Player, BigPlayButton } from 'video-react';
 import data from '../../lib/copywriting/data.js'
 
 
-// import "../../node_modules/video-react/dist/video-react.css";
+import "../../node_modules/video-react/dist/video-react.css";
 
 
 class Project extends React.Component {
@@ -82,12 +82,12 @@ class Project extends React.Component {
                     <img src="../static/image/Home.png" width="100%" style={{WebkitTransform:`translate(-50%,${-trans}px)`,msTransform:`translate(-50%,${-trans}px)`,transform:`translate(-50%,${-trans}px)`}} alt="project-mockup2"/>
                 </section>
                 <section className="section_seventh-project width100 p-0">
-                    {/* <Player
+                    <Player
                         src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
                         poster="../static/image/Video.png"
                     >
                         <BigPlayButton position="center" />
-                    </Player> */}
+                    </Player>
                 </section>
                 <section className="section_eighth-project text-center">
                     <div className="container pl-5 pr-5">
