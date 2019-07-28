@@ -1,12 +1,12 @@
 import React from 'react'
 import Layout from '../../components/layouts'
-import Slider from "react-slick";
-import { Player, BigPlayButton } from 'video-react';
-import GAwrapper from '../../lib/GAWarp';
-import data from '../../lib/copywriting/data.js'
+// import Slider from "react-slick";
+// import { Player, BigPlayButton } from 'video-react';
+// import GAwrapper from '../../lib/GAWarp';
+// import data from '../../lib/copywriting/data.js'
 
 
-import "../../node_modules/video-react/dist/video-react.css";
+// import "../../node_modules/video-react/dist/video-react.css";
 
 
 class ProductDetail extends React.Component {
@@ -53,7 +53,7 @@ class ProductDetail extends React.Component {
         //     return item.slug === this.state.slug
         // })
         return (
-            <GAwrapper>
+            // <GAwrapper>
             <Layout>
                 {/* <section className="section_first-project text-center">
                     <h1 className="text-center mb-5">{data[0].title}</h1>
@@ -115,7 +115,7 @@ class ProductDetail extends React.Component {
                 </section> */}
                 <h1>test</h1>
             </Layout>
-            </GAwrapper>
+            // </GAwrapper>
         )
     }
 }
