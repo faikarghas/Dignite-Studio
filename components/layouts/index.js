@@ -19,11 +19,11 @@ class Layout extends React.Component{
     transMenu:''
   }
   componentDidMount(){
-    if (!window.GA_INITIALIZED) {
-      initGA()
-      window.GA_INITIALIZED = true
-    }
-    logPageView()
+    // if (!window.GA_INITIALIZED) {
+    //   initGA()
+    //   window.GA_INITIALIZED = true
+    // }
+    // logPageView()
     setTimeout(()=>{
       this.setState({
         transMenu:'trans'
