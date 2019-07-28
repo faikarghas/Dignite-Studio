@@ -5,55 +5,55 @@ import { Player, BigPlayButton } from 'video-react';
 import data from '../../lib/copywriting/data.js'
 
 
-import "../../node_modules/video-react/dist/video-react.css";
+// import "../../node_modules/video-react/dist/video-react.css";
 
 
 class Project extends React.Component {
 
-    static async getInitialProps(ctx){
-        const { slug } = ctx.query
-        const res = await data.home
-        return {slug,res}
-    }
+    // static async getInitialProps(ctx){
+    //     const { slug } = ctx.query
+    //     const res = await data.home
+    //     return {slug,res}
+    // }
 
-    state = {
-        trans : 0,
-        data: this.props.res,
-        slug: this.props.slug
-    }
-    componentDidMount(){
-        window.addEventListener('scroll', this.handleScroll);
-    }
-    componentWillUnmount() {
-        window.removeEventListener('scroll', this.handleScroll);
-    }
-    handleScroll = ()=> {
-        let valueScroll = window.scrollY
-        if(valueScroll){
-            this.setState({
-                trans : valueScroll / 7,
-            })
-        }
+    // state = {
+    //     trans : 0,
+    //     data: this.props.res,
+    //     slug: this.props.slug
+    // }
+    // componentDidMount(){
+    //     window.addEventListener('scroll', this.handleScroll);
+    // }
+    // componentWillUnmount() {
+    //     window.removeEventListener('scroll', this.handleScroll);
+    // }
+    // handleScroll = ()=> {
+    //     let valueScroll = window.scrollY
+    //     if(valueScroll){
+    //         this.setState({
+    //             trans : valueScroll / 7,
+    //         })
+    //     }
 
-    }
+    // }
     render(){
-        const {trans} = this.state
-        var settings = {
-            dots: true,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 3000,
-            pauseOnHover: false
-        };
-        const data = this.state.data.Project.filter((item)=>{
-            return item.slug === this.state.slug
-        })
+        // const {trans} = this.state
+        // var settings = {
+        //     dots: true,
+        //     infinite: true,
+        //     speed: 500,
+        //     slidesToShow: 1,
+        //     slidesToScroll: 1,
+        //     autoplay: true,
+        //     autoplaySpeed: 3000,
+        //     pauseOnHover: false
+        // };
+        // const data = this.state.data.Project.filter((item)=>{
+        //     return item.slug === this.state.slug
+        // })
         return (
             <Layout>
-                <section className="section_first-project text-center">
+                {/* <section className="section_first-project text-center">
                     <h1 className="text-center mb-5">{data[0].title}</h1>
                     <p className="">Illum mallem levares, quo optimum atque humanis simum virum, Cn. Tu autem negas fortem esse <br/> quem quam posse, qui dolorem m alum putet. Cupiditates non Epicuri divisione finiebat, sed sua satietate.</p>
                     <a className="button_seeLive" href={data[0].link} target="_blank">See Live</a>
@@ -110,7 +110,8 @@ class Project extends React.Component {
                 <section className="section_ninth-project">
                     <p>Next Project</p>
                     <a>PROJECT NAME &nbsp; -></a>
-                </section>
+                </section> */}
+                <h1>TESST</h1>
             </Layout>
         )
     }
