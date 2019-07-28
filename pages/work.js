@@ -1,6 +1,5 @@
 import Slider from "react-slick"
 import { Container,Row,Col } from 'react-bootstrap'
-import GAwrapper from '../lib/GAWarp'
 import Link from 'next/link'
 
 import TextHeader from '../components/presentational/textHead'
@@ -17,7 +16,6 @@ var settings = {
 };
 const work = props => {
     return (
-        <GAwrapper>
         <Layout>
             <TextHeader text={data.work.title} />
             <section className="section_second-work">
@@ -26,7 +24,7 @@ const work = props => {
                         <Row style={{display:'flex !important'}}>
                             {data.home.Project.map(item=>{
                                 return (
-                                    <Link href="/productDetail/[slug]" as={`/productDetail/${item.slug}`}>
+                                    <Link href="/project/[slug]" as={`/project/${item.slug}`}>
                                         <Col className="box" xs={4} md={4} lg={4}  key={item.id}>
                                                 <img src={item.imgUrl} alt="project-img"/>
                                                 <div className="box-name">
@@ -42,7 +40,6 @@ const work = props => {
                 </Container>
             </section>
         </Layout>
-        </GAwrapper>
     )
 }
 

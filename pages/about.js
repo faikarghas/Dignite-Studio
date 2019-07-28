@@ -1,6 +1,5 @@
 import Layout from '../components/layouts'
 import TextHeader from '../components/presentational/textHead'
-import GAwrapper from '../lib/GAWarp';
 
 import data from '../lib/copywriting/data.js'
 
@@ -8,7 +7,6 @@ import { Container,Row,Col } from 'react-bootstrap';
 
 const about = () => {
     return (
-        <GAwrapper>
         <Layout>
             <TextHeader text={data.about.title} />
             <section className="section_second-about width100">
@@ -75,7 +73,7 @@ const about = () => {
                                 <Col className="box-photo p-0" xs={5}>
                                     <img src="../static/image/egis.jpeg" alt="photo"/>
                                     <div className="overlay-yellow">
-                                        {/* <p>Egi Muharram</p> */}
+                                        <p>Egi Muharram</p>
                                     </div>
                                 </Col>
                             </Row>
@@ -84,7 +82,6 @@ const about = () => {
                 </Container>
             </section>
         </Layout>
-        </GAwrapper>
     )
 }
 

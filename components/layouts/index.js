@@ -5,6 +5,8 @@ import Header from '../layouts/header'
 import Menu from '../layouts/menu'
 import Footer from '../layouts/footer'
 
+import { initGA, logPageView } from '../../lib/analytics'
+
 import '../../sass/main.scss'
 
 class Layout extends React.Component{
@@ -17,6 +19,11 @@ class Layout extends React.Component{
     transMenu:''
   }
   componentDidMount(){
+    if (!window.GA_INITIALIZED) {
+      initGA()
+      window.GA_INITIALIZED = true
+    }
+    logPageView()
     setTimeout(()=>{
       this.setState({
         transMenu:'trans'

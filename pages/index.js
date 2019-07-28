@@ -1,6 +1,5 @@
 import Layout from '../components/layouts'
 
-import GAwrapper from '../lib/GAWarp'
 import { Container,Row,Col } from 'react-bootstrap';
 
 import Link from 'next/link'
@@ -29,7 +28,6 @@ class index extends React.Component{
     render(){
         const {trans} = this.state
         return (
-            <GAwrapper>
             <Layout>
                 <section className="textHeaderHome width100">
                     <Container>
@@ -62,7 +60,6 @@ class index extends React.Component{
                     </Container>
                 </section>
             </Layout>
-            </GAwrapper>
         )
     }
 }

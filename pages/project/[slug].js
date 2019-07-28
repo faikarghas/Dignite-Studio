@@ -53,7 +53,6 @@ class Project extends React.Component {
             return item.slug === this.state.slug
         })
         return (
-            <GAwrapper>
             <Layout>
                 <section className="section_first-project text-center">
                     <h1 className="text-center mb-5">{data[0].title}</h1>
@@ -114,7 +113,6 @@ class Project extends React.Component {
                     <a>PROJECT NAME &nbsp; -></a>
                 </section>
             </Layout>
-            </GAwrapper>
         )
     }
 }
