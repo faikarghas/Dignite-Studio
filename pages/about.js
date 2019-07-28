@@ -62,23 +62,22 @@ const about = () => {
                                     <img src="../static/image/Faikar.jpg" alt="photo"/>
                                     <div className="overlay-yellow">
                                         <p>Faikar Ghassan</p>
-                                        <p>Web Developer</p>
+                                        {/* <p>Web Developer</p> */}
                                     </div>
                                 </Col>
                                 <Col className="box-photo p-0" xs={5}>
                                     <img src="../static/image/Tasya.jpg" alt="photo"/>
                                     <div className="overlay-yellow">
                                         <p>Mayesta Arientasya</p>
-                                        <p>UI/UX Designer & Digital Marketing</p>
+                                        {/* <p>UI/UX Designer & Digital Marketing</p> */}
                                     </div>
                                 </Col>
-                                {/* <Col className="box-photo p-0" xs={5}>
-                                    <img src="../static/image/egi.jpeg" alt="photo"/>
+                                <Col className="box-photo p-0" xs={5}>
+                                    <img src="../static/image/egis.jpeg" alt="photo"/>
                                     <div className="overlay-yellow">
-                                        <p>Egi Muharram</p>
-                                        <p>Graphic Designer</p>
+                                        {/* <p>Egi Muharram</p> */}
                                     </div>
-                                </Col> */}
+                                </Col>
                             </Row>
                         </Col>
                     </Row>

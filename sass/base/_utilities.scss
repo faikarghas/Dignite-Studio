@@ -26,17 +26,13 @@
   border: 0px none #ffffff;
   border-radius: 60px;
 }
-::-webkit-scrollbar-thumb:active {
-  background: #000000;
-}
+
 ::-webkit-scrollbar-track {
   background: #e2e2e2;
   border: 0px none #ffffff;
   border-radius: 50px;
 }
-::-webkit-scrollbar-track:active {
-  background: #333333;
-}
+
 ::-webkit-scrollbar-corner {
   background: transparent;
 }
