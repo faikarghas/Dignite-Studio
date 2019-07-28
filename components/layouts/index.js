@@ -5,7 +5,7 @@ import Header from '../layouts/header'
 import Menu from '../layouts/menu'
 import Footer from '../layouts/footer'
 
-import { initGA, logPageView } from '../../lib/analytics'
+// import { initGA, logPageView } from '../../lib/analytics'
 
 import '../../sass/main.scss'
 

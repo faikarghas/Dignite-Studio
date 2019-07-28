@@ -1,8 +1,8 @@
 import React from 'react'
 import Layout from '../../components/layouts'
-import Slider from "react-slick";
-import { Player, BigPlayButton } from 'video-react';
-import data from '../../lib/copywriting/data.js'
+// import Slider from "react-slick";
+// import { Player, BigPlayButton } from 'video-react';
+// import data from '../../lib/copywriting/data.js'
 
 
 // import "../../node_modules/video-react/dist/video-react.css";
