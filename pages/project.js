@@ -48,19 +48,19 @@ class project extends React.Component {
             autoplaySpeed: 3000,
             pauseOnHover: false
         };
-        const data = this.state.data.Project.filter((item)=>{
-            return item.slug === this.state.slug
-        })
+        // const data = this.state.data.Project.filter((item)=>{
+        //     return item.slug === this.state.slug
+        // })
         return (
             <GAwrapper>
             <Layout>
                 <section className="section_first-project text-center">
-                    <h1 className="text-center mb-5">{data[0].title}</h1>
+                    {/* <h1 className="text-center mb-5">{data[0].title}</h1> */}
                     <p className="">Illum mallem levares, quo optimum atque humanis simum virum, Cn. Tu autem negas fortem esse <br/> quem quam posse, qui dolorem m alum putet. Cupiditates non Epicuri divisione finiebat, sed sua satietate.</p>
-                    <a className="button_seeLive" href={data[0].link} target="_blank">See Live</a>
+                    {/* <a className="button_seeLive" href={data[0].link} target="_blank">See Live</a> */}
                 </section>
                 <section className="section_second-project width100 p-0">
-                    <img  src={data[0].landingImg} width="100%" alt="project-img"/>
+                    {/* <img  src={data[0].landingImg} width="100%" alt="project-img"/> */}
                 </section>
                 <section className="section_third-project text-center">
                     <h2>Challenge</h2>
@@ -68,11 +68,11 @@ class project extends React.Component {
                 </section>
                 <section className="section_fourth-project text-center">
                     <Slider {...settings}>
-                        {data[0].carouselImg.map(item=>{
+                        {/* {data[0].carouselImg.map(item=>{
                             return (
                                 <img src={item} width="100%" alt="project-mockup"/>
                             )
-                        })}
+                        })} */}
                     </Slider>
                 </section>
                 <section className="section_fifth-project text-center">
