@@ -41,7 +41,7 @@ class index extends React.Component{
                         <Row>
                         {data.home.Project.map(item=>{
                             return (
-                                <Link  href="/project">
+                                <Link  href="/work">
                                     <Col className="box1 p-0" xs={4}>
                                             <img src={item.imgUrl} width="100%" height="100%" alt="project-img"></img>
                                             <div className="box-hover">
@@ -54,7 +54,7 @@ class index extends React.Component{
                             )
                         })}
                         </Row>
-                        <Link href="/project">
+                        <Link href="/project-detail">
                             <div className="view_allpr">
                                 <a className="pr-4 pl-4">View all our projects</a>
                             </div>
