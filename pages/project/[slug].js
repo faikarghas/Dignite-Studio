@@ -48,9 +48,9 @@ class Project extends React.Component {
             autoplaySpeed: 3000,
             pauseOnHover: false
         };
-        // const data = this.state.data.Project.filter((item)=>{
-        //     return item.slug === this.state.slug
-        // })
+        const data = this.state.data.Project.filter((item)=>{
+            return item.slug === this.state.slug
+        })
         return (
             <Layout>
                 <section className="section_first-project text-center">
