@@ -20,7 +20,7 @@ app.prepare()
     server.use(cookieParser());
     if( process.env.NODE_ENV === 'production' ) server.use(enforce.HTTPS({ trustProtoHeader: true }))
 
-    server.get('/project-detail/:slug', (req, res) => {
+    server.get('/project/:slug', (req, res) => {
         const actualPage = '/project-detail'
         const queryParams = { slug: req.params.slug }
         app.render(req, res, actualPage, queryParams)
