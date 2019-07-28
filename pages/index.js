@@ -28,20 +28,6 @@ class index extends React.Component{
     }
     render(){
         const {trans} = this.state
-        const renderBox = data.home.Project.map(item=>{
-            return (
-                <Link  href="/project" prefetch={false}>
-                    <Col className="box1 p-0" xs={4}>
-                            <img src={item.imgUrl} width="100%" height="100%" alt="project-img"></img>
-                            <div className="box-hover">
-                                <h2>{item.title}</h2>
-                                <h2>{item.Category}</h2>
-                            </div>
-                    </Col>
-                </Link>
-
-            )
-        })
         return (
             <GAwrapper>
             <Layout>
