@@ -5,9 +5,10 @@ import Header from '../layouts/header'
 import Menu from '../layouts/menu'
 import Footer from '../layouts/footer'
 
-// import { initGA, logPageView } from '../../lib/analytics'
+import { initGA, logPageView } from '../../lib/analytics'
 
 import '../../sass/main.scss'
+import '../../node_modules/video-react/styles/scss/video-react.scss'
 
 class Layout extends React.Component{
   state={
@@ -19,11 +20,11 @@ class Layout extends React.Component{
     transMenu:''
   }
   componentDidMount(){
-    // if (!window.GA_INITIALIZED) {
-    //   initGA()
-    //   window.GA_INITIALIZED = true
-    // }
-    // logPageView()
+    if (!window.GA_INITIALIZED) {
+      initGA()
+      window.GA_INITIALIZED = true
+    }
+    logPageView()
     setTimeout(()=>{
       this.setState({
         transMenu:'trans'

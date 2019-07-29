@@ -108,7 +108,6 @@ class Project extends React.Component {
                     <p>Next Project</p>
                     <a>PROJECT NAME &nbsp; -></a>
                 </section>
-                <h1>{this.state.slug}</h1>
             </Layout>
         )
     }
