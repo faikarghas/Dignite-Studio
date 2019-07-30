@@ -1,4 +1,6 @@
 footer{
+    background-color: white;
+    position: relative;
     padding: 8rem;
         @include respond(phone){
             padding: 10rem 5rem;
