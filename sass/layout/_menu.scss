@@ -5,6 +5,8 @@
     width: 100%;
     height:100%;
     transform: translateX(100%);
+    transition: all .5s ease-out;
+
     ul{
         padding-top: 10rem;
         list-style: none;
@@ -22,20 +24,16 @@
     }
 }
 
-.trans{
-    transition: all .5s ease-out;
-}
 
 .active{
     transform: translateX(0);
     z-index: 2;
 }
-.deactive{
-    z-index: 2;
-}
 .contents{
     transition: all .7s ease-out;
     overflow: hidden;
+    background-color: white;
+    position: relative;
 }
 
 .closeContent{
@@ -59,6 +57,7 @@
     top: 0;
     left: 0;
     background-color: #918f8f9e;
+    z-index: 1;
 }
 
 .activeoverlay{
@@ -68,4 +67,5 @@
     top: 0;
     left: 0;
     background-color: #918f8f9e;
+    z-index: 1;
 }

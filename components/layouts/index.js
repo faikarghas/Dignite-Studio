@@ -17,7 +17,6 @@ class Layout extends React.Component{
     activeoverlay:'',
     overlaymenu:'',
     modal:'modal-hide',
-    transMenu:''
   }
   componentDidMount(){
     if (!window.GA_INITIALIZED) {
@@ -25,11 +24,6 @@ class Layout extends React.Component{
       window.GA_INITIALIZED = true
     }
     logPageView()
-    setTimeout(()=>{
-      this.setState({
-        transMenu:'trans'
-      })
-    },1000)
   }
   openMenu = () => {
     this.setState({
@@ -58,7 +52,7 @@ class Layout extends React.Component{
     })
   }
   render(){
-    const {activeMenu,closeContents,activeoverlay,overlaymenu,modal,transMenu} = this.state
+    const {activeMenu,closeContents,activeoverlay,overlaymenu,modal} = this.state
     return(
       <React.Fragment>
         <Head>
@@ -66,7 +60,7 @@ class Layout extends React.Component{
         </Head>
         <div className={`overlay ${activeoverlay}` }></div>
 
-        <div className={`menu ${activeMenu} ${overlaymenu} ${transMenu}`}>
+        <div className={`menu ${activeMenu} ${overlaymenu}`}>
             <Menu closeMenu={this.closeMenu} showModal={this.showModal}/>
         </div>
         <div className={`contents ${closeContents}`}>
