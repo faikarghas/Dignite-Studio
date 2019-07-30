@@ -1,15 +1,19 @@
-.header_menu{
-    padding: 2rem;
+header{
     background-color: white;
     position: relative;
-    ul{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        list-style: none;
-        align-items: center;
-        @include respond (phone){
-            padding-right: 3rem;
+    .header_menu{
+        padding: 2rem;
+        background-color: white;
+        position: relative;
+        ul{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            list-style: none;
+            align-items: center;
+            @include respond (phone){
+                padding-right: 3rem;
+            }
         }
     }
 }
