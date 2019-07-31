@@ -57,21 +57,21 @@ const about = () => {
                         <Col className="box" xs={12} md={6}>
                             <Row>
                                 <Col className="box-photo p-0" xs={5}>
-                                    <img src="../static/image/Faikar.jpg" width="100%" alt="photo" />
+                                    <img src="../static/image/faikar.jpg" width="100%" alt="photo" />
                                     <div className="overlay-yellow">
                                         <p>Faikar Ghassan</p>
                                         <p style={{fontSize:'1.5rem'}}>Full-Stack Developer</p>
                                     </div>
                                 </Col>
                                 <Col className="box-photo p-0" xs={5}>
-                                    <img src="../static/image/Tasya.jpg" alt="photo"/>
+                                    <img src="../static/image/tasya.jpg" alt="photo"/>
                                     <div className="overlay-yellow">
                                         <p>Mayesta Arientasya</p>
                                         <p style={{fontSize:'1.5rem'}}>UI/UX Designer & Digital Marketing</p>
                                     </div>
                                 </Col>
                                 <Col className="box-photo p-0" xs={5}>
-                                    <img src="../static/image/egi.jpeg" alt="photo"/>
+                                    <img src="../static/image/egi.jpg" alt="photo"/>
                                     <div className="overlay-yellow">
                                         <p>Egi Muharram</p>
                                         <p style={{fontSize:'1.5rem'}}>Graphic Designer</p>
