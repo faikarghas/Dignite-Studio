@@ -27,9 +27,9 @@ const work = props => {
                                     <Link href="/project/[slug]" as={`/project/${item.slug}`}>
                                         <Col className="box" xs={4} md={4} lg={4}  key={item.id}>
                                                 <img src={item.imgUrl} alt="project-img"/>
-                                                <div className="box-name">
-                                                    {/* <h2>{item.title}</h2> */}
-                                                    {/* <h2>{item.Category}</h2> */}
+                                                <div className="box-hover">
+                                                    <h2>{item.title}</h2>
+                                                    <h2>{item.Category}</h2>
                                                 </div>
                                         </Col>
                                     </Link>

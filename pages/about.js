@@ -22,7 +22,7 @@ const about = () => {
                         </Col>
                         <Col className="box" xs={6} md={3}>
                             <h2 className="mb-5">Develop</h2>
-                            <p>Our people are artists - they can breathe life into designs and make digital products move in ways you never thought possible. The products and platforms we develop are modular, so they can easily evolve over time, extending their life cycle in an ever-changing digital landscape.</p>
+                            <p>Our people are artists - they can breathe life into designs and make digital products move in ways you never thought possible. The products and platforms we develop are modular, so they can easily evolve over time.</p>
                         </Col>
                         <Col className="box" xs={6} md={3}>
                             <h2 className="mb-5">Support</h2>
@@ -74,7 +74,7 @@ const about = () => {
                                     <img src="../static/image/egi.jpeg" alt="photo"/>
                                     <div className="overlay-yellow">
                                         <p>Egi Muharram</p>
-                                        <p style={{fontSize:'1..5rem'}}>Graphic Designer</p>
+                                        <p style={{fontSize:'1.5rem'}}>Graphic Designer</p>
                                     </div>
                                 </Col>
                             </Row>
