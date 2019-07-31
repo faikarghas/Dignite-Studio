@@ -16,7 +16,12 @@ class Blog extends React.Component {
     render() {
 
         return (
-            <div className="commentbox" />
+            <React.Fragment>
+            <h1>komentar artikel 1</h1>
+            <div className="commentbox" id="comment1"/>
+            <h1>komentar artikel 2</h1>
+            <div className="commentbox" id="comment2"/>
+            </React.Fragment>
         );
     }
 }
