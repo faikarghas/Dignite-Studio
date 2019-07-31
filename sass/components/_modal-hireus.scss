@@ -25,12 +25,20 @@
             font-size: 2rem;
             height: 7rem;
             padding: 1rem;
+            &::placeholder{
+                font-size: 2rem;
+                color: #b9bec3;
+            }
         }
         textarea{
             font-family: 'Brandon-grotesque-light';
             font-size: 2rem;
             height: 10rem;
             padding: 1rem;
+            &::placeholder{
+                font-size: 2rem;
+                color: #b9bec3;
+            }
         }
     }
     button{

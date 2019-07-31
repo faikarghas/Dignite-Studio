@@ -71,22 +71,22 @@ class project extends React.Component{
                         <Col xs={7}>
                             <Form onSubmit={this.onSubmitHandler}>
                                 <Form.Row>
-                                    <Form.Group as={Col} md='6'>
+                                    <Form.Group as={Col} md='6' className="mb-4">
                                         <Form.Control type="text" id="name" placeholder="Your Name" name="name" value={name} onChange={this.inputHandler} />
                                     </Form.Group>
-                                    <Form.Group as={Col} md='6'>
+                                    <Form.Group as={Col} md='6' className="mb-4">
                                         <Form.Control type="email" id="email" placeholder="Your Email" name="email" value={email} onChange={this.inputHandler} />
                                     </Form.Group>
                                 </Form.Row>
                                 <Form.Row>
-                                    <Form.Group as={Col} md='6'>
+                                    <Form.Group as={Col} md='6' className="mb-4">
                                         <Form.Control type="text" id="companyName" placeholder="Company Name" name="companyName" value={companyName} onChange={this.inputHandler} />
                                     </Form.Group>
-                                    <Form.Group as={Col} md='6'>
+                                    <Form.Group as={Col} md='6' className="mb-4">
                                         <Form.Control type="number" id="phoneNumber" placeholder="Phone Number" name="phoneNumber" value={phoneNumber} onChange={this.inputHandler} />
                                     </Form.Group>
                                 </Form.Row>
-                                <Form.Group>
+                                <Form.Group className="mb-5">
                                     <Form.Control as="textarea"  id="message" placeholder="Your Message" name="message" value={message} onChange={this.inputHandler}/>
                                 </Form.Group>
                                 <Button type="submit">

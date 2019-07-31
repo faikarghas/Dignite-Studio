@@ -57,7 +57,7 @@ const about = () => {
                         <Col className="box" xs={12} md={6}>
                             <Row>
                                 <Col className="box-photo p-0" xs={5}>
-                                    <img src="../static/image/Faikar.jpg" alt="photo"/>
+                                    <img src="../static/image/Faikar.jpg" width="100%" alt="photo" />
                                     <div className="overlay-yellow">
                                         <p>Faikar Ghassan</p>
                                         <p style={{fontSize:'1.5rem'}}>Full-Stack Developer</p>

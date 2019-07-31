@@ -1,15 +1,23 @@
 import React from 'react'
-import Layout from '../../components/layouts'
+import Link from 'next/link'
+import Router from 'next/router'
 import Slider from "react-slick";
 import { Player, BigPlayButton } from 'video-react';
+
+import Layout from '../../components/layouts'
 import data from '../../lib/copywriting/data.js'
 
 
 class Project extends React.Component {
 
     static async getInitialProps(ctx){
-        const { slug } = ctx.query
+        let { slug } = ctx.query
         const res = await data.home
+
+        if(process.browser){
+            console.log(ctx);
+            Router.replace(ctx.asPath)
+        }
         return {slug,res}
     }
 
@@ -48,6 +56,28 @@ class Project extends React.Component {
         const data = this.state.data.Project.filter((item)=>{
             return item.slug === this.state.slug
         })
+
+        const getid = this.state.data.Project.filter((item)=>{
+            if (item.slug === this.state.slug) {
+                return item.id
+            }
+        })
+
+        // ambil id project sekarang
+        let id = getid[0].id;
+
+        // cek total data
+        let idnext = id
+        if(id === 6){
+            idnext = 0
+        } else {
+            // ambil id project selanjutnya dan data
+            idnext = id++;
+        }
+        // ambil slug project selanjutnya
+        const nextProjectSlug = this.state.data.Project[idnext].slug
+        // ambil nama project sekarang
+        const nextProjectName = this.state.data.Project[idnext].title
         return (
             <Layout>
                 <section className="section_first-project text-center">
@@ -76,16 +106,16 @@ class Project extends React.Component {
                     <p>Illum mallem levares, quo optimum atque humanis simum virum, Cn. Tu autem negas fortem esse <br/> quem quam posse, qui dolorem m alum putet. Cupiditates non Epicuri divisione finiebat, sed sua satietate.</p>
                 </section>
                 <section className="section_sixth-project text-center">
-                    <img src="../static/image/Home.png" width="100%" style={{WebkitTransform:`translate(-50%,${-trans}px)`,msTransform:`translate(-50%,${-trans}px)`,transform:`translate(-50%,${-trans}px)`}} alt="project-mockup2"/>
+                    <img src={data[0].fullImg} width="100%" style={{WebkitTransform:`translate(-50%,${-trans}px)`,msTransform:`translate(-50%,${-trans}px)`,transform:`translate(-50%,${-trans}px)`}} alt="project-mockup2"/>
                 </section>
-                <section className="section_seventh-project width100 p-0">
+                {/* <section className="section_seventh-project width100 p-0">
                     <Player
                         src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
                         poster="../static/image/Video.png"
                     >
                         <BigPlayButton position="center" />
                     </Player>
-                </section>
+                </section> */}
                 <section className="section_eighth-project text-center">
                     <div className="container pl-5 pr-5">
                         <p className="quotes">We love Dignite autem negas fortem esse quemquam posse, qui dolorem malum putet. Cupiditates non Epicuri divisione finiebat, sed sua satietate. Quia nec honesto quic quam honestius nec turpi</p>
@@ -106,7 +136,14 @@ class Project extends React.Component {
                 </section>
                 <section className="section_ninth-project">
                     <p>Next Project</p>
-                    <a>PROJECT NAME &nbsp; -></a>
+                    <Link href="/project/[slug]" as={`/project/${nextProjectSlug}`}>
+                        <a>
+                            <ul>
+                                <li>{nextProjectName}</li>
+                                <li><img src="../static/image/right-arrow.svg" width="35px" height="100%"/></li>
+                            </ul>
+                        </a>
+                    </Link>
                 </section>
             </Layout>
         )

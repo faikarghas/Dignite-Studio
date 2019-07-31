@@ -6,9 +6,8 @@
     height:100%;
     transform: translateX(100%);
     transition: all .5s ease-out;
-
+    .header_menu{padding: 4rem;}
     ul{
-        padding-top: 10rem;
         list-style: none;
         li,a{
             color: white;
@@ -40,11 +39,6 @@
     transform: translatex(-110%);
 }
 
-.closemenu{
-    position: absolute;
-    top: 5%;
-    right: 5%;
-}
 
 .overlay{
     transition: all .7s ease-out
