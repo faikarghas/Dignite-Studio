@@ -21,6 +21,10 @@
                 position: relative;
                 img{
                     box-shadow: 0 2px 4px rgba(3,27,78,.06);
+                    height: 20rem;
+                    @include respond(phone){
+                        height: 11rem;
+                    }
                 }
                 &:hover{
                     .box-hover{
