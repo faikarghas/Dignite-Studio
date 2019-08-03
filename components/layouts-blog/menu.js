@@ -18,9 +18,13 @@ class Menu extends Component {
 
     search=(e)=>{
         if(e.key === 'Enter'){
-            Router.push('/search/[slug]',`/search/${this.state.search}`)
             console.log(e.key,this.state.search);
+            Router.push('/search/[slug]',`/search/${this.state.search}`)
         }
+    }
+
+    searchButton=()=>{
+        Router.push('/search/[slug]',`/search/${this.state.search}`)
     }
 
     render() {
@@ -64,7 +68,7 @@ class Menu extends Component {
                                             name="search"
                                             onChange={this.handleChangeSearch}
                                             />
-                                            <InputGroup.Append>
+                                            <InputGroup.Append onClick={this.searchButton} style={{cursor:'pointer'}}>
                                                 <InputGroup.Text id="basic-addon2"><img src='https://api.dignitestudio.com/images/image/Icons/search_white.svg'  alt="icon search" width="20px"/></InputGroup.Text>
                                             </InputGroup.Append>
                                         </InputGroup>

@@ -1,5 +1,6 @@
 import { Container,Row,Col } from 'react-bootstrap'
 import Link from 'next/link'
+import commentBox from 'commentbox.io';
 
 import Layout from '../components/layouts'
 

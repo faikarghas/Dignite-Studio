@@ -31,6 +31,10 @@ class Blog extends React.Component {
         }
     }
 
+    searchButton=()=>{
+        Router.push('/search/[slug]',`/search/${this.state.search}`)
+    }
+
 
     render(){
         let slug = 'inijudul'
@@ -43,15 +47,15 @@ class Blog extends React.Component {
                             <Col>
                                 <InputGroup className="mb-3">
                                     <FormControl
-                                        type="text" 
+                                        type="text"
                                         value={this.state.search}
                                         onKeyPress={this.search}
-                                        name="search" 
+                                        name="search"
                                         onChange={this.handleChangeSearch}
                                     />
                                     <InputGroup.Append>
-                                        <Button variant="outline-secondary">
-                                            <img src={process.env.API_HOST_IMG + "/Icons/search_black.svg"} alt="icon-search"/>
+                                        <Button variant="outline-secondary" onClick={this.searchButton}>
+                                            <img src="https://api.dignitestudio.com/images/image/Icons/search_black.svg" alt="icon-search"/>
                                         </Button>
                                     </InputGroup.Append>
                                 </InputGroup>
@@ -76,7 +80,7 @@ class Blog extends React.Component {
                                     </section>
                                 </Col>
                                 <Col xs={{span:12,order:1}} md={{span:3,order:2}} className="img-blog">
-                                    <img src={process.env.API_HOST_IMG + "/postmarketing.png"} alt="gambar artikel" width="100%" height="100%"/>
+                                    <img src="https://api.dignitestudio.com/images/image/postmarketing.png" alt="gambar artikel" width="100%" height="100%"/>
                                 </Col>
                             </Row>
                         </section>
