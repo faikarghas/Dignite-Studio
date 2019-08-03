@@ -50,7 +50,7 @@ class project extends React.Component{
         return (
             <div className={`modal-hireus ${modal}`}>
                 <div className="close-contact">
-                    <img onClick={closeModal} src={process.env.API_HOST_IMG + "/Icons/Close-Contact.png"}/>
+                    <img onClick={closeModal} src="https://api.dignitestudio.com/images/image/Icons/Close-Contact.png"/>
                 </div>
                 <Container>
                     <Row>
