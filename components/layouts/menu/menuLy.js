@@ -7,7 +7,7 @@ const menuLy = props => {
         <React.Fragment>
             <Container className="header_menu">
                 <ul style={{textAlign:'right',paddingTop:0}}>
-                    <li onClick={props.closeMenu} className="closemenu p-0" style={{cursor:'pointer'}}><img src={process.env.API_HOST_IMG + "/Icons/Close-Menu.png"} width="50px" height="50px" alt="icon-close"/></li>
+                    <li onClick={props.closeMenu} className="closemenu p-0" style={{cursor:'pointer'}}><img src='https://api.dignitestudio.com/images/image/Icons/Close-Menu.png' width="50px" height="50px" alt="icon-close"/></li>
                 </ul>
             </Container>
             <ul>

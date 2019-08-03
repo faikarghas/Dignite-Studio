@@ -38,7 +38,7 @@ class BlogDetail extends React.Component {
                                     <h2>Boosting Your Sales Like Never Before</h2>
                                     <p>Turn your followers into potential customers by creating growth and building online <br/> community.</p>
                                     <br/>
-                                    <Link href="/about"><a>Let's go <img src="../../static/image/right-arrow.svg" width="20px" alt="icon next" /></a></Link>
+                                    <Link href="/about"><a>Let's go <img src="https://api.dignitestudio.com/images/image/right-arrow.svg" width="20px" alt="icon next" /></a></Link>
                                 </div>
                             </Col>
                         </Row>
