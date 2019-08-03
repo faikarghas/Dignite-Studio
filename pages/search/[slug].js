@@ -28,7 +28,6 @@ class Blog extends React.Component {
     search=(e)=>{
         if(e.key === 'Enter'){
             Router.push('/search/[slug]',`/search/${this.state.search}`)
-            console.log(e.key,this.state.search);
         }
     }
 

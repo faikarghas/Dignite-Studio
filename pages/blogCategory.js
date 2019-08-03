@@ -12,8 +12,8 @@ class BlogCa extends React.Component {
 
     static async getInitialProps(ctx) {
         const {category} = ctx.query
-        const res = await fetch('http://localhost:3007/api/blog1/')
-        const resLength = await fetch('http://localhost:3007/api/blog/')
+        const res = await fetch(process.env.API_HOST_API + '/blog1/')
+        const resLength = await fetch(process.env.API_HOST_API +'/blog/')
         const allData = await resLength.json()
         const dataBlog = await res.json()
         return {category,allData,dataBlog}

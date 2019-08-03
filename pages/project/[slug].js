@@ -15,7 +15,6 @@ class Project extends React.Component {
         const res = await data.home
 
         if(process.browser){
-            console.log(ctx);
             Router.replace(ctx.asPath)
         }
         return {slug,res}

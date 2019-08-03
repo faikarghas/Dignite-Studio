@@ -12,9 +12,9 @@ class BlogCatPage extends React.Component {
 
     static async getInitialProps(ctx){
         const {page,category} = ctx.query
-        const res = await fetch(`http://localhost:3007/api/blog/${page}`)
+        const res = await fetch(process.env.API_HOST_API + '/blog1/')
+        const resLength = await fetch(process.env.API_HOST_API +'/blog/')
         const dataBlog = await res.json()
-        const resLength = await fetch('http://localhost:3007/api/blog/')
         const allData = await resLength.json()
         return {dataBlog,allData,page,category}
     }

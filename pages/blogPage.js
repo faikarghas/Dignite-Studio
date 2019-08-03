@@ -12,11 +12,10 @@ class BlogPage extends React.Component {
 
     static async getInitialProps(ctx){
         const {page} = ctx.query
-        const res = await fetch(`http://localhost:3007/api/blog/${page}`)
+        const res = await fetch(process.env.API_HOST_API + '/blog1/')
+        const resLength = await fetch(process.env.API_HOST_API +'/blog/')
         const dataBlog = await res.json()
-        const resLength = await fetch('http://localhost:3007/api/blog/')
         const allData = await resLength.json()
-        console.log('page',page);
         return {dataBlog,allData,page}
     }
 
@@ -49,7 +48,6 @@ class BlogPage extends React.Component {
         let year = 2019
         let slug = 'inijudul'
         let dataLength = this.props.allData.length
-        console.log(this.props.dataBlog);
         return (
             <Layout>
                 <section className="section_first-blog">
