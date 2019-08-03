@@ -12,7 +12,7 @@ class BlogPage extends React.Component {
 
     static async getInitialProps(ctx){
         const {page} = ctx.query
-        const res = await fetch('https://api.dignitestudio.com/api/blog1/')
+        const res = await fetch(`https://api.dignitestudio.com/api/blog/${page}`)
         const resLength = await fetch('https://api.dignitestudio.com/api/blog/')
         const dataBlog = await res.json()
         const allData = await resLength.json()
@@ -39,6 +39,7 @@ class BlogPage extends React.Component {
     }
 
     componentDidUpdate(a,b){
+        console.log(a,b);
         if(b.page !== b.activePage){
             this.setState({page:b.activePage})
         }

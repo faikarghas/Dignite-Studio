@@ -12,8 +12,8 @@ import LayoutBlog from '../components/layouts-blog'
 class Blog extends React.Component {
 
     static async getInitialProps(ctx){
-        const res = await fetch('https://api.dignitestudio.com/api/blog1/')
-        const resLength = await fetch('https://api.dignitestudio.com/api/blog/')
+        const res = await fetch(`https://api.dignitestudio.com/api/blog1`)
+        const resLength = await fetch(`https://api.dignitestudio.com/api/blog/`)
         const allData = await resLength.json()
         const dataBlog = await res.json()
         return {dataBlog,allData}

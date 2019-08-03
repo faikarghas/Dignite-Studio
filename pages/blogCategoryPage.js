@@ -12,9 +12,9 @@ class BlogCatPage extends React.Component {
 
     static async getInitialProps(ctx){
         const {page,category} = ctx.query
-        const res = await fetch('https://api.dignitestudio.com/api/blog1/')
-        const resLength = await fetch('https://api.dignitestudio.com/api/blog/')
+        const res = await fetch(`https://api.dignitestudio.com/api/blog/${page}`)
         const dataBlog = await res.json()
+        const resLength = await fetch('https://api.dignitestudio.com/api/blog/')
         const allData = await resLength.json()
         return {dataBlog,allData,page,category}
     }
@@ -62,6 +62,7 @@ class BlogCatPage extends React.Component {
                 <section className="section_first-blog">
                     <h1 className="mb-5">BLOG</h1>
                     <p>Business to entrepreneurship and marketing tips, Dignite announcements,<br/> and the occasional musings of our digital world. </p>
+                    <p>cat page</p>
                 </section>
                 <LayoutBlog activeCategory={activeCategory}>
                     {this.props.dataBlog.map(item=>{
@@ -82,7 +83,7 @@ class BlogCatPage extends React.Component {
                                             </section>
                                         </Col>
                                         <Col xs={{span:12,order:1}} md={{span:3,order:2}} className="img-blog">
-                                            <img src='https://api.dignitestudio.com/images/image/postmarketing.png' alt="gambar artikel" width="100%" height="100%"/>
+                                            <img src="https://api.dignitestudio.com/images/image/postmarketing.png" alt="gambar artikel" width="100%" height="100%"/>
                                         </Col>
                                     </Row>
                                 </section>
