@@ -1,32 +1,37 @@
 import { Container,Row,Col } from 'react-bootstrap'
+
 import Link from 'next/link'
 import Router from 'next/router'
 
 import Pagination from "react-js-pagination";
 import fetch from 'isomorphic-unfetch'
-
 import Layout from '../components/layouts'
 import LayoutBlog from '../components/layouts-blog'
 
-
-class Blog extends React.Component {
+class BlogPage extends React.Component {
 
     static async getInitialProps(ctx){
-        const res = await fetch('http://localhost:3007/api/blog1/')
+        const {page} = ctx.query
+        const res = await fetch(`http://localhost:3007/api/blog/${page}`)
+        const dataBlog = await res.json()
         const resLength = await fetch('http://localhost:3007/api/blog/')
         const allData = await resLength.json()
-        const dataBlog = await res.json()
-        return {dataBlog,allData}
+        console.log('page',page);
+        return {dataBlog,allData,page}
     }
 
     constructor(props) {
         super(props);
         this.state = {
-          activePage: 1,
+            page : this.props.page,
+            activePage : 0
         };
     }
 
-    handlePageChange(pageNumber) {
+    handlePageChange = (pageNumber) => {
+        this.setState({
+            activePage:pageNumber
+        })
         if(pageNumber === 1) {
             Router.push(`/blog`);
         } else {
@@ -34,12 +39,17 @@ class Blog extends React.Component {
         }
     }
 
+    componentDidUpdate(a,b){
+        if(b.page !== b.activePage){
+            this.setState({page:b.activePage})
+        }
+    }
 
     render(){
         let year = 2019
         let slug = 'inijudul'
         let dataLength = this.props.allData.length
-        console.log(dataLength);
+        console.log(this.props.dataBlog);
         return (
             <Layout>
                 <section className="section_first-blog">
@@ -49,7 +59,7 @@ class Blog extends React.Component {
                 <LayoutBlog allTopics={'active'}>
                     {this.props.dataBlog.map(item=>{
                         return (
-                            <Link href={`/blogDetail?slug=${slug}`} as={`/blog/${slug}`} key={item.id}>
+                            <Link href={`/blogDetail?${slug}`} as={`/blog/${slug}`} key={item.id}>
                                 <section className="blog_contents__box">
                                     <Row>
                                         <Col xs={{span:12,order:2}} md={{span:9,order:1}} >
@@ -73,16 +83,13 @@ class Blog extends React.Component {
                         )
                     })}
 
-                    <div className="pagination_box">
-                        <Pagination
-                            activePage={this.state.activePage}
-                            itemsCountPerPage={4}
-                            totalItemsCount={dataLength}
-                            pageRangeDisplayed={5}
-                            onChange={this.handlePageChange}
-                        />
-                    </div>
-
+                    <Pagination
+                        activePage={Number(this.state.page)}
+                        itemsCountPerPage={4}
+                        totalItemsCount={dataLength}
+                        pageRangeDisplayed={5}
+                        onChange={this.handlePageChange}
+                    />
                 </LayoutBlog>
             </Layout>
         )
@@ -90,4 +97,4 @@ class Blog extends React.Component {
 
 }
 
-export default Blog
+export default BlogPage

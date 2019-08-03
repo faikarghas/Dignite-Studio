@@ -98,3 +98,18 @@
   }
 }
 
+
+.featured{
+  list-style: none;
+  li{
+      display: inline-block;
+      margin-right: 1rem;
+      font-family: 'Brandon-grotesque-medium', sans-serif !important;
+  }
+}
+
+.commentbox{
+  .btn{
+    background-color: black !important;
+  }
+}

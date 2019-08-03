@@ -11,10 +11,10 @@ const footer = props => {
                         <p>hello@dignitestudio.com</p>
                         <a href="">(+62) 812 8783 1421</a>
                         <ul className="mt-5">
-                            <li><img src="../static/image/SocialIcon/Facebook.png" alt="icon-fb"/></li>
-                            <li><img src="../static/image/SocialIcon/Instagram.png" alt="icon-ig"/></li>
-                            <li><img src="../static/image/SocialIcon/LinkedIn.png" alt="icon-lk"/></li>
-                            <li><img src="../static/image/SocialIcon/Whatsapp.png" alt="icon-wa"/></li>
+                            <li><img src={process.env.API_HOST_IMG + '/SocialIcon/Facebook.png'} alt="icon-fb"/></li>
+                            <li><img src={process.env.API_HOST_IMG + '/SocialIcon/Instagram.png'} alt="icon-ig"/></li>
+                            <li><img src={process.env.API_HOST_IMG + '/SocialIcon/LinkedIn.png'} alt="icon-lk"/></li>
+                            <li><img src={process.env.API_HOST_IMG + '/SocialIcon/Whatsapp.png'} alt="icon-wa"/></li>
                         </ul>
                     </Col>
                     <Col xs={6}>

@@ -23,6 +23,7 @@
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "express-sslify": "^1.2.0",
+    "isomorphic-unfetch": "^3.0.0",
     "next": "^9.0.2",
     "next-compose-plugins": "^2.2.0",
     "next-images": "^1.1.2",
@@ -33,6 +34,8 @@
     "react-bootstrap": "^1.0.0-beta.9",
     "react-dom": "^16.8.6",
     "react-ga": "^2.6.0",
+    "react-js-pagination": "^3.0.2",
+    "react-paginate": "^6.3.0",
     "react-slick": "^0.24.0",
     "spdy": "^4.0.0",
     "video-react": "^0.14.0"

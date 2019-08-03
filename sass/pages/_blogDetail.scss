@@ -1,0 +1,42 @@
+.section_first-blogDetail{
+    padding: 10rem 0 10rem 0;
+    position: relative;
+    background-color: white;
+    .info{
+        h4{
+            color: #ffba00;
+        }
+    }
+    .content{
+        h1{
+            font-size: 4rem;
+            font-family: "Brandon-grotesque-medium" !important;
+            margin-bottom: 6rem;
+        }
+        .ads{
+            margin-top: 6rem;
+            background-color: #222;
+            width: 100%;
+            padding: 3rem;
+            h2,p{
+                color: white;
+            }
+            h2{
+                font-size: 3rem;
+                font-family: "Brandon-grotesque-medium" !important;
+            }
+            p{
+                margin-bottom: 2rem;
+            }
+            a{
+                background-color: #ffba00;
+                padding: 1rem;
+                margin-top: 1rem;
+                color: white;
+                &:hover{
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

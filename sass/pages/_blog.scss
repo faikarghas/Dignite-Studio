@@ -1,0 +1,38 @@
+.section_first-blog{
+    padding: 10rem 0 10rem 0;
+    text-align: center;
+    position: relative;
+    background-color: white;
+    h1{
+        font-family: "Brandon-grotesque-black";
+        font-size: 4.5rem;
+    }
+}
+
+.blog_contents{
+    background-color: white;
+    position: relative;
+    .featured{
+        list-style: none;
+        li{
+            display: inline-block;
+            margin-right: 1rem;
+        }
+    }
+    &__box{
+        padding: 4rem 0;
+        border-bottom: 1px solid rgb(236, 238, 241);
+        cursor: pointer;
+        &-p{
+            h2{
+                font-size: 4rem;
+                font-family: "Brandon-grotesque-black";
+            }
+        }
+        .img-blog{
+            @include respond(phone){
+                margin-bottom: 3rem;
+            }
+        }
+    }
+}

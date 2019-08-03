@@ -1,0 +1,21 @@
+.pagination{
+    justify-content: center;
+    padding: 2rem;
+    cursor: auto;
+    li{
+        margin-right: 1rem;
+        a{
+            font-size: 2rem;
+            color: black;
+            &:hover{
+                text-decoration: none;
+            }
+        }
+    }
+    .active{
+        a{
+            font-size: 2rem;
+            color: #ffba00;
+        }
+    }
+}
