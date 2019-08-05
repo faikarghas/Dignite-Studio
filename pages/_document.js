@@ -1,7 +1,10 @@
 import Document, { Head, Main, NextScript } from 'next/document'
 
 export default class MyDocument extends Document {
-
+    static async getInitialProps (ctx) {
+        const initialProps = await Document.getInitialProps(ctx)
+        return { ...initialProps }
+    }
     render() {
         return (
             <html lang="en">
@@ -30,6 +33,8 @@ export default class MyDocument extends Document {
                     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
                     {/* canonical */}
                     <link rel="canonical" href="https://www.dignitestudio.com" />
+                    {/* Import CSS for nprogress */}
+                    <link rel='stylesheet' type='text/css' href='https://unpkg.com/nprogress@0.2.0/nprogress.css' />
                 </Head>
                 <body>
                     <Main />
