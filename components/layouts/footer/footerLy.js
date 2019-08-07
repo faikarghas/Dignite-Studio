@@ -18,7 +18,7 @@ const footer = props => {
                         </ul>
                     </Col>
                     <Col xs={6}>
-                        <button className="button_hire" onClick={props.showModal}><h2>HIRE US</h2></button>
+                        <button className="button_hire" onClick={ () => props.showModal('button','click','hire','modal-hire')}><h2>HIRE US</h2></button>
                     </Col>
                 </Row>
             </Container>

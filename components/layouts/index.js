@@ -5,7 +5,7 @@ import Header from '../layouts/header'
 import Menu from '../layouts/menu'
 import Footer from '../layouts/footer'
 
-import { initGA, logPageView } from '../../lib/analytics'
+import { initGA, logPageView, modalView, logEvent } from '../../lib/analytics'
 
 import '../../sass/main.scss'
 import '../../node_modules/video-react/styles/scss/video-react.scss'
@@ -41,7 +41,9 @@ class Layout extends React.Component{
       overlaymenu:'overlaymenu'
     })
   }
-  showModal = () => {
+  showModal = (category,action,label,modalName) => {
+    modalView(modalName)
+    logEvent(category,action,label)
     this.setState({
       modal:'modal-show'
     })
@@ -51,6 +53,9 @@ class Layout extends React.Component{
       modal:'modal-hide'
     })
   }
+
+
+
   render(){
     const {activeMenu,closeContents,activeoverlay,overlaymenu,modal} = this.state
     return(
