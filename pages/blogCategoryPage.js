@@ -1,10 +1,11 @@
 import { Container,Row,Col } from 'react-bootstrap'
-
 import Link from 'next/link'
 import Router from 'next/router'
-
+import parse from 'html-react-parser'
 import Pagination from "react-js-pagination";
 import fetch from 'isomorphic-unfetch'
+import {convertMonth} from '../lib/date'
+
 import Layout from '../components/layouts'
 import LayoutBlog from '../components/layouts-blog'
 
@@ -12,9 +13,9 @@ class BlogCatPage extends React.Component {
 
     static async getInitialProps(ctx){
         const {page,category} = ctx.query
-        const res = await fetch(`https://api.dignitestudio.com/api/blog/${page}`)
+        const res = await fetch(`https://api.dignitestudio.com/api/blogCategoryPerPage/${page}/${category}`)
         const dataBlog = await res.json()
-        const resLength = await fetch('https://api.dignitestudio.com/api/blog/')
+        const resLength = await fetch(`https://api.dignitestudio.com/api/blogCategory/${category}`)
         const allData = await resLength.json()
         return {dataBlog,allData,page,category}
     }
@@ -66,18 +67,23 @@ class BlogCatPage extends React.Component {
                 </section>
                 <LayoutBlog activeCategory={activeCategory}>
                     {this.props.dataBlog.map(item=>{
+                         let month = new Date(item.created_at).getMonth() + 1
+                         let date = new Date(item.created_at).getDate() 
+                         let year = new Date(item.created_at).getFullYear() 
+     
+                         let tMonth = convertMonth(month)
                         return (
-                            <Link href={`/blogDetail?${slug}`} as={`/blog/${slug}`} key={item.id}>
+                            <Link href={`/blogCategoryDetail?category=${this.props.category}&slug=${item.slug}`} as={`/blog/${this.props.category}/${item.slug}`} key={item.idblog}>
                                 <section className="blog_contents__box">
                                     <Row>
                                         <Col xs={{span:12,order:2}} md={{span:9,order:1}} >
                                             <section className="blog_contents__box-p">
                                                 <ul className="featured">
                                                     <li>FEATURED :</li>
-                                                    <li style={{color:'#FFBA00',fontWeight:700}}>MARKETING {item.idblog}</li>
+                                                    <li style={{color:'#FFBA00',fontWeight:700}}>{item.category}</li>
                                                 </ul>
-                                                <h2>How to Gain Organic Followers on Instagram in 2019</h2>
-                                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using…</p>
+                                                <h2>{item.title}</h2>
+                                                {parse(item.first_pg)}
                                                 <br/>
                                                 <p className="m-0">By AuthorName - July 31, 2019 </p>
                                             </section>

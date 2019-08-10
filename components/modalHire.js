@@ -66,7 +66,7 @@ class project extends React.Component{
                             <br/>
                             <br/>
                             <p>hello@dignitestudio.com</p>
-                            <p>(+62) 812 8783 1421</p>
+                            <p>(+62) 813 1610 0044</p>
                         </Col>
                         <Col xs={7}>
                             <Form onSubmit={this.onSubmitHandler}>

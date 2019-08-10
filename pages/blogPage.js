@@ -7,6 +7,7 @@ import Pagination from "react-js-pagination";
 import fetch from 'isomorphic-unfetch'
 import Layout from '../components/layouts'
 import LayoutBlog from '../components/layouts-blog'
+import {convertMonth} from '../lib/date'
 
 class BlogPage extends React.Component {
 
@@ -46,8 +47,6 @@ class BlogPage extends React.Component {
     }
 
     render(){
-        let year = 2019
-        let slug = 'inijudul'
         let dataLength = this.props.allData.length
         return (
             <Layout>
@@ -57,20 +56,25 @@ class BlogPage extends React.Component {
                 </section>
                 <LayoutBlog allTopics={'active'}>
                     {this.props.dataBlog.map(item=>{
+                        let month = new Date(item.created_at).getMonth() + 1
+                        let date = new Date(item.created_at).getDate() 
+                        let year = new Date(item.created_at).getFullYear() 
+
+                        let tMonth = convertMonth(month)
                         return (
-                            <Link href={`/blogDetail?${slug}`} as={`/blog/${slug}`} key={item.id}>
+                            <Link href={`/blogDetail?slug=${item.slug}`} as={`/blog/${item.slug}`} key={item.idblog}>
                                 <section className="blog_contents__box">
                                     <Row>
                                         <Col xs={{span:12,order:2}} md={{span:9,order:1}} >
                                             <section className="blog_contents__box-p">
                                                 <ul className="featured">
                                                     <li>FEATURED :</li>
-                                                    <li style={{color:'#FFBA00',fontWeight:700}}>MARKETING {item.idblog}</li>
+                                                    <li style={{color:'#FFBA00',fontWeight:700}}>{item.category}</li>
                                                 </ul>
-                                                <h2>How to Gain Organic Followers on Instagram in 2019</h2>
+                                                <h2>{item.title}</h2>
                                                 <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using…</p>
                                                 <br/>
-                                                <p className="m-0">By AuthorName - July 31, 2019 </p>
+                                                <p className="m-0">By AuthorName - {tMonth} {date}, {year} </p>
                                             </section>
                                         </Col>
                                         <Col xs={{span:12,order:1}} md={{span:3,order:2}} className="img-blog">

@@ -1,9 +1,10 @@
 import { Container,Row,Col,InputGroup,FormControl,Button } from 'react-bootstrap'
 import Link from 'next/link'
 import Router from 'next/router'
-
 import Pagination from "react-js-pagination";
 import fetch from 'isomorphic-unfetch'
+import parse from 'html-react-parser'
+import {convertMonth} from '../../lib/date'
 
 import Layout from '../../components/layouts'
 
@@ -12,7 +13,9 @@ class Blog extends React.Component {
 
     static async getInitialProps(ctx){
         const {slug} = ctx.query
-        return {slug}
+        const res = await fetch(`https://api.dignitestudio.com/api/search/${slug}`)
+        const dataSearch = await res.json()
+        return {dataSearch,slug}
     }
 
     state={
@@ -37,8 +40,6 @@ class Blog extends React.Component {
 
 
     render(){
-        let slug = 'inijudul'
-
         return (
             <Layout>
                 <section className="section_first-search">
@@ -64,27 +65,37 @@ class Blog extends React.Component {
                     </Container>
                 </section>
                 <Container>
-                    <Link href={`/blogDetail?slug=${slug}`} as={`/blog/${slug}`}>
-                        <section className="blog_contents__box">
-                            <Row>
-                                <Col xs={{span:12,order:2}} md={{span:9,order:1}} >
-                                    <section className="blog_contents__box-p">
-                                        <ul className="featured">
-                                            <li>FEATURED :</li>
-                                            <li style={{color:'#FFBA00',fontWeight:700}}>MARKETING </li>
-                                        </ul>
-                                        <h2>How to Gain Organic Followers on Instagram in 2019</h2>
-                                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using…</p>
-                                        <br/>
-                                        <p className="m-0">By AuthorName - July 31, 2019 </p>
-                                    </section>
-                                </Col>
-                                <Col xs={{span:12,order:1}} md={{span:3,order:2}} className="img-blog">
-                                    <img src="https://api.dignitestudio.com/images/image/postmarketing.png" alt="gambar artikel" width="100%" height="100%"/>
-                                </Col>
-                            </Row>
-                        </section>
-                    </Link>
+                    {this.props.dataSearch.map(item => {
+                        let month = new Date(item.created_at).getMonth() + 1
+                        let date = new Date(item.created_at).getDate() 
+                        let year = new Date(item.created_at).getFullYear() 
+
+                        let tMonth = convertMonth(month)
+                        return (
+                            <Link href={`/blogDetail?slug=${item.slug}`} as={`/blog/${item.slug}`}>
+                                <section className="blog_contents__box">
+                                    <Row>
+                                        <Col xs={{span:12,order:2}} md={{span:9,order:1}} >
+                                            <section className="blog_contents__box-p">
+                                                <ul className="featured">
+                                                    <li>FEATURED :</li>
+                                                    <li style={{color:'#FFBA00',fontWeight:700}}>{item.category}</li>
+                                                </ul>
+                                                <h2>{item.title}</h2>
+                                                {parse(item.first_pg)}
+                                                <br/>
+                                                <p className="m-0">By AuthorName - {tMonth} {date}, {year}</p>
+                                            </section>
+                                        </Col>
+                                        <Col xs={{span:12,order:1}} md={{span:3,order:2}} className="img-blog">
+                                            <img src="https://api.dignitestudio.com/images/image/postmarketing.png" alt="gambar artikel" width="100%" height="100%"/>
+                                        </Col>
+                                    </Row>
+                                </section>
+                                </Link>
+                        )
+                    })}
+                   
                 </Container>
             </Layout>
         )

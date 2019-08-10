@@ -9,7 +9,7 @@ const footer = props => {
                     <Col xs={6}>
                         <h2 className="mb-5">Get in touch</h2>
                         <p>hello@dignitestudio.com</p>
-                        <a href="">(+62) 812 8783 1421</a>
+                        <a href="">(+62) 813 1610 0044</a>
                         <ul className="mt-5">
                             <li><img src='https://api.dignitestudio.com/images/image/SocialIcon/Facebook.png' alt="icon-fb"/></li>
                             <li><img src='https://api.dignitestudio.com/images/image/SocialIcon/Instagram.png' alt="icon-ig"/></li>

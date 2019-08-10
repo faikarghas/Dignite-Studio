@@ -128,8 +128,8 @@ class Project extends React.Component {
                             </div>
                         </li>
                         <li className="client-name">
-                            <h2>Client Name</h2>
-                            <p>Marketing Manager</p>
+                            <h2>{data[0].clientName}</h2>
+                            {/* <p>Marketing Manager</p> */}
                         </li>
                     </ul>
                 </section>

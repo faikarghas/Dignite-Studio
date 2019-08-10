@@ -47,22 +47,22 @@ app.prepare()
         app.render(req, res, actualPage, queryParams)
     })
 
-    server.get('/blog/announcement/:slug', (req, res) => {
+    server.get('/blog/:category/:slug', (req, res) => {
         const actualPage = '/blogCategoryDetail'
         const queryParams = { slug: req.params.slug, category: req.params.category }
         app.render(req, res, actualPage, queryParams)
     })
-    server.get('/blog/business/:slug', (req, res) => {
+    server.get('/blog/:category/:slug', (req, res) => {
         const actualPage = '/blogCategoryDetail'
         const queryParams = { slug: req.params.slug, category: req.params.category }
         app.render(req, res, actualPage, queryParams)
     })
-    server.get('/blog/design/:slug', (req, res) => {
+    server.get('/blog/:category/:slug', (req, res) => {
         const actualPage = '/blogCategoryDetail'
         const queryParams = { slug: req.params.slug, category: req.params.category }
         app.render(req, res, actualPage, queryParams)
     })
-    server.get('/blog/tech/:slug', (req, res) => {
+    server.get('/blog/:category/:slug', (req, res) => {
         const actualPage = '/blogCategoryDetail'
         const queryParams = { slug: req.params.slug, category: req.params.category }
         app.render(req, res, actualPage, queryParams)

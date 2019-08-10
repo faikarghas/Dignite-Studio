@@ -39,7 +39,7 @@ class index extends React.Component{
                         <Row>
                         {data.home.Project.map(item=>{
                             return (
-                                <Link href="/project/[slug]" as={`/project/${item.slug}`}>
+                                <Link href="/project/[slug]" as={`/project/${item.slug}`} key={item.id}>
                                     <Col className="box1 p-0" xs={4} key={item.id}>
                                         <img src={item.imgUrl} width="100%" height="100%" alt="project-img"></img>
                                         <div className="box-hover">

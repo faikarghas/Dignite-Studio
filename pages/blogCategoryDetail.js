@@ -1,12 +1,18 @@
 import { Container,Row,Col } from 'react-bootstrap'
 import Link from 'next/link'
+import parse from 'html-react-parser'
+import fetch from 'isomorphic-unfetch'
 import commentBox from 'commentbox.io';
+import {convertMonth} from '../lib/date'
 
 import Layout from '../components/layouts'
 
 class BlogCategoryDetail extends React.Component {
     static async getInitialProps (ctx){
-        return {}
+        const {slug,category} = ctx.query
+        const res = await fetch(`https://api.dignitestudio.com/api/blogCategoryDetail/${category}/${slug}`)
+        const dataBlog = await res.json()
+        return {dataBlog}
     }
 
     componentDidMount() {
@@ -17,20 +23,24 @@ class BlogCategoryDetail extends React.Component {
         this.removeCommentBox();
     }
     render(){
+        let data = this.props.dataBlog[0]
+        let month = new Date(data.created_at).getMonth() + 1
+        let date = new Date(data.created_at).getDate() 
+        let year = new Date(data.created_at).getFullYear() 
+
+        let tMonth = convertMonth(month)
         return (
             <Layout>
                 <section className="section_first-blogDetail">
                     <Container>
                         <Row>
                             <Col xs={12} md={3} className="info">
-                                <h4 className="mb-4">MARKETING</h4>
-                                <p>July 31, 2019</p>
+                                <h4 className="mb-4">{data.category}</h4>
+                                <p>{tMonth} {date}, {year}</p>
                             </Col>
                             <Col xs={12} md={9} className="content">
-                                <h1>How to Gain Organic Followers on Instagram in 2019</h1>
-                                <p>Even still, there's a high learning curve before you can build a proper application. That's because you need to learn about client-side routing, page layout, and so on. If you'd like to perform server-side rendering for faster page loads, things can become even more difficult.</p>
-                                <p>Think about how webapps are created with PHP. You create some files, write PHP code, then simply deploy it. We don't have to worry about routing much, and the app is rendered on the server by default.Think about how webapps are created with PHP. You create some files, write PHP code, then simply deploy it. We don't have to worry about routing much, and the app is rendered on the server by default.</p>
-                                <p>Think about how webapps are created with PHP. You create some files, write PHP code, then simply deploy it. We don't have to worry about routing much, and the app is rendered on the server by default.</p>
+                                <h1>{data.title}</h1>
+                                {parse(data.content)}
                                 <div className="ads">
                                     <h2>Boosting Your Sales Like Never Before</h2>
                                     <p>Turn your followers into potential customers by creating growth and building online <br/> community.</p>
