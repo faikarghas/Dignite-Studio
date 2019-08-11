@@ -46,7 +46,7 @@ class Menu extends Component {
                 <section className="menu_blog">
                     <Container>
                         <Row style={{borderBottom:' 1px solid #ECEEF1'}}>
-                            <Col xs={12} md={9}>
+                            <Col xs={12} md={8}>
                                 <ul className="menu_blog-1">
                                     <Link href="/blog"><a className={active}>ALL TOPICS</a></Link>
                                     <Link href={`/blogCategory?category=business`} as={`/blog/business`}><a className={activeB}>BUSINESS</a></Link>
@@ -55,7 +55,7 @@ class Menu extends Component {
                                     <Link href={`/blogCategory?category=announcement`} as={`/blog/announcement`}><a className={activeA}>ANNOUNCEMENT</a></Link>
                                 </ul>
                             </Col>
-                            <Col xs={12} md={3}>
+                            <Col xs={12} md={4}>
                                 <ul>
                                     <li>
                                         <InputGroup>

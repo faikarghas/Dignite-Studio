@@ -38,6 +38,7 @@
     "react-ga": "^2.6.0",
     "react-js-pagination": "^3.0.2",
     "react-paginate": "^6.3.0",
+    "react-share": "^3.0.0",
     "react-slick": "^0.24.0",
     "spdy": "^4.0.0",
     "video-react": "^0.14.0"

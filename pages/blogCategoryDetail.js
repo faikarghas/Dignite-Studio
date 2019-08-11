@@ -6,6 +6,7 @@ import commentBox from 'commentbox.io';
 import {convertMonth} from '../lib/date'
 
 import Layout from '../components/layouts'
+import ShareIcon from '../components/presentational/shareIcon'
 
 class BlogCategoryDetail extends React.Component {
     static async getInitialProps (ctx){
@@ -27,8 +28,9 @@ class BlogCategoryDetail extends React.Component {
         let month = new Date(data.created_at).getMonth() + 1
         let date = new Date(data.created_at).getDate() 
         let year = new Date(data.created_at).getFullYear() 
-
         let tMonth = convertMonth(month)
+        let url = window.location.href
+
         return (
             <Layout>
                 <section className="section_first-blogDetail">
@@ -37,6 +39,11 @@ class BlogCategoryDetail extends React.Component {
                             <Col xs={12} md={3} className="info">
                                 <h4 className="mb-4">{data.category}</h4>
                                 <p>{tMonth} {date}, {year}</p>
+                                <br/>
+                                <br/>
+                                <ShareIcon url={url}/>
+                                <br/>
+                                <br/>
                             </Col>
                             <Col xs={12} md={9} className="content">
                                 <h1>{data.title}</h1>

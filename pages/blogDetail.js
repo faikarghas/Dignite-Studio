@@ -3,10 +3,10 @@ import Link from 'next/link'
 import parse from 'html-react-parser'
 import fetch from 'isomorphic-unfetch'
 import commentBox from 'commentbox.io';
+import {convertMonth} from '../lib/date'
 
 import Layout from '../components/layouts'
-
-import {convertMonth} from '../lib/date'
+import ShareIcon from '../components/presentational/shareIcon'
 
 
 class BlogDetail extends React.Component {
@@ -32,8 +32,8 @@ class BlogDetail extends React.Component {
         let month = new Date(data.created_at).getMonth() + 1
         let date = new Date(data.created_at).getDate() 
         let year = new Date(data.created_at).getFullYear() 
-
         let tMonth = convertMonth(month)
+        let url = window.location.href
         return (
             <Layout>
                 <section className="section_first-blogDetail">
@@ -42,6 +42,11 @@ class BlogDetail extends React.Component {
                             <Col xs={12} md={3} className="info">
                                 <h4 className="mb-4">{data.category}</h4>
                                 <p>{tMonth} {date}, {year}</p>
+                                <br/>
+                                <br/>
+                                <ShareIcon url={url}/>
+                                <br/>
+                                <br/>
                             </Col>
                             <Col xs={12} md={9} className="content">
                                 <h1>{data.title}</h1>

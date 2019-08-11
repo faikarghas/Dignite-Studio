@@ -65,7 +65,7 @@ class BlogPage extends React.Component {
                             <Link href={`/blogDetail?slug=${item.slug}`} as={`/blog/${item.slug}`} key={item.idblog}>
                                 <section className="blog_contents__box">
                                     <Row>
-                                        <Col xs={{span:12,order:2}} md={{span:9,order:1}} >
+                                        <Col xs={{span:12,order:2}} md={{span:8,order:1}} >
                                             <section className="blog_contents__box-p">
                                                 <ul className="featured">
                                                     <li>FEATURED :</li>
@@ -74,11 +74,11 @@ class BlogPage extends React.Component {
                                                 <h2>{item.title}</h2>
                                                 <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using…</p>
                                                 <br/>
-                                                <p className="m-0">By AuthorName - {tMonth} {date}, {year} </p>
+                                                <p className="m-0">By Author - {tMonth} {date}, {year} </p>
                                             </section>
                                         </Col>
-                                        <Col xs={{span:12,order:1}} md={{span:3,order:2}} className="img-blog">
-                                            <img src='https://api.dignitestudio.com/images/image/postmarketing.png' alt="gambar artikel" width="100%" height="100%"/>
+                                        <Col xs={{span:12,order:1}} md={{span:4,order:2}} className="img-blog">
+                                            <img src={`https://api.dignitestudio.com/images/image/artikel/${item.imgThumbnail}.jpg`} alt="gambar artikel" width="100%" height="100%"/>
                                         </Col>
                                     </Row>
                                 </section>
