@@ -19,6 +19,19 @@
     h1{
         font-size: 4rem;
     }
+    h2{
+        @include respond(phone){
+            font-size: 18px;
+        }
+    }
+    p{
+        @include respond(phone){
+            font-size: 14px;
+        }
+        @include respond(phone320){
+            font-size: 11px;
+        }
+    }
     .form-group{
         input{
             font-family: 'Brandon-grotesque-light';

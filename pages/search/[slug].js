@@ -84,11 +84,11 @@ class Blog extends React.Component {
                                                 <h2>{item.title}</h2>
                                                 {parse(item.first_pg)}
                                                 <br/>
-                                                <p className="m-0">By AuthorName - {tMonth} {date}, {year}</p>
+                                                <p className="m-0">By Author - {tMonth} {date}, {year}</p>
                                             </section>
                                         </Col>
                                         <Col xs={{span:12,order:1}} md={{span:3,order:2}} className="img-blog">
-                                            <img src="https://api.dignitestudio.com/images/image/postmarketing.png" alt="gambar artikel" width="100%" height="100%"/>
+                                            <img src={`https://api.dignitestudio.com/images/image/artikel/${item.imgThumbnail}.jpg`} alt="gambar artikel" width="100%" height="100%"/>
                                         </Col>
                                     </Row>
                                 </section>

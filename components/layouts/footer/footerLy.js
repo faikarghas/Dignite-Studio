@@ -7,14 +7,14 @@ const footer = props => {
             <Container>
                 <Row>
                     <Col xs={6}>
-                        <h2 className="mb-5">Get in touch</h2>
+                        <h2 className="mb-5 get">Get in touch</h2>
                         <p>hello@dignitestudio.com</p>
-                        <a href="">(+62) 813 1610 0044</a>
+                        <a href="tel:+6281387831421">(+62) 813 1610 0044</a>
                         <ul className="mt-5">
-                            <li><img src='https://api.dignitestudio.com/images/image/SocialIcon/Facebook.png' alt="icon-fb"/></li>
-                            <li><img src='https://api.dignitestudio.com/images/image/SocialIcon/Instagram.png' alt="icon-ig"/></li>
-                            <li><img src='https://api.dignitestudio.com/images/image/SocialIcon/LinkedIn.png' alt="icon-lk"/></li>
-                            <li><img src='https://api.dignitestudio.com/images/image/SocialIcon/Whatsapp.png' alt="icon-wa"/></li>
+                            {/* <li><a href="" target="_blank"><img src='https://api.dignitestudio.com/images/image/SocialIcon/Facebook.png' alt="icon-fb"/></a></li> */}
+                            <li><a href="https://www.instagram.com/dignitestudio/?hl=en" target="_blank"><img src='https://api.dignitestudio.com/images/image/SocialIcon/Instagram.png' alt="icon-ig"/></a></li>
+                            {/* <li><a href="" target="_blank"><img src='https://api.dignitestudio.com/images/image/SocialIcon/LinkedIn.png' alt="icon-lk"/></a></li> */}
+                            <li><a href="https://api.whatsapp.com/send?phone=6281316100044&text=Hai%20aku%20ingin%20bertanya" target="_blank"><img src='https://api.dignitestudio.com/images/image/SocialIcon/Whatsapp.png' alt="icon-wa"/></a></li>
                         </ul>
                     </Col>
                     <Col xs={6}>

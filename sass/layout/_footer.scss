@@ -2,15 +2,36 @@ footer{
     background-color: white;
     position: relative;
     padding: 8rem;
+    @include respond(phone){
+        padding: 10rem 5rem;
+    }
+    .get{
         @include respond(phone){
-            padding: 10rem 5rem;
-
+            font-size: 20px;
         }
+    }
+    h2{
+        @include respond(phone){
+            // font-size: 20px;
+        }
+    }
     p{
         margin: 0;
+        @include respond(phone){
+            font-size: 14px;
+        }
+        @include respond(phone320){
+            font-size: 12px;
+        }
     }
     a{
         color: #222222;
+        @include respond(phone){
+            font-size: 14px;
+        }
+        @include respond(phone320){
+            font-size: 12px;
+        }
     }
     ul{
         list-style: none;

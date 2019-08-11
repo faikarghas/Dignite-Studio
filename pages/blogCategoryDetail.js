@@ -16,8 +16,15 @@ class BlogCategoryDetail extends React.Component {
         return {dataBlog}
     }
 
+    state = {
+        url : ''
+    }
+
     componentDidMount() {
         this.removeCommentBox = commentBox('5644854293954560-proj',{});
+        this.setState({
+            url: window.location.href
+        })
     }
 
     componentWillUnmount() {
@@ -29,7 +36,7 @@ class BlogCategoryDetail extends React.Component {
         let date = new Date(data.created_at).getDate() 
         let year = new Date(data.created_at).getFullYear() 
         let tMonth = convertMonth(month)
-        let url = window.location.href
+        let url = this.state.url
 
         return (
             <Layout>
