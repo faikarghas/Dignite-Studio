@@ -57,12 +57,12 @@ class project extends React.Component{
                         <Col xs={5}>
                             <h1 className="mb-5">Get in touch!</h1>
                             <h2>Have a project in mind? <br/>Let's talk.</h2>
-                            <br/>
+                            {/* <br/>
                             <br/>
                             <p className="m-0">Jl. Raya Rawabuntu</p>
                             <p className="m-0">Ruko Golden Vienna Blok BB No. 11</p>
                             <p className="m-0">Serpong, Tangerang Selatan</p>
-                            <p className="m-0">Indonesia 15318</p>
+                            <p className="m-0">Indonesia 15318</p> */}
                             <br/>
                             <br/>
                             <p>hello@dignitestudio.com</p>

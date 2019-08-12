@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const enforce = require('express-sslify');
 const spdy = require('spdy');
 const fs = require('fs');
+const os = require('os')
 
 require('dotenv').config()
 const port      = process.env.PORT || 3013;
@@ -84,7 +85,7 @@ app.prepare()
         return app.render(req, res, actualPage,queryParams)
     })
     server.get('/blog/announcement', (req, res) => {
-        const actualPage = '/blogCategory' 
+        const actualPage = '/blogCategory'
         const queryParams = { category: 'announcement' }
         return app.render(req, res, actualPage,queryParams)
     })
@@ -94,6 +95,7 @@ app.prepare()
         const queryParams = { slug: req.params.slug }
         app.render(req, res, actualPage, queryParams)
     })
+
 
     server.get('*', (req, res) => {
         return handle(req, res)
