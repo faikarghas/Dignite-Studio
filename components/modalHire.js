@@ -6,7 +6,8 @@ class project extends React.Component{
         companyName:'',
         phoneNumber:'',
         message:'',
-        Loading:false
+        Loading:false,
+        modal:''
     }
 
     inputHandler = (evt) => {
@@ -44,13 +45,19 @@ class project extends React.Component{
         })
     }
 
+    closeModal = (a,b) =>{
+        a()
+        b()
+    }
+
     render(){
         const {name,email,companyName,phoneNumber,message} = this.state
-        const {modal,closeModal} = this.props
+        const {modal,closeModal,showModal2,closeModal2} = this.props
+
         return (
-            <div className={`modal-hireus ${modal}`}>
+            <div className={`modal-hireus ${modal} ${showModal2}`}>
                 <div className="close-contact">
-                    <img onClick={closeModal} src="https://api.dignitestudio.com/images/image/Icons/Close-Contact.png"/>
+                    <img onClick={()=>this.closeModal(closeModal2, closeModal)} src="https://api.dignitestudio.com/images/image/Icons/Close-Contact.png"/>
                 </div>
                 <Container>
                     <Row>

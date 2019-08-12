@@ -16,8 +16,9 @@ class Layout extends React.Component{
     closeContents: '',
     activeoverlay:'',
     overlaymenu:'',
-    modal:'modal-hide',
+    modal:'',
   }
+
   componentDidMount(){
     if (!window.GA_INITIALIZED) {
       initGA()
@@ -25,6 +26,7 @@ class Layout extends React.Component{
     }
     logPageView()
   }
+
   openMenu = () => {
     this.setState({
       activeMenu:'active',
@@ -33,6 +35,7 @@ class Layout extends React.Component{
       overlaymenu:''
     })
   }
+
   closeMenu = () => {
     this.setState({
       activeMenu:'deactive',
@@ -41,6 +44,7 @@ class Layout extends React.Component{
       overlaymenu:'overlaymenu'
     })
   }
+
   showModal = (category,action,label,modalName) => {
     modalView(modalName)
     logEvent(category,action,label)
@@ -48,10 +52,11 @@ class Layout extends React.Component{
       modal:'modal-show'
     })
   }
+
   closeModal = () => {
-    this.setState({
-      modal:'modal-hide'
-    })
+      this.setState({
+        modal:''
+      })
   }
 
 
@@ -71,10 +76,10 @@ class Layout extends React.Component{
         <div className={`contents ${closeContents}`}>
           <Header openMenu={this.openMenu}/>
             {this.props.children}
-          <Footer showModal={this.showModal}/>
+          <Footer showModal={this.showModal} />
         </div>
 
-        <ModalHire modal={modal} closeModal={this.closeModal}/>
+        <ModalHire modal={modal} closeModal={this.closeModal} showModal2={this.props.showModal2} closeModal2={this.props.closeModal2}/>
 
       </React.Fragment>
     )

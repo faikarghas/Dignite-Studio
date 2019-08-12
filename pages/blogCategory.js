@@ -75,7 +75,7 @@ class BlogCa extends React.Component {
                                                 <h2>{item.title}</h2>
                                                 {parse(item.first_pg)}
                                                 <br/>
-                                                <p className="m-0">By Author - {tMonth} {date}, {year} </p>
+                                                <p className="m-0 author">By Author - {tMonth} {date}, {year} </p>
                                             </section>
                                         </Col>
                                         <Col xs={{span:12,order:1}} md={{span:4,order:2}} className="img-blog">

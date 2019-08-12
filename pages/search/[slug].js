@@ -5,6 +5,7 @@ import Pagination from "react-js-pagination";
 import fetch from 'isomorphic-unfetch'
 import parse from 'html-react-parser'
 import {convertMonth} from '../../lib/date'
+import { modalView, logEvent } from '../../lib/analytics'
 
 import Layout from '../../components/layouts'
 
@@ -19,7 +20,8 @@ class Blog extends React.Component {
     }
 
     state={
-        search: this.props.slug
+        search: this.props.slug,
+        modal:''
     }
 
     handleChangeSearch = (e) => {
@@ -38,10 +40,22 @@ class Blog extends React.Component {
         Router.push('/search/[slug]',`/search/${this.state.search}`)
     }
 
+    showModal = (category,action,label,modalName) => {
+        this.setState({
+          modal:'modal-show'
+        })
+    }
+
+    closeModal = () => {
+        this.setState({
+          modal:''
+        })
+    }
+
 
     render(){
         return (
-            <Layout>
+            <Layout showModal2={this.state.modal} closeModal2={this.closeModal}>
                 <section className="section_first-search">
                     <Container>
                         <Row>
@@ -65,11 +79,10 @@ class Blog extends React.Component {
                     </Container>
                 </section>
                 <Container>
-                    {this.props.dataSearch.map(item => {
+                    {this.props.dataSearch.length >= 1 ? this.props.dataSearch.map(item => {
                         let month = new Date(item.created_at).getMonth() + 1
-                        let date = new Date(item.created_at).getDate() 
-                        let year = new Date(item.created_at).getFullYear() 
-
+                        let date = new Date(item.created_at).getDate()
+                        let year = new Date(item.created_at).getFullYear()
                         let tMonth = convertMonth(month)
                         return (
                             <Link href={`/blogDetail?slug=${item.slug}`} as={`/blog/${item.slug}`}>
@@ -84,7 +97,7 @@ class Blog extends React.Component {
                                                 <h2>{item.title}</h2>
                                                 {parse(item.first_pg)}
                                                 <br/>
-                                                <p className="m-0">By Author - {tMonth} {date}, {year}</p>
+                                                <p className="m-0 author">By Author - {tMonth} {date}, {year}</p>
                                             </section>
                                         </Col>
                                         <Col xs={{span:12,order:1}} md={{span:3,order:2}} className="img-blog">
@@ -94,8 +107,7 @@ class Blog extends React.Component {
                                 </section>
                                 </Link>
                         )
-                    })}
-                   
+                    }) : <h2 className="sorry-search">Sorry, I guess we haven't created anything like that. <span onClick={this.showModal}>Let us know it</span></h2>}
                 </Container>
             </Layout>
         )

@@ -1,5 +1,5 @@
 .modal-hireus{
-    display: flex;
+    display: none;
     align-items: center;
     position: fixed;
     top: 0;
@@ -59,7 +59,7 @@
         height: 5rem;
         background-color: #FFBA00;
         border: none;
-        color: #222222;
+        color: white;
         font-size: 2rem;
     }
     .btn-primary:hover {
@@ -69,12 +69,11 @@
 
 .modal-show{
     display: flex;
-    // visibility: visible;
-    // opacity: 1;
 }
+
 
 .modal-hide{
     display: none;
-    // visibility: hidden;
-    // opacity: 0;
 }
+
+
