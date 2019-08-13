@@ -46,7 +46,9 @@ class project extends React.Component{
     }
 
     closeModal = (a,b) =>{
-        a()
+        if(a){
+            a()
+        }
         b()
     }
 
@@ -64,12 +66,6 @@ class project extends React.Component{
                         <Col xs={5}>
                             <h1 className="mb-5">Get in touch!</h1>
                             <h2>Have a project in mind? <br/>Let's talk.</h2>
-                            {/* <br/>
-                            <br/>
-                            <p className="m-0">Jl. Raya Rawabuntu</p>
-                            <p className="m-0">Ruko Golden Vienna Blok BB No. 11</p>
-                            <p className="m-0">Serpong, Tangerang Selatan</p>
-                            <p className="m-0">Indonesia 15318</p> */}
                             <br/>
                             <br/>
                             <p>hello@dignitestudio.com</p>
@@ -79,22 +75,22 @@ class project extends React.Component{
                             <Form onSubmit={this.onSubmitHandler}>
                                 <Form.Row>
                                     <Form.Group as={Col} md='6' className="mb-4">
-                                        <Form.Control type="text" id="name" placeholder="Your Name" name="name" value={name} onChange={this.inputHandler} />
+                                        <Form.Control type="text" id="name" placeholder="Your Name" name="name" value={name} onChange={this.inputHandler} required/>
                                     </Form.Group>
                                     <Form.Group as={Col} md='6' className="mb-4">
-                                        <Form.Control type="email" id="email" placeholder="Your Email" name="email" value={email} onChange={this.inputHandler} />
+                                        <Form.Control type="email" id="email" placeholder="Your Email" name="email" value={email} onChange={this.inputHandler} required/>
                                     </Form.Group>
                                 </Form.Row>
                                 <Form.Row>
                                     <Form.Group as={Col} md='6' className="mb-4">
-                                        <Form.Control type="text" id="companyName" placeholder="Company Name" name="companyName" value={companyName} onChange={this.inputHandler} />
+                                        <Form.Control type="text" id="companyName" placeholder="Company Name" name="companyName" value={companyName} onChange={this.inputHandler} required/>
                                     </Form.Group>
                                     <Form.Group as={Col} md='6' className="mb-4">
-                                        <Form.Control type="number" id="phoneNumber" placeholder="Phone Number" name="phoneNumber" value={phoneNumber} onChange={this.inputHandler} />
+                                        <Form.Control type="number" id="phoneNumber" placeholder="Phone Number" name="phoneNumber" value={phoneNumber} onChange={this.inputHandler} required/>
                                     </Form.Group>
                                 </Form.Row>
                                 <Form.Group className="mb-5">
-                                    <Form.Control as="textarea"  id="message" placeholder="Your Message" name="message" value={message} onChange={this.inputHandler}/>
+                                    <Form.Control as="textarea"  id="message" placeholder="Your Message" name="message" value={message} onChange={this.inputHandler} required/>
                                 </Form.Group>
                                 <Button type="submit">
                                     {this.state.Loading ? <div class="lds-ring"><div></div><div></div><div></div><div></div></div>: 'Start Conversation'}

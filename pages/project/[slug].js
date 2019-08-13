@@ -14,9 +14,6 @@ class Project extends React.Component {
         let { slug } = ctx.query
         const res = await data.home
 
-        if(process.browser){
-            Router.replace(ctx.asPath)
-        }
         return {slug,res}
     }
 
@@ -25,12 +22,23 @@ class Project extends React.Component {
         data: this.props.res,
         slug: this.props.slug
     }
+
     componentDidMount(){
         window.addEventListener('scroll', this.handleScroll);
     }
+
     componentWillUnmount() {
         window.removeEventListener('scroll', this.handleScroll);
     }
+
+    componentDidUpdate(prevProps){
+        if(prevProps.slug !== this.props.slug){
+            this.setState({
+                slug:this.props.slug
+            })
+        }
+    }
+
     handleScroll = ()=> {
         let valueScroll = window.scrollY
         if(valueScroll){
@@ -38,8 +46,8 @@ class Project extends React.Component {
                 trans : valueScroll / 7,
             })
         }
-
     }
+
     render(){
         const {trans} = this.state
         var settings = {
@@ -55,7 +63,6 @@ class Project extends React.Component {
         const data = this.state.data.Project.filter((item)=>{
             return item.slug === this.state.slug
         })
-
         const getid = this.state.data.Project.filter((item)=>{
             if (item.slug === this.state.slug) {
                 return item.id

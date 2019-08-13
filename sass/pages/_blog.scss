@@ -19,10 +19,7 @@
             margin-right: 1rem;
         }
     }
-    .author{
-        font-size: 1.8rem;
-        color: #9b9999;
-    }
+   
     &__box{
         padding: 4rem 0;
         border-bottom: 1px solid rgb(236, 238, 241);
@@ -37,6 +34,9 @@
             }
         }
         .img-blog{
+            img{
+                object-fit: contain;
+            }
             @include respond(phone){
                 margin-bottom: 3rem;
             }
