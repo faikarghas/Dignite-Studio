@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import Router from 'next/router'
+import {Router,withRouter} from 'next/router'
 import Slider from "react-slick";
 import { Player, BigPlayButton } from 'video-react';
 

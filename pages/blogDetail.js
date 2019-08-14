@@ -4,6 +4,7 @@ import parse from 'html-react-parser'
 import fetch from 'isomorphic-unfetch'
 import commentBox from 'commentbox.io';
 import {convertMonth} from '../lib/date'
+import Slider from "react-slick";
 
 import Layout from '../components/layouts'
 import ShareIcon from '../components/presentational/shareIcon'
@@ -15,8 +16,9 @@ class BlogDetail extends React.Component {
         const {slug} = ctx.query
         const res = await fetch(`https://api.dignitestudio.com/api/blogDetail/${slug}`)
         const dataBlog = await res.json()
-        console.log('slug',slug);
-        return {dataBlog}
+        const resCat = await fetch(`https://api.dignitestudio.com/api/blogCategory/${dataBlog[0].category}`)
+        const dataCategory = await resCat.json()
+        return {dataBlog,dataCategory}
     }
 
     state = {
@@ -36,11 +38,23 @@ class BlogDetail extends React.Component {
 
     render(){
         let data = this.props.dataBlog[0]
+        let allDataCategory = this.props.dataCategory
         let month = new Date(data.created_at).getMonth() + 1
         let date = new Date(data.created_at).getDate() 
         let year = new Date(data.created_at).getFullYear() 
         let tMonth = convertMonth(month)
         let url = this.state.url
+
+        const settings = {
+            className: "center",
+            centerMode: true,
+            infinite: false,
+            centerPadding: "60px",
+            slidesToShow: 1,
+            speed: 500,
+            variableWidth: true
+        };
+
         return (
             <Layout>
                 <section className="section_first-blogDetail">
@@ -68,11 +82,40 @@ class BlogDetail extends React.Component {
                         </Row>
                     </Container>
                 </section>
-                <section className="section_second-comment">
+                {/* <section className="section_second-comment">
                     <Container>
                         <Row>
                             <Col>
                                 <div className="commentbox" id="contoh2"/>
+                            </Col>
+                        </Row>
+                    </Container>
+                </section> */}
+                <section className="section_third-slider">
+                    <Container>
+                        <Row>
+                            <Col className="text-center">
+                                <h2>Keep Inspired</h2>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                            <Slider {...settings}>
+                                {allDataCategory.map(item => {
+                                    return (
+                                            <div className="box">
+                                                <div className="box-img">
+                                                    <img src={`https://api.dignitestudio.com/images/image/artikel/${item.imgThumbnail}.jpg`} width="100%"></img>
+                                                </div>
+                                                <Link href={`/blogDetail?slug=${item.slug}`} as={`/blog/${item.slug}`} key={item.idblog}>
+                                                    <a><h3>{item.title}</h3></a>
+                                                </Link>
+                                                {/* <p>{parse(item.first_pg)}</p> */}
+                                                <p className="category">{item.category}</p>
+                                            </div>
+                                    )
+                                })}
+                            </Slider>
                             </Col>
                         </Row>
                     </Container>

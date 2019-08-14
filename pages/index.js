@@ -29,6 +29,7 @@ class index extends React.Component{
         const {trans} = this.state
         return (
             <Layout>
+                <h6 id="foo">a</h6>
                 <section className="textHeaderHome width100">
                     <Container>
                         <h1 className="text-center">{data.home.title}</h1>
