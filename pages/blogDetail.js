@@ -82,7 +82,7 @@ class BlogDetail extends React.Component {
                         </Row>
                     </Container>
                 </section>
-                {/* <section className="section_second-comment">
+                <section className="section_second-comment">
                     <Container>
                         <Row>
                             <Col>
@@ -90,7 +90,7 @@ class BlogDetail extends React.Component {
                             </Col>
                         </Row>
                     </Container>
-                </section> */}
+                </section>
                 <section className="section_third-slider">
                     <Container>
                         <Row>
@@ -103,16 +103,15 @@ class BlogDetail extends React.Component {
                             <Slider {...settings}>
                                 {allDataCategory.map(item => {
                                     return (
-                                            <div className="box">
-                                                <div className="box-img">
-                                                    <img src={`https://api.dignitestudio.com/images/image/artikel/${item.imgThumbnail}.jpg`} width="100%"></img>
-                                                </div>
-                                                <Link href={`/blogDetail?slug=${item.slug}`} as={`/blog/${item.slug}`} key={item.idblog}>
-                                                    <a><h3>{item.title}</h3></a>
-                                                </Link>
-                                                {/* <p>{parse(item.first_pg)}</p> */}
-                                                <p className="category">{item.category}</p>
+                                        <div className="box">
+                                            <div className="box-img">
+                                                <img src={`https://api.dignitestudio.com/images/image/artikel/${item.imgThumbnail}.jpg`} width="100%"></img>
                                             </div>
+                                            <Link href={`/blogDetail?slug=${item.slug}`} as={`/blog/${item.slug}`} key={item.idblog}>
+                                                <a><h3>{item.title}</h3></a>
+                                            </Link>
+                                            <p className="category">{item.category}</p>
+                                        </div>
                                     )
                                 })}
                             </Slider>

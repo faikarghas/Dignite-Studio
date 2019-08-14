@@ -82,7 +82,6 @@ class BlogCatPage extends React.Component {
                                                     <li style={{color:'#FFBA00',fontWeight:700}}>{item.category}</li>
                                                 </ul>
                                                 <h2>{item.title}</h2>
-                                                {/* {parse(item.first_pg)} */}
                                                 <br/>
                                                 <p className="m-0 author">By Author - {tMonth} {date}, {year} </p>
                                             </section>
