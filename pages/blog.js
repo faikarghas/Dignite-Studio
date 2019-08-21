@@ -9,8 +9,6 @@ import {convertMonth} from '../lib/date'
 import Layout from '../components/layouts'
 import LayoutBlog from '../components/layouts-blog'
 
-
-
 class Blog extends React.Component {
 
     static async getInitialProps(ctx){
@@ -36,7 +34,6 @@ class Blog extends React.Component {
         }
     }
 
-
     render(){
         let dataLength = this.props.allData.length
         return (
@@ -49,9 +46,8 @@ class Blog extends React.Component {
                     {this.props.dataBlog.map(item=>{
 
                         let month = new Date(item.created_at).getMonth() + 1
-                        let date = new Date(item.created_at).getDate() 
-                        let year = new Date(item.created_at).getFullYear() 
-
+                        let date = new Date(item.created_at).getDate()
+                        let year = new Date(item.created_at).getFullYear()
                         let tMonth = convertMonth(month)
 
                         return (
@@ -87,7 +83,6 @@ class Blog extends React.Component {
                             onChange={this.handlePageChange}
                         />
                     </div>
-
                 </LayoutBlog>
             </Layout>
         )

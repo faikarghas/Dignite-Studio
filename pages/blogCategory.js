@@ -57,9 +57,8 @@ class BlogCa extends React.Component {
                 <LayoutBlog activeCategory={activeCategory}>
                 {this.props.dataBlog.map(item=>{
                     let month = new Date(item.created_at).getMonth() + 1
-                    let date = new Date(item.created_at).getDate() 
-                    let year = new Date(item.created_at).getFullYear() 
-
+                    let date = new Date(item.created_at).getDate()
+                    let year = new Date(item.created_at).getFullYear()
                     let tMonth = convertMonth(month)
 
                         return (
