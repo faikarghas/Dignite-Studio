@@ -51,7 +51,6 @@ class Menu extends Component {
                                     <Link href="/blog"><a className={active}>ALL TOPICS</a></Link>
                                     <Link href={`/blogCategory?category=business`} as={`/blog/business`}><a className={activeB}>BUSINESS</a></Link>
                                     <Link href={`/blogCategory?category=design`} as={`/blog/design`}><a className={activeD}>DESIGN</a></Link>
-                                    <Link href={`/blogCategory?category=tech`} as={`/blog/tech`}><a className={activeT}>TECH</a></Link>
                                     <Link href={`/blogCategory?category=announcement`} as={`/blog/announcement`}><a className={activeA}>ANNOUNCEMENT</a></Link>
                                 </ul>
                             </Col>
