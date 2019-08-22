@@ -1,7 +1,7 @@
 import Layout from '../components/layouts'
 
 import { Container,Row,Col } from 'react-bootstrap';
-
+import Fade from 'react-reveal/Fade';
 import Link from 'next/link'
 
 import data from '../lib/copywriting/data.js'
@@ -31,7 +31,9 @@ class index extends React.Component{
             <Layout>
                 <section className="textHeaderHome width100">
                     <Container>
-                        <h1 className="text-center">{data.home.title}</h1>
+                        <Fade bottom>
+                            <h1 className="text-center">{data.home.title}</h1>
+                        </Fade>
                     </Container>
                 </section>
                 <section className="section_second-home width100 homeku">
