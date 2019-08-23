@@ -36,6 +36,7 @@ class Project extends React.Component {
             this.setState({
                 slug:this.props.slug
             })
+            window.location.reload();
         }
     }
 
