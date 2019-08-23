@@ -88,15 +88,19 @@ class Project extends React.Component {
             <Layout>
                 <section className="section_first-project text-center">
                     <h1 className="text-center mb-5">{data[0].title}</h1>
-                    <p className="">Illum mallem levares, quo optimum atque humanis simum virum, Cn. Tu autem negas fortem esse <br/> quem quam posse, qui dolorem m alum putet. Cupiditates non Epicuri divisione finiebat, sed sua satietate.</p>
-                    <a className="button_seeLive" href={data[0].link} target="_blank">See Live</a>
+                    <p className="">{data[0].about}</p>
+                    {data[0].link === 'false' ?
+                        ''
+                    :
+                        <a className="button_seeLive" href={data[0].link} target="_blank">See Live</a>
+                    }
                 </section>
                 <section className="section_second-project width100 p-0">
                     <img  src={data[0].landingImg} width="100%" alt="project-img"/>
                 </section>
                 <section className="section_third-project text-center">
                     <h2>Challenge</h2>
-                    <p>Illum mallem levares, quo optimum atque humanis simum virum, Cn. Tu autem negas fortem esse <br/> quem quam posse, qui dolorem m alum putet. Cupiditates non Epicuri divisione finiebat, sed sua satietate.</p>
+                    <p>{data[0].challenge}</p>
                 </section>
                 <section className="section_fourth-project text-center">
                     <Slider {...settings}>
@@ -109,7 +113,7 @@ class Project extends React.Component {
                 </section>
                 <section className="section_fifth-project text-center">
                     <h2>Solution</h2>
-                    <p>Illum mallem levares, quo optimum atque humanis simum virum, Cn. Tu autem negas fortem esse <br/> quem quam posse, qui dolorem m alum putet. Cupiditates non Epicuri divisione finiebat, sed sua satietate.</p>
+                    <p>{data[0].solution}</p>
                 </section>
                 <section className="section_sixth-project text-center">
                     <img src={data[0].fullImg} width="100%" style={{WebkitTransform:`translate(-50%,${-trans}px)`,msTransform:`translate(-50%,${-trans}px)`,transform:`translate(-50%,${-trans}px)`}} alt="project-mockup2"/>
@@ -131,7 +135,7 @@ class Project extends React.Component {
                     <ul>
                         <li>
                             <div className="text-center">
-                                <img src="../static/image/Person3.png" className="rounded" alt="person-img"/>
+                                <img src={data[0].thumbImg} className="rounded" alt="person-img"/>
                             </div>
                         </li>
                         <li className="client-name">
