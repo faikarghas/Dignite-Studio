@@ -21,6 +21,12 @@
 }
 
 .section_second-project{
+    position: relative;
+    background-color: white;
+    min-height: 77rem;
+    @include respond(tab-port){
+        min-height: 45rem;
+    }
     img{
         @include respond(phone){
             height: 40rem !important;
@@ -29,6 +35,8 @@
 }
 
 .section_third-project{
+    position: relative;
+    background-color: white;
     padding: 10rem 10rem;
     h2{
         font-family: 'Brandon-grotesque-black';
@@ -38,6 +46,8 @@
 }
 
 .section_fourth-project{
+    position: relative;
+    background-color: white;
     background: linear-gradient(#ffffff 50%,#464646 0);
     height: 60rem;
     @include respond(phone){
@@ -67,6 +77,8 @@
 }
 
 .section_fifth-project{
+    position: relative;
+    background-color: white;
     padding: 10rem 10rem;
     h2{
         font-family: 'Brandon-grotesque-black';
@@ -98,6 +110,7 @@
 
 .section_seventh-project{
     position: relative;
+    background-color: white;
     height: 65rem;
     @include respond(phone){
         height: 28rem;
@@ -122,6 +135,7 @@
 }
 
 .section_eighth-project{
+    position: relative;
     padding: 10rem 0;
     background-color: white;
     .quotes{
@@ -151,6 +165,7 @@
 }
 
 .section_ninth-project{
+    position: relative;
     padding: 10rem;
     background-color: #FFBA00;
     display: flex;
