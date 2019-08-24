@@ -3,6 +3,7 @@ import Link from 'next/link'
 import {Router,withRouter} from 'next/router'
 import Slider from "react-slick";
 import { Player, BigPlayButton } from 'video-react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import Layout from '../../components/layouts'
 import data from '../../lib/copywriting/data.js'
@@ -20,7 +21,8 @@ class Project extends React.Component {
     state = {
         trans : 0,
         data: this.props.res,
-        slug: this.props.slug
+        slug: this.props.slug,
+        fullImg:  this.props.res
     }
 
     componentDidMount(){
@@ -36,7 +38,7 @@ class Project extends React.Component {
             this.setState({
                 slug:this.props.slug
             })
-            window.location.reload();
+            // window.location.reload();
         }
     }
 
@@ -97,7 +99,12 @@ class Project extends React.Component {
                     }
                 </section>
                 <section className="section_second-project width100 p-0">
-                    <img  src={data[0].landingImg} width="100%" alt="project-img"/>
+                <LazyLoadImage
+                    alt={'project-img'}
+                    src={data[0].landingImg}
+                    effect="blur"
+                    width={'100%'} />
+                    {/* <img  src={data[0].landingImg} width="100%" alt="project-img"/> */}
                 </section>
                 <section className="section_third-project text-center">
                     <h2>Challenge</h2>
@@ -117,6 +124,12 @@ class Project extends React.Component {
                     <p>{data[0].solution}</p>
                 </section>
                 <section className="section_sixth-project text-center">
+                {/* <LazyLoadImage
+                    alt="project-mockup2"
+                    src={data[0].fullImg}
+                    effect="blur"
+                    width={'100%'} 
+                    /> */}
                     <img src={data[0].fullImg} width="100%" style={{WebkitTransform:`translate(-50%,${-trans}px)`,msTransform:`translate(-50%,${-trans}px)`,transform:`translate(-50%,${-trans}px)`}} alt="project-mockup2"/>
                 </section>
                 {/* <section className="section_seventh-project width100 p-0">
