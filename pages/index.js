@@ -1,9 +1,9 @@
-import Layout from '../components/layouts'
-
 import { Container,Row,Col } from 'react-bootstrap';
 import Fade from 'react-reveal/Fade';
 import Link from 'next/link'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
+import Layout from '../components/layouts'
 import data from '../lib/copywriting/data.js'
 
 class index extends React.Component{
@@ -43,7 +43,14 @@ class index extends React.Component{
                             return (
                                 <Link href="/project/[slug]" as={`/project/${item.slug}`} key={item.id}>
                                     <Col className="box1 p-0" xs={4} key={item.id}>
-                                        <img src={item.imgUrl} width="100%" height="100%" alt="project-img"></img>
+                                        <LazyLoadImage
+                                            alt={'project-img'}
+                                            src={item.imgUrl}
+                                            effect="blur"
+                                            width={'100%'} 
+                                            height={"100%"}
+                                        />
+                                        {/* <img src={item.imgUrl} width="100%" height="100%" alt="project-img"></img> */}
                                         <div className="box-hover">
                                             <h2>{item.title}</h2>
                                             <h2>{item.Category}</h2>

@@ -124,12 +124,6 @@ class Project extends React.Component {
                     <p>{data[0].solution}</p>
                 </section>
                 <section className="section_sixth-project text-center">
-                {/* <LazyLoadImage
-                    alt="project-mockup2"
-                    src={data[0].fullImg}
-                    effect="blur"
-                    width={'100%'} 
-                    /> */}
                     <img src={data[0].fullImg} width="100%" style={{WebkitTransform:`translate(-50%,${-trans}px)`,msTransform:`translate(-50%,${-trans}px)`,transform:`translate(-50%,${-trans}px)`}} alt="project-mockup2"/>
                 </section>
                 {/* <section className="section_seventh-project width100 p-0">

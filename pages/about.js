@@ -1,5 +1,6 @@
 import Layout from '../components/layouts'
 import TextHeader from '../components/presentational/textHead'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import data from '../lib/copywriting/data.js'
 
@@ -57,14 +58,24 @@ const about = () => {
                         <Col className="box" xs={12} md={6}>
                             <Row>
                                 <Col className="box-photo p-0" xs={5}>
-                                    <img src="../static/image/Faikar.jpg" width="100%" alt="photo" />
+                                    <LazyLoadImage
+                                        alt={'photofaikar'}
+                                        src={"../static/image/Faikar.jpg"}
+                                        effect="blur"
+                                        width={'100%'} 
+                                    />
                                     <div className="overlay-yellow">
                                         <p>Faikar Ghassan</p>
                                         <p style={{fontSize:'1.5rem'}}>Full-Stack Developer</p>
                                     </div>
                                 </Col>
                                 <Col className="box-photo p-0" xs={5}>
-                                    <img src="../static/image/Tasya.jpg" alt="photo"/>
+                                    <LazyLoadImage
+                                        alt={'phototasya'}
+                                        src={"../static/image/Tasya.jpg"}
+                                        effect="blur"
+                                        width={'100%'} 
+                                    />
                                     <div className="overlay-yellow">
                                         <p>Mayesta Arientasya</p>
                                         <p style={{fontSize:'1.5rem'}}>UI/UX Designer & Digital Marketing</p>
