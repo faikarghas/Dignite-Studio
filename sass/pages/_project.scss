@@ -2,8 +2,11 @@
     position: relative;
     background-color: white;
     padding: 10rem 10rem;
+    @include respond (tab-port){
+        padding: 10rem 4rem;
+    }
     h1{
-        font-size: 3rem;
+        font-size: 4.5rem;
         font-family: 'Brandon-grotesque-black';
         font-weight: 700;
     }
@@ -38,9 +41,12 @@
     position: relative;
     background-color: white;
     padding: 10rem 10rem;
+    @include respond (tab-port){
+        padding: 10rem 4rem;
+    }
     h2{
         font-family: 'Brandon-grotesque-black';
-        font-size: 3rem;
+        font-size: 4.5rem;
         margin-bottom: 4rem;
     }
 }
@@ -80,9 +86,12 @@
     position: relative;
     background-color: white;
     padding: 10rem 10rem;
+    @include respond (tab-port){
+        padding: 10rem 4rem;
+    }
     h2{
         font-family: 'Brandon-grotesque-black';
-        font-size: 3rem;
+        font-size: 4.5rem;
         margin-bottom: 4rem;
     }
 }
@@ -135,8 +144,11 @@
 
 .section_eighth-project{
     position: relative;
-    padding: 10rem 0;
     background-color: white;
+    padding: 10rem 10rem;
+    @include respond (tab-port){
+        padding: 10rem 4rem;
+    }
     .quotes{
         font-family: 'Brandon-grotesque-regular';
         font-weight: 700;
