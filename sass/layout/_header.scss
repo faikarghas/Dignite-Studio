@@ -11,9 +11,6 @@ header{
             justify-content: space-between;
             list-style: none;
             align-items: center;
-            @include respond (phone){
-                padding-right: 3rem;
-            }
         }
     }
 }

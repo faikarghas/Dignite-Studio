@@ -30,9 +30,15 @@
     @include respond(tab-port){
         min-height: 45rem;
     }
+    @include respond(phone){
+        min-height: 30rem;
+    }
     img{
+        @include respond(tab-port){
+            height: 100%;
+        }
         @include respond(phone){
-            height: 40rem !important;
+            height: 30rem !important;
         }
     }
 }
@@ -151,7 +157,6 @@
     }
     .quotes{
         font-family: 'Brandon-grotesque-regular';
-        font-weight: 700;
         font-style: italic;
     }
     ul{
@@ -167,22 +172,34 @@
             .rounded {
                 border-radius: 15.25rem!important;
                 width: 5rem;
+                @include respond(phone){
+                    width: 8rem;
+                }
             }
         }
         .client-name{
             padding-left: 2rem;
+            p:last-child{
+                font-size: 15px;
+            }
         }
     }
 }
 
 .section_ninth-project{
     position: relative;
-    padding: 10rem 4rem;
     background-color: #FFBA00;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10rem;
+    @include respond(phone){
+        padding: 10rem 4rem;
+    }
     p{
+        @include respond(phone){
+            font-size: 15px;
+        }
         color: white !important;
     }
     a{
@@ -203,10 +220,12 @@
             margin: 0;
             display: flex;
             align-items: center;
-            &:nth-child(1){
+            &:last-child{
                 li{
-                    font-size: 3rem;
-                    margin-right: 2rem;
+                    margin-left: 2rem;
+                    p{
+                        margin-bottom: 0;
+                    }
                 }
             }
             li{

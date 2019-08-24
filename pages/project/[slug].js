@@ -4,6 +4,7 @@ import {Router,withRouter} from 'next/router'
 import Slider from "react-slick";
 import { Player, BigPlayButton } from 'video-react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { Container,Row,Col } from 'react-bootstrap';
 
 import Layout from '../../components/layouts'
 import data from '../../lib/copywriting/data.js'
@@ -147,22 +148,27 @@ class Project extends React.Component {
                             </div>
                         </li>
                         <li className="client-name">
-                            <h2>{data[0].clientName}</h2>
-                            {/* <p>Marketing Manager</p> */}
+                            <p>{data[0].clientName}</p>
+                            <p>Owner</p>
                         </li>
                     </ul>
                 </section>
                 <section className="section_ninth-project">
-                    <p>Next Project</p>
-                    <Link href="/project/[slug]" as={`/project/${nextProjectSlug}`}>
-                        {/* <a href={`/project/${nextProjectSlug}`}> */}
-                        <a>
-                            <ul>
-                                <li>{nextProjectName}</li>
-                                <li><img src="../static/image/right-arrow.png" width="35px" height="100%"/></li>
-                            </ul>
-                        </a>
-                    </Link>
+                    <Container>
+                        <Row>
+                            <Col xs={12} style={{display:'flex',justifyContent:'space-between'}}>
+                                <p className="m-0">Next Project</p>
+                                <Link href="/project/[slug]" as={`/project/${nextProjectSlug}`}>
+                                    <a style={{display:'flex',alignItems:'center'}}>
+                                        <ul>
+                                            <li><p>{nextProjectName}</p></li>
+                                            <li><img src="../static/image/right-arrow.png" width="20px" height="100%"/></li>
+                                        </ul>
+                                    </a>
+                                </Link>
+                            </Col>
+                        </Row>
+                    </Container>
                 </section>
             </Layout>
         )

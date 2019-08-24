@@ -1,9 +1,9 @@
 footer{
     background-color: white;
     position: relative;
-    padding: 8rem;
+    padding: 10rem;
     @include respond(phone){
-        padding: 10rem 5rem;
+        padding: 10rem 4rem;
     }
     .get{
         @include respond(phone){

@@ -11,13 +11,12 @@
     cursor: pointer;
     color: white;
     &:hover{
-        // background-color: rgb(240, 177, 4);
         color: #222222;
     }
     h2{
         margin: 0;
     }
     @include respond(phone){
-        width: 20rem;
+        width: 100%;
     }
 }
