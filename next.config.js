@@ -19,5 +19,5 @@ const nextConfig = {
 module.exports = withPlugins([
 	withCSS,
 	withSass,
-    withImages,
+  withImages,
 ],nextConfig)

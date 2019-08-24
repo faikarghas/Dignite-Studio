@@ -51,6 +51,10 @@ class Project extends React.Component {
         }
     }
 
+    test = () => {
+        console.log('test');
+    }
+
     render(){
         const {trans} = this.state
         var settings = {
@@ -100,6 +104,7 @@ class Project extends React.Component {
                 </section>
                 <section className="section_second-project width100 p-0">
                 <LazyLoadImage
+                    beforeLoad={this.test}
                     alt={'project-img'}
                     src={data[0].landingImg}
                     effect="blur"
@@ -155,6 +160,7 @@ class Project extends React.Component {
                 <section className="section_ninth-project">
                     <p>Next Project</p>
                     <Link href="/project/[slug]" as={`/project/${nextProjectSlug}`}>
+                        {/* <a href={`/project/${nextProjectSlug}`}> */}
                         <a>
                             <ul>
                                 <li>{nextProjectName}</li>
