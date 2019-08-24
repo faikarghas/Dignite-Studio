@@ -31,14 +31,14 @@
         min-height: 45rem;
     }
     @include respond(phone){
-        min-height: 30rem;
+        min-height: 27rem;
     }
     img{
         @include respond(tab-port){
             height: 100%;
         }
         @include respond(phone){
-            height: 30rem !important;
+            object-fit: contain;
         }
     }
 }
@@ -198,7 +198,8 @@
     }
     p{
         @include respond(phone){
-            font-size: 15px;
+            line-height: 40px;
+            font-size: 20px;
         }
         color: white !important;
     }
@@ -225,6 +226,7 @@
                     margin-left: 2rem;
                     p{
                         margin-bottom: 0;
+                        font-size: 4.5rem;
                     }
                 }
             }

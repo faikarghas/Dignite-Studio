@@ -40,7 +40,11 @@ footer{
             img{
                 width: 2.5rem;
                 height: 2.5rem;
-                margin: .4rem;
+                margin-right: 1rem;
+                @include respond(tab-port){
+                    width: 4.5rem;
+                    height: 4.5rem;
+                }
             }
         }
     }

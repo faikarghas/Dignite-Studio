@@ -14,7 +14,7 @@ const footer = props => {
                             {/* <li><a href="" target="_blank"><img src='https://api.dignitestudio.com/images/image/SocialIcon/Facebook.png' alt="icon-fb"/></a></li> */}
                             <li><a href="https://www.instagram.com/dignitestudio/?hl=en" target="_blank"><img src='https://api.dignitestudio.com/images/image/SocialIcon/Instagram.png' alt="icon-ig"/></a></li>
                             {/* <li><a href="" target="_blank"><img src='https://api.dignitestudio.com/images/image/SocialIcon/LinkedIn.png' alt="icon-lk"/></a></li> */}
-                            <li><a href="https://api.whatsapp.com/send?phone=6281316100044&text=Hai%20aku%20ingin%20bertanya" target="_blank"><img src='https://api.dignitestudio.com/images/image/SocialIcon/Whatsapp.png' alt="icon-wa"/></a></li>
+                            <li><a href="https://api.whatsapp.com/send?phone=6281316100044&text=Halo Dignite, saya ingin bertanya mengenai pembuatan website/desain/digital marketing." target="_blank"><img src='https://api.dignitestudio.com/images/image/SocialIcon/Whatsapp.png' alt="icon-wa"/></a></li>
                         </ul>
                     </Col>
                     <Col xs={6}>
