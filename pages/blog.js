@@ -4,8 +4,9 @@ import Router from 'next/router'
 import parse from 'html-react-parser'
 import Pagination from "react-js-pagination";
 import fetch from 'isomorphic-unfetch'
-import {convertMonth} from '../lib/date'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
+import {convertMonth} from '../lib/date'
 import Layout from '../components/layouts'
 import LayoutBlog from '../components/layouts-blog'
 
@@ -66,7 +67,13 @@ class Blog extends React.Component {
                                             </section>
                                         </Col>
                                         <Col xs={{span:12,order:1}} md={{span:4,order:2}} className="img-blog">
-                                            <img src={`https://api.dignitestudio.com/images/image/artikel/${item.imgThumbnail}.jpg`} alt="gambar artikel" width="100%" height="100%"/>
+                                            <LazyLoadImage
+                                                alt={'gambar artikel'}
+                                                src={`https://api.dignitestudio.com/images/image/artikel/${item.imgThumbnail}.jpg`}
+                                                effect="blur"
+                                                width={'100%'} 
+                                                height={"100%"}
+                                            />
                                         </Col>
                                     </Row>
                                 </section>
