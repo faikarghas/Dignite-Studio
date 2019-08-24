@@ -199,7 +199,7 @@
     p{
         @include respond(phone){
             line-height: 40px;
-            font-size: 20px;
+            font-size: 15px;
         }
         color: white !important;
     }
@@ -226,7 +226,9 @@
                     margin-left: 2rem;
                     p{
                         margin-bottom: 0;
-                        font-size: 4.5rem;
+                        @include respond(phone){
+                            font-size: 19px;
+                        }
                     }
                 }
             }
