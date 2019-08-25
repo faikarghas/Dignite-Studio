@@ -16,6 +16,7 @@ class BlogDetail extends React.Component {
         const {slug} = ctx.query
         const res = await fetch(`https://api.dignitestudio.com/api/blogDetail/${slug}`)
         const dataBlog = await res.json()
+        console.log(dataBlog);
         const resCat = await fetch(`https://api.dignitestudio.com/api/blogCategory/${dataBlog[0].category}`)
         const dataCategory = await resCat.json()
         return {dataBlog,dataCategory}
@@ -52,7 +53,17 @@ class BlogDetail extends React.Component {
             centerPadding: "60px",
             slidesToShow: 1,
             speed: 500,
-            variableWidth: true
+            variableWidth: true,
+            responsive: [
+                {
+                  breakpoint: 600,
+                  settings: {
+                    slidesToShow: 1,
+                    variableWidth: false,
+                    centerPadding: "30px",
+                  }
+                },
+              ]
         };
 
         return (
