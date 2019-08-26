@@ -39,7 +39,6 @@ class Project extends React.Component {
             this.setState({
                 slug:this.props.slug
             })
-            // window.location.reload();
         }
     }
 
@@ -54,6 +53,7 @@ class Project extends React.Component {
 
     render(){
         const {trans} = this.state
+
         var settings = {
             dots: true,
             infinite: true,
