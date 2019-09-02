@@ -17,6 +17,8 @@ export default class MyDocument extends Document {
                     {/* OPEN GRAP */}
                     <meta name="description" content="We craft experiences for your digital needs."/>
                     <meta name="author" content="DIGNITE STUDIO"/>
+                    <meta name="copyright" content="DIGNITE STUDIO" />
+                    <meta name="creator" content="DIGNITE STUDIO" /> 
                     {/* favicon */}
                     <link rel="shortcut icon" href="../static/image/logofavicon.ico" type="image/x-icon"/>
                     <link rel="icon" href="../static/favicon.ico" type="image/x-icon"></link>
@@ -40,6 +42,19 @@ export default class MyDocument extends Document {
                     <Main />
                     <NextScript />
                 </body>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(
+                        {
+                            "@context" : "http://schema.org",
+                            "@type" : "LocalBusiness",
+                            "name" : "Dignite Studio",
+                            "image" : "https://api.dignitestudio.com/images/image/logo.png",
+                            "telephone" : "62813 1610 0044",
+                            "email" : "hello@dignitestudio.com"
+                        }
+                    ) }}
+                />;
             </html>
         )
     }
