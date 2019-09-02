@@ -10,15 +10,8 @@ import * as Scroll from 'react-scroll';
 import Layout from '../../components/layouts'
 import data from '../../lib/copywriting/data.js'
 
-import '../../node_modules/video-react/styles/scss/video-react.scss'
+import 'video-react/styles/scss/video-react.scss'
 
-const ScrollToTop = (props) => {
-    return (
-        <Scroll.Link className="toTop" activeClass="active" to="top" duration={500} smooth={true} spy={true}>
-            <img src="../../static/image/totop.png" width="45%" height="45%" />
-        </Scroll.Link>
-    )
-}
 
 class Project extends React.Component {
 
@@ -172,7 +165,7 @@ class Project extends React.Component {
                                     <a style={{display:'flex',alignItems:'center'}}  className="toOtherProject">
                                         <ul>
                                             <li><p>{nextProjectName}</p></li>
-                                            <li><img src="../static/image/right-arrow.png" width="20px" height="100%"/></li>
+                                            <li><img src="https://api.dignitestudio.com/images/image/right-arrow.png" width="20px" height="100%"/></li>
                                         </ul>
                                     </a>
                                 </Link>
@@ -180,7 +173,9 @@ class Project extends React.Component {
                         </Row>
                     </Container>
                 </section>
-                <ScrollToTop />
+                <Scroll.Link className="toTop" activeClass="active" to="top" duration={500} smooth={true} spy={true}>
+                    <img src="https://api.dignitestudio.com/images/image/totop.png" width="45%" height="45%" />
+                </Scroll.Link>
             </Layout>
         )
     }
