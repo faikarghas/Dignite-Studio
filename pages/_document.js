@@ -47,7 +47,7 @@ export default class MyDocument extends Document {
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(
                         {
                             "@context" : "http://schema.org",
-                            "@type" : "LocalBusiness",
+                            "@type" : "Organization",
                             "name" : "Dignite Studio",
                             "image" : "https://api.dignitestudio.com/images/image/logo.png",
                             "telephone" : "62813 1610 0044",
