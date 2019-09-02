@@ -4,7 +4,7 @@ import Slider from "react-slick";
 // import { Player, BigPlayButton } from 'video-react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Container,Row,Col } from 'react-bootstrap';
-// import * as Scroll from 'react-scroll';
+import * as Scroll from 'react-scroll';
 
 import Layout from '../../components/layouts'
 import data from '../../lib/copywriting/data.js'
@@ -171,9 +171,9 @@ class Project extends React.Component {
                         </Row>
                     </Container>
                 </section>
-                {/* <Scroll.Link className="toTop" activeClass="active" to="top" duration={500} smooth={true} spy={true}>
+                <Scroll.Link className="toTop" activeClass="active" to="top" duration={500} smooth={true} spy={true}>
                     <img src="https://api.dignitestudio.com/images/image/totop.png" width="45%" height="45%" />
-                </Scroll.Link> */}
+                </Scroll.Link>
             </Layout>
         )
     }
