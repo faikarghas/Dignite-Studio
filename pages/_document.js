@@ -51,7 +51,12 @@ export default class MyDocument extends Document {
                             "name" : "Dignite Studio",
                             "image" : "https://api.dignitestudio.com/images/image/logo.png",
                             "telephone" : "62813 1610 0044",
-                            "email" : "hello@dignitestudio.com"
+                            "email" : "hello@dignitestudio.com",
+                            "address" : {
+                                "@type" : "PostalAddress",
+                                "addressLocality" : "Tangerang Selatan",
+                                "addressCountry" : "Indonesia"
+                            }
                         }
                     ) }}
                 />;
