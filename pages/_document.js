@@ -16,6 +16,7 @@ export default class MyDocument extends Document {
 
                     {/* OPEN GRAP */}
                     <meta name="description" content="We craft experiences for your digital needs."/>
+                    <meta name="og:description" content="We craft experiences for your digital needs."/>
                     <meta name="author" content="DIGNITE STUDIO"/>
                     <meta name="copyright" content="DIGNITE STUDIO" />
                     <meta name="creator" content="DIGNITE STUDIO" /> 

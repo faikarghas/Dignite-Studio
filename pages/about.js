@@ -81,13 +81,13 @@ const about = () => {
                                         {/* <p style={{fontSize:'1.5rem'}}>UI/UX Designer & Digital Marketing</p> */}
                                     </div>
                                 </Col>
-                                {/* <Col className="box-photo p-0" xs={5}>
+                                <Col className="box-photo p-0" xs={5}>
                                     <img src="../static/image/egi.jpg" alt="photo"/>
                                     <div className="overlay-yellow">
                                         <p>Egi Muharram</p>
-                                        <p style={{fontSize:'1.5rem'}}>Graphic Designer</p>
+                                        {/* <p style={{fontSize:'1.5rem'}}>Graphic Designer</p> */}
                                     </div>
-                                </Col> */}
+                                </Col>
                             </Row>
                         </Col>
                     </Row>
