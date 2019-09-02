@@ -43,7 +43,7 @@ const about = () => {
                                 <li>UI/UX Design</li>
                                 <li>Graphic Design</li>
                                 <li>Web Development</li>
-                                <li>Digital Marketing</li>
+                                {/* <li>Digital Marketing</li> */}
                             </ul>
                         </Col>
                     </Row>
