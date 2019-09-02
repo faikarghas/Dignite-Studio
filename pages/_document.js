@@ -46,17 +46,15 @@ export default class MyDocument extends Document {
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(
                         {
-                            "@context" : "http://schema.org",
-                            "@type" : "Organization",
-                            "name" : "Dignite Studio",
-                            "image" : "https://api.dignitestudio.com/images/image/logo.png",
-                            "telephone" : "62813 1610 0044",
-                            "email" : "hello@dignitestudio.com",
-                            "address" : {
-                                "@type" : "PostalAddress",
-                                "addressLocality" : "Tangerang Selatan",
-                                "addressCountry" : "Indonesia"
-                            }
+                            "@context": "https://schema.org",
+                            "@type": "Organization",
+                            "url": "http://www.dignitestudio.com",
+                            "contactPoint": [
+                              { "@type": "ContactPoint",
+                                "telephone" : "+62 813 1610 0044",
+                                "contactType": "customer service"
+                              }
+                            ]
                         }
                     ) }}
                 />;
