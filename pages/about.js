@@ -82,7 +82,12 @@ const about = () => {
                                     </div>
                                 </Col>
                                 <Col className="box-photo p-0" xs={5}>
-                                    <img src="../static/image/egi.jpg" alt="photo"/>
+                                    <LazyLoadImage
+                                        alt={'photoegi'}
+                                        src={"../static/image/egi.jpg"}
+                                        effect="blur"
+                                        width={'100%'} 
+                                    />
                                     <div className="overlay-yellow">
                                         <p>Egi Muharram</p>
                                         {/* <p style={{fontSize:'1.5rem'}}>Graphic Designer</p> */}
