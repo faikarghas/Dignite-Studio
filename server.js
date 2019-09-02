@@ -11,12 +11,20 @@ const app       = next({dev});
 const handle    = app.getRequestHandler();
 
 
+const sitemapOptions = {
+    root: __dirname + '/static/sitemap/',
+    headers: {
+        'Content-Type': 'text/xml;charset=UTF-8'
+    }
+};
+
 app.prepare()
 .then(()=>{
     const server = express()
     server.use(compression());
     server.use(cookieParser());
     if( process.env.NODE_ENV === 'production' ) server.use(enforce.HTTPS({ trustProtoHeader: true }))
+
 
     server.get('/blog/page/:page', (req, res) => {
         const actualPage = '/blogPage'
@@ -66,6 +74,8 @@ app.prepare()
         const queryParams = { slug: req.params.slug }
         app.render(req, res, actualPage, queryParams)
     })
+
+    server.get('/sitemap.xml', (req, res) => res.status(200).sendFile('sitemap.xml', sitemapOptions));
 
     server.get('*', (req, res) => {
         return handle(req, res)
