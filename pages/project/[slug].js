@@ -1,16 +1,15 @@
 import React from 'react'
 import Link from 'next/link'
-import {Router,withRouter} from 'next/router'
 import Slider from "react-slick";
-import { Player, BigPlayButton } from 'video-react';
+// import { Player, BigPlayButton } from 'video-react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Container,Row,Col } from 'react-bootstrap';
-import * as Scroll from 'react-scroll';
+// import * as Scroll from 'react-scroll';
 
 import Layout from '../../components/layouts'
 import data from '../../lib/copywriting/data.js'
 
-import 'video-react/styles/scss/video-react.scss'
+// import 'video-react/styles/scss/video-react.scss'
 
 
 class Project extends React.Component {
@@ -108,7 +107,6 @@ class Project extends React.Component {
                     src={data[0].landingImg}
                     effect="blur"
                     width={'100%'} />
-                    {/* <img  src={data[0].landingImg} width="100%" alt="project-img"/> */}
                 </section>
                 <section className="section_third-project text-center">
                     <h2>Challenge</h2>
@@ -173,9 +171,9 @@ class Project extends React.Component {
                         </Row>
                     </Container>
                 </section>
-                <Scroll.Link className="toTop" activeClass="active" to="top" duration={500} smooth={true} spy={true}>
+                {/* <Scroll.Link className="toTop" activeClass="active" to="top" duration={500} smooth={true} spy={true}>
                     <img src="https://api.dignitestudio.com/images/image/totop.png" width="45%" height="45%" />
-                </Scroll.Link>
+                </Scroll.Link> */}
             </Layout>
         )
     }
