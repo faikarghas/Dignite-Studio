@@ -60,25 +60,25 @@ const about = () => {
                                 <Col className="box-photo p-0" xs={5}>
                                     <LazyLoadImage
                                         alt={'photofaikar'}
-                                        src={"../static/image/Faikar.jpg"}
+                                        src={"https://api.dignitestudio.com/images/image/Faikar.jpg"}
                                         effect="blur"
                                         width={'100%'} 
                                     />
                                     <div className="overlay-yellow">
                                         <p>Faikar Ghassan</p>
-                                        <p style={{fontSize:'1.5rem'}}>Full-Stack Developer</p>
+                                        {/* <p style={{fontSize:'1.5rem'}}>Full-Stack Developer</p> */}
                                     </div>
                                 </Col>
                                 <Col className="box-photo p-0" xs={5}>
                                     <LazyLoadImage
                                         alt={'phototasya'}
-                                        src={"../static/image/Tasya.jpg"}
+                                        src={"https://api.dignitestudio.com/images/image/Tasya.jpg"}
                                         effect="blur"
                                         width={'100%'} 
                                     />
                                     <div className="overlay-yellow">
                                         <p>Mayesta Arientasya</p>
-                                        <p style={{fontSize:'1.5rem'}}>UI/UX Designer & Digital Marketing</p>
+                                        {/* <p style={{fontSize:'1.5rem'}}>UI/UX Designer & Digital Marketing</p> */}
                                     </div>
                                 </Col>
                                 {/* <Col className="box-photo p-0" xs={5}>

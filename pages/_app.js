@@ -3,6 +3,7 @@ import React from 'react';
 import Router from 'next/router';
 import NProgress from 'nprogress'
 
+
 // NProgress
 Router.events.on('routeChangeStart', url => {
   console.log(`Loading: ${url}`)

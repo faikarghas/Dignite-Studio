@@ -5,7 +5,7 @@
     width: 100%;
     height:100%;
     transform: translateX(100%);
-    transition: all .5s ease-out;
+    transition: all .35s ease-in;
     .header_menu{padding: 4rem;}
     ul{
         list-style: none;
@@ -30,19 +30,19 @@
     z-index: 2;
 }
 .contents{
-    transition: all .7s ease-out;
+    transition: all .35s ease-in;
     overflow: hidden;
     background-color: white;
     position: relative;
 }
 
 .closeContent{
-    transform: translatex(-110%);
+    transform: translatex(-100%);
 }
 
 
 .overlay{
-    transition: all .7s ease-out
+    transition: all .35s ease-in;
 }
 
 .overlaymenu{

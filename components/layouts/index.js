@@ -7,8 +7,8 @@ import Footer from '../layouts/footer'
 
 import { initGA, logPageView, modalView, logEvent } from '../../lib/analytics'
 
+// Style
 import '../../sass/main.scss'
-import '../../node_modules/video-react/styles/scss/video-react.scss'
 
 class Layout extends React.Component{
   state={

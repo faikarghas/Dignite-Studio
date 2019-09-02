@@ -214,7 +214,13 @@
         }
         &:hover{
             text-decoration: none;
-            color: #222222 !important;
+            ul{
+                li{
+                    p{
+                        color: #222222 !important;
+                    }
+                }
+            }
         }
         ul{
             list-style: none;
