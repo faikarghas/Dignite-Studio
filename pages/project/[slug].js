@@ -25,7 +25,8 @@ class Project extends React.Component {
         trans : 0,
         data: this.props.res,
         slug: this.props.slug,
-        fullImg:  this.props.res
+        fullImg:  this.props.res,
+        imgToTop: 'https://api.dignitestudio.com/images/image/totopw.png'
     }
 
     componentDidMount(){
@@ -51,6 +52,18 @@ class Project extends React.Component {
                 trans : valueScroll / 7,
             })
         }
+    }
+
+    enter = () => {
+        this.setState({
+            imgToTop: 'https://api.dignitestudio.com/images/image/totop.png'
+        })
+    }
+
+    leave = () => {
+        this.setState({
+            imgToTop: 'https://api.dignitestudio.com/images/image/totopw.png'
+        })
     }
 
     render(){
@@ -171,8 +184,8 @@ class Project extends React.Component {
                         </Row>
                     </Container>
                 </section>
-                <Scroll.Link className="toTop" activeClass="active" to="top" duration={500} smooth={true} spy={true}>
-                    <img src="https://api.dignitestudio.com/images/image/totop.png" width="45%" height="45%" />
+                <Scroll.Link className="toTop" activeClass="active" to="top" duration={500} smooth={true} spy={true} onMouseEnter={this.enter} onMouseLeave={this.leave}>
+                    <img src={this.state.imgToTop} width="45%" height="45%" />
                 </Scroll.Link>
             </Layout>
         )
