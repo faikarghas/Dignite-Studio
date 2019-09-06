@@ -40,7 +40,7 @@ class Index extends React.Component{
                 <section className="section_second-home width100 homeku">
                     <Container className="box_allprojects" style={{WebkitTransform:`translate(-50%,${-trans}px)`,msTransform:`translate(-50%,${-trans}px)`,transform:`translate(-50%,${-trans}px)`}}>
                         <Row>
-                        {/* {data.home.Project.map(item=>{
+                        {data.home.Project.map(item=>{
                             return (
                                 <Link href="/project/[slug]" as={`/project/${item.slug}`} key={item.id}>
                                     <Col className="box1 p-0" xs={4} key={item.id}>
@@ -58,7 +58,7 @@ class Index extends React.Component{
                                     </Col>
                                 </Link>
                             )
-                        })} */}
+                        })}
                         </Row>
                         <Link  href="/work">
                             <div className="view_allpr">
