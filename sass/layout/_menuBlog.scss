@@ -1,7 +1,12 @@
 .menu_blog{
-    // margin-bottom: 4rem;
     background-color: white;
     position: relative;
+    @include respond(phone){
+        padding: 0 4rem;
+        .container{
+            padding: 0;
+        }
+    }
     ul{
         list-style: none;
         width: 100%;

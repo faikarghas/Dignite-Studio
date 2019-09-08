@@ -70,12 +70,12 @@ class BlogCategoryDetail extends React.Component {
                             <Col xs={12} md={9} className="content">
                                 <h1>{data.title}</h1>
                                 {parse(data.content)}
-                                <div className="ads">
+                                {/* <div className="ads">
                                     <h2>Boosting Your Sales Like Never Before</h2>
                                     <p>Turn your followers into potential customers by creating growth and building online <br/> community.</p>
                                     <br/>
                                     <Link href="/about"><a>Let's go <img src="https://api.dignitestudio.com/images/image/right-arrow.svg" width="20px" alt="icon next" /></a></Link>
-                                </div>
+                                </div> */}
                             </Col>
                         </Row>
                     </Container>

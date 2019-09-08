@@ -5,6 +5,9 @@ header{
         padding: 4rem;
         background-color: white;
         position: relative;
+         @include respond(phone){
+            // padding: 4rem 2rem;
+         }
         ul{
             display: flex;
             flex-direction: row;

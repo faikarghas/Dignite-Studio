@@ -3,6 +3,9 @@
     text-align: center;
     position: relative;
     background-color: white;
+    @include respond (phone){
+        padding: 10rem 4rem;
+    }
     h1{
         font-family: "Brandon-grotesque-black";
         font-size: 4.5rem;
@@ -19,21 +22,29 @@
             margin-right: 1rem;
         }
     }
-   
+
     &__box{
         padding: 4rem 0;
         border-bottom: 1px solid rgb(236, 238, 241);
         cursor: pointer;
         &-p{
             h2{
-                font-size: 4rem;
+                font-size: 3rem;
                 font-family: "Brandon-grotesque-black";
             }
             p{
                 text-align: justify;
             }
         }
+        .content-blog{
+            @include respond(phone){
+                padding: 0 4rem;
+            }
+        }
         .img-blog{
+            @include respond(phone){
+                padding: 0;
+            }
             img{
                 object-fit: contain;
             }

@@ -56,12 +56,16 @@
             margin-top: 10rem;
             text-align: center;
             a{
+                color: white;
                 font-size: 3rem;
                 display: inline-block;
                 margin: 0;
                 padding-bottom: 1rem;
                 border-bottom: 2px solid white;
                 cursor: pointer;
+                &:hover{
+                    text-decoration: none;
+                }
             }
         }
     }

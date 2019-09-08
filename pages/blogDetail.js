@@ -16,7 +16,6 @@ class BlogDetail extends React.Component {
         const {slug} = ctx.query
         const res = await fetch(`https://api.dignitestudio.com/api/blogDetail/${slug}`)
         const dataBlog = await res.json()
-        console.log(dataBlog);
         const resCat = await fetch(`https://api.dignitestudio.com/api/blogCategory/${dataBlog[0].category}`)
         const dataCategory = await resCat.json()
         return {dataBlog,dataCategory}
@@ -83,12 +82,12 @@ class BlogDetail extends React.Component {
                             <Col xs={12} md={9} className="content">
                                 <h1>{data.title}</h1>
                                 {parse(data.content)}
-                                <div className="ads">
+                                {/* <div className="ads">
                                     <h2>Boosting Your Sales Like Never Before</h2>
                                     <p>Turn your followers into potential customers by creating growth and building online <br/> community.</p>
                                     <br/>
                                     <Link href="/about"><a>Let's go <img src="https://api.dignitestudio.com/images/image/right-arrow.svg" width="20px" alt="icon next" /></a></Link>
-                                </div>
+                                </div> */}
                             </Col>
                         </Row>
                     </Container>

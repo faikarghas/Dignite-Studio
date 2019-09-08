@@ -2,25 +2,37 @@
     padding: 10rem 0 10rem 0;
     position: relative;
     background-color: white;
+    @include respond(phone){
+        padding: 10rem 4rem;
+    }
     .info{
         h4{
             color: #ffba00;
             font-size: 2rem;
             font-weight: bold;
         }
+        @include respond(phone){
+            padding: 0;
+        }
     }
     .content{
+        @include respond(phone){
+            padding: 0;
+        }
         h1{
             font-size: 4rem;
-            font-family: "Brandon-grotesque-medium" !important;
+            font-family: "Brandon-grotesque-black" !important;
             margin-bottom: 6rem;
         }
         p{
             text-align: justify;
             a{
                 font-size: 2.1rem !important;
-                color: rgb(94, 135, 246);
+                color: #222;
+                border-bottom: 2px solid #222;
+                cursor: pointer;
                 text-decoration: none;
+                
                 @include respond(phone){
                     font-size: 18px !important;
                 }
@@ -62,6 +74,7 @@
 
 .section_third{
     &-slider{
+        margin-top: 4rem;
         h2{
             font-size: 3.5rem;
             font-family: "Brandon-grotesque-black";

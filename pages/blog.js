@@ -55,7 +55,7 @@ class Blog extends React.Component {
                             <Link href={`/blogDetail?slug=${item.slug}`} as={`/blog/${item.slug}`} key={item.idblog}>
                                 <section className="blog_contents__box" >
                                     <Row>
-                                        <Col xs={{span:12,order:2}} md={{span:8,order:1}} >
+                                        <Col xs={{span:12,order:2}} md={{span:8,order:1}} className="content-blog">
                                             <section className="blog_contents__box-p">
                                                 <ul className="featured">
                                                     <li>FEATURED :</li>

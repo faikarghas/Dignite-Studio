@@ -60,11 +60,13 @@ class Index extends React.Component{
                             )
                         })}
                         </Row>
-                        <Link  href="/work">
-                            <div className="view_allpr">
-                                <a className="pr-4 pl-4">View all our projects</a>
-                            </div>
-                        </Link>
+                        <div className="view_allpr">
+                            <Link  href="/work">
+                                <a>
+                                    View all our projects
+                                </a>
+                            </Link>
+                        </div>
                     </Container>
                 </section>
             </Layout>
