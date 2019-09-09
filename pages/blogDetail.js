@@ -43,9 +43,6 @@ class BlogDetail extends React.Component {
         let valueScroll = window.scrollY
         const height = this.divElement.clientHeight;
         const widthWindow = window.innerWidth;
-        console.log(height,'h');
-        console.log(valueScroll,'v');
-        console.log(widthWindow,'ww');
         if(valueScroll > 200 && valueScroll < height  && widthWindow >= 890){
             this.setState({
                 show:'show'
@@ -100,12 +97,6 @@ class BlogDetail extends React.Component {
                             <Col xs={12} md={8} xl={7} className="content"  ref={ (divElement) => this.divElement = divElement}>
                                 <h1>{data.title}</h1>
                                 {parse(data.content)}
-                                {/* <div className="ads">
-                                    <h2>Boosting Your Sales Like Never Before</h2>
-                                    <p>Turn your followers into potential customers by creating growth and building online <br/> community.</p>
-                                    <br/>
-                                    <Link href="/about"><a>Let's go <img src="https://api.dignitestudio.com/images/image/right-arrow.svg" width="20px" alt="icon next" /></a></Link>
-                                </div> */}
                                 <div className={`info ${show}`}>
                                     <h4 className="mb-4">{data.category}</h4>
                                     <p>{tMonth} {date}, {year}</p>
@@ -122,27 +113,15 @@ class BlogDetail extends React.Component {
                         </Row>
                     </Container>
                 </section>
-                {/* <section className="section_second-comment">
-                    <Container>
-                        <Row>
-                            <Col>
-                                <div className="commentbox" id="contoh2"/>
-                            </Col>
-                        </Row>
-                    </Container>
-                </section> */}
                 <section className="section_third-slider">
                     <Container>
                         <Row>
-                            <Col className="text-center">
+                            <Col md={12} className="text-center">
                                 <h2>Keep Inspired</h2>
                             </Col>
-                        </Row>
-                        <Row>
-                            <Col>
-                            <Slider {...settings}>
-                                {allDataCategory.map(item => {
-                                    return (
+                            {allDataCategory.map(item => {
+                                return (
+                                    <Col xs={12} md={4} className="xs-p-0 mb-5" key={item.idblog}>
                                         <div className="box">
                                             <div className="box-img">
                                                 <img src={`https://api.dignitestudio.com/images/image/artikel/${item.imgThumbnail}.jpg`} width="100%"></img>
@@ -152,10 +131,9 @@ class BlogDetail extends React.Component {
                                             </Link>
                                             <p className="category">{item.category}</p>
                                         </div>
-                                    )
-                                })}
-                            </Slider>
-                            </Col>
+                                    </Col>
+                                )
+                            })}
                         </Row>
                     </Container>
                 </section>
