@@ -42,9 +42,11 @@ class BlogDetail extends React.Component {
     handleScroll = ()=> {
         let valueScroll = window.scrollY
         const height = this.divElement.clientHeight;
+        const widthWindow = window.innerWidth;
         console.log(height,'h');
         console.log(valueScroll,'v');
-        if(valueScroll > 200 && valueScroll < height - 250){
+        console.log(widthWindow,'ww');
+        if(valueScroll > 200 && valueScroll < height  && widthWindow >= 890){
             this.setState({
                 show:'show'
             })
@@ -52,7 +54,7 @@ class BlogDetail extends React.Component {
             this.setState({
                 show:''
             })
-        } else {
+        } else if (valueScroll < 199){
             this.setState({
                 show:''
             })
@@ -95,7 +97,7 @@ class BlogDetail extends React.Component {
                 <section className="section_first-blogDetail">
                     <Container>
                         <Row className="justify-content-center">
-                            <Col xs={12} md={7} xl={7} className="content"  ref={ (divElement) => this.divElement = divElement}>
+                            <Col xs={12} md={8} xl={7} className="content"  ref={ (divElement) => this.divElement = divElement}>
                                 <h1>{data.title}</h1>
                                 {parse(data.content)}
                                 {/* <div className="ads">
@@ -114,7 +116,7 @@ class BlogDetail extends React.Component {
                                     <br/>
                                 </div>
                             </Col>
-                            <Col xs={12} md={7} xl={7} className="mt-5">
+                            <Col xs={12} md={8} xl={7} className="mt-5">
                                 <div className="commentbox" id="contoh2"/>
                             </Col>
                         </Row>
