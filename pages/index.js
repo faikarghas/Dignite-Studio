@@ -24,7 +24,6 @@ class Index extends React.Component{
                 trans : valueScroll / 7,
             })
         }
-
     }
     render(){
         const {trans} = this.state

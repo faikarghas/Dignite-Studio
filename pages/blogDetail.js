@@ -22,10 +22,12 @@ class BlogDetail extends React.Component {
     }
 
     state = {
-        url : ''
+        url : '',
+        show: ''
     }
 
     componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll);
         this.removeCommentBox = commentBox('5644854293954560-proj',{});
         this.setState({
             url: window.location.href
@@ -34,9 +36,30 @@ class BlogDetail extends React.Component {
 
     componentWillUnmount() {
         this.removeCommentBox();
+        window.removeEventListener('scroll', this.handleScroll);
+    }
+    
+    handleScroll = ()=> {
+        let valueScroll = window.scrollY
+        console.log(valueScroll);
+        if(valueScroll > 300 && valueScroll < 2499){
+            this.setState({
+                show:'show'
+            })
+        } else if( valueScroll > 2500){
+            this.setState({
+                show:''
+            })
+        } else {
+            this.setState({
+                show:''
+            })
+        }
     }
 
     render(){
+        const {show} = this.state
+
         let data = this.props.dataBlog[0]
         let allDataCategory = this.props.dataCategory
         let month = new Date(data.created_at).getMonth() + 1
@@ -79,7 +102,7 @@ class BlogDetail extends React.Component {
                                     <br/>
                                     <Link href="/about"><a>Let's go <img src="https://api.dignitestudio.com/images/image/right-arrow.svg" width="20px" alt="icon next" /></a></Link>
                                 </div> */}
-                                {/* <div className="info">
+                                <div className={`info ${show}`}>
                                     <h4 className="mb-4">{data.category}</h4>
                                     <p>{tMonth} {date}, {year}</p>
                                     <br/>
@@ -87,7 +110,7 @@ class BlogDetail extends React.Component {
                                     <ShareIcon url={url}/>
                                     <br/>
                                     <br/>
-                                </div> */}
+                                </div>
                             </Col>
                         </Row>
                     </Container>

@@ -9,15 +9,30 @@
         position: fixed;
         top: calc(65px + 54px + 40px);
         left: 50%;
-        transform: translateX(-578px);
+        transform: translateX(-561px);
+        visibility: hidden;
+        opacity: 0;
+        transition: .2s all;
         h4{
             color: #ffba00;
             font-size: 2rem;
             font-weight: bold;
         }
+
+        @media screen and (max-width: 992px) {
+            transform: translateX(-396px);
+        }
+        @media screen and (max-width: 890px) {
+            visibility: hidden;
+            opacity: 0;
+        }
         @include respond(phone){
             padding: 0;
         }
+    }
+    .show{
+        visibility: visible;
+        opacity: 1;
     }
     .content{
         @include respond(phone){
