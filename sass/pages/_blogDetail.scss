@@ -7,16 +7,20 @@
     }
     .info{
         position: fixed;
-        top: calc(65px + 54px + 40px);
+        top: calc(65px + 54px );
         left: 50%;
-        transform: translateX(-561px);
+        transform: translateX(-495px);
         visibility: hidden;
         opacity: 0;
-        transition: .2s all;
+        transition: .05s all;
         h4{
             color: #ffba00;
             font-size: 2rem;
             font-weight: bold;
+        }
+
+        @media screen and (min-width: 1400px) {
+            transform: translateX(-500px);
         }
 
         @media screen and (max-width: 992px) {

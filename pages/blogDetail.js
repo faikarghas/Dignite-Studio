@@ -38,15 +38,17 @@ class BlogDetail extends React.Component {
         this.removeCommentBox();
         window.removeEventListener('scroll', this.handleScroll);
     }
-    
+
     handleScroll = ()=> {
         let valueScroll = window.scrollY
-        console.log(valueScroll);
-        if(valueScroll > 300 && valueScroll < 2499){
+        const height = this.divElement.clientHeight;
+        console.log(height,'h');
+        console.log(valueScroll,'v');
+        if(valueScroll > 200 && valueScroll < height - 250){
             this.setState({
                 show:'show'
             })
-        } else if( valueScroll > 2500){
+        } else if( valueScroll > height){
             this.setState({
                 show:''
             })
@@ -63,8 +65,8 @@ class BlogDetail extends React.Component {
         let data = this.props.dataBlog[0]
         let allDataCategory = this.props.dataCategory
         let month = new Date(data.created_at).getMonth() + 1
-        let date = new Date(data.created_at).getDate() 
-        let year = new Date(data.created_at).getFullYear() 
+        let date = new Date(data.created_at).getDate()
+        let year = new Date(data.created_at).getFullYear()
         let tMonth = convertMonth(month)
         let url = this.state.url
 
@@ -93,7 +95,7 @@ class BlogDetail extends React.Component {
                 <section className="section_first-blogDetail">
                     <Container>
                         <Row className="justify-content-center">
-                            <Col xs={12} md={8} className="content">
+                            <Col xs={12} md={7} xl={7} className="content"  ref={ (divElement) => this.divElement = divElement}>
                                 <h1>{data.title}</h1>
                                 {parse(data.content)}
                                 {/* <div className="ads">
@@ -112,10 +114,13 @@ class BlogDetail extends React.Component {
                                     <br/>
                                 </div>
                             </Col>
+                            <Col xs={12} md={7} xl={7} className="mt-5">
+                                <div className="commentbox" id="contoh2"/>
+                            </Col>
                         </Row>
                     </Container>
                 </section>
-                <section className="section_second-comment">
+                {/* <section className="section_second-comment">
                     <Container>
                         <Row>
                             <Col>
@@ -123,7 +128,7 @@ class BlogDetail extends React.Component {
                             </Col>
                         </Row>
                     </Container>
-                </section>
+                </section> */}
                 <section className="section_third-slider">
                     <Container>
                         <Row>
