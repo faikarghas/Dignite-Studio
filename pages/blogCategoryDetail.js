@@ -57,8 +57,8 @@ class BlogCategoryDetail extends React.Component {
             <Layout>
                 <section className="section_first-blogDetail">
                     <Container>
-                        <Row>
-                            <Col xs={12} md={3} className="info">
+                        <Row className="justify-content-center">
+                            {/* <Col xs={12} md={3} className="info">
                                 <h4 className="mb-4">{data.category}</h4>
                                 <p>{tMonth} {date}, {year}</p>
                                 <br/>
@@ -66,8 +66,8 @@ class BlogCategoryDetail extends React.Component {
                                 <ShareIcon url={url}/>
                                 <br/>
                                 <br/>
-                            </Col>
-                            <Col xs={12} md={9} className="content">
+                            </Col> */}
+                            <Col xs={12} md={8} className="content">
                                 <h1>{data.title}</h1>
                                 {parse(data.content)}
                                 {/* <div className="ads">

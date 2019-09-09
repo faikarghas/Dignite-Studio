@@ -6,6 +6,10 @@
         padding: 10rem 4rem;
     }
     .info{
+        position: fixed;
+        top: calc(65px + 54px + 40px);
+        left: 50%;
+        transform: translateX(-578px);
         h4{
             color: #ffba00;
             font-size: 2rem;
@@ -32,7 +36,6 @@
                 border-bottom: 2px solid #222;
                 cursor: pointer;
                 text-decoration: none;
-                
                 @include respond(phone){
                     font-size: 18px !important;
                 }

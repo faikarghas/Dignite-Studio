@@ -81,7 +81,7 @@ const about = () => {
                                         {/* <p style={{fontSize:'1.5rem'}}>UI/UX Designer & Digital Marketing</p> */}
                                     </div>
                                 </Col>
-                                {/* <Col className="box-photo p-0" xs={5}>
+                                <Col className="box-photo p-0" xs={5}>
                                     <LazyLoadImage
                                         alt={'photoegi'}
                                         src={"../static/image/egi.jpg"}
@@ -91,7 +91,7 @@ const about = () => {
                                     <div className="overlay-yellow">
                                         <p>Egi Muharram</p>
                                     </div>
-                                </Col> */}
+                                </Col>
                             </Row>
                         </Col>
                     </Row>
