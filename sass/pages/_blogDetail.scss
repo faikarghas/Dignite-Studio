@@ -5,14 +5,17 @@
     @include respond(phone){
         padding: 10rem 4rem;
     }
+    .mt-cm{
+        margin-top: 8rem;
+    }
     .info{
         position: fixed;
-        top: calc(65px + 54px );
+        top: calc(65px + 84px );
         left: 50%;
         transform: translateX(-495px);
         visibility: hidden;
         opacity: 0;
-        transition: .05s all;
+        transition: opacity 200ms;
         h4{
             color: #ffba00;
             font-size: 2rem;
@@ -25,6 +28,9 @@
             transform: translateX(-500px);
         }
 
+        @media screen and (max-width: 1024px) {
+            transform: translateX(-440px);
+        }
         @media screen and (max-width: 992px) {
             transform: translateX(-396px);
         }

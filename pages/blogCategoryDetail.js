@@ -45,7 +45,7 @@ class BlogCategoryDetail extends React.Component {
             this.setState({
                 show:'show'
             })
-        } else if( valueScroll > height){
+        } else if( valueScroll > height - 200){
             this.setState({
                 show:''
             })

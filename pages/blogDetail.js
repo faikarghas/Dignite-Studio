@@ -42,12 +42,14 @@ class BlogDetail extends React.Component {
     handleScroll = ()=> {
         let valueScroll = window.scrollY
         const height = this.divElement.clientHeight;
+        const height2 = this.divElement.clientHeight - 300;
+
         const widthWindow = window.innerWidth;
-        if(valueScroll > 200 && valueScroll < height  && widthWindow >= 890){
+        if(valueScroll >= 190 && valueScroll <= height  && widthWindow >= 890){
             this.setState({
                 show:'show'
             })
-        } else if( valueScroll > height){
+        } else if( valueScroll >= height2){
             this.setState({
                 show:''
             })
@@ -107,7 +109,7 @@ class BlogDetail extends React.Component {
                                     <br/>
                                 </div>
                             </Col>
-                            <Col xs={12} md={8} xl={7} className="mt-5">
+                            <Col xs={12} md={8} xl={7} className="mt-cm">
                                 <div className="commentbox" id="contoh2"/>
                             </Col>
                         </Row>
