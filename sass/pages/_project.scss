@@ -70,7 +70,7 @@
         height: 45rem;
         object-fit: contain;
         @include respond(phone){
-            height: 30rem;
+            height: 27rem;
             object-fit: cover;
         }
     }
