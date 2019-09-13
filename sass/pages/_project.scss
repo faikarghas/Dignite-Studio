@@ -71,6 +71,7 @@
         object-fit: contain;
         @include respond(phone){
             height: 25rem;
+            object-fit: cover;
         }
     }
     .slick-dots {
