@@ -18,6 +18,7 @@ class BlogDetail extends React.Component {
         const dataBlog = await res.json()
         const resCat = await fetch(`https://api.dignitestudio.com/api/blogCategory/${dataBlog[0].category}`)
         const dataCategory = await resCat.json()
+        console.log(slug)
         return {dataBlog,dataCategory}
     }
 

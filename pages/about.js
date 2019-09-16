@@ -49,7 +49,7 @@ const about = () => {
                     </Row>
                 </Container>
             </section>
-            <section className="section_fourth-about">
+            {/* <section className="section_fourth-about">
                 <Container>
                     <Row>
                         <Col className="box" xs={12} md={6}>
@@ -66,7 +66,7 @@ const about = () => {
                                     />
                                     <div className="overlay-yellow">
                                         <p>Faikar Ghassan</p>
-                                        {/* <p style={{fontSize:'1.5rem'}}>Full-Stack Developer</p> */}
+                                        <p style={{fontSize:'1.5rem'}}>Full-Stack Developer</p>
                                     </div>
                                 </Col>
                                 <Col className="box-photo p-0" xs={5}>
@@ -78,10 +78,10 @@ const about = () => {
                                     />
                                     <div className="overlay-yellow">
                                         <p>Mayesta Arientasya</p>
-                                        {/* <p style={{fontSize:'1.5rem'}}>UI/UX Designer & Digital Marketing</p> */}
+                                        <p style={{fontSize:'1.5rem'}}>UI/UX Designer & Digital Marketing</p>
                                     </div>
                                 </Col>
-                                {/* <Col className="box-photo p-0" xs={5}>
+                                <Col className="box-photo p-0" xs={5}>
                                     <LazyLoadImage
                                         alt={'photoegi'}
                                         src={"../static/image/egi.jpg"}
@@ -91,12 +91,12 @@ const about = () => {
                                     <div className="overlay-yellow">
                                         <p>Egi Muharram</p>
                                     </div>
-                                </Col> */}
+                                </Col>
                             </Row>
                         </Col>
                     </Row>
                 </Container>
-            </section>
+            </section> */}
         </Layout>
     )
 }
