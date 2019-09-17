@@ -11,8 +11,8 @@ const menuLy = props => {
                 </ul>
             </Container>
             <ul>
-                <li><Link href="/about">ABOUT</Link></li>
-                <li><Link href="/work">WORK</Link></li>
+                <li><Link href="/about">ABOUT DIGNITE STUDIO</Link></li>
+                <li><Link href="/work">OUR WORKS</Link></li>
                 <li><a onClick={props.showModal}>HIRE US</a></li>
                 <li><Link href="/blog">BLOG</Link></li>
                 <li><a href="https://dignitestore.herokuapp.com/" target="_blank" rel="noopener">STORE</a></li>
