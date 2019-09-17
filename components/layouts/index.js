@@ -122,7 +122,7 @@ class Layout extends React.Component{
                   </Container>
                   <ul className="list-item">
                     {this.state.listMenu.map((item,i)=>{
-                      if(item.klik === true){
+                      if(item.klik){
                         return(
                           <li key={item.id} ref={div => this.users[i] = div}><a onClick={this.showModal}>HIRE US</a></li>
                         )
@@ -132,7 +132,7 @@ class Layout extends React.Component{
                         )
                       } else {
                         return(
-                          <li key={item.id} ref={div => this.users[i] = div}><Link href="/about"><a>{item.nama}</a></Link></li>
+                          <li key={item.id} ref={div => this.users[i] = div}><Link href={item.link}><a>{item.nama}</a></Link></li>
                         )
                       }
                     })}
