@@ -54,11 +54,10 @@ class Layout extends React.Component{
     const GSAP = require('gsap');
 
     const { TweenMax, TimelineLite, Power4 } = GSAP;
+    TweenMax.to(this.navbar, .4, { right: 0,opacity:1,ease:Power4.easeInOut });
 
-    TweenMax.to(this.navbar, .4, { right: 0 });
-
-    TweenMax.staggerFrom(this.users, .3, { opacity: 0 }, 0.2);
-    TweenMax.staggerTo(this.users, .3, { opacity: 1 }, 0.2);
+    TweenMax.staggerFrom(this.users, .1, { opacity: 0 }, .1);
+    TweenMax.staggerTo(this.users, .1, { opacity: 1 }, .1);
 
   }
 
@@ -66,10 +65,22 @@ class Layout extends React.Component{
     const GSAP = require('gsap');
 
     const { TweenMax, TimelineLite, Power4 } = GSAP;
-    TweenMax.to(this.navbar, 1.5, { right: '-100%' }).delay(.5);
 
-    TweenMax.staggerFrom(this.users, .2, { opacity: 1 }, 0.2);
-    TweenMax.staggerTo(this.users, .2, { opacity: 0 }, 0.2);
+
+      TweenMax.staggerFrom(this.users, .1, { opacity: 1 }, 0.1);
+      TweenMax.staggerTo(this.users, .1, { opacity: 0,ease:Power4.easeInOut }, 0.1,allDone);
+
+      let thisNavbar = this.navbar
+
+      function allDone(){
+        TweenMax.to(thisNavbar, .4, { right: '100%',ease:Power4.easeInOut ,onComplete:done2});
+        console.log('1');
+      }
+
+      function done2() {
+        TweenMax.to(thisNavbar, 0, {css:{opacity:0,right:'-100%'},ease:Power4.easeInOut});
+        console.log('2');
+      }
 
   }
 
@@ -113,15 +124,15 @@ class Layout extends React.Component{
                     {this.state.listMenu.map((item,i)=>{
                       if(item.klik === true){
                         return(
-                          <li ref={div => this.users[i] = div}><a onClick={this.showModal}>HIRE US</a></li>
+                          <li key={item.id} ref={div => this.users[i] = div}><a onClick={this.showModal}>HIRE US</a></li>
                         )
                       } else if (item.linkweb){
                         return (
-                          <li ref={div => this.users[i] = div}><a href="https://dignitestore.herokuapp.com/" target="_blank" rel="noopener">STORE</a></li>
+                          <li key={item.id} ref={div => this.users[i] = div}><a href="https://dignitestore.herokuapp.com/" target="_blank" rel="noopener">STORE</a></li>
                         )
                       } else {
                         return(
-                          <li key={item.id} ref={div => this.users[i] = div}><Link href="/about">{item.nama}</Link></li>
+                          <li key={item.id} ref={div => this.users[i] = div}><Link href="/about"><a>{item.nama}</a></Link></li>
                         )
                       }
                     })}
