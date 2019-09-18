@@ -17,13 +17,9 @@ const headerLy = props => {
             <div className="hd_bg" ref={props.headerRef}></div>
             <Container className="header_menu">
                 <ul>
-                    <li style={{cursor:'pointer'}}>
+                    <li style={{cursor:'pointer'}} ref={props.logoRef}>
                         <Link href="/">
-                            {props.menu ?
-                                <img src='../../static/image/logo-putih.png' width="60px" height="60px" alt="logo-dignite"></img>
-                            :
-                                <img src='../../static/image/logo-hitam.png' width="60px" height="60px" alt="logo-dignite"></img>
-                            }
+                            <img src='../../static/image/logo-hitam.png' width="60px" height="60px" alt="logo-dignite" ></img>
                         </Link>
                     </li>
                     <li onClick={() => menuHandler(props.menu,props.openMenu,props.closeMenu)} style={{cursor:'pointer'}}>
