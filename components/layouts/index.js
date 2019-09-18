@@ -20,10 +20,6 @@ class Layout extends React.Component{
   }
 
   state={
-    activeMenu : '',
-    closeContents: '',
-    activeoverlay:'',
-    overlaymenu:'',
     modal:'',
     listMenu : [
       {id:1,nama:'ABOUT',link:'/about'},
@@ -40,24 +36,21 @@ class Layout extends React.Component{
       window.GA_INITIALIZED = true
     }
     logPageView()
-    const GSAP = require('gsap');
-
-    const { TweenMax, TimelineLite, Power4 } = GSAP;
-
-
-    console.log(
-      this.users
-    );
   }
 
   openMenu = () => {
     const GSAP = require('gsap');
 
-    const { TweenMax, TimelineLite, Power4 } = GSAP;
-    TweenMax.to(this.navbar, .4, { right: 0,opacity:1,ease:Power4.easeInOut });
 
-    TweenMax.staggerFrom(this.users, .1, { opacity: 0 }, .1);
-    TweenMax.staggerTo(this.users, .1, { opacity: 1 }, .1);
+
+    const { TweenMax, TimelineLite, Power4 } = GSAP;
+    TweenMax.to(this.navbar, .3, { right: 0, opacity:1, ease:Power4.easeInOut });
+    // TweenMax.to(this.navbar2, .2, { right: 0, opacity:1, ease:Power4.easeInOut });
+
+    TweenMax.staggerFrom(this.users, .4, { opacity: 0}, .1);
+    TweenMax.staggerTo(this.users, .4, { opacity: 1, ease:Power4.easeInOut }, .1);
+
+    // TweenMax.to(this.users, .1, { opacity: 1,delay: .4,ease:Power4.easeInOut });
 
   }
 
@@ -67,23 +60,22 @@ class Layout extends React.Component{
     const { TweenMax, TimelineLite, Power4 } = GSAP;
 
 
-      TweenMax.staggerFrom(this.users, .1, { opacity: 1 }, 0.1);
-      TweenMax.staggerTo(this.users, .1, { opacity: 0,ease:Power4.easeInOut }, 0.1,allDone);
+      TweenMax.staggerFrom(this.users, .4, { opacity: 1}, 0.1);
+      TweenMax.staggerTo(this.users, .4, { opacity: 0,ease:Power4.easeInOut }, 0.1,allDone);
 
       let thisNavbar = this.navbar
+      let thisNavbar2 = this.navbar2
 
       function allDone(){
         TweenMax.to(thisNavbar, .4, { right: '100%',ease:Power4.easeInOut ,onComplete:done2});
-        console.log('1');
+        // TweenMax.to(thisNavbar2, .4, { right: '100%',ease:Power4.easeInOut ,onComplete:done2});
       }
 
       function done2() {
         TweenMax.to(thisNavbar, 0, {css:{opacity:0,right:'-100%'},ease:Power4.easeInOut});
-        console.log('2');
+        // TweenMax.to(thisNavbar2, 0, {css:{opacity:0,right:'-100%'},ease:Power4.easeInOut});
       }
-
   }
-
 
   showModal = (category,action,label,modalName) => {
     modalView(modalName)
@@ -99,53 +91,42 @@ class Layout extends React.Component{
     })
   }
 
-
-
   render(){
-    const {activeoverlay,modal} = this.state
+    const {modal} = this.state
 
     return(
       <React.Fragment>
         <Head>
           <title>Dignite Studio</title>
         </Head>
-        <div className={`overlay ${activeoverlay}` }></div>
-
-            <div className="menu" ref={nav => this.navbar = nav}>
-                <div>
-                  {/* <Menu closeMenu={this.closeMenu} showModal={this.showModal}/> */}
-
-                  <Container className="header_menu">
-                      <ul style={{textAlign:'right',paddingTop:0}}>
-                          <li className="closemenu p-0" style={{cursor:'pointer',opacity:1}}><img onClick={this.closeMenu} src='https://api.dignitestudio.com/images/image/Icons/Close-Menu.png' width="50px" height="50px" alt="icon-close"/></li>
-                      </ul>
-                  </Container>
-                  <ul className="list-item">
-                    {this.state.listMenu.map((item,i)=>{
-                      if(item.klik){
-                        return(
-                          <li key={item.id} ref={div => this.users[i] = div}><a onClick={this.showModal}>HIRE US</a></li>
-                        )
-                      } else if (item.linkweb){
-                        return (
-                          <li key={item.id} ref={div => this.users[i] = div}><a href="https://dignitestore.herokuapp.com/" target="_blank" rel="noopener">STORE</a></li>
-                        )
-                      } else {
-                        return(
-                          <li key={item.id} ref={div => this.users[i] = div}><Link href={item.link}><a>{item.nama}</a></Link></li>
-                        )
-                      }
-                    })}
-                      {/* <li ref={nav => this.navbar2 = nav}><Link href="/about">ABOUT</Link></li>
-                      <li ref={nav => this.navbar2 = nav}><Link href="/work">WORK</Link></li>
-                      <li ref={nav => this.navbar2 = nav}><a onClick={this.showModal}>HIRE US</a></li>
-                      <li ref={nav => this.navbar2 = nav}><Link href="/blog">BLOG</Link></li>
-                      <li ref={nav => this.navbar2 = nav}><a href="https://dignitestore.herokuapp.com/" target="_blank" rel="noopener">STORE</a></li> */}
-                  </ul>
-                </div>
-            </div>
-
-        {/* <div className={`contents ${closeContents}`}> */}
+        <div className={`overlay` }></div>
+          {/* <div className="menu2" ref={nav => this.navbar2 = nav}></div> */}
+          <div className="menu" ref={nav => this.navbar = nav}>
+              <div>
+                <Container className="header_menu">
+                    <ul style={{textAlign:'right',paddingTop:0}}>
+                        <li className="closemenu p-0" style={{cursor:'pointer',opacity:1}}><img onClick={this.closeMenu} src='https://api.dignitestudio.com/images/image/Icons/Close-Menu.png' width="50px" height="50px" alt="icon-close"/></li>
+                    </ul>
+                </Container>
+                <ul className="list-item">
+                  {this.state.listMenu.map((item,i)=>{
+                    if(item.klik){
+                      return(
+                        <li key={item.id} ref={div => this.users[i] = div}><a onClick={this.showModal}>HIRE US</a></li>
+                      )
+                    } else if (item.linkweb){
+                      return (
+                        <li key={item.id} ref={div => this.users[i] = div}><a href="https://dignitestore.herokuapp.com/" target="_blank" rel="noopener">STORE</a></li>
+                      )
+                    } else {
+                      return(
+                        <li key={item.id} ref={div => this.users[i] = div}><Link href={item.link}><a>{item.nama}</a></Link></li>
+                      )
+                    }
+                  })}
+                </ul>
+              </div>
+          </div>
         <div>
           <Header openMenu={this.openMenu}/>
             {this.props.children}

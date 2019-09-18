@@ -47,7 +47,7 @@ class Index extends React.Component{
                                             alt={'project-img'}
                                             src={item.imgUrl}
                                             effect="blur"
-                                            width={'100%'} 
+                                            width={'100%'}
                                             height={"100%"}
                                         />
                                         <div className="box-hover">
@@ -60,11 +60,7 @@ class Index extends React.Component{
                         })}
                         </Row>
                         <div className="view_allpr">
-                            <Link  href="/work">
-                                <a>
-                                    View all our projects
-                                </a>
-                            </Link>
+                            <Link  href="/work"><a>View all our projects</a></Link>
                         </div>
                     </Container>
                 </section>

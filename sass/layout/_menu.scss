@@ -38,8 +38,15 @@
         width: 100%;
     }
 }
-
-
+.menu2{
+    height: 100%;
+    background-color: #222222;
+    opacity: 1;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    right: -100%;
+}
 .active{
     transform: translateX(0);
     z-index: 2;
