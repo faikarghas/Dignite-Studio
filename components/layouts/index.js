@@ -60,15 +60,16 @@ class Layout extends React.Component{
     })
 
     // menu icon
-    TweenMax.to(this.svgElement1,.5, {fill: "rgb(255,255,255,1)"})
-    TweenMax.to(this.svgElement2,.5, {fill: "rgb(255,255,255,1)"})
-    TweenMax.to(this.svgElement3,.5, {fill: "rgb(255,255,255,1)",rotation: -5})
+    TweenMax.to(this.svgElement1,.2, {fill: "rgb(255,255,255,1)"})
+    TweenMax.to(this.svgElement2,.2, {fill: "rgb(255,255,255,1)"})
+    TweenMax.to(this.svgElement3,.2, {fill: "rgb(255,255,255,1)",rotation: -5})
 
     // menu box
-    TweenMax.to(this.navbar, .5, { right: 0, opacity:1, ease:Power4.easeInOut });
-    TweenMax.staggerFrom(this.users, 1.1, { opacity: 0}, .1);
-    TweenMax.staggerTo(this.users, 1.1, { opacity: 1, ease:Power4.easeInOut }, .1);
-    TweenMax.to(this.headerElement, .5, { right: 0, opacity:1, ease:Power4.easeInOut });
+    TweenMax.to(this.navbar, .4, { right: 0, opacity:1, ease:Power4.easeInOut });
+    TweenMax.to(this.headerElement, .4, { right: 0, opacity:1, ease:Power4.easeInOut });
+
+    TweenMax.staggerFrom(this.users, 1, { opacity: 0}, .1);
+    TweenMax.staggerTo(this.users, 1, { opacity: 1, ease:Power4.easeInOut }, .1);
 
   }
 
@@ -82,9 +83,9 @@ class Layout extends React.Component{
     })
 
     // menu icon
-    TweenMax.to(this.svgElement1,.5, {fill: "rgb(34,34,34,1)",delay:1})
-    TweenMax.to(this.svgElement2,.5, {fill: "rgb(34,34,34,1)",delay:1})
-    TweenMax.to(this.svgElement3,.5, {fill: "rgb(34,34,34,1)",rotation: 0,delay:1})
+    TweenMax.to(this.svgElement1,.2, {fill: "rgb(34,34,34,1)",delay:1})
+    TweenMax.to(this.svgElement2,.2, {fill: "rgb(34,34,34,1)",delay:1})
+    TweenMax.to(this.svgElement3,.2, {fill: "rgb(34,34,34,1)",rotation: 0,delay:1})
 
     TweenMax.staggerFrom(this.users, 1, { opacity: 1}, 0.1);
     TweenMax.staggerTo(this.users, 1, { opacity: 0,ease:Power4.easeInOut }, 0.1,allDone);
