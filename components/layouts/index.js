@@ -40,15 +40,16 @@ class Layout extends React.Component{
 
   openMenu = () => {
     const GSAP = require('gsap');
+    const CustomEase = require('../../lib/CustomEase');
 
-
+    console.log(CustomEase.CustomEase.create());
 
     const { TweenMax, TimelineLite, Power4 } = GSAP;
-    TweenMax.to(this.navbar, .3, { right: 0, opacity:1, ease:Power4.easeInOut });
+    TweenMax.to(this.navbar, .5, { right: 0, opacity:1, ease:Power4.easeInOut });
     // TweenMax.to(this.navbar2, .2, { right: 0, opacity:1, ease:Power4.easeInOut });
 
-    TweenMax.staggerFrom(this.users, .4, { opacity: 0}, .1);
-    TweenMax.staggerTo(this.users, .4, { opacity: 1, ease:Power4.easeInOut }, .1);
+    TweenMax.staggerFrom(this.users, 1.2, { opacity: 0}, .1);
+    TweenMax.staggerTo(this.users, 1.2, { opacity: 1, ease:Power4.easeInOut }, .1);
 
     // TweenMax.to(this.users, .1, { opacity: 1,delay: .4,ease:Power4.easeInOut });
 
@@ -60,14 +61,15 @@ class Layout extends React.Component{
     const { TweenMax, TimelineLite, Power4 } = GSAP;
 
 
-      TweenMax.staggerFrom(this.users, .4, { opacity: 1}, 0.1);
-      TweenMax.staggerTo(this.users, .4, { opacity: 0,ease:Power4.easeInOut }, 0.1,allDone);
+      TweenMax.staggerFrom(this.users, 1, { opacity: 1}, 0.1);
+      TweenMax.staggerTo(this.users, 1, { opacity: 0,ease:Power4.easeInOut }, 0.1,allDone);
+      // TweenMax.to(this.users, .5, { opacity: 0  ,ease:Power4.easeInOut ,onComplete:allDone});
 
       let thisNavbar = this.navbar
       let thisNavbar2 = this.navbar2
 
       function allDone(){
-        TweenMax.to(thisNavbar, .4, { right: '100%',ease:Power4.easeInOut ,onComplete:done2});
+        TweenMax.to(thisNavbar, .8, { right: '100%',ease:Power4.easeInOut ,onComplete:done2});
         // TweenMax.to(thisNavbar2, .4, { right: '100%',ease:Power4.easeInOut ,onComplete:done2});
       }
 
