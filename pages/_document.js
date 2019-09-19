@@ -59,6 +59,7 @@ export default class MyDocument extends Document {
                         }
                     ) }}
                 />;
+                {/* <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/SplitText.min.js?r=28"></script> */}
             </html>
         )
     }

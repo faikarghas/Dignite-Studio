@@ -2,10 +2,18 @@ import { Container,Row,Col } from 'react-bootstrap';
 import Fade from 'react-reveal/Fade';
 import Link from 'next/link'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import SplitText from 'react-pose-text';
 
 import Layout from '../components/layouts'
 import data from '../lib/copywriting/data.js'
 
+const charPoses = {
+    exit: { opacity: 0 },
+    enter: {
+    opacity: 1,
+    delay: ({ charIndex }) => charIndex * 30
+    }
+};
 
 class Index extends React.Component{
     state = {
@@ -27,13 +35,18 @@ class Index extends React.Component{
     }
     render(){
         const {trans} = this.state
+
         return (
             <Layout>
                 <section className="textHeaderHome width100">
                     <Container>
-                        <Fade bottom>
-                            <h1 className="text-center">{data.home.title}</h1>
-                        </Fade>
+                        {/* <Fade bottom> */}
+                            <h1 className="text-center">
+                                <SplitText initialPose="exit" pose="enter" charPoses={charPoses}>
+                                    {data.home.title}
+                                </SplitText>
+                            </h1>
+                        {/* </Fade> */}
                     </Container>
                 </section>
                 <section className="section_second-home width100 homeku">

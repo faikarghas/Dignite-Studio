@@ -59,8 +59,6 @@ class BLayout extends React.Component{
       })
   }
 
-
-
   render(){
     const {activeMenu,closeContents,activeoverlay,overlaymenu,modal} = this.state
     return(
