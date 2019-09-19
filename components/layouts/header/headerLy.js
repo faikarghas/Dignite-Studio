@@ -17,7 +17,7 @@ const headerLy = props => {
             <div className="hd_bg" ref={props.headerRef}></div>
             <Container className="header_menu">
                 <ul>
-                    <li style={{cursor:'pointer'}} ref={props.logoRef}>
+                    <li style={{cursor:'pointer',zIndex:2}}>
                         <Link href="/">
                             <img src='../../static/image/logo-hitam.png' width="60px" height="60px" alt="logo-dignite" ></img>
                         </Link>

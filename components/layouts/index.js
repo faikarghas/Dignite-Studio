@@ -74,9 +74,6 @@ class Layout extends React.Component{
 
     TweenMax.staggerFrom(this.users, 1, { opacity: 0}, .1);
     TweenMax.staggerTo(this.users, 1, { opacity: 1, ease:Power4.easeInOut }, .1);
-
-    TweenMax.from(this.logoElement,.2, {opacity:1})
-    TweenMax.to(this.logoElement,.2, {opacity:0})
   }
 
   closeMenu = () => {
@@ -107,8 +104,6 @@ class Layout extends React.Component{
     }
 
     function done2() {
-      TweenMax.from(logoElement, .1, {opacity:0})
-      TweenMax.to(logoElement, .1, {opacity:1})
       TweenMax.to(thisNavbar, 0, {css:{opacity:0,right:'-100%'},ease:Power4.easeInOut});
       TweenMax.to(headerElement, 0, {css:{opacity:0,right:'-100%'},ease:Power4.easeInOut});
     }
@@ -139,7 +134,6 @@ class Layout extends React.Component{
 
         <div>
           <Header openMenu={this.openMenu} closeMenu={this.closeMenu} menu={menu}
-            logoRef={el => this.logoElement = el}
             headerRef={el => this.headerElement = el}
             svgRef1={el => this.svgElement1 = el}
             svgRef2={el => this.svgElement2 = el}
