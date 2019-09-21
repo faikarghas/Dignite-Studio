@@ -14,13 +14,13 @@ Router.events.on('routeChangeError', () => NProgress.done())
 
 class MyApp extends App {
     // NProgress
-    static async getInitialProps ({ Component, router, ctx }) {
-        let pageProps = {}
-        if (Component.getInitialProps) {
-          pageProps = await Component.getInitialProps(ctx)
-        }
-        return { pageProps }
-    }
+    // static async getInitialProps ({ Component, router, ctx }) {
+    //     let pageProps = {}
+    //     if (Component.getInitialProps) {
+    //       pageProps = await Component.getInitialProps(ctx)
+    //     }
+    //     return { pageProps }
+    // }
 
     // handler refresh back button history
     componentDidMount() {
