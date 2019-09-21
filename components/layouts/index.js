@@ -152,7 +152,7 @@ class Layout extends React.Component{
                 )
               } else if (item.linkweb){
                 return (
-                  <li key={item.id} ref={div => this.users[i] = div}><a href="https://dignitestore.herokuapp.com/" target="_blank" rel="noopener">STORE</a></li>
+                  <li key={item.id} ref={div => this.users[i] = div}><a href="https://store.dignitestudio.com/" target="_blank" rel="noopener">STORE</a></li>
                 )
               } else {
                 return(

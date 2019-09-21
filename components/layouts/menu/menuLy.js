@@ -27,7 +27,7 @@ const menuLy = props => {
                 <li><Link href="/work">OUR WORKS</Link></li>
                 <li><a onClick={props.showModal}>HIRE US</a></li>
                 <li><Link href="/blog">BLOG</Link></li>
-                <li><a href="https://dignitestore.herokuapp.com/" target="_blank" rel="noopener">STORE</a></li>
+                <li><a href="https://store.dignitestudio.com/" target="_blank" rel="noopener">STORE</a></li>
             </ul>
         </React.Fragment>
     )

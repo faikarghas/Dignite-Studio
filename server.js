@@ -2,7 +2,7 @@ const express       = require('express');
 const next          = require('next');
 const compression   = require('compression')
 const cookieParser = require('cookie-parser');
-const enforce = require('express-sslify');
+// const enforce = require('express-sslify');
 
 require('dotenv').config()
 const port      = process.env.PORT || 3013;
@@ -23,7 +23,7 @@ app.prepare()
     const server = express()
     server.use(compression());
     server.use(cookieParser());
-    if( process.env.NODE_ENV === 'production' ) server.use(enforce.HTTPS({ trustProtoHeader: true }))
+    // if( process.env.NODE_ENV === 'production' ) server.use(enforce.HTTPS({ trustProtoHeader: true }))
 
 
     server.get('/blog/page/:page', (req, res) => {
