@@ -219,6 +219,9 @@
                 li{
                     p{
                         color: #222222 !important;
+                        @include respond(phone){
+                            color: white !important;
+                        }
                     }
                 }
             }
