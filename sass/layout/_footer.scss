@@ -55,15 +55,10 @@ footer{
     }
 
     .for-lg-sc{
-        display: flex;
-        justify-content: space-between;
-        @include respond(phone){
-            display: none;
-        }
         li{
             display: inline-block;
             list-style: none;
-            // margin-right: 1.5rem;
+            margin-right: 1.5rem;
             a{
                 font-size: 2rem;
                 &:hover{
@@ -73,22 +68,4 @@ footer{
         }
     }
 
-    .for-sm-sc{
-        display: none;
-        @include respond(phone){
-            display: flex;
-            justify-content: space-between;
-        }
-        li{
-            display: inline-block;
-            list-style: none;
-            // margin-right: 1.5rem;
-            a{
-                font-size: 2rem;
-                &:hover{
-                    color: #222222;
-                }
-            }
-        }
-    }
 }

@@ -27,12 +27,6 @@ const footer = props => {
                         </Row>
                     </Col>
                     <Col xs={5}>
-                        <ul className="mb-5 for-sm-sc">
-                            <li><Link href="/about"><a>About</a></Link></li>
-                            <li><Link href="/work"><a>Work</a></Link></li>
-                            <li><Link href="/blog"><a>Blog</a></Link></li>
-                            <li> <a href="https://store.dignitestudio.com/" target="_blank" rel="noopener">Store</a></li>
-                        </ul>
                         <button className="button_hire" onClick={ () => props.showModal('button','click','hire','modal-hire')}><h2>HIRE US</h2></button>
                     </Col>
                 </Row>
