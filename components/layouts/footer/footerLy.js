@@ -16,7 +16,7 @@ const footer = props => {
                                     <li><Link href="/blog"><a>Blog</a></Link></li>
                                     <li> <a href="https://store.dignitestudio.com/" target="_blank" rel="noopener">Store</a></li>
                                 </ul>
-                                <h2 className="mb-5 get">Get in touch</h2>
+                                {/* <h2 className="mb-5 get">Get in touch</h2> */}
                                 <p>hello@dignitestudio.com</p>
                                 <a href="tel:+6281387831421">(+62) 813 1610 0044</a>
                                 <ul className="mt-5 contact">

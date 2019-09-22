@@ -15,8 +15,8 @@ export default class MyDocument extends Document {
                     <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
 
                     {/* OPEN GRAP */}
-                    <meta name="description" content="We craft experiences for your digital needs."/>
-                    <meta name="og:description" content="We craft experiences for your digital needs."/>
+                    <meta name="description" content="Dignite crafts experiences for your digital needs."/>
+                    <meta name="og:description" content="Dignite crafts experiences for your digital needs."/>
                     <meta name="author" content="DIGNITE STUDIO"/>
                     <meta name="copyright" content="DIGNITE STUDIO" />
                     <meta name="creator" content="DIGNITE STUDIO" /> 
