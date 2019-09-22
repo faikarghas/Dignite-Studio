@@ -15,11 +15,11 @@
     h2{
         margin: 0;
     }
-    @include respond(phone){
-        padding: 2rem 5rem;
+    @include respond(tab-port){
+        padding: 3rem 10rem;
     }
-    @include respond(phone320){
-        height: 6rem;
-        padding: 2rem 3rem;
+    @include respond(phone){
+        padding: 2rem 0;
+        width: 100%;
     }
 }
