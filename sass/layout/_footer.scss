@@ -28,6 +28,9 @@ footer{
     }
     a{
         color: #222222;
+        &:hover{
+            color: #222222;
+        }
         @include respond(phone){
             font-size: 14px;
         }
@@ -53,11 +56,14 @@ footer{
 
     ul{
         li{
-            // display: inline-block;
+            display: inline-block;
             list-style: none;
             margin-right: 1.5rem;
             a{
                 font-size: 2rem;
+                &:hover{
+                    color: #222222;
+                }
             }
         }
     }

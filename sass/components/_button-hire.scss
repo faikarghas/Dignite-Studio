@@ -1,6 +1,5 @@
 .button_hire{
-    width: 30rem;
-    height: 8rem;
+    padding: 3rem 13rem;
     background-color: #FFBA00;
     justify-content: center;
     display: flex;
@@ -17,6 +16,10 @@
         margin: 0;
     }
     @include respond(phone){
-        width: 100%;
+        padding: 2rem 5rem;
+    }
+    @include respond(phone320){
+        height: 6rem;
+        padding: 2rem 3rem;
     }
 }
