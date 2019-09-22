@@ -5,15 +5,15 @@ footer{
     @include respond(phone){
         padding: 10rem 4rem;
     }
+    .col-5{
+        @include respond(phone320){
+            padding-left: 0;
+        }
+    }
     .get{
         font-weight: bold;
         @include respond(phone){
             font-size: 20px;
-        }
-    }
-    h2{
-        @include respond(phone){
-            // font-size: 20px;
         }
     }
     p{
@@ -54,11 +54,35 @@ footer{
         }
     }
 
-    ul{
+    .for-lg-sc{
+        display: flex;
+        justify-content: space-between;
+        @include respond(phone){
+            display: none;
+        }
         li{
             display: inline-block;
             list-style: none;
-            margin-right: 1.5rem;
+            // margin-right: 1.5rem;
+            a{
+                font-size: 2rem;
+                &:hover{
+                    color: #222222;
+                }
+            }
+        }
+    }
+
+    .for-sm-sc{
+        display: none;
+        @include respond(phone){
+            display: flex;
+            justify-content: space-between;
+        }
+        li{
+            display: inline-block;
+            list-style: none;
+            // margin-right: 1.5rem;
             a{
                 font-size: 2rem;
                 &:hover{
