@@ -79,7 +79,7 @@ class BlogCategoryDetail extends React.Component {
 
 
         return (
-            <Layout>
+            <Layout title={'Blog'}>
                 <section className="section_first-blogDetail">
                     <Container>
                         <Row className="justify-content-center">

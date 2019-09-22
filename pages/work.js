@@ -17,7 +17,7 @@ var settings = {
 };
 const work = props => {
     return (
-        <Layout>
+        <Layout title={'Work'}>
             <TextHeader text={data.work.title} />
             <section className="section_second-work">
                 <Container>

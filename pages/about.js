@@ -1,6 +1,7 @@
 import Layout from '../components/layouts'
 import TextHeader from '../components/presentational/textHead'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import Head from 'next/head'
 
 import data from '../lib/copywriting/data.js'
 
@@ -8,7 +9,7 @@ import { Container,Row,Col } from 'react-bootstrap';
 
 const about = () => {
     return (
-        <Layout>
+        <Layout title={'About'}>
             <TextHeader text={data.about.title} />
             <section className="section_second-about width100">
                 <Container>

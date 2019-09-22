@@ -129,7 +129,7 @@ class Layout extends React.Component{
     return(
       <React.Fragment>
         <Head>
-          <title>Dignite Studio</title>
+          <title>Dignite Studio - {`${this.props.title}`}</title>
         </Head>
 
         <div>

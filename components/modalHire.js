@@ -64,8 +64,8 @@ class project extends React.Component{
                 <Container>
                     <Row>
                         <Col xs={5}>
-                            <h1 className="mb-5">Get in touch!</h1>
-                            <h2>Have a project in mind? <br/>Let's talk.</h2>
+                            <h2 className="mb-5">Get in touch!</h2>
+                            <h3>Have a project in mind? <br/>Let's talk.</h3>
                             <br/>
                             <br/>
                             <p>hello@dignitestudio.com</p>

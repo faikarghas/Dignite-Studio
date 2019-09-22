@@ -55,7 +55,7 @@ class Blog extends React.Component {
 
     render(){
         return (
-            <Layout showModal2={this.state.modal} closeModal2={this.closeModal}>
+            <Layout showModal2={this.state.modal} closeModal2={this.closeModal} title={'Search'}>
                 <section className="section_first-search">
                     <Container>
                         <Row>

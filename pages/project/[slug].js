@@ -104,7 +104,7 @@ class Project extends React.Component {
         // ambil nama project sekarang
         const nextProjectName = this.state.data.Project[idnext].title
         return (
-            <Layout>
+            <Layout title={'Project'}>
                 <section className="section_first-project text-center">
                     <h1 className="text-center mb-5">{data[0].title}</h1>
                     <p className="">{data[0].about}</p>
