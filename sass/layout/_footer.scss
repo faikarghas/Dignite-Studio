@@ -6,6 +6,7 @@ footer{
         padding: 10rem 4rem;
     }
     .get{
+        font-weight: bold;
         @include respond(phone){
             font-size: 20px;
         }
@@ -16,6 +17,7 @@ footer{
         }
     }
     p{
+        font-size: 1.6rem;
         margin: 0;
         @include respond(phone){
             font-size: 14px;
@@ -33,7 +35,7 @@ footer{
             font-size: 12px;
         }
     }
-    ul{
+    .contact{
         list-style: none;
         li{
             display: inline-block;
@@ -45,6 +47,17 @@ footer{
                     width: 4.5rem;
                     height: 4.5rem;
                 }
+            }
+        }
+    }
+
+    ul{
+        li{
+            // display: inline-block;
+            list-style: none;
+            margin-right: 1.5rem;
+            a{
+                font-size: 2rem;
             }
         }
     }
