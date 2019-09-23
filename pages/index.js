@@ -38,7 +38,7 @@ class Index extends React.Component{
         const {trans} = this.state
 
         return (
-            <Layout title={'Home'} canonical="">
+            <Layout title={'Home'} canonical="home">
                 <section className="textHeaderHome width100">
                     <Container>
                         {/* <Fade bottom> */}
