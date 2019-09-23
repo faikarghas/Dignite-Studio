@@ -51,7 +51,7 @@ class BlogPage extends React.Component {
         return (
             <Layout title={'Blog'}>
                 <section className="section_first-blog">
-                    <h1 className="mb-5">BLOG</h1>
+                    <h2 className="mb-5">BLOG</h2>
                     <p>Business to entrepreneurship and marketing tips, Dignite announcements,<br/> and the occasional musings of our digital world. </p>
                 </section>
                 <LayoutBlog allTopics={'active'}>

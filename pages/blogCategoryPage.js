@@ -59,10 +59,25 @@ class BlogCatPage extends React.Component {
         } else if (this.props.category === 'announcement') {
             activeCategory = 'announcement'
         }
+
+        let category = this.props.category
+        let title =   category.split('')
+        let arrTitle = []
+
+        for (let i = 0; i < title.length; i++) {
+            if (i === 0) {
+                arrTitle.push(title[i].toUpperCase())
+            } else {
+                arrTitle.push(title[i])
+            }
+        }
+
+        let resTitle = arrTitle.join('')
+
         return (
-            <Layout title={'Blog'}>
+            <Layout title={`Blog ${resTitle}`}>
                 <section className="section_first-blog">
-                    <h1 className="mb-5">BLOG</h1>
+                    <h2 className="mb-5">BLOG</h2>
                     <p>Business to entrepreneurship and marketing tips, Dignite announcements,<br/> and the occasional musings of our digital world. </p>
                     <p>cat page</p>
                 </section>
@@ -92,7 +107,7 @@ class BlogCatPage extends React.Component {
                                                 alt={'gambar artikel'}
                                                 src={`https://api.dignitestudio.com/images/image/artikel/${item.imgThumbnail}.jpg`}
                                                 effect="blur"
-                                                width={'100%'} 
+                                                width={'100%'}
                                                 height={"100%"}
                                             />
                                         </Col>
