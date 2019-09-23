@@ -130,6 +130,7 @@ class Layout extends React.Component{
       <React.Fragment>
         <Head>
           <title>Dignite Studio - {`${this.props.title}`}</title>
+          <link rel="canonical" href={`https://www.dignitestudio.com/${this.props.canonical}`} />
         </Head>
 
         <div>

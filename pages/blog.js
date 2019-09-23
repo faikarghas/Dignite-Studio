@@ -9,6 +9,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import {convertMonth} from '../lib/date'
 import Layout from '../components/layouts'
 import LayoutBlog from '../components/layouts-blog'
+import Head from 'next/head';
 
 class Blog extends React.Component {
 
@@ -39,7 +40,7 @@ class Blog extends React.Component {
         let dataLength = this.props.allData.length
 
         return (
-            <Layout title={'Blog'}>
+            <Layout title={'Blog'} canonical="blog">
                 <section className="section_first-blog">
                     <h1 className="mb-5">BLOG</h1>
                     <p>Business to entrepreneurship and marketing tips, Dignite announcements,<br/> and the occasional musings of our digital world. </p>

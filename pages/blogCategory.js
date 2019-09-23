@@ -71,7 +71,7 @@ class BlogCa extends React.Component {
 
 
         return (
-            <Layout title={`${title}`}>
+            <Layout title={`${title}`} canonical={`blog/${activeCategory}`}>
                 <section className="section_first-blog">
                     <h1 className="mb-5">{`${activeCategory}`}</h1>
                     <p>Business to entrepreneurship and marketing tips, Dignite announcements,<br/> and the occasional musings of our digital world. </p>

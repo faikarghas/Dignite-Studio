@@ -38,11 +38,7 @@ class Index extends React.Component{
         const {trans} = this.state
 
         return (
-            <React.Fragment>
-                <Head>
-                    <link rel="canonical" href="https://www.dignitestudio.com" />
-                </Head>
-            <Layout title={'Home'}>
+            <Layout title={'Home'} canonical="">
                 <section className="textHeaderHome width100">
                     <Container>
                         {/* <Fade bottom> */}
@@ -83,7 +79,6 @@ class Index extends React.Component{
                     </Container>
                 </section>
             </Layout>
-            </React.Fragment>
         )
     }
 }

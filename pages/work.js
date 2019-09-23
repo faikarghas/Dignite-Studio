@@ -7,6 +7,7 @@ import TextHeader from '../components/presentational/textHead'
 import Layout from '../components/layouts'
 
 import data from '../lib/copywriting/data.js'
+import Head from "next/head";
 
 var settings = {
     dots: true,
@@ -17,7 +18,7 @@ var settings = {
 };
 const work = props => {
     return (
-        <Layout title={'Work'}>
+        <Layout title={'Work'} canonical="work">
             <TextHeader text={data.work.title} />
             <section className="section_second-work">
                 <Container>

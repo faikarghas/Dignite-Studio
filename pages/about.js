@@ -9,11 +9,7 @@ import { Container,Row,Col } from 'react-bootstrap';
 
 const about = () => {
     return (
-        <React.Fragment>
-        <Head>
-            <link rel="canonical" href="https://www.dignitestudio.com/about" />
-        </Head>
-        <Layout title={'About'}>
+        <Layout title={'About'} canonical="about">
             <TextHeader text={data.about.title} />
             <section className="section_second-about width100">
                 <Container>
@@ -103,7 +99,6 @@ const about = () => {
                 </Container>
             </section> */}
         </Layout>
-        </React.Fragment>
     )
 }
 
