@@ -6,6 +6,7 @@ import SplitText from 'react-pose-text';
 
 import Layout from '../components/layouts'
 import data from '../lib/copywriting/data.js'
+import Head from 'next/head';
 
 const charPoses = {
     exit: { opacity: 0 },
@@ -37,6 +38,10 @@ class Index extends React.Component{
         const {trans} = this.state
 
         return (
+            <React.Fragment>
+                <Head>
+                    <link rel="canonical" href="https://www.dignitestudio.com" />
+                </Head>
             <Layout title={'Home'}>
                 <section className="textHeaderHome width100">
                     <Container>
@@ -78,6 +83,7 @@ class Index extends React.Component{
                     </Container>
                 </section>
             </Layout>
+            </React.Fragment>
         )
     }
 }
