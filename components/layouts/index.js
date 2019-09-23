@@ -129,7 +129,7 @@ class Layout extends React.Component{
 
     let canUrl = `https://www.dignitestudio.com/${canonical}`
 
-    if (canonical.length <= 0) {
+    if (canonical.length <= 0 || canonical.length === undefined) {
         canUrl = `https://www.dignitestudio.com`
     } else {
         canUrl = `https://www.dignitestudio.com/${canonical}`
