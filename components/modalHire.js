@@ -59,7 +59,7 @@ class project extends React.Component{
         return (
             <div className={`modal-hireus ${modal} ${showModal2}`}>
                 <div className="close-contact">
-                    <img onClick={()=>this.closeModal(closeModal2, closeModal)} src="https://api.dignitestudio.com/images/image/Icons/Close-Contact.png"/>
+                    <img onClick={()=>this.closeModal(closeModal2, closeModal)} src="https://api.dignitestudio.com/images/image/Icons/Close-Contact.png" alt="icon-close"/>
                 </div>
                 <Container>
                     <Row>

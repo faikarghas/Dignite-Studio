@@ -38,8 +38,6 @@ class Blog extends React.Component {
     render(){
         let dataLength = this.props.allData.length
 
-        // console.table(this.props.allData)
-
         return (
             <Layout title={'Blog'}>
                 <section className="section_first-blog">
