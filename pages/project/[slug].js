@@ -149,12 +149,12 @@ class Project extends React.Component {
                         <BigPlayButton position="center" />
                     </Player>
                 </section> */}
-                <section className="section_eighth-project text-center">
-                    {/* <div className="container pl-5 pr-5">
+                {/* <section className="section_eighth-project text-center">
+                    <div className="container pl-5 pr-5">
                         <p className="quotes">We love Dignite autem negas fortem esse quemquam posse, qui dolorem malum putet. Cupiditates non Epicuri divisione finiebat, sed sua satietate. Quia nec honesto quic quam honestius nec turpi</p>
                     </div>
                     <br/>
-                    <br/> */}
+                    <br/>
                     <ul>
                         <li>
                             <div className="text-center">
@@ -166,7 +166,7 @@ class Project extends React.Component {
                             <p>Owner</p>
                         </li>
                     </ul>
-                </section>
+                </section> */}
                 <section className="section_ninth-project">
                     <Container>
                         <Row>
