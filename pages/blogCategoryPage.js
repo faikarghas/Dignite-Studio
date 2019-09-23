@@ -61,14 +61,14 @@ class BlogCatPage extends React.Component {
         }
 
         let category = this.props.category
-        let title =   category.split('')
+        let splitTitle =   category.split('')
         let arrTitle = []
 
-        for (let i = 0; i < title.length; i++) {
+        for (let i = 0; i < splitTitle.length; i++) {
             if (i === 0) {
-                arrTitle.push(title[i].toUpperCase())
+                arrTitle.push(splitTitle[i].toUpperCase())
             } else {
-                arrTitle.push(title[i])
+                arrTitle.push(splitTitle[i])
             }
         }
 
