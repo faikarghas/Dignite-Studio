@@ -40,7 +40,6 @@ class BlogPage extends React.Component {
     }
 
     componentDidUpdate(a,b){
-        console.log(a,b);
         if(b.page !== b.activePage){
             this.setState({page:b.activePage})
         }

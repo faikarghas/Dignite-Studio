@@ -73,11 +73,17 @@ class BlogCatPage extends React.Component {
         }
 
         let resTitle = arrTitle.join('')
+        let title = `${resTitle} Blog`
+
+        if(this.props.category === 'announcement'){
+            title = `${resTitle}`
+        }
+
 
         return (
-            <Layout title={`Blog ${resTitle}`}>
+            <Layout title={`${title}`}>
                 <section className="section_first-blog">
-                    <h2 className="mb-5">BLOG</h2>
+                    <h1 className="mb-5">{`${activeCategory}`}</h1>
                     <p>Business to entrepreneurship and marketing tips, Dignite announcements,<br/> and the occasional musings of our digital world. </p>
                     <p>cat page</p>
                 </section>

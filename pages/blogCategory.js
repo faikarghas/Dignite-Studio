@@ -51,23 +51,29 @@ class BlogCa extends React.Component {
         }
 
         let category = this.props.category
-        let title =   category.split('')
+        let splitTitle = category.split('')
         let arrTitle = []
 
-        for (let i = 0; i < title.length; i++) {
+        for (let i = 0; i < splitTitle.length; i++) {
             if (i === 0) {
-                arrTitle.push(title[i].toUpperCase())
+                arrTitle.push(splitTitle[i].toUpperCase())
             } else {
-                arrTitle.push(title[i])
+                arrTitle.push(splitTitle[i])
             }
         }
 
         let resTitle = arrTitle.join('')
+        let title = `${resTitle} Blog`
+
+        if(this.props.category === 'announcement'){
+            title = `${resTitle}`
+        }
+
 
         return (
-            <Layout title={`Blog ${resTitle}`}>
+            <Layout title={`${title}`}>
                 <section className="section_first-blog">
-                    <h2 className="mb-5">BLOG</h2>
+                    <h1 className="mb-5">{`${activeCategory}`}</h1>
                     <p>Business to entrepreneurship and marketing tips, Dignite announcements,<br/> and the occasional musings of our digital world. </p>
                 </section>
                 <LayoutBlog activeCategory={activeCategory}>

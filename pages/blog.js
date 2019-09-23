@@ -37,10 +37,13 @@ class Blog extends React.Component {
 
     render(){
         let dataLength = this.props.allData.length
+
+        // console.table(this.props.allData)
+
         return (
             <Layout title={'Blog'}>
                 <section className="section_first-blog">
-                    <h2 className="mb-5">BLOG</h2>
+                    <h1 className="mb-5">BLOG</h1>
                     <p>Business to entrepreneurship and marketing tips, Dignite announcements,<br/> and the occasional musings of our digital world. </p>
                 </section>
                 <LayoutBlog allTopics={'active'}>
