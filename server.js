@@ -3,7 +3,7 @@ const next          = require('next');
 const compression   = require('compression')
 const cookieParser = require('cookie-parser');
 // const enforce = require('express-sslify');
-const cacheableResponse = require('cacheable-response')
+// const cacheableResponse = require('cacheable-response')
 
 require('dotenv').config()
 const port      = process.env.PORT || 3013;
@@ -11,13 +11,13 @@ const dev       = process.env.NODE_ENV !== 'production';
 const app       = next({dev});
 const handle    = app.getRequestHandler();
 
-const ssrCache = cacheableResponse({
-    ttl: 1000 * 60 * 60, // 1hour
-    get: async ({ req, res, pagePath, queryParams }) => ({
-      data: await app.renderToHTML(req, res, pagePath, queryParams)
-    }),
-    send: ({ data, res }) => res.send(data)
-})
+// const ssrCache = cacheableResponse({
+//     ttl: 1000 * 60 * 60, // 1hour
+//     get: async ({ req, res, pagePath, queryParams }) => ({
+//       data: await app.renderToHTML(req, res, pagePath, queryParams)
+//     }),
+//     send: ({ data, res }) => res.send(data)
+// })
 
 const sitemapOptions = {
     root: __dirname + '/static/sitemap/',
