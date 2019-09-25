@@ -16,6 +16,7 @@
     "@zeit/next-sass": "^1.0.1",
     "autoprefixer": "^9.6.0",
     "bootstrap": "^4.3.1",
+    "cacheable-response": "^1.7.3",
     "commentbox.io": "^2.0.0",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.4",
