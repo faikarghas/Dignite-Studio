@@ -15,7 +15,7 @@ const handle    = app.getRequestHandler();
 const ssrCache = cacheableResponse({
     ttl: 1000 * 60 * 60, // 1hour
     get: async ({ req, res, pagePath, queryParams }) => ({
-      data: await app.render(req, res, pagePath, queryParams)
+      data: await app.renderToHTML(req, res, pagePath, queryParams)
     }),
     send: ({ data, res }) => res.send(data)
 })
@@ -46,7 +46,6 @@ app.prepare()
     server.get('/blog/page/:page', (req, res) => {
         const actualPage = '/blogPage'
         const queryParams = { page: req.params.page }
-        app.render(req, res, actualPage, queryParams)
         return ssrCache({ req, res, actualPage, queryParams })
     })
 
