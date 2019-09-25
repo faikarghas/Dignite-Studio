@@ -2,4 +2,7 @@ User-agent: *
 Disallow: /blog/business
 Disallow: /blog/design
 Disallow: /blog/announcement
+Disallow: /blog/*
+Disallow: /blog/*/*
+
 Sitemap: https://www.dignitestudio.com/sitemap.xml
