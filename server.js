@@ -41,13 +41,6 @@ app.prepare()
     server.use(cookieParser());
     // if( process.env.NODE_ENV === 'production' ) server.use(enforce.HTTPS({ trustProtoHeader: true }))
 
-
-    server.get('/', (req, res) => {
-        const actualPage = '/'
-        return ssrCache({ req, res, actualPage })
-    })
-
-
     server.get('/blog/page/:page', (req, res) => {
         const actualPage = '/blogPage'
         const queryParams = { page: req.params.page }
