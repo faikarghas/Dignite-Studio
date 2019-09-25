@@ -15,7 +15,7 @@ const handle    = app.getRequestHandler();
 const ssrCache = cacheableResponse({
     ttl: 1000 * 60 * 60, // 1hour
     get: async ({ req, res, pagePath, queryParams }) => ({
-      data: await app.renderToHTML(req, res, pagePath, queryParams)
+      data: await app.render(req, res, pagePath, queryParams)
     }),
     send: ({ data, res }) => res.send(data)
 })
@@ -40,6 +40,8 @@ app.prepare()
     server.use(compression());
     server.use(cookieParser());
     // if( process.env.NODE_ENV === 'production' ) server.use(enforce.HTTPS({ trustProtoHeader: true }))
+
+    server.get('/', (req, res) => ssrCache({ req, res, pagePath: '/' }))
 
     server.get('/blog/page/:page', (req, res) => {
         const actualPage = '/blogPage'
