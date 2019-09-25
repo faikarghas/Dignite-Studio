@@ -1,5 +1,8 @@
 import { Container,Row,Col,Form,Button } from 'react-bootstrap';
-class project extends React.Component{
+import PropTypes from 'prop-types';
+
+
+class Project extends React.Component{
     state = {
         name:'',
         email:'',
@@ -104,4 +107,11 @@ class project extends React.Component{
     }
 }
 
-export default project
+Project.propTypes = {
+    modal : PropTypes.string,
+    closeModal : PropTypes.func,
+    closeModal2 : PropTypes.func,
+    showModal2 : PropTypes.func
+  }
+
+export default Project

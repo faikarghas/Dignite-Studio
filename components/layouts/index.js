@@ -2,6 +2,7 @@ import Head from 'next/head'
 import {Tween,Timeline} from 'react-gsap'
 import Link from 'next/link'
 import { Container,Row,Col } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 import ModalHire from '../modalHire'
 import Header from '../layouts/header'
@@ -125,7 +126,7 @@ class Layout extends React.Component{
 
   render(){
     const {modal,menu} = this.state
-    const {canonical} = this.props
+    const {canonical,title} = this.props
 
     let canUrl = `https://www.dignitestudio.com/${canonical}`
 
@@ -138,7 +139,7 @@ class Layout extends React.Component{
     return(
       <React.Fragment>
         <Head>
-          <title>Dignite Studio - {`${this.props.title}`}</title>
+          <title>Dignite Studio - {`${title}`}</title>
           <link rel="canonical" href={`${canUrl}`} />
         </Head>
 
@@ -178,6 +179,11 @@ class Layout extends React.Component{
       </React.Fragment>
     )
   }
+}
+
+Layout.propTypes = {
+  title : PropTypes.string,
+  canonical : PropTypes.string
 }
 
 export default Layout

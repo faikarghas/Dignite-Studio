@@ -7,10 +7,7 @@
     "dev": "node server.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
-    "idb": "npm run build",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "idb": "npm run build"
   },
   "author": "Faikar & Mayesta",
   "license": "ISC",

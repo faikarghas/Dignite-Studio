@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import PropTypes from 'prop-types';
 import { Container,Row,Col } from 'react-bootstrap';
 
 function menuHandler(menu,open,close) {
@@ -41,6 +42,13 @@ const headerLy = props => {
             </Container>
         </header>
     )
+}
+
+headerLy.propTypes = {
+    headerRef : PropTypes.func,
+    menu: PropTypes.bool,
+    openMenu: PropTypes.func,
+    closeMenu: PropTypes.func
 }
 
 export default headerLy

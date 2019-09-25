@@ -18,13 +18,19 @@ const sitemapOptions = {
     }
 };
 
+const robotsOptions = {
+    root: __dirname + '/static/robots/',
+    headers: {
+        'Content-Type': 'text/plain;charset=UTF-8'
+    }
+};
+
 app.prepare()
 .then(()=>{
     const server = express()
     server.use(compression());
     server.use(cookieParser());
     // if( process.env.NODE_ENV === 'production' ) server.use(enforce.HTTPS({ trustProtoHeader: true }))
-
 
     server.get('/blog/page/:page', (req, res) => {
         const actualPage = '/blogPage'
@@ -76,6 +82,7 @@ app.prepare()
     })
 
     server.get('/sitemap.xml', (req, res) => res.status(200).sendFile('sitemap.xml', sitemapOptions));
+    server.get('/robots.txt', (req, res) => res.status(200).sendFile('robots.txt', robotsOptions));
 
     server.get('*', (req, res) => {
         return handle(req, res)
