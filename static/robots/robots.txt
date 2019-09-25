@@ -1,3 +1,5 @@
 User-agent: *
-Disallow: 
+Disallow: /blog/business
+Disallow: /blog/design
+Disallow: /blog/announcement
 Sitemap: https://www.dignitestudio.com/sitemap.xml
