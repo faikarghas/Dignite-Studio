@@ -83,9 +83,9 @@ class BlogCategoryDetail extends React.Component {
             <Layout title={data.title}>
                 <section className="section_first-blogDetail">
                     <Container>
-                        <Row className="mb-5">
-                            <Col xs={12} style={{padding:0}}>
-                                <Breadcrumb style={{padding:0}}>
+                        <Row className="mb-5 justify-content-center">
+                            <Col xs={12} md={8} xl={7} className="bread">
+                                <Breadcrumb>
                                     <li className="breadcrumb-item"><Link href="/"><a>Home</a></Link></li>
                                     <li className="breadcrumb-item"><Link href="/blog"><a>Blog</a></Link></li>
                                     <li className="breadcrumb-item active">{data.title}</li>
