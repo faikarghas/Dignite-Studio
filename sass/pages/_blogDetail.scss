@@ -8,9 +8,18 @@
     .mt-cm{
         margin-top: 8rem;
     }
+    .breadcrumb{
+        // padding: 0;
+        background: transparent;
+        li{
+            a{
+                color: black;
+            }
+        }
+    }
     .info{
         position: fixed;
-        top: calc(65px + 84px );
+        top: 20%;
         left: 50%;
         transform: translateX(-495px);
         visibility: hidden;

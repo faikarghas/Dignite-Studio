@@ -1,12 +1,12 @@
-import { Container,Row,Col } from 'react-bootstrap'
+import { Container,Row,Col,Breadcrumb } from 'react-bootstrap'
 import Link from 'next/link'
 import parse from 'html-react-parser'
 import fetch from 'isomorphic-unfetch'
 import commentBox from 'commentbox.io';
 import {convertMonth} from '../lib/date'
-import Slider from "react-slick";
 
 import Layout from '../components/layouts'
+import ButtonToTop from '../components/presentational/buttonToTop'
 import ShareIcon from '../components/presentational/shareIcon'
 
 
@@ -42,15 +42,14 @@ class BlogDetail extends React.Component {
 
     handleScroll = ()=> {
         let valueScroll = window.scrollY
-        const height = this.divElement.clientHeight;
-        const height2 = this.divElement.clientHeight - 300;
+        const height = this.divElement.clientHeight ;
 
         const widthWindow = window.innerWidth;
         if(valueScroll >= 190 && valueScroll <= height  && widthWindow >= 890){
             this.setState({
                 show:'show'
             })
-        } else if( valueScroll >= height2){
+        } else if( valueScroll >= height){
             this.setState({
                 show:''
             })
@@ -89,13 +88,22 @@ class BlogDetail extends React.Component {
                     centerPadding: "30px",
                   }
                 },
-              ]
+            ]
         };
 
         return (
-            <Layout title={'Blog'}>
+            <Layout title={data.title}>
                 <section className="section_first-blogDetail">
                     <Container>
+                        <Row className="mb-5">
+                            <Col xs={12} style={{padding:0}}>
+                                <Breadcrumb style={{padding:0}}>
+                                    <li className="breadcrumb-item"><Link href="/"><a>Home</a></Link></li>
+                                    <li className="breadcrumb-item"><Link href="/blog"><a>Blog</a></Link></li>
+                                    <li className="breadcrumb-item active">{data.title}</li>
+                                </Breadcrumb>
+                            </Col>
+                        </Row>
                         <Row className="justify-content-center">
                             <Col xs={12} md={8} xl={7} className="content"  ref={ (divElement) => this.divElement = divElement}>
                                 <h1>{data.title}</h1>
@@ -110,9 +118,9 @@ class BlogDetail extends React.Component {
                                     <br/>
                                 </div>
                             </Col>
-                            <Col xs={12} md={8} xl={7} className="mt-cm">
-                                <div className="commentbox" id="contoh2"/>
-                            </Col>
+                            {/* <Col xs={12} md={8} xl={7} className="mt-cm"> */}
+                                {/* <div className="commentbox" id="contoh2"/> */}
+                            {/* </Col> */}
                         </Row>
                     </Container>
                 </section>
@@ -140,6 +148,7 @@ class BlogDetail extends React.Component {
                         </Row>
                     </Container>
                 </section>
+                <ButtonToTop/>
             </Layout>
         )
     }

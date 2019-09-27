@@ -13,9 +13,10 @@ const app       = next({dev});
 const handle    = app.getRequestHandler();
 
 const ssrCache = cacheableResponse({
-    ttl: 1000 * 60 * 60, // 1hour
-    get: async ({ req, res, pagePath, queryParams }) => ({
-      data: await app.renderToHTML(req, res, pagePath, queryParams)
+    
+    get: async ({ req, res, actualPage, queryParams }) => ({
+      data: await app.render(req, res, actualPage, queryParams),
+      ttl: 1000 * 60 * 60, // 1hour
     }),
     send: ({ data, res }) => res.send(data)
 })
@@ -44,50 +45,50 @@ app.prepare()
     server.get('/blog/page/:page', (req, res) => {
         const actualPage = '/blogPage'
         const queryParams = { page: req.params.page }
-        return ssrCache({ req, res, actualPage, queryParams })
+        return app.render( req, res, actualPage, queryParams )
     })
 
     server.get('/blog/announcement/page/:page', (req, res) => {
         const actualPage = '/blogCategoryPage'
         const queryParams = { page: req.params.page, category: 'announcement' }
-        return ssrCache({ req, res, actualPage, queryParams })
+        return app.render( req, res, actualPage, queryParams )
     })
     server.get('/blog/business/page/:page', (req, res) => {
         const actualPage = '/blogCategoryPage'
         const queryParams = { page: req.params.page, category: 'business' }
-        return ssrCache({ req, res, actualPage, queryParams })
+        return app.render( req, res, actualPage, queryParams )
     })
     server.get('/blog/design/page/:page', (req, res) => {
         const actualPage = '/blogCategoryPage'
         const queryParams = { page: req.params.page, category: 'design' }
-        return ssrCache({ req, res, actualPage, queryParams })
+        return app.render(req, res, actualPage, queryParams )
     })
 
     server.get('/blog/:category/:slug', (req, res) => {
         const actualPage = '/blogCategoryDetail'
         const queryParams = { slug: req.params.slug, category: req.params.category }
-        return ssrCache({ req, res, actualPage, queryParams })
+        return app.render( req, res, actualPage, queryParams )
     })
 
     server.get('/blog/business', (req, res) => {
         const actualPage = '/blogCategory'
         const queryParams = { category: 'business' }
-        return ssrCache({ req, res, actualPage, queryParams })
+        return app.render( req, res, actualPage, queryParams )
     })
     server.get('/blog/design', (req, res) => {
         const actualPage = '/blogCategory'
         const queryParams = { category: 'design' }
-        return ssrCache({ req, res, actualPage, queryParams })
+        return app.render( req, res, actualPage, queryParams )
     })
     server.get('/blog/announcement', (req, res) => {
         const actualPage = '/blogCategory'
         const queryParams = { category: 'announcement' }
-        return ssrCache({ req, res, actualPage, queryParams })
+        return app.render( req, res, actualPage, queryParams )
     })
     server.get('/blog/:slug', (req, res) => {
         const actualPage = '/blogDetail'
         const queryParams = { slug: req.params.slug }
-        return ssrCache({ req, res, actualPage, queryParams })
+        return app.render( req, res, actualPage, queryParams )
     })
 
     server.get('/sitemap.xml', (req, res) => res.status(200).sendFile('sitemap.xml', sitemapOptions));
