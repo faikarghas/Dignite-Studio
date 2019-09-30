@@ -22,14 +22,16 @@ class Project extends React.Component {
     }
 
     state = {
-        trans : 0,
+        transs: 0,
         data: this.props.res,
         slug: this.props.slug,
-        fullImg:  this.props.res,
+        fullImg: this.props.res,
     }
 
     componentDidMount(){
         window.addEventListener('scroll', this.handleScroll);
+        console.log('trigger');
+        this.loadImgAndAppend()
     }
 
     componentWillUnmount() {
@@ -38,9 +40,7 @@ class Project extends React.Component {
 
     componentDidUpdate(prevProps){
         if(prevProps.slug !== this.props.slug){
-            this.setState({
-                slug:this.props.slug
-            })
+            this.loadImgAndReplace()
         }
     }
 
@@ -53,13 +53,50 @@ class Project extends React.Component {
         }
     }
 
-    onload = () => {
-        console.log('test');
+    loadImgAndReplace = () => {
+        var placeholder = document.querySelector('.placeholder'),
+                small = placeholder.querySelector('.img-small')
+
+            // 1: load small image and show it
+            var img = new Image();
+                img.src = small.src;
+                img.onload = function () {
+                small.classList.add('loaded');
+            };
+
+            // 2: load large image
+            var imgLarge = new Image();
+                imgLarge.src = placeholder.dataset.large;
+                imgLarge.onload = function () {
+                    imgLarge.classList.add('loaded');
+                };
+                placeholder.replaceChild(imgLarge,placeholder.childNodes[2]);
     }
+
+    loadImgAndAppend = () => {
+        var placeholder = document.querySelector('.placeholder'),
+                small = placeholder.querySelector('.img-small')
+
+            // 1: load small image and show it
+            var img = new Image();
+                img.src = small.src;
+                img.onload = function () {
+                small.classList.add('loaded');
+            };
+
+            // 2: load large image
+            var imgLarge = new Image();
+                imgLarge.src = placeholder.dataset.large;
+                imgLarge.onload = function () {
+                    imgLarge.classList.add('loaded');
+                };
+                placeholder.appendChild(imgLarge);
+    }
+
 
     render(){
         const {trans} = this.state
-
+        console.log(this.props.slug,'slug');
         var settings = {
             dots: true,
             infinite: true,
@@ -71,10 +108,10 @@ class Project extends React.Component {
             pauseOnHover: false
         };
         const data = this.state.data.Project.filter((item)=>{
-            return item.slug === this.state.slug
+            return item.slug === this.props.slug
         })
         const getid = this.state.data.Project.filter((item)=>{
-            if (item.slug === this.state.slug) {
+            if (item.slug === this.props.slug) {
                 return item.id
             }
         })
@@ -105,12 +142,9 @@ class Project extends React.Component {
                         <a className="button_seeLive" href={data[0].link} target="_blank">See Live</a>
                     }
                 </section>
-                <section className="section_second-project width100 p-0">
-                <LazyLoadImage
-                    alt={'project-img'}
-                    src={data[0].landingImg}
-                    effect="blur"
-                    width={'100%'} />
+                <section className="section_second-project width100 p-0 placeholder" data-large={data[0].landingImg}>
+                    <img src={data[0].landingSmallImg} width="100%" className="img-small"/>
+                    <div style={{paddingBottom:'50%'}}></div>
                 </section>
                 <section className="section_third-project text-center">
                     <h2>Challenge</h2>
@@ -120,7 +154,7 @@ class Project extends React.Component {
                     <Slider {...settings}>
                         {data[0].carouselImg.map((item,i)=>{
                             return (
-                                <img key={i} src={item} width="100%" alt="project-mockup" onLoad={this.onload}/>
+                                <img key={i} src={item} width="100%" alt="project-mockup"/>
                             )
                         })}
                     </Slider>

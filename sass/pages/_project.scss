@@ -2,6 +2,7 @@
     position: relative;
     background-color: white;
     padding: 10rem 10rem;
+    
     @include respond (tab-port){
         padding: 10rem 4rem;
     }
@@ -25,8 +26,14 @@
 
 .section_second-project{
     position: relative;
-    background-color: white;
-    min-height: 77rem;
+    background-color: #ffffff;
+    min-height: 65rem;
+
+    background-color: #f6f6f6;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
     @include respond(tab-port){
         min-height: 45rem;
     }
@@ -34,12 +41,25 @@
         min-height: 27rem;
     }
     img{
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        transition: opacity 1s linear;
+        height: 100%;
+        object-fit: cover;
         @include respond(tab-port){
             height: 100%;
         }
-        @include respond(phone){
-            object-fit: contain;
-        }
+    }
+    .loaded{
+        opacity: 1;
+    }
+    .img-small {
+        filter: blur(50px);
+        /* this is needed so Safari keeps sharp edges */
+        transform: scale(1);
     }
 }
 

@@ -6,14 +6,13 @@ import SplitText from 'react-pose-text';
 
 import Layout from '../components/layouts'
 import data from '../lib/copywriting/data.js'
-import Head from 'next/head';
 
 const charPoses = {
     exit: { opacity: 0 },
     enter: {
     opacity: 1,
     delay: ({ charIndex }) => charIndex * 30
-    }
+}
 };
 
 class Index extends React.Component{
@@ -34,6 +33,7 @@ class Index extends React.Component{
             })
         }
     }
+
     render(){
         const {trans} = this.state
 
@@ -41,13 +41,11 @@ class Index extends React.Component{
             <Layout title={'Home'} canonical="home">
                 <section className="textHeaderHome width100">
                     <Container>
-                        {/* <Fade bottom> */}
                             <h1 className="text-center">
                                 <SplitText initialPose="exit" pose="enter" charPoses={charPoses}>
                                     {data.home.title}
                                 </SplitText>
                             </h1>
-                        {/* </Fade> */}
                     </Container>
                 </section>
                 <section className="section_second-home width100 homeku">
@@ -56,14 +54,15 @@ class Index extends React.Component{
                         {data.home.Project.map(item=>{
                             return (
                                 <Link href="/project/[slug]" as={`/project/${item.slug}`} key={item.id}>
-                                    <Col className="box1 p-0" xs={4} key={item.id}>
+                                    <Col className="box1 p-0 placeholder" xs={4} key={item.id} data-large={item.imgUrl}>
                                         <LazyLoadImage
-                                            alt={'project-img'}
+                                            alt={item.slug}
                                             src={item.imgUrl}
                                             effect="blur"
                                             width={'100%'}
                                             height={"100%"}
                                         />
+                                        {/* <img className="img-small" alt={item.slug} src={item.imgSmallUrl} width="100%" height="100%" /> */}
                                         <div className="box-hover">
                                             <h2>{item.title}</h2>
                                             <h2>{item.Category}</h2>
