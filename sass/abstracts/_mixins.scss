@@ -26,15 +26,11 @@
 0 - 650px       :   Phone
 650 - 900px     :   Tablet Potrait
 650 - 1200px    :   Tablet Landscape
-[1200 - 1800px] :   Tablet Potrait
-1800px +        :   Tablet Potrait
+[1200 - 1800px] :   Med Desktop
+1800px +        :   Big Desktop
 */
 
-@mixin respond-phone {
-    @media (max-width: 600px) {@content};
-}
-
-/* 
+/*
 $breakpoint argument choices:
 - phone
 - tab-port
@@ -46,9 +42,7 @@ ORDER:  Base + typography > general layout + grid > page layout > components
 1em = 16px
 */
 @mixin respond($breakpoint) {
-    @if $breakpoint == phone270 {
-        @media only screen and (max-width: 16.875em) { @content };    //320px
-    }
+    // down
     @if $breakpoint == phone320 {
         @media only screen and (max-width: 20em) { @content };    //320px
     }
@@ -59,10 +53,10 @@ ORDER:  Base + typography > general layout + grid > page layout > components
         @media only screen and (max-width: 40.625em) { @content };    //650px
     }
     @if $breakpoint == tab-port {
-        @media only screen and (max-width: 56.25em) { @content };     //900px
+        @media only screen and (max-width: 60em) { @content };     //960px
     }
-    @if $breakpoint == tab-land {
-        @media only screen and (max-width: 64em) { @content };    //1024px
+    @if $breakpoint == med-desktop {
+        @media only screen and (max-width: 75em) { @content };    //1200px
     }
     @if $breakpoint == big-desktop {
         @media only screen and (min-width: 112.5em) { @content };    //1800
@@ -71,4 +65,6 @@ ORDER:  Base + typography > general layout + grid > page layout > components
 
 
 
+// onclick='gtag("event", "Click", {"event_category": "Product Type", "event_label": "'.$row->nama.'", "value": 1});'
 
+// ga('send', 'event', 'Product Type', 'Click', 'eventLabel', 1);

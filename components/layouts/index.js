@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { Container,Row,Col } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
-import ModalHire from '../modalHire'
+import ModalHire from '../presentational/modalHire'
 import Header from '../layouts/header'
 import Menu from '../layouts/menu'
 import Footer from '../layouts/footer'

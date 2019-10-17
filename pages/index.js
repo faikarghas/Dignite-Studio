@@ -1,85 +1,72 @@
+import React, { useState, useEffect } from "react"
 import { Container,Row,Col } from 'react-bootstrap';
-import Fade from 'react-reveal/Fade';
 import Link from 'next/link'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import SplitText from 'react-pose-text';
 
+import TextHeaderHome from '../components/presentational/textHeaderHome'
+import ButtonViewAllProjects from '../components/presentational/buttonViewAllProjects'
 import Layout from '../components/layouts'
 import data from '../lib/copywriting/data.js'
 
-const charPoses = {
-    exit: { opacity: 0 },
-    enter: {
-    opacity: 1,
-    delay: ({ charIndex }) => charIndex * 30
-}
-};
+const Project = ({trans}) => (
+    <section className="section_second-home width100 homeku">
+        <Container className="box_allprojects" style={{WebkitTransform:`translate(-50%,${-trans}px)`,msTransform:`translate(-50%,${-trans}px)`,transform:`translate(-50%,${-trans}px)`}}>
+            <Row>
+            {data.home.Project.map(item=>{
+                return (
+                    <Link href="/project/[slug]" as={`/project/${item.slug}`} key={item.id}>
+                        <Col className="box1 p-0 placeholder" xs={4} key={item.id} data-large={item.imgUrl}>
+                            <LazyLoadImage
+                                alt={item.slug}
+                                src={item.imgUrl}
+                                effect="blur"
+                                width={'100%'}
+                                height={"100%"}
+                            />
+                            <div className="box-hover">
+                                <h2>{item.title}</h2>
+                                <h2>{item.Category}</h2>
+                            </div>
+                        </Col>
+                    </Link>
+                )
+            })}
+            </Row>
+            <ButtonViewAllProjects/>
+        </Container>
+    </section>
+)
 
-class Index extends React.Component{
-    state = {
-        trans : 0,
+const Index = () => {
+  const [trans, setTrans] = useState(0);
+
+  function handleScroll() {
+    let valueScroll = window.scrollY
+    if(valueScroll){
+        setTrans(valueScroll/7)
     }
-    componentDidMount(){
-        window.addEventListener('scroll', this.handleScroll);
-    }
-    componentWillUnmount() {
-        window.removeEventListener('scroll', this.handleScroll);
-    }
-    handleScroll = ()=> {
-        let valueScroll = window.scrollY
-        if(valueScroll){
-            this.setState({
-                trans : valueScroll / 7,
-            })
-        }
+  }
+
+  useEffect(() => {
+
+    function watchScroll() {
+      window.addEventListener("scroll", handleScroll);
     }
 
-    render(){
-        const {trans} = this.state
+    watchScroll();
+    // Remove listener (like componentWillUnmount)
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
 
-        return (
-            <Layout title={'Home'} canonical="home">
-                <section className="textHeaderHome width100">
-                    <Container>
-                            <h1 className="text-center">
-                                <SplitText initialPose="exit" pose="enter" charPoses={charPoses}>
-                                    {data.home.title}
-                                </SplitText>
-                            </h1>
-                    </Container>
-                </section>
-                <section className="section_second-home width100 homeku">
-                    <Container className="box_allprojects" style={{WebkitTransform:`translate(-50%,${-trans}px)`,msTransform:`translate(-50%,${-trans}px)`,transform:`translate(-50%,${-trans}px)`}}>
-                        <Row>
-                        {data.home.Project.map(item=>{
-                            return (
-                                <Link href="/project/[slug]" as={`/project/${item.slug}`} key={item.id}>
-                                    <Col className="box1 p-0 placeholder" xs={4} key={item.id} data-large={item.imgUrl}>
-                                        <LazyLoadImage
-                                            alt={item.slug}
-                                            src={item.imgUrl}
-                                            effect="blur"
-                                            width={'100%'}
-                                            height={"100%"}
-                                        />
-                                        {/* <img className="img-small" alt={item.slug} src={item.imgSmallUrl} width="100%" height="100%" /> */}
-                                        <div className="box-hover">
-                                            <h2>{item.title}</h2>
-                                            <h2>{item.Category}</h2>
-                                        </div>
-                                    </Col>
-                                </Link>
-                            )
-                        })}
-                        </Row>
-                        <div className="view_allpr">
-                            <Link  href="/work"><a>View all our projects</a></Link>
-                        </div>
-                    </Container>
-                </section>
-            </Layout>
-        )
-    }
+  });
+
+  return (
+    <Layout title={'Home'} canonical="home">
+        <TextHeaderHome text={data.home.title} />
+        <Project trans={trans} />
+    </Layout>
+  );
 }
 
 export default Index

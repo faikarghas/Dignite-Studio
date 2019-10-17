@@ -14,11 +14,12 @@ class BlogDetail extends React.Component {
 
     static async getInitialProps (ctx){
         const {slug} = ctx.query
+
         const res = await fetch(`https://api.dignitestudio.com/api/blogDetail/${slug}`)
         const dataBlog = await res.json()
         const resCat = await fetch(`https://api.dignitestudio.com/api/blogCategory/${dataBlog[0].category}`)
         const dataCategory = await resCat.json()
-        console.log(slug)
+
         return {dataBlog,dataCategory}
     }
 
@@ -29,14 +30,12 @@ class BlogDetail extends React.Component {
 
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
-        this.removeCommentBox = commentBox('5644854293954560-proj',{});
         this.setState({
             url: window.location.href
         })
     }
 
     componentWillUnmount() {
-        this.removeCommentBox();
         window.removeEventListener('scroll', this.handleScroll);
     }
 
@@ -71,26 +70,6 @@ class BlogDetail extends React.Component {
         let tMonth = convertMonth(month)
         let url = this.state.url
 
-        const settings = {
-            className: "center",
-            centerMode: true,
-            infinite: false,
-            centerPadding: "60px",
-            slidesToShow: 1,
-            speed: 500,
-            variableWidth: true,
-            responsive: [
-                {
-                  breakpoint: 600,
-                  settings: {
-                    slidesToShow: 1,
-                    variableWidth: false,
-                    centerPadding: "30px",
-                  }
-                },
-            ]
-        };
-
         return (
             <Layout title={data.title}>
                 <section className="section_first-blogDetail">
@@ -118,9 +97,6 @@ class BlogDetail extends React.Component {
                                     <br/>
                                 </div>
                             </Col>
-                            {/* <Col xs={12} md={8} xl={7} className="mt-cm"> */}
-                                {/* <div className="commentbox" id="contoh2"/> */}
-                            {/* </Col> */}
                         </Row>
                     </Container>
                 </section>

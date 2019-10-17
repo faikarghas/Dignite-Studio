@@ -6,14 +6,18 @@ import Router from 'next/router'
 
 class Menu extends Component {
 
-    state={
-        search:''
+    state = {
+        search:'',
     }
 
-    handleChangeSearch = (e) => {
-        const state = this.state
-        state[e.target.name] = e.target.value;
-        this.setState(state);
+    handleChangeSearch = (evt) => {
+        // const state = this.state
+        // state[e.target.name] = e.target.value;
+        // this.setState(state);
+
+        // or
+
+        this.setState({[evt.target.name]:evt.target.value})
     }
 
     search=(e)=>{

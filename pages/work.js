@@ -3,11 +3,10 @@ import { Container,Row,Col } from 'react-bootstrap'
 import Link from 'next/link'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-import TextHeader from '../components/presentational/textHead'
+import TextHeader from '../components/presentational/textHeader'
 import Layout from '../components/layouts'
 
 import data from '../lib/copywriting/data.js'
-import Head from "next/head";
 
 var settings = {
     dots: true,
@@ -16,37 +15,35 @@ var settings = {
     slidesToScroll: 1,
     lazyLoad: true
 };
-const work = props => {
-    return (
-        <Layout title={'Work'} canonical="work">
-            <TextHeader text={data.work.title} />
-            <section className="section_second-work">
-                <Container>
-                    <Slider {...settings}>
-                        <Row style={{display:'flex !important'}}>
-                            {data.home.Project.map(item=>{
-                                return (
-                                    <Link href="/project/[slug]" as={`/project/${item.slug}`}>
-                                        <Col className="box" xs={4} md={4} lg={4}  key={item.id}>
-                                                <LazyLoadImage
-                                                    alt={'project-img'}
-                                                    src={item.imgUrl}
-                                                    effect="blur"
-                                                />
-                                                <div className="box-hover">
-                                                    <h2>{item.title}</h2>
-                                                    <h2>{item.Category}</h2>
-                                                </div>
-                                        </Col>
-                                    </Link>
-                                )
-                            })}
-                        </Row>
-                    </Slider>
-                </Container>
-            </section>
-        </Layout>
-    )
-}
+const work = props =>  (
+    <Layout title={'Work'} canonical="work">
+        <TextHeader text={data.work.title} />
+        <section className="section_second-work">
+            <Container>
+                <Slider {...settings}>
+                    <Row style={{display:'flex !important'}}>
+                        {data.home.Project.map(item=>{
+                            return (
+                                <Link href="/project/[slug]" as={`/project/${item.slug}`}>
+                                    <Col className="box" xs={4} md={4} lg={4}  key={item.id}>
+                                            <LazyLoadImage
+                                                alt={'project-img'}
+                                                src={item.imgUrl}
+                                                effect="blur"
+                                            />
+                                            <div className="box-hover">
+                                                <h2>{item.title}</h2>
+                                                <h2>{item.Category}</h2>
+                                            </div>
+                                    </Col>
+                                </Link>
+                            )
+                        })}
+                    </Row>
+                </Slider>
+            </Container>
+        </section>
+    </Layout>
+)
 
 export default work

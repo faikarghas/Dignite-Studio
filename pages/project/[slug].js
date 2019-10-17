@@ -2,11 +2,11 @@ import React from 'react'
 import Link from 'next/link'
 import Slider from "react-slick";
 // import { Player, BigPlayButton } from 'video-react';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Container,Row,Col } from 'react-bootstrap';
 
 import Layout from '../../components/layouts'
 import ButtonToTop from '../../components/presentational/buttonToTop'
+import ButtonSeeLive from '../../components/presentational/buttonSeeLive'
 import data from '../../lib/copywriting/data.js'
 
 // import 'video-react/styles/scss/video-react.scss'
@@ -18,14 +18,11 @@ class Project extends React.Component {
         let { slug } = ctx.query
         const res = await data.home
 
-        return {slug,res}
+        return {slug: slug, dataProject: res}
     }
 
     state = {
         transs: 0,
-        data: this.props.res,
-        slug: this.props.slug,
-        fullImg: this.props.res,
     }
 
     componentDidMount(){
@@ -96,7 +93,8 @@ class Project extends React.Component {
 
     render(){
         const {trans} = this.state
-        console.log(this.props.slug,'slug');
+        const {dataProject,slug} = this.props
+
         var settings = {
             dots: true,
             infinite: true,
@@ -107,11 +105,11 @@ class Project extends React.Component {
             autoplaySpeed: 3000,
             pauseOnHover: false
         };
-        const data = this.state.data.Project.filter((item)=>{
-            return item.slug === this.props.slug
+        const data = dataProject.Project.filter((item)=>{
+            return item.slug === slug
         })
-        const getid = this.state.data.Project.filter((item)=>{
-            if (item.slug === this.props.slug) {
+        const getid = dataProject.Project.filter((item)=>{
+            if (item.slug === slug) {
                 return item.id
             }
         })
@@ -128,18 +126,18 @@ class Project extends React.Component {
             idnext = id++;
         }
         // ambil slug project selanjutnya
-        const nextProjectSlug = this.state.data.Project[idnext].slug
+        const nextProjectSlug = dataProject.Project[idnext].slug
         // ambil nama project sekarang
-        const nextProjectName = this.state.data.Project[idnext].title
+        const nextProjectName = dataProject.Project[idnext].title
         return (
-            <Layout title={'Project'}>
+            <Layout title={`${data[0].title}`}>
                 <section className="section_first-project text-center">
                     <h1 className="text-center mb-5">{data[0].title}</h1>
                     <p className="">{data[0].about}</p>
                     {data[0].link === 'false' ?
                         ''
                     :
-                        <a className="button_seeLive" href={data[0].link} target="_blank">See Live</a>
+                        <ButtonSeeLive link={data[0].link}/>
                     }
                 </section>
                 <section className="section_second-project width100 p-0 placeholder" data-large={data[0].landingImg}>
