@@ -2,7 +2,7 @@ const express       = require('express');
 const next          = require('next');
 const compression   = require('compression')
 const cookieParser = require('cookie-parser');
-const cacheableResponse = require('cacheable-response')
+const LRUCache = require('lru-cache');
 
 // const enforce = require('express-sslify');
 
@@ -12,13 +12,14 @@ const dev       = process.env.NODE_ENV !== 'production';
 const app       = next({dev});
 const handle    = app.getRequestHandler();
 
-const ssrCache = cacheableResponse({
-    get: async ({ req, res, actualPage, queryParams }) => ({
-      data: await app.render(req, res, actualPage, queryParams),
-      ttl: 1000 * 60 * 60, // 1hour
-    }),
-    send: ({ data, res }) => res.send(data)
-})
+const ssrCache = new LRUCache({
+    max: 100 * 1024 * 1024, /* cache size will be 100 MB using `return n.length` as length() function */
+    length: function (n, key) {
+        return n.length
+    },
+    maxAge: 1000 * 60 * 60 * 24 * 30
+});
+
 
 const sitemapOptions = {
     root: __dirname + '/static/sitemap/',
@@ -93,8 +94,15 @@ app.prepare()
     server.get('/sitemap.xml', (req, res) => res.status(200).sendFile('sitemap.xml', sitemapOptions));
     server.get('/robots.txt', (req, res) => res.status(200).sendFile('robots.txt', robotsOptions));
 
+    server.get('/_next/*', (req, res) => {
+        /* serving _next static content using next.js handler */
+        handle(req, res);
+    });
+
+
     server.get('*', (req, res) => {
-        return handle(req, res)
+        // return handle(req, res)
+        return renderAndCache(req, res)
     })
 
     server.listen(port, err =>{
@@ -107,3 +115,38 @@ app.prepare()
     process.exit(1)
 })
 
+function getCacheKey(req) {
+    return `${req.path}`
+}
+
+async function renderAndCache(req, res) {
+    const key = getCacheKey(req);
+
+    // If we have a page in the cache, let's serve it
+    if (ssrCache.has(key)) {
+        //console.log(`serving from cache ${key}`);
+        res.setHeader('x-cache', 'HIT');
+        res.send(ssrCache.get(key));
+        return
+    }
+
+    try {
+        //console.log(`key ${key} not found, rendering`);
+        // If not let's render the page into HTML
+        const html = await app.renderToHTML(req, res, req.path, req.query);
+
+        // Something is wrong with the request, let's skip the cache
+        if (res.statusCode !== 200) {
+            res.send(html);
+            return
+        }
+
+        // Let's cache this page
+        ssrCache.set(key, html);
+
+        res.setHeader('x-cache', 'MISS');
+        res.send(html)
+    } catch (err) {
+        app.renderError(err, req, res, req.path, req.query)
+    }
+}
