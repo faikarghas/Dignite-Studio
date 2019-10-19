@@ -12,8 +12,10 @@ const searchResult = ({dataSearch,showModal}) => {
                 let date = new Date(item.created_at).getDate()
                 let year = new Date(item.created_at).getFullYear()
                 let tMonth = convertMonth(month)
+                let categoryLowerCase = item.category.toLowerCase()
+
                 return (
-                    <Link href={`/blogDetail?slug=${item.slug}`} as={`/blog/${item.slug}`} key={item.id}>
+                    <Link href={`/blogDetail?category=${categoryLowerCase}&slug=${item.slug}`} as={`/blog/${categoryLowerCase}/${item.slug}`} key={item.idblog}>
                         <section className="blog_contents__box">
                             <Row>
                                 <Col xs={{span:12,order:2}} md={{span:9,order:1}} >
