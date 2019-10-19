@@ -13,19 +13,13 @@ class BlogPage extends React.Component {
 
     static async getInitialProps(ctx){
         const {page} = ctx.query
-        const res = await fetch(`https://api.dignitestudio.com/api/blog/${page}`)
-        const resLength = await fetch('https://api.dignitestudio.com/api/blog/')
+        const res = await fetch(`https://api.dignitestudio.com/api/blogCategoryPage/${page}/all`)
         const dataBlog = await res.json()
-        const allData = await resLength.json()
-        return {dataBlog,allData,page}
+        return {dataBlog,page}
     }
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            page : this.props.page,
-            activePage : 0
-        };
+    state = {
+        activePage : 0
     }
 
     handlePageChange = (pageNumber) => {
@@ -39,14 +33,8 @@ class BlogPage extends React.Component {
         }
     }
 
-    componentDidUpdate(a,b){
-        if(b.page !== b.activePage){
-            this.setState({page:b.activePage})
-        }
-    }
 
     render(){
-        let dataLength = this.props.allData.length
         return (
             <Layout title={'Blog'}>
                 <section className="section_first-blog">
@@ -54,14 +42,15 @@ class BlogPage extends React.Component {
                     <p>Business to entrepreneurship and marketing tips, Dignite announcements,<br/> and the occasional musings of our digital world. </p>
                 </section>
                 <LayoutBlog allTopics={'active'}>
-                    {this.props.dataBlog.map(item=>{
+                    {this.props.dataBlog.currPage.map(item=>{
                         let month = new Date(item.created_at).getMonth() + 1
                         let date = new Date(item.created_at).getDate() 
                         let year = new Date(item.created_at).getFullYear() 
-
                         let tMonth = convertMonth(month)
+                        let categoryLowerCase = item.category.toLowerCase()
+
                         return (
-                            <Link href={`/blogDetail?slug=${item.slug}`} as={`/blog/${item.slug}`} key={item.idblog}>
+                            <Link href={`/blogDetail?category=${categoryLowerCase}&slug=${item.slug}`} as={`/blog/${categoryLowerCase}/${item.slug}`} key={item.idblog}>
                                 <section className="blog_contents__box">
                                     <Row>
                                         <Col xs={{span:12,order:2}} md={{span:8,order:1}} >
@@ -91,9 +80,9 @@ class BlogPage extends React.Component {
                     })}
 
                     <Pagination
-                        activePage={Number(this.state.page)}
+                        activePage={Number(this.props.page)}
                         itemsCountPerPage={4}
-                        totalItemsCount={dataLength}
+                        totalItemsCount={this.props.dataBlog.totalPage}
                         pageRangeDisplayed={5}
                         onChange={this.handlePageChange}
                     />

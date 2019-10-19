@@ -10,7 +10,7 @@ import {convertMonth} from '../lib/date'
 import Layout from '../components/layouts'
 import LayoutBlog from '../components/layouts-blog'
 
-const Blog = ({dataBlog,allData}) => {
+const Blog = ({dataBlog}) => {
     const [activePage, setActivePage] = useState(0)
 
     function handlePageChange(pageNumber) {
@@ -21,6 +21,7 @@ const Blog = ({dataBlog,allData}) => {
         }
     }
 
+
     return (
         <Layout title={'Blog'} canonical="blog">
             <section className="section_first-blog">
@@ -28,15 +29,15 @@ const Blog = ({dataBlog,allData}) => {
                 <p>Business to entrepreneurship and marketing tips, Dignite announcements,<br/> and the occasional musings of our digital world. </p>
             </section>
             <LayoutBlog allTopics={'active'}>
-                {dataBlog.map(item=>{
+                {dataBlog.currPage.map(item=>{
 
                     let month = new Date(item.created_at).getMonth() + 1
                     let date = new Date(item.created_at).getDate()
                     let year = new Date(item.created_at).getFullYear()
                     let tMonth = convertMonth(month)
-
+                    let categoryLowerCase = item.category.toLowerCase()
                     return (
-                        <Link href={`/blogDetail?slug=${item.slug}`} as={`/blog/${item.slug}`} key={item.idblog}>
+                        <Link href={`/blogDetail?category=${categoryLowerCase}&slug=${item.slug}`} as={`/blog/${categoryLowerCase}/${item.slug}`} key={item.idblog}>
                             <section className="blog_contents__box" >
                                 <Row>
                                     <Col xs={{span:12,order:2}} md={{span:8,order:1}} className="content-blog">
@@ -69,7 +70,7 @@ const Blog = ({dataBlog,allData}) => {
                     <Pagination
                         activePage={Number(activePage)}
                         itemsCountPerPage={4}
-                        totalItemsCount={allData.length}
+                        totalItemsCount={dataBlog.totalPage}
                         pageRangeDisplayed={5}
                         onChange={handlePageChange}
                     />
@@ -80,12 +81,10 @@ const Blog = ({dataBlog,allData}) => {
 }
 
 Blog.getInitialProps = async ({ req }) => {
-    const res = await fetch(`https://api.dignitestudio.com/api/blog1`)
-    const resLength = await fetch(`https://api.dignitestudio.com/api/blog/`)
-    const allData = await resLength.json()
+    const res = await fetch(`https://api.dignitestudio.com/api/blog/1`)
     const dataBlog = await res.json()
 
-    return {dataBlog,allData}
+    return {dataBlog}
 }
 
 export default Blog

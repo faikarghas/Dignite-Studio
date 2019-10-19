@@ -14,11 +14,9 @@ class BlogCa extends React.Component {
 
     static async getInitialProps(ctx) {
         const {category} = ctx.query
-        const res = await fetch(`https://api.dignitestudio.com/api/blogCategory1/${category}`)
-        const resLength = await fetch(`https://api.dignitestudio.com/api/blogCategory/${category}`)
-        const allData = await resLength.json()
+        const res = await fetch(`https://api.dignitestudio.com/api/blogCategoryPage/1/${category}`)
         const dataBlog = await res.json()
-        return {category,allData,dataBlog}
+        return {dataBlog,category}
     }
 
     constructor(props) {
@@ -39,7 +37,6 @@ class BlogCa extends React.Component {
 
     render(){
         let activeCategory = ''
-        let dataLength = this.props.allData.length
         if(this.props.category === 'business'){
             activeCategory = 'business'
         } else if (this.props.category === 'design'){
@@ -77,7 +74,7 @@ class BlogCa extends React.Component {
                     <p>Business to entrepreneurship and marketing tips, Dignite announcements,<br/> and the occasional musings of our digital world. </p>
                 </section>
                 <LayoutBlog activeCategory={activeCategory}>
-                {this.props.dataBlog.map(item=>{
+                {this.props.dataBlog.currPage.map(item=>{
                     let month = new Date(item.created_at).getMonth() + 1
                     let date = new Date(item.created_at).getDate()
                     let year = new Date(item.created_at).getFullYear()
@@ -116,7 +113,7 @@ class BlogCa extends React.Component {
                     <Pagination
                         activePage={this.state.activePage}
                         itemsCountPerPage={4}
-                        totalItemsCount={dataLength}
+                        totalItemsCount={this.props.dataBlog.totalPage}
                         pageRangeDisplayed={5}
                         onChange={this.handlePageChange}
                     />

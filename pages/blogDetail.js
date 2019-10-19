@@ -5,50 +5,48 @@ import fetch from 'isomorphic-unfetch'
 import commentBox from 'commentbox.io';
 import {convertMonth} from '../lib/date'
 
+
 import Layout from '../components/layouts'
 import ButtonToTop from '../components/presentational/buttonToTop'
 import ShareIcon from '../components/presentational/shareIcon'
 
-
 class BlogDetail extends React.Component {
-
     static async getInitialProps (ctx){
-        const {slug} = ctx.query
-
-        const res = await fetch(`https://api.dignitestudio.com/api/blogDetail/${slug}`)
+        const {slug,category} = ctx.query
+        const res = await fetch(`https://api.dignitestudio.com/api/blogCategoryDetail/${category}/${slug}`)
         const dataBlog = await res.json()
-        const resCat = await fetch(`https://api.dignitestudio.com/api/blogCategory/${dataBlog[0].category}`)
-        const dataCategory = await resCat.json()
-
-        return {dataBlog,dataCategory}
+        return {dataBlog,category}
     }
 
     state = {
         url : '',
-        show: ''
+        show:'',
+        data: []
     }
 
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
+        this.removeCommentBox = commentBox('5644854293954560-proj',{});
         this.setState({
-            url: window.location.href
+            url: window.location.href,
+            data: this.props.dataBlog
         })
     }
 
     componentWillUnmount() {
+        this.removeCommentBox();
         window.removeEventListener('scroll', this.handleScroll);
     }
 
     handleScroll = ()=> {
         let valueScroll = window.scrollY
-        const height = this.divElement.clientHeight ;
-
+        const height = this.divElement.clientHeight;
         const widthWindow = window.innerWidth;
-        if(valueScroll >= 190 && valueScroll <= height  && widthWindow >= 890){
+        if(valueScroll > 200 && valueScroll < height  && widthWindow >= 890){
             this.setState({
                 show:'show'
             })
-        } else if( valueScroll >= height){
+        } else if( valueScroll > height - 200){
             this.setState({
                 show:''
             })
@@ -60,35 +58,47 @@ class BlogDetail extends React.Component {
     }
 
     render(){
-        const {show} = this.state
+        const {show,data} = this.state
+        const {dataBlog} = this.props
+        let [title,content,category] = ['','','']
 
-        let data = this.props.dataBlog[0]
-        let allDataCategory = this.props.dataCategory
-        let month = new Date(data.created_at).getMonth() + 1
-        let date = new Date(data.created_at).getDate()
-        let year = new Date(data.created_at).getFullYear()
-        let tMonth = convertMonth(month)
+        let tMonth,dataDet,date,year
+
+        if (dataBlog.detail.length > 0) {
+            dataDet = dataBlog.detail[0]
+
+            title = dataDet.title
+            content = dataDet.content
+            category = dataDet.category
+
+            let month = new Date(dataDet.created_at).getMonth() + 1
+            date = new Date(dataDet.created_at).getDate()
+            year = new Date(dataDet.created_at).getFullYear()
+            tMonth = convertMonth(month)
+        }
+        let keepInspData = dataBlog.keep
         let url = this.state.url
 
+
         return (
-            <Layout title={data.title}>
+            <Layout title={title}>
                 <section className="section_first-blogDetail">
                     <Container>
                         <Row className="mb-5 justify-content-center">
-                            <Col xs={12} md={8} xl={7} className="bread">
+                            <Col xs={12} md={8} xl={12} className="bread">
                                 <Breadcrumb>
                                     <li className="breadcrumb-item"><Link href="/"><a>Home</a></Link></li>
                                     <li className="breadcrumb-item"><Link href="/blog"><a>Blog</a></Link></li>
-                                    <li className="breadcrumb-item active">{data.title}</li>
+                                    <li className="breadcrumb-item active">{title}</li>
                                 </Breadcrumb>
                             </Col>
                         </Row>
                         <Row className="justify-content-center">
                             <Col xs={12} md={8} xl={7} className="content"  ref={ (divElement) => this.divElement = divElement}>
-                                <h1>{data.title}</h1>
-                                {parse(data.content)}
+                                <h1>{title}</h1>
+                                {parse(content)}
                                 <div className={`info ${show}`}>
-                                    <h4 className="mb-4">{data.category}</h4>
+                                    <h4 className="mb-4">{category}</h4>
                                     <p>{tMonth} {date}, {year}</p>
                                     <br/>
                                     <br/>
@@ -96,6 +106,9 @@ class BlogDetail extends React.Component {
                                     <br/>
                                     <br/>
                                 </div>
+                            </Col>
+                            <Col xs={12} md={8} xl={7} className="mt-5">
+                                <div className="commentbox" id="contoh2"/>
                             </Col>
                         </Row>
                     </Container>
@@ -106,12 +119,12 @@ class BlogDetail extends React.Component {
                             <Col md={12} className="text-center">
                                 <h2>Keep Inspired</h2>
                             </Col>
-                            {allDataCategory.map(item => {
+                            {keepInspData.map(item => {
                                 return (
                                     <Col xs={12} md={4} className="xs-p-0 mb-5" key={item.idblog}>
                                         <div className="box">
                                             <div className="box-img">
-                                                <img src={`https://api.dignitestudio.com/images/image/artikel/${item.imgThumbnail}.jpg`} width="100%" alt="sosmed-icon"></img>
+                                                <img src={`https://api.dignitestudio.com/images/image/artikel/${item.imgThumbnail}.jpg`} width="100%"></img>
                                             </div>
                                             <Link href={`/blogDetail?slug=${item.slug}`} as={`/blog/${item.slug}`} key={item.idblog}>
                                                 <a><h3>{item.title}</h3></a>

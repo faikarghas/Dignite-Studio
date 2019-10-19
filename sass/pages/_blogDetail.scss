@@ -9,6 +9,8 @@
         margin-top: 8rem;
     }
     .bread{
+        display: flex;
+        justify-content: center;
         @include respond(phone){
             padding: 0;
         }

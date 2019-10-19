@@ -14,19 +14,13 @@ class BlogCatPage extends React.Component {
 
     static async getInitialProps(ctx){
         const {page,category} = ctx.query
-        const res = await fetch(`https://api.dignitestudio.com/api/blogCategoryPerPage/${page}/${category}`)
+        const res = await fetch(`https://api.dignitestudio.com/api/blogCategoryPage/${page}/${category}`)
         const dataBlog = await res.json()
-        const resLength = await fetch(`https://api.dignitestudio.com/api/blogCategory/${category}`)
-        const allData = await resLength.json()
-        return {dataBlog,allData,page,category}
+        return {dataBlog,page,category}
     }
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            page : this.props.page,
-            activePage : 0
-        };
+    state = {
+        activePage : 0
     }
 
     handlePageChange = (pageNumber) => {
@@ -40,15 +34,7 @@ class BlogCatPage extends React.Component {
         }
     }
 
-    componentDidUpdate(a,b){
-        if(b.page !== b.activePage){
-            this.setState({page:b.activePage})
-        }
-    }
-
     render(){
-        let dataLength = this.props.allData.length
-        let slug = 'inijudul'
         let activeCategory
         if(this.props.category === 'business'){
             activeCategory = 'business'
@@ -88,13 +74,15 @@ class BlogCatPage extends React.Component {
                     <p>cat page</p>
                 </section>
                 <LayoutBlog activeCategory={activeCategory}>
-                    {this.props.dataBlog.map(item=>{
-                         let month = new Date(item.created_at).getMonth() + 1
-                         let date = new Date(item.created_at).getDate() 
-                         let year = new Date(item.created_at).getFullYear() 
-                         let tMonth = convertMonth(month)
+                    {this.props.dataBlog.currPage.map(item=>{
+                        let month = new Date(item.created_at).getMonth() + 1
+                        let date = new Date(item.created_at).getDate() 
+                        let year = new Date(item.created_at).getFullYear() 
+                        let tMonth = convertMonth(month)
+                        let categoryLowerCase = item.category.toLowerCase()
+
                         return (
-                            <Link href={`/blogCategoryDetail?category=${this.props.category}&slug=${item.slug}`} as={`/blog/${this.props.category}/${item.slug}`} key={item.idblog}>
+                            <Link href={`/blogDetail?category=${categoryLowerCase}&slug=${item.slug}`} as={`/blog/${categoryLowerCase}/${item.slug}`} key={item.idblog}>
                                 <section className="blog_contents__box">
                                     <Row>
                                         <Col xs={{span:12,order:2}} md={{span:8,order:1}} >
@@ -124,9 +112,9 @@ class BlogCatPage extends React.Component {
                     })}
 
                     <Pagination
-                        activePage={Number(this.state.page)}
+                        activePage={Number(this.props.page)}
                         itemsCountPerPage={4}
-                        totalItemsCount={dataLength}
+                        totalItemsCount={this.props.dataBlog.totalPage}
                         pageRangeDisplayed={5}
                         onChange={this.handlePageChange}
                     />
