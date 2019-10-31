@@ -120,13 +120,15 @@ class BlogDetail extends React.Component {
                                 <h2>Keep Inspired</h2>
                             </Col>
                             {keepInspData.map(item => {
+                                let categoryLowerCase = item.category.toLowerCase()
+
                                 return (
                                     <Col xs={12} md={4} className="xs-p-0 mb-5" key={item.idblog}>
                                         <div className="box">
                                             <div className="box-img">
                                                 <img src={`https://api.dignitestudio.com/images/image/artikel/${item.imgThumbnail}.jpg`} width="100%"></img>
                                             </div>
-                                            <Link href={`/blogDetail?slug=${item.slug}`} as={`/blog/${item.slug}`} key={item.idblog}>
+                                            <Link href={`/blogDetail?category=${categoryLowerCase}&slug=${item.slug}`} as={`/blog/${categoryLowerCase}/${item.slug}`} key={item.idblog}>
                                                 <a><h3>{item.title}</h3></a>
                                             </Link>
                                             <p className="category">{item.category}</p>
