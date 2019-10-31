@@ -1,5 +1,5 @@
 .menu{
-    background-color: #222222;
+    background-color: $color_primary;
     text-align: center;
     position: fixed;
     width: 100%;
@@ -7,13 +7,14 @@
     z-index: 2;
     right: -100%;
     top: 0;
+    transition: background-color .5s;
     .header_menu{padding: 4rem;}
 
     ul{
         // opacity: 0;
         list-style: none;
         li,a{
-            color: white;
+            color: $color_black;
             padding:1rem 3rem;
             font-size: 3rem;
             cursor: pointer;
@@ -21,7 +22,7 @@
         a{
             &:hover{
                 text-decoration: none;
-                 color: #ffba00 !important;
+                color: #222 !important;
             }
         }
         li{

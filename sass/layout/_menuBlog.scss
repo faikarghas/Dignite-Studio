@@ -41,7 +41,7 @@
             }
         }
         a{
-            color: #464646 !important;
+            color: #464646 ;
             cursor: pointer;
             height: 4rem;
             display: flex;
@@ -49,14 +49,14 @@
             font-family: 'Brandon-grotesque-medium', sans-serif !important;
             &:hover{
                 text-decoration: none;
-                color: #ffba00 !important;
+                color: #ffba00;
             }
             @include respond (phone){
                 // font-size: 1rem;
             }
         }
         .active{
-            color: #ffba00 !important;
+            color: #ffba00;
         }
     }
     &-1{

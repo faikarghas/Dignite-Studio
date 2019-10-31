@@ -1,1 +1,1 @@
-export {default} from './menuLy'
+export {default} from './menu'

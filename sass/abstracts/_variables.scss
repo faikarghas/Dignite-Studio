@@ -1,11 +1,179 @@
 // Color
 $color_dark          : #222222;
-$color_semiDark    : #292929;
-$color_light     : #AAAAAA;
-$color_red     : #FA2E2F;
+$color_semiDark      : #292929;
+$color_primary       : #FFBA00;
 
 
 $color_black    : black;
 $color_white    : white;
 
 
+[data-theme="dark"] {
+    .menu{
+        background-color: $color_dark;
+        ul{
+            li{
+                a{
+                    color: $color_white;
+                }
+            }
+        }
+    }
+    body{
+        background-color: $color_dark;
+    }
+    header, header .header_menu {
+        background-color: $color_dark ;
+    }
+    .menu ul a:hover {
+        text-decoration: none;
+        color: white !important;
+    }
+    .textHeaderHome {
+        background-color: $color_dark ;
+        h1{
+            color: white;
+        }
+    }
+    .textHeader{
+        background-color: $color_dark ;
+        h1{
+            color: $color_white;
+        }
+    }
+    .section_second-home {
+        background-color: #fff;
+        .box_allprojects {
+            .view_allpr {
+                a {
+                    color: $color_dark ;
+                    border-bottom: 2px solid $color_dark;
+                }
+            }
+        }
+    }
+    .section_third-about .box h2 {
+        color: white;
+    }
+    .section_third-about .box ul li {
+        color: white;
+    }
+    footer {
+        background: rgba(70,70,70,.12);
+
+        p,a{
+            color: white;
+        }
+       .for-lg-sc {
+           li {
+                a {
+                    color: white;
+                    &:hover{
+                        color: white;
+                    }
+               }
+            }
+        }
+        .button_hire {
+            color: $color_dark;
+        }
+    }
+
+    // det project
+
+    .section_first-project .button_seeLive {
+        color: #222;
+    }
+
+    .section_first-project,.section_third-project,.section_fifth-project {
+        background-color: #222;
+        h1,p,h2{
+            color: white;
+        }
+    }
+    .section_fourth-project{
+        background: rgba(70,70,70,.12);
+    }
+    .section_sixth-project {
+        background: rgba(70,70,70,.12);
+    }
+    .section_ninth-project {
+        background-color: #222;
+    }
+
+    // blog
+
+    .section_first-blog {
+        background-color: #222;
+        h1,p{
+            color: white;
+        }
+    }
+    .menu_blog {
+        background-color: #222;
+        ul{
+            a{
+                color: white;
+            }
+            .active{
+                color: #ffba00;
+            }
+            li{
+                .input-group{
+                    input{
+
+                        &::placeholder{
+                            color: white;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+    .blog_contents {
+        background-color: #222;
+        position: relative;
+        .featured li{
+            color: white;
+        }
+        .pagination li a {
+            color: white;
+        }
+    }
+
+    .blog_contents__box-p h2,p {
+        color: white;
+    }
+
+    .form-control {
+        color: #ffffff;
+    }
+
+    .section_first-blogDetail {
+        background-color: #222;
+        h1,a,p{
+            color: white;
+        }
+        .breadcrumb{
+            a{
+                color: white;
+            }
+            li{
+                color: $color_primary;
+            }
+        }
+        .content p a {
+            color: white;
+            border-bottom: 2px solid white;
+        }
+    }
+
+    .section_third-slider{
+        h2,h3,p{
+            color: white;
+        }
+    }
+    
+}

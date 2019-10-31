@@ -1,13 +1,13 @@
 import Head from 'next/head'
-import {Tween,Timeline} from 'react-gsap'
 import Link from 'next/link'
-import { Container,Row,Col } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux'
+import * as action from '../../redux/actionIndex'
 
 import ModalHire from '../presentational/modalHire'
 import Header from '../layouts/header'
-import Menu from '../layouts/menu'
 import Footer from '../layouts/footer'
+import ThemeButton from '../presentational/themeButton'
 
 import { initGA, logPageView, modalView, logEvent } from '../../lib/analytics'
 
@@ -27,9 +27,9 @@ class Layout extends React.Component{
         {id:3,nama:'HIRE US',link:'',klik:true},
         {id:4,nama:'BLOG',link:'/blog'},
         {id:5,nama:'STORE',link:'',linkweb:true},
+        {id:6,nama:'BUTTON',link:'',button:true},
       ],
-      elHeight: 171,
-      menu: false
+      menu: false,
     }
 
   }
@@ -40,74 +40,39 @@ class Layout extends React.Component{
       window.GA_INITIALIZED = true
     }
     logPageView()
-    this.getHeight()
+    this.props.initilizeThemeHandler()
   }
 
-  getHeight = () => {
-    let elHeight = document.getElementById('top').clientHeight
-    this.setState({
-      elHeight
-    })
-  }
 
   openMenu = () => {
-    const GSAP = require('gsap');
-    const CustomEase = require('../../lib/CustomEase');
+    this.setState({ menu: true })
 
-    const { TweenMax, TimelineLite, Power4 } = GSAP;
-
-    this.setState({
-      menu: true
-    })
-
-    // logo
-
-    // menu icon
-    TweenMax.to(this.svgElement1,.2, {fill: "rgb(255,255,255,1)"})
-    TweenMax.to(this.svgElement2,.2, {fill: "rgb(255,255,255,1)"})
-    TweenMax.to(this.svgElement3,.2, {fill: "rgb(255,255,255,1)"})
-
-
-
-    // menu box
-    TweenMax.to(this.navbar, .4, { right: 0, opacity:1, ease:Power4.easeInOut });
-    TweenMax.to(this.headerElement, .4, { right: 0, opacity:1, ease:Power4.easeInOut });
-
-    TweenMax.staggerFrom(this.users, 1, { opacity: 0}, .1);
-    TweenMax.staggerTo(this.users, 1, { opacity: 1, ease:Power4.easeInOut }, .1);
+    let refData = {
+      svg1: this.svgElement1,
+      svg2: this.svgElement2,
+      svg3: this.svgElement3,
+      navbar: this.navbar,
+      hEl: this.headerElement,
+      usersRef: this.users,
+      color: this.props.colour
+    }
+    this.props.openMenuHandler(refData)
   }
 
   closeMenu = () => {
-    const GSAP = require('gsap');
+    this.setState({ menu: false })
 
-    const { TweenMax, TimelineLite, Power4 } = GSAP;
+    let refData = {
+      svg1: this.svgElement1,
+      svg2: this.svgElement2,
+      svg3: this.svgElement3,
+      navbar: this.navbar,
+      hEl: this.headerElement,
+      usersRef: this.users,
+      color: this.props.colour
 
-    this.setState({
-      menu: false
-    })
-
-
-    TweenMax.staggerFrom(this.users, 1, { opacity: 1}, 0.1);
-    TweenMax.staggerTo(this.users, 1, { opacity: 0,ease:Power4.easeInOut }, 0.1,allDone);
-
-    // menu icon
-    TweenMax.to(this.svgElement1,.2, {fill: "rgb(34,34,34,1)",delay:1})
-    TweenMax.to(this.svgElement2,.2, {fill: "rgb(34,34,34,1)",delay:1})
-    TweenMax.to(this.svgElement3,.2, {fill: "rgb(34,34,34,1)",delay:1})
-
-    let thisNavbar = this.navbar
-    let headerElement = this.headerElement
-    let logoElement = this.logoElement
-
-    function allDone(){
-      TweenMax.to(thisNavbar, .8, { right: '100%',ease:Power4.easeInOut ,onComplete:done2});
-      TweenMax.to(headerElement, .8, { right: '100%',ease:Power4.easeInOut ,onComplete:done2});
     }
-
-    function done2() {
-      TweenMax.to(thisNavbar, 0, {css:{opacity:0,right:'-100%'},ease:Power4.easeInOut});
-      TweenMax.to(headerElement, 0, {css:{opacity:0,right:'-100%'},ease:Power4.easeInOut});
-    }
+    this.props.closeMenuHandler(refData)
   }
 
   showModal = (category,action,label,modalName) => {
@@ -149,6 +114,7 @@ class Layout extends React.Component{
             svgRef1={el => this.svgElement1 = el}
             svgRef2={el => this.svgElement2 = el}
             svgRef3={el => this.svgElement3 = el}
+            menuButtonColour={this.state.menuButtonColour}
           />
             {this.props.children}
           <Footer showModal={this.showModal} />
@@ -165,12 +131,23 @@ class Layout extends React.Component{
                 return (
                   <li key={item.id} ref={div => this.users[i] = div}><a href="https://store.dignitestudio.com/" target="_blank" rel="noopener">STORE</a></li>
                 )
+              } else if(item.button){
+                return (
+                  <li key={item.id} style={{opacity:1}} ref={div => this.users[i] = div} className="mt-5">
+                    <ThemeButton
+                      svgRef1={el => this.svgElement1 = el}
+                      svgRef2={el => this.svgElement2 = el}
+                      svgRef3={el => this.svgElement3 = el}
+                    />
+                  </li>
+                )
               } else {
                 return(
                   <li key={item.id} ref={div => this.users[i] = div}><Link href={item.link}><a>{item.nama}</a></Link></li>
                 )
               }
             })}
+
           </ul>
         </div>
 
@@ -186,4 +163,19 @@ Layout.propTypes = {
   canonical : PropTypes.string
 }
 
-export default Layout
+const mapStateToProps = (state) => {
+  return {
+    colour: state.theme.theme_colour,
+    theme: state.theme.theme,
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    initilizeThemeHandler : (bs,theme,colour) => dispatch(action.initilizeThemeHandler(bs,theme,colour)),
+    openMenuHandler: (data) => dispatch(action.openMenuHandler(data)),
+    closeMenuHandler: (data) => dispatch(action.closeMenuHandler(data))
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Layout)

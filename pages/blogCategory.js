@@ -1,7 +1,7 @@
-import { Container,Row,Col } from 'react-bootstrap'
+import React, { useState, useEffect } from "react"
+import { Row,Col } from 'react-bootstrap'
 import Link from 'next/link'
 import Router from 'next/router'
-import parse from 'html-react-parser'
 import Pagination from "react-js-pagination";
 import fetch from 'isomorphic-unfetch'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
@@ -10,45 +10,19 @@ import {convertMonth} from '../lib/date'
 import Layout from '../components/layouts'
 import LayoutBlog from '../components/layouts-blog'
 
-class BlogCa extends React.Component {
 
-    static async getInitialProps(ctx) {
-        const {category} = ctx.query
-        const res = await fetch(`https://api.dignitestudio.com/api/blogCategoryPage/1/${category}`)
-        const dataBlog = await res.json()
-        return {dataBlog,category}
-    }
+const BlogCa = ({dataBlog,category}) => {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            activePage: 1,
-        };
-    }
-
-    handlePageChange = (pageNumber) => {
-        if(pageNumber === 1) {
-            Router.push(`/blogCategory?category=${this.props.category}`, `/blog/${this.props.category}`);
-        } else {
-            Router.push(`/blogCategoryPage?category=${this.props.category}&page=${pageNumber}`, `/blog/${this.props.category}/page/${pageNumber}`);
-        }
-    }
-
-
-    render(){
-        let activeCategory = ''
-        if(this.props.category === 'business'){
-            activeCategory = 'business'
-        } else if (this.props.category === 'design'){
-            activeCategory = 'design'
-        } else if (this.props.category === 'tech'){
-            activeCategory = 'tech'
-        } else if (this.props.category === 'announcement') {
-            activeCategory = 'announcement'
+        function handlePageChange (pageNumber){
+            if(pageNumber === 1) {
+                Router.push(`/blogCategory?category=${category}`, `/blog/${category}`);
+            } else {
+                Router.push(`/blogCategoryPage?category=${category}&page=${pageNumber}`, `/blog/${category}/page/${pageNumber}`);
+            }
         }
 
-        let category = this.props.category
-        let splitTitle = category.split('')
+        let currCategory = category
+        let splitTitle = currCategory.split('')
         let arrTitle = []
 
         for (let i = 0; i < splitTitle.length; i++) {
@@ -62,26 +36,25 @@ class BlogCa extends React.Component {
         let resTitle = arrTitle.join('')
         let title = `${resTitle} Blog`
 
-        if(this.props.category === 'announcement'){
+        if(category === 'announcement'){
             title = `${resTitle}`
         }
 
-
-        return (
-            <Layout title={`${title}`} canonical={`blog/${activeCategory}`}>
+    return (
+            <Layout title={`${title}`} canonical={`blog/${category}`}>    
                 <section className="section_first-blog">
-                    <h1 className="mb-5">{`${activeCategory}`}</h1>
+                    <h1 className="mb-5">{`${category}`}</h1>
                     <p>Business to entrepreneurship and marketing tips, Dignite announcements,<br/> and the occasional musings of our digital world. </p>
                 </section>
-                <LayoutBlog activeCategory={activeCategory}>
-                {this.props.dataBlog.currPage.map(item=>{
+                <LayoutBlog activeCategory={category}>
+                {dataBlog.currPage.map(item=>{
                     let month = new Date(item.created_at).getMonth() + 1
                     let date = new Date(item.created_at).getDate()
                     let year = new Date(item.created_at).getFullYear()
                     let tMonth = convertMonth(month)
 
                         return (
-                            <Link href={`/blogCategoryDetail?category=${this.props.category}&slug=${item.slug}`} as={`/blog/${this.props.category}/${item.slug}`} key={item.idblog}>
+                            <Link href={`/blogCategoryDetail?category=${category}&slug=${item.slug}`} as={`/blog/${category}/${item.slug}`} key={item.idblog}>
                                 <section className="blog_contents__box">
                                     <Row>
                                         <Col xs={{span:12,order:2}} md={{span:8,order:1}} >
@@ -111,18 +84,23 @@ class BlogCa extends React.Component {
                     })}
 
                     <Pagination
-                        activePage={this.state.activePage}
+                        activePage={1}
                         itemsCountPerPage={4}
-                        totalItemsCount={this.props.dataBlog.totalPage}
+                        totalItemsCount={dataBlog.totalPage}
                         pageRangeDisplayed={5}
-                        onChange={this.handlePageChange}
+                        onChange={handlePageChange}
                     />
 
                 </LayoutBlog>
             </Layout>
-        )
-    }
+    )
+}
 
+BlogCa.getInitialProps = async ({query})=>{
+        const {category} = query
+        const res = await fetch(`https://api.dignitestudio.com/api/blogCategoryPage/1/${category}`)
+        const dataBlog = await res.json()
+        return {dataBlog,category}
 }
 
 export default BlogCa

@@ -2,7 +2,8 @@ import App, { Container } from 'next/app';
 import React from 'react';
 import Router from 'next/router';
 import NProgress from 'nprogress'
-
+import withReduxStore from '../lib/with-redux-store';
+import { Provider } from 'react-redux';
 
 // NProgress
 Router.events.on('routeChangeStart', url => {
@@ -22,11 +23,13 @@ class MyApp extends App {
         });
     }
     render() {
-        const { Component, pageProps } = this.props
+        const { Component, pageProps, reduxStore } = this.props
         return (
-                <Component {...pageProps} />
+          <Provider store={reduxStore}>
+            <Component {...pageProps} />
+          </Provider>
         )
     }
 }
 
-export default MyApp
+export default withReduxStore(MyApp)
