@@ -9,6 +9,15 @@ $color_white    : white;
 
 
 [data-theme="dark"] {
+    #nprogress .bar {
+        background: #FFBA00;
+    }
+
+        /* Fancy blur effect */
+    #nprogress .peg {
+        box-shadow: 0 0 10px #FFBA00, 0 0 5px #FFBA00;
+    }
+
     .menu{
         background-color: $color_dark;
         ul{
@@ -59,7 +68,7 @@ $color_white    : white;
         color: white;
     }
     footer {
-        background: rgba(70,70,70,.12);
+        background: #222;
 
         p,a{
             color: white;
@@ -76,6 +85,15 @@ $color_white    : white;
         }
         .button_hire {
             color: $color_dark;
+        }
+    }
+
+    // search result
+
+    .section_first-search {
+        background-color: #222;
+        .form-control{
+            background-color: #222;
         }
     }
 
@@ -175,5 +193,5 @@ $color_white    : white;
             color: white;
         }
     }
-    
+
 }
