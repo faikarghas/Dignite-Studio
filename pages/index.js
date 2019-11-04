@@ -7,7 +7,6 @@ import TextHeaderHome from '../components/presentational/textHeaderHome'
 import ButtonViewAllProjects from '../components/presentational/buttonViewAllProjects'
 import Layout from '../components/layouts'
 import data from '../lib/copywriting/data.js'
-import ThemeButton from '../components/presentational/themeButton'
 
 const Project = ({trans}) => (
   <section className="section_second-home width100 homeku">

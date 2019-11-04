@@ -21,7 +21,7 @@ const headerLy = props => {
                 <ul>
                     <li style={{cursor:'pointer',zIndex:2}}>
                         <Link href="/">
-                            <img src='../../static/image/logo-hitam.png' width="60px" height="60px" alt="logo-dignite" ></img>
+                            <img src='https://image-dignite.s3-ap-southeast-1.amazonaws.com/logo-dignite-kuning.png' width="100px" height="100px" alt="logo-dignite" ></img>
                         </Link>
                     </li>
                     <li onClick={() => menuHandler(props.menu,props.openMenu,props.closeMenu)} style={{cursor:'pointer'}} className="menu-button">
