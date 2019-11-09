@@ -17,9 +17,9 @@ const textHeader = props => {
             <Container>
                 {/* <Fade bottom> */}
                     <h1 className="text-center">
-                    <SplitText initialPose="exit" pose="enter" charPoses={charPoses}>
+                    {/* <SplitText initialPose="exit" pose="enter" charPoses={charPoses}> */}
                         {props.text}
-                    </SplitText>
+                    {/* </SplitText> */}
                     </h1>
                 {/* </Fade> */}
             </Container>

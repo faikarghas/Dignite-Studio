@@ -14,7 +14,8 @@ import data from '../../lib/copywriting/data.js'
 
 const Project = ({trans}) => {
   const { locale, t } = useTranslation()
-  console.log(locale);
+  // const [browserSetting] = navigator.language.split('-')
+  // console.log(navigator,'lang');
   
   return (
     <section className="section_second-home width100 homeku">

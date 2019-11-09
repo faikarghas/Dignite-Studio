@@ -15,9 +15,9 @@ const textHeaderHome = ({text}) => {
         <section className="textHeaderHome width100">
             <Container>
                     <h1 className="text-center">
-                    <SplitText initialPose="exit" pose="enter" charPoses={charPoses}>
+                    {/* <SplitText initialPose="exit" pose="enter" charPoses={charPoses}> */}
                         {text}
-                    </SplitText>
+                    {/* </SplitText> */}
                     </h1>
             </Container>
         </section>
