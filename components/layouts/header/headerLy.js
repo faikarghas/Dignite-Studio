@@ -2,8 +2,11 @@ import Link from 'next/link'
 import PropTypes from 'prop-types';
 import { Container,Row,Col } from 'react-bootstrap';
 import React, { useEffect } from 'react'
+
 import * as action from '../../../redux/actionIndex'
 import {connect} from 'react-redux'
+import useTranslation from '../../../hooks/useTranslation'
+
 
 function menuHandler(menu,open,close) {
     if(menu){
@@ -14,13 +17,15 @@ function menuHandler(menu,open,close) {
 }
 
 const headerLy = props => {
+    const { locale, t } = useTranslation()
+
     return (
         <header id="top" >
             <div className="hd_bg" ref={props.headerRef}></div>
             <Container className="header_menu">
                 <ul>
                     <li style={{cursor:'pointer',zIndex:2}}>
-                        <Link href="/">
+                        <Link href="/[langs]" as={`/${locale}`}>
                             <img src='https://image-dignite.s3-ap-southeast-1.amazonaws.com/logo-dignite-kuning.png' width="60px" height="60px" alt="logo-dignite" ></img>
                         </Link>
                     </li>

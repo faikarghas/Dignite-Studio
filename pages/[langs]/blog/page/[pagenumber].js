@@ -1,22 +1,22 @@
 import { Container,Row,Col } from 'react-bootstrap'
 import Link from 'next/link'
 import Router from 'next/router'
-import parse from 'html-react-parser'
 import Pagination from "react-js-pagination";
 import fetch from 'isomorphic-unfetch'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-import {convertMonth} from '../lib/date'
-import Layout from '../components/layouts'
-import LayoutBlog from '../components/layouts-blog'
+import Layout from '../../../../components/layouts'
+import LayoutBlog from '../../../../components/layouts-blog'
+import {convertMonth} from '../../../../lib/date'
+import withLocale from '../../../../hocs/withLocale'
 
-class BlogCatPage extends React.Component {
+class BlogPage extends React.Component {
 
     static async getInitialProps(ctx){
-        const {page,category} = ctx.query
-        const res = await fetch(`https://api.dignitestudio.com/api/blogCategoryPage/${page}/${category}`)
+        const {pagenumber,langs} = ctx.query
+        const res = await fetch(`https://api.dignitestudio.com/api/blogCategoryPage/${pagenumber}/all`)
         const dataBlog = await res.json()
-        return {dataBlog,page,category}
+        return {dataBlog,pagenumber,langs}
     }
 
     state = {
@@ -28,61 +28,31 @@ class BlogCatPage extends React.Component {
             activePage:pageNumber
         })
         if(pageNumber === 1) {
-            Router.push(`/blogCategory?category=${this.props.category}`, `/blog/${this.props.category}`);
+            Router.push(`/[langs]/blog`,`/${this.props.langs}/blog`);
         } else {
-            Router.push(`/blogCategoryPage?category=${this.props.category}&page=${pageNumber}`, `/blog/${this.props.category}/page/${pageNumber}`);
+            Router.push(`/[langs]/blog/page/[pagenumber]`, `/${this.props.langs}/blog/page/${pageNumber}`);
         }
     }
 
+
     render(){
-        let activeCategory
-        if(this.props.category === 'business'){
-            activeCategory = 'business'
-        } else if (this.props.category === 'design'){
-            activeCategory = 'design'
-        } else if (this.props.category === 'tech'){
-            activeCategory = 'tech'
-        } else if (this.props.category === 'announcement') {
-            activeCategory = 'announcement'
-        }
-
-        let category = this.props.category
-        let splitTitle =   category.split('')
-        let arrTitle = []
-
-        for (let i = 0; i < splitTitle.length; i++) {
-            if (i === 0) {
-                arrTitle.push(splitTitle[i].toUpperCase())
-            } else {
-                arrTitle.push(splitTitle[i])
-            }
-        }
-
-        let resTitle = arrTitle.join('')
-        let title = `${resTitle} Blog`
-
-        if(this.props.category === 'announcement'){
-            title = `${resTitle}`
-        }
-
-
         return (
-            <Layout title={`${title}`}>
+            <Layout title={'Blog'}>
                 <section className="section_first-blog">
-                    <h1 className="mb-5">{`${activeCategory}`}</h1>
+                    <h2 className="mb-5">BLOG</h2>
                     <p>Business to entrepreneurship and marketing tips, Dignite announcements,<br/> and the occasional musings of our digital world. </p>
-                    <p>cat page</p>
+                    <p>page </p>
                 </section>
-                <LayoutBlog activeCategory={activeCategory}>
+                <LayoutBlog allTopics={'active'}>
                     {this.props.dataBlog.currPage.map(item=>{
                         let month = new Date(item.created_at).getMonth() + 1
                         let date = new Date(item.created_at).getDate() 
                         let year = new Date(item.created_at).getFullYear() 
                         let tMonth = convertMonth(month)
-                        let categoryLowerCase = item.category.toLowerCase()
+                        // let categoryLowerCase = item.category.toLowerCase()
 
                         return (
-                            <Link href={`/blogDetail?category=${categoryLowerCase}&slug=${item.slug}`} as={`/blog/${categoryLowerCase}/${item.slug}`} key={item.idblog}>
+                            <Link href={`/[langs]/blog/[blogdetail]`} as={`/${this.props.langs}/blog/${item.slug}`} key={item.idblog}>
                                 <section className="blog_contents__box">
                                     <Row>
                                         <Col xs={{span:12,order:2}} md={{span:8,order:1}} >
@@ -101,7 +71,7 @@ class BlogCatPage extends React.Component {
                                                 alt={'gambar artikel'}
                                                 src={`https://api.dignitestudio.com/images/image/artikel/${item.imgThumbnail}.jpg`}
                                                 effect="blur"
-                                                width={'100%'}
+                                                width={'100%'} 
                                                 height={"100%"}
                                             />
                                         </Col>
@@ -112,7 +82,7 @@ class BlogCatPage extends React.Component {
                     })}
 
                     <Pagination
-                        activePage={Number(this.props.page)}
+                        activePage={Number(this.props.pagenumber)}
                         itemsCountPerPage={4}
                         totalItemsCount={this.props.dataBlog.totalPage}
                         pageRangeDisplayed={5}
@@ -125,4 +95,4 @@ class BlogCatPage extends React.Component {
 
 }
 
-export default BlogCatPage
+export default withLocale(BlogPage)

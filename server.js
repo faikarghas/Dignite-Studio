@@ -40,47 +40,47 @@ app.prepare()
     server.use(cookieParser());
     // if( process.env.NODE_ENV === 'production' ) server.use(enforce.HTTPS({ trustProtoHeader: true }))
 
-    server.get('/blog/page/:page', (req, res) => {
-        const actualPage = '/blogPage'
-        const queryParams = { page: req.params.page }
-        return app.render( req, res, actualPage, queryParams )
-    })
+    // server.get('/blog/page/:page', (req, res) => {
+    //     const actualPage = '/blogPage'
+    //     const queryParams = { page: req.params.page }
+    //     return app.render( req, res, actualPage, queryParams )
+    // })
 
-    server.get('/blog/announcement/page/:page', (req, res) => {
-        const actualPage = '/blogCategoryPage'
-        const queryParams = { page: req.params.page, category: 'announcement' }
-        return app.render( req, res, actualPage, queryParams )
-    })
-    server.get('/blog/business/page/:page', (req, res) => {
-        const actualPage = '/blogCategoryPage'
-        const queryParams = { page: req.params.page, category: 'business' }
-        return app.render( req, res, actualPage, queryParams )
-    })
-    server.get('/blog/design/page/:page', (req, res) => {
-        const actualPage = '/blogCategoryPage'
-        const queryParams = { page: req.params.page, category: 'design' }
-        return app.render(req, res, actualPage, queryParams )
-    })
+    // server.get('/blog/announcement/page/:page', (req, res) => {
+    //     const actualPage = '/blogCategoryPage'
+    //     const queryParams = { page: req.params.page, category: 'announcement' }
+    //     return app.render( req, res, actualPage, queryParams )
+    // })
+    // server.get('/blog/business/page/:page', (req, res) => {
+    //     const actualPage = '/blogCategoryPage'
+    //     const queryParams = { page: req.params.page, category: 'business' }
+    //     return app.render( req, res, actualPage, queryParams )
+    // })
+    // server.get('/blog/design/page/:page', (req, res) => {
+    //     const actualPage = '/blogCategoryPage'
+    //     const queryParams = { page: req.params.page, category: 'design' }
+    //     return app.render(req, res, actualPage, queryParams )
+    // })
 
-    server.get('/blog/:category/:slug', (req, res) => {
-        const actualPage = '/blogDetail'
-        const queryParams = { slug: req.params.slug, category: req.params.category }
-        return app.render( req, res, actualPage, queryParams )
-    })
+    // server.get('/blog/:category/:slug', (req, res) => {
+    //     const actualPage = '/blogDetail'
+    //     const queryParams = { slug: req.params.slug, category: req.params.category }
+    //     return app.render( req, res, actualPage, queryParams )
+    // })
 
-    server.get('/blog/business', (req, res) => {
-        const actualPage = '/blogCategory'
-        const queryParams = { category: 'business' }
+    server.get('/:langs/blog/business', (req, res) => {
+        const actualPage = '/[langs]/[blogcat]/[category]'
+        const queryParams = { category: 'business',langs: `${req.params.langs}` }
         return app.render( req, res, actualPage, queryParams )
     })
-    server.get('/blog/design', (req, res) => {
-        const actualPage = '/blogCategory'
-        const queryParams = { category: 'design' }
+    server.get('/:langs/blog/design', (req, res) => {
+        const actualPage = '/[langs]/[blogcat]/[category]'
+        const queryParams = { category: 'design',langs: `${req.params.langs}` }
         return app.render( req, res, actualPage, queryParams )
     })
-    server.get('/blog/announcement', (req, res) => {
-        const actualPage = '/blogCategory'
-        const queryParams = { category: 'announcement' }
+    server.get('/:langs/blog/announcement', (req, res) => {
+        const actualPage = '/[langs]/[blogcat]/[category]'
+        const queryParams = { category: 'announcement',langs: `${req.params.langs}` }
         return app.render( req, res, actualPage, queryParams )
     })
 

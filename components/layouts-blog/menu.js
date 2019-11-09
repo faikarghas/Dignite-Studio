@@ -2,7 +2,15 @@ import React, { Component } from 'react'
 import { Container,Row,Col,InputGroup,FormControl } from 'react-bootstrap'
 import Link from 'next/link'
 import Router from 'next/router'
+import useTranslation from '../../hooks/useTranslation'
 
+
+function withMyHook(Component) {
+    return function WrappedComponent(props) {
+      const { locale, t } = useTranslation()
+      return <Component {...props} locale={locale} />;
+    }
+}
 
 class Menu extends Component {
 
@@ -22,18 +30,17 @@ class Menu extends Component {
 
     search=(e)=>{
         if(e.key === 'Enter'){
-            console.log(e.key,this.state.search);
-            Router.push('/search/[slug]',`/search/${this.state.search}`)
+            Router.push('/[lang]/search/[search]',`/${this.props.locale}/search/${this.state.search}`)
         }
     }
 
     searchButton=()=>{
-        Router.push('/search/[slug]',`/search/${this.state.search}`)
+        Router.push('/[lang]/search/[search]',`/${this.props.locale}/search/${this.state.search}`)
     }
 
     render() {
         let active,activeA,activeB,activeD,activeT = ''
-
+        const {locale} = this.props
         if(this.props.activeCategory === 'business'){
             activeB = 'active'
         } else if (this.props.activeCategory === 'design'){
@@ -52,10 +59,10 @@ class Menu extends Component {
                         <Row style={{borderBottom:' 1px solid #ECEEF1'}}>
                             <Col xs={12} md={8}>
                                 <ul className="menu_blog-1">
-                                    <Link href="/blog"><a className={active}>ALL TOPICS</a></Link>
-                                    <Link href={`/blogCategory?category=business`} as={`/blog/business`}><a className={activeB}>BUSINESS</a></Link>
-                                    <Link href={`/blogCategory?category=design`} as={`/blog/design`}><a className={activeD}>DESIGN</a></Link>
-                                    <Link href={`/blogCategory?category=announcement`} as={`/blog/announcement`}><a className={activeA}>ANNOUNCEMENT</a></Link>
+                                    <Link href="/[langs]/blog" as={`/${this.props.locale}/blog`}><a className={active}>ALL TOPICS</a></Link>
+                                    <Link href={`/[langs]/[blogcat]/[category]`} as={`/${locale}/blog/business`}><a className={activeB}>BUSINESS</a></Link>
+                                    <Link href={`/[langs]/[blogcat]/[category]`} as={`/${locale}/blog/design`}><a className={activeD}>DESIGN</a></Link>
+                                    <Link href={`/[langs]/[blogcat]/[category]`} as={`/${locale}/blog/announcement`}><a className={activeA}>ANNOUNCEMENT</a></Link>
                                 </ul>
                             </Col>
                             <Col xs={12} md={4}>
@@ -91,4 +98,4 @@ class Menu extends Component {
     }
 }
 
-export default Menu
+export default withMyHook(Menu)

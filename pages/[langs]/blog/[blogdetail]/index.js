@@ -3,19 +3,22 @@ import Link from 'next/link'
 import parse from 'html-react-parser'
 import fetch from 'isomorphic-unfetch'
 import commentBox from 'commentbox.io';
-import {convertMonth} from '../lib/date'
+import {convertMonth} from '../../../../lib/date'
 
 
-import Layout from '../components/layouts'
-import ButtonToTop from '../components/presentational/buttonToTop'
-import ShareIcon from '../components/presentational/shareIcon'
+import Layout from '../../../../components/layouts'
+import ButtonToTop from '../../../../components/presentational/buttonToTop'
+import ShareIcon from '../../../../components/presentational/shareIcon'
+import withLocale from '../../../../hocs/withLocale'
+
+
 
 class BlogDetail extends React.Component {
     static async getInitialProps (ctx){
-        const {slug,category} = ctx.query
-        const res = await fetch(`https://api.dignitestudio.com/api/blogCategoryDetail/${category}/${slug}`)
+        const {langs,blogdetail} = ctx.query
+        const res = await fetch(`https://api.dignitestudio.com/api/blogDetail/${blogdetail}`)
         const dataBlog = await res.json()
-        return {dataBlog,category}
+        return {dataBlog,langs,blogdetail}
     }
 
     state = {
@@ -79,7 +82,6 @@ class BlogDetail extends React.Component {
         let keepInspData = dataBlog.keep
         let url = this.state.url
 
-
         return (
             <Layout title={title}>
                 <section className="section_first-blogDetail">
@@ -87,8 +89,8 @@ class BlogDetail extends React.Component {
                         <Row className="mb-5 justify-content-center">
                             <Col xs={12} md={8} xl={12} className="bread">
                                 <Breadcrumb>
-                                    <li className="breadcrumb-item"><Link href="/"><a>Home</a></Link></li>
-                                    <li className="breadcrumb-item"><Link href="/blog"><a>Blog</a></Link></li>
+                                    <li className="breadcrumb-item"><Link href="/[langs]" as={`/${this.props.langs}`}><a>Home</a></Link></li>
+                                    <li className="breadcrumb-item"><Link href="/[langs]/blog" as={`/${this.props.langs}/blog`}><a>Blog</a></Link></li>
                                     <li className="breadcrumb-item active">{title}</li>
                                 </Breadcrumb>
                             </Col>
@@ -146,4 +148,4 @@ class BlogDetail extends React.Component {
 
 }
 
-export default BlogDetail
+export default withLocale(BlogDetail)

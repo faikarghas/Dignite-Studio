@@ -1,8 +1,9 @@
-import Layout from '../components/layouts'
-import TextHeader from '../components/presentational/textHeader'
+import Layout from '../../components/layouts'
+import TextHeader from '../../components/presentational/textHeader'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-import data from '../lib/copywriting/data.js'
+import data from '../../lib/copywriting/data.js'
+import withLocale from '../../hocs/withLocale'
 
 import { Container,Row,Col } from 'react-bootstrap';
 
@@ -80,6 +81,6 @@ const about = () =>  (
     </Layout>
 )
 
-export default about
+export default withLocale(about)
 
 

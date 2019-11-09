@@ -8,11 +8,20 @@ import ModalHire from '../presentational/modalHire'
 import Header from '../layouts/header'
 import Footer from '../layouts/footer'
 import ThemeButton from '../presentational/themeButton'
+import useTranslation from '../../hooks/useTranslation'
 
 import { initGA, logPageView, modalView, logEvent } from '../../lib/analytics'
 
 // Style
 import '../../sass/main.scss'
+
+function withMyHook(Component) {
+  return function WrappedComponent(props) {
+    const { locale, t } = useTranslation()
+
+    return <Component {...props} locale={locale} />;
+  }
+}
 
 class Layout extends React.Component{
   constructor(props) {
@@ -22,10 +31,10 @@ class Layout extends React.Component{
     this.state={
       modal:'',
       listMenu : [
-        {id:1,nama:'ABOUT',link:'/about'},
-        {id:2,nama:'WORK',link:'/work'},
+        {id:1,nama:'ABOUT',link:'about'},
+        {id:2,nama:'WORK',link:'work'},
         {id:3,nama:'HIRE US',link:'',klik:true},
-        {id:4,nama:'BLOG',link:'/blog'},
+        {id:4,nama:'BLOG',link:'blog'},
         {id:5,nama:'STORE',link:'',linkweb:true},
         {id:6,nama:'BUTTON',link:'',button:true},
       ],
@@ -91,7 +100,7 @@ class Layout extends React.Component{
 
   render(){
     const {modal,menu} = this.state
-    const {canonical,title} = this.props
+    const {canonical,title,locale} = this.props
 
     let canUrl = `https://www.dignitestudio.com/${canonical}`
 
@@ -143,7 +152,11 @@ class Layout extends React.Component{
                 )
               } else {
                 return(
-                  <li key={item.id} ref={div => this.users[i] = div}><Link href={item.link}><a>{item.nama}</a></Link></li>
+                  <li key={item.id} ref={div => this.users[i] = div}>
+                    <Link href={`/[langs]/${item.link}`} as={`/${locale}/${item.link}`}>
+                      <a>{item.nama}</a>
+                    </Link>
+                  </li>
                 )
               }
             })}
@@ -178,4 +191,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Layout)
+export default connect(mapStateToProps,mapDispatchToProps)(withMyHook(Layout))

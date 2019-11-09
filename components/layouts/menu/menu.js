@@ -2,7 +2,11 @@ import React from 'react'
 import Link from 'next/link'
 import { Container,Row,Col } from 'react-bootstrap'
 
+import useTranslation from '../../../hooks/useTranslation'
+
 const menuLy = ({listMenu,refs,refList,showModal}) => {
+  const { locale, t } = useTranslation()
+
     return (
         <div className="menu" ref={refs} >
           <ul className="list-item">
@@ -17,7 +21,7 @@ const menuLy = ({listMenu,refs,refList,showModal}) => {
                 )
               } else {
                 return(
-                  <li key={item.id} ref={refList}><Link href={item.link}><a>{item.nama}</a></Link></li>
+                  <li key={item.id} ref={refList}><Link href={`/[langs]/${item.link}`} as={`${locale}/${item.link}`}><a>{item.nama}</a></Link></li>
                 )
               }
             })}

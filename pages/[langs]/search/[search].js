@@ -1,29 +1,29 @@
 import React, {useState} from 'react'
 import { Container,Row,Col,InputGroup,FormControl,Button } from 'react-bootstrap'
-import Link from 'next/link'
 import Router from 'next/router'
 import fetch from 'isomorphic-unfetch'
 
-import SearchResult from '../../components/presentational/searchResult'
-import Layout from '../../components/layouts'
+import SearchResult from '../../../components/presentational/searchResult'
+import Layout from '../../../components/layouts'
+import useTranslation from '../../../hooks/useTranslation'
 
-
-const Blog = props => {
+const Search = props => {
     const [modal, setModal] = useState("")
-    const [inputValue, setInputValue] = useState(props.slug);
+    const [inputValue, setInputValue] = useState(props.search);
+    const {locale,t} = useTranslation()
 
     const onChangeHandler = event => {
       setInputValue(event.target.value);
     };
 
-    function search(e) {
+    function searchEnter(e) {
         if(e.key === 'Enter'){
-            Router.push('/search/[slug]',`/search/${inputValue}`)
+            Router.push('/[lang]/search/[slug]',`/${locale}/search/${inputValue}`)
         }
     }
 
     function searchButton() {
-        Router.push('/search/[slug]',`/search/${inputValue}`)
+        Router.push('/[lang]/search/[slug]',`/${locale}/search/${inputValue}`)
     }
 
     function showModal() {
@@ -44,7 +44,7 @@ const Blog = props => {
                                 <FormControl
                                     type="text"
                                     value={inputValue}
-                                    onKeyPress={search}
+                                    onKeyPress={searchEnter}
                                     name="search"
                                     onChange={onChangeHandler}
                                 />
@@ -65,12 +65,12 @@ const Blog = props => {
     )
 }
 
-Blog.getInitialProps = async (ctx) => {
-        const {slug} = ctx.query
-        const res = await fetch(`https://api.dignitestudio.com/api/search/${slug}`)
+Search.getInitialProps = async (ctx) => {
+        const {search} = ctx.query
+        const res = await fetch(`https://api.dignitestudio.com/api/search/${search}`)
         const dataSearch = await res.json()
-        return {dataSearch,slug}
+        return {dataSearch,search}
 }
 
 
-export default Blog
+export default Search

@@ -4,10 +4,11 @@ import Slider from "react-slick";
 // import { Player, BigPlayButton } from 'video-react';
 import { Container,Row,Col } from 'react-bootstrap';
 
-import Layout from '../../components/layouts'
-import ButtonToTop from '../../components/presentational/buttonToTop'
-import ButtonSeeLive from '../../components/presentational/buttonSeeLive'
-import data from '../../lib/copywriting/data.js'
+import Layout from '../../../components/layouts'
+import ButtonToTop from '../../../components/presentational/buttonToTop'
+import ButtonSeeLive from '../../../components/presentational/buttonSeeLive'
+import data from '../../../lib/copywriting/data.js'
+import withLocale from '../../../hocs/withLocale'
 
 // import 'video-react/styles/scss/video-react.scss'
 
@@ -15,10 +16,10 @@ import data from '../../lib/copywriting/data.js'
 class Project extends React.Component {
 
     static async getInitialProps(ctx){
-        let { slug } = ctx.query
+        let { project,langs } = ctx.query
         const res = await data.home
 
-        return {slug: slug, dataProject: res}
+        return {slug: project, dataProject: res,langs}
     }
 
     state = {
@@ -195,7 +196,7 @@ class Project extends React.Component {
                         <Row>
                             <Col xs={12} style={{display:'flex',justifyContent:'space-between'}}>
                                 <p className="m-0">Next Project</p>
-                                <Link href="/project/[slug]" as={`/project/${nextProjectSlug}`}>
+                                <Link href="/[langs]/project/[slug]" as={`/${this.props.langs}/project/${nextProjectSlug}`}>
                                     <a style={{display:'flex',alignItems:'center'}}  className="toOtherProject">
                                         <ul>
                                             <li><p>{nextProjectName}</p></li>
@@ -213,4 +214,4 @@ class Project extends React.Component {
     }
 }
 
-export default Project
+export default withLocale(Project)

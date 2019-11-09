@@ -6,18 +6,21 @@ import Pagination from "react-js-pagination";
 import fetch from 'isomorphic-unfetch'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-import {convertMonth} from '../lib/date'
-import Layout from '../components/layouts'
-import LayoutBlog from '../components/layouts-blog'
+import {convertMonth} from '../../lib/date'
+import Layout from '../../components/layouts'
+import LayoutBlog from '../../components/layouts-blog'
+import withLocale from '../../hocs/withLocale'
+import useTranslation from '../../hooks/useTranslation'
 
 const Blog = ({dataBlog}) => {
-    const [activePage, setActivePage] = useState(0)
+    const [activePage, setActivePage] = useState(1)
+    const {locale,t} = useTranslation()
 
     function handlePageChange(pageNumber) {
         if(pageNumber === 1) {
-            Router.push(`/blog`);
+            Router.push(`/[langs]/blog`,`/${locale}/blog`);
         } else {
-            Router.push(`/blogPage?page=${pageNumber}`, `/blog/page/${pageNumber}`);
+            Router.push(`/[langs]/blog/page/[pagenumber]`, `/${locale}/blog/page/${pageNumber}`);
         }
     }
 
@@ -35,9 +38,9 @@ const Blog = ({dataBlog}) => {
                     let date = new Date(item.created_at).getDate()
                     let year = new Date(item.created_at).getFullYear()
                     let tMonth = convertMonth(month)
-                    let categoryLowerCase = item.category.toLowerCase()
                     return (
-                        <Link href={`/blogDetail?category=${categoryLowerCase}&slug=${item.slug}`} as={`/blog/${categoryLowerCase}/${item.slug}`} key={item.idblog}>
+                        <Link href={`/[langs]/blog/[blogdetail]`} as={`/${locale}/blog/${item.slug}`} key={item.idblog}>
+                        {/* <Link href={`/blogDetail?category=${categoryLowerCase}&slug=${item.slug}`} as={`/blog/${categoryLowerCase}/${item.slug}`} key={item.idblog}> */}
                             <section className="blog_contents__box" >
                                 <Row>
                                     <Col xs={{span:12,order:2}} md={{span:8,order:1}} className="content-blog">
@@ -87,4 +90,4 @@ Blog.getInitialProps = async ({ req }) => {
     return {dataBlog}
 }
 
-export default Blog
+export default withLocale(Blog)

@@ -7,7 +7,7 @@ export default class MyDocument extends Document {
     }
     render() {
         return (
-            <html lang="en">
+            <html lang="id">
                 <Head>
                     <meta charSet="UTF-8" />
                     <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
@@ -17,7 +17,7 @@ export default class MyDocument extends Document {
                     {/* OPEN GRAP */}
                     <meta name="description" content="Dignite Studio crafts experiences for your digital needs."/>
                     <meta name="og:description" content="Dignite Studio crafts experiences for your digital needs."/>
-                    <meta name="keywords" content="dignite,dignite studio, dignitestudio, website, digital" />
+                    <meta name="keywords" content="dignite,dignite studio, dignitestudio,jasa website, digital" />
                     <meta name="author" content="DIGNITE STUDIO"/>
                     <meta name="copyright" content="DIGNITE STUDIO" />
                     <meta name="creator" content="DIGNITE STUDIO" /> 
