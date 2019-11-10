@@ -62,7 +62,7 @@ class Menu extends Component {
                                     <Link href="/[langs]/blog" as={`/${this.props.locale}/blog`}><a className={active}>ALL TOPICS</a></Link>
                                     <Link href={`/[langs]/[blogcat]/[category]`} as={`/${locale}/blog/business`}><a className={activeB}>BUSINESS</a></Link>
                                     <Link href={`/[langs]/[blogcat]/[category]`} as={`/${locale}/blog/design`}><a className={activeD}>DESIGN</a></Link>
-                                    <Link href={`/[langs]/[blogcat]/[category]`} as={`/${locale}/blog/announcement`}><a className={activeA}>ANNOUNCEMENT</a></Link>
+                                    {/* <Link href={`/[langs]/[blogcat]/[category]`} as={`/${locale}/blog/announcement`}><a className={activeA}>ANNOUNCEMENT</a></Link> */}
                                 </ul>
                             </Col>
                             <Col xs={12} md={4}>

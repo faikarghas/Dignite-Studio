@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react"
-import { Container,Row,Col } from 'react-bootstrap'
+import React, { useState } from "react"
+import { Row,Col } from 'react-bootstrap'
 import Link from 'next/link'
 import Router from 'next/router'
 import Pagination from "react-js-pagination";
 import fetch from 'isomorphic-unfetch'
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import {convertMonth} from '../../lib/date'
 import Layout from '../../components/layouts'
@@ -55,13 +54,7 @@ const Blog = ({dataBlog}) => {
                                         </section>
                                     </Col>
                                     <Col xs={{span:12,order:1}} md={{span:4,order:2}} className="img-blog">
-                                        <LazyLoadImage
-                                            alt={'gambar artikel'}
-                                            src={`https://api.dignitestudio.com/images/image/artikel/${item.imgThumbnail}.jpg`}
-                                            effect="blur"
-                                            width={'100%'} 
-                                            height={"100%"}
-                                        />
+                                        <img width="100%" height="100%" alt={item.imgThumbnail} src={`https://api.dignitestudio.com/images/image/artikel/${item.imgThumbnail}.jpg`}/>
                                     </Col>
                                 </Row>
                             </section>

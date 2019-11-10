@@ -10,7 +10,7 @@
     cursor: pointer;
     color: #222222;
     &:hover{
-        color: #222222;
+        animation: color-change-2x .5s linear infinite alternate both;
     }
     h2{
         margin: 0;

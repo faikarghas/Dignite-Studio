@@ -8,40 +8,36 @@
 
 
 <url>
-  <loc>https://www.dignitestudio.com/</loc>
+  <loc>https://www.dignitestudio.com/en</loc>
   <lastmod>2019-09-02T13:53:28+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://www.dignitestudio.com/about</loc>
+  <loc>https://www.dignitestudio.com/en/about</loc>
   <lastmod>2019-09-02T13:53:28+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.dignitestudio.com/work</loc>
+  <loc>https://www.dignitestudio.com/en/work</loc>
   <lastmod>2019-09-02T13:53:28+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.dignitestudio.com/blog</loc>
+  <loc>https://www.dignitestudio.com/en/blog</loc>
   <lastmod>2019-09-02T13:53:28+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.dignitestudio.com/blog/business</loc>
+  <loc>https://www.dignitestudio.com/en/blog/business</loc>
   <lastmod>2019-09-02T13:53:28+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.dignitestudio.com/blog/design</loc>
+  <loc>https://www.dignitestudio.com/en/blog/design</loc>
   <lastmod>2019-09-02T13:53:28+00:00</lastmod>
   <priority>0.64</priority>
 </url>
-<url>
-  <loc>https://www.dignitestudio.com/blog/announcement</loc>
-  <lastmod>2019-09-02T13:53:28+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
+
 
 
 
