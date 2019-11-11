@@ -74,7 +74,7 @@ const OurTeam = () => (
 )
 
 const about = () =>  (
-    <Layout title={'About'} canonical="about">
+    <Layout title={'Solution for Your Creative Digital Needs | Dignite Studio'} canonical="about" metaDesc="Supported by different backgrounds of the founders, Dignite Studio specializes in crafting digital experiences for brands that are ready to make an impact.">
         <TextHeader text={data.about.title} />
         <Process/>
         <WhatWeDo/>

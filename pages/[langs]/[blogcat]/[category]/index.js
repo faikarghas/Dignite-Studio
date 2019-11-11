@@ -23,27 +23,16 @@ const BlogCa = ({dataBlog,category}) => {
             }
         }
 
-        let currCategory = category
-        let splitTitle = currCategory.split('')
-        let arrTitle = []
+        let title
 
-        for (let i = 0; i < splitTitle.length; i++) {
-            if (i === 0) {
-                arrTitle.push(splitTitle[i].toUpperCase())
-            } else {
-                arrTitle.push(splitTitle[i])
-            }
-        }
-
-        let resTitle = arrTitle.join('')
-        let title = `${resTitle} Blog`
-
-        if(category === 'announcement'){
-            title = `${resTitle}`
+        if(category === 'design'){
+            title = `Blog - All About Designs | Dignite Studio`
+        } else {
+            title = `Blog - Business, Marketing and Branding | Dignite Studio`
         }
 
     return (
-            <Layout title={`${title}`} canonical={`blog/${category}`}>
+            <Layout title={`${title}`} canonical={`blog/${category}`} >
                 <section className="section_first-blog">
                     <h1 className="mb-5">{`${category}`}</h1>
                     <p>Business to entrepreneurship and marketing tips, Dignite announcements,<br/> and the occasional musings of our digital world. </p>

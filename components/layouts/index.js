@@ -100,20 +100,22 @@ class Layout extends React.Component{
 
   render(){
     const {modal,menu} = this.state
-    const {canonical,title,locale} = this.props
+    const {canonical,title,locale,metaDesc} = this.props
 
     let canUrl = `https://www.dignitestudio.com/${canonical}`
 
     if (canonical === 'home') {
-        canUrl = `https://www.dignitestudio.com`
+        canUrl = `https://www.dignitestudio.com/${locale}`
     } else {
-        canUrl = `https://www.dignitestudio.com/${canonical}`
+        canUrl = `https://www.dignitestudio.com/${locale}/${canonical}`
     }
 
     return(
       <React.Fragment>
         <Head>
-          <title>Dignite Studio - {`${title}`}</title>
+          <title>{`${title}`}</title>
+          <meta name="description" content={`${metaDesc}`}/>
+          <meta name="og:description" content={`${metaDesc}`}/>
           <link rel="canonical" href={`${canUrl}`} />
         </Head>
 

@@ -19,7 +19,7 @@ var settings = {
 const work = props =>  {
     const {locale,t} = useTranslation()
     return (
-        <Layout title={'Work'} canonical="work">
+        <Layout title={'Website, App, Graphic Design & Branding Portfolio | Dignite Studio'} canonical="work" metaDesc="Digital products for all kind of clients and audiences">
             <TextHeader text={data.work.title} />
             <section className="section_second-work">
                 <Container>

@@ -25,7 +25,7 @@ const Blog = ({dataBlog}) => {
 
 
     return (
-        <Layout title={'Blog'} canonical="blog">
+        <Layout title={'Business, Marketing, Design | Dignite Studio'} canonical="blog" metaDesc="Business to entrepreneurship, marketing tips and the occasional musings of our digital world.">
             <section className="section_first-blog">
                 <h1 className="mb-5">BLOG</h1>
                 <p>Business to entrepreneurship and marketing tips, Dignite announcements,<br/> and the occasional musings of our digital world. </p>
