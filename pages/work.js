@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import TextHeader from '../components/presentational/textHeader'
-import Layout from '../components/layouts'
+import Layout from '../components/layouts/base'
 import data from '../lib/copywriting/data.js'
 import useTranslation from '../hooks/useTranslation'
 
@@ -19,7 +19,7 @@ var settings = {
 const work = props =>  {
     const {locale,t} = useTranslation()
     React.useEffect(() => {
-      window.location.replace(`/${getInitialLocale()}/work`)
+    //   window.location.replace(`/${getInitialLocale()}/work`)
     })
 
     return (
@@ -31,7 +31,7 @@ const work = props =>  {
                         <Row style={{display:'flex !important'}}>
                             {data.home.Project.map(item=>{
                                 return (
-                                    <Link href="/[langs]/project/[slug]" as={`/${locale}/project/${item.slug}`} key={item.id}>
+                                    <Link href="/project/[slug]" as={`/project/${item.slug}`} key={item.id}>
                                         <Col className="box" xs={4} md={4} lg={4}  >
                                                 <LazyLoadImage
                                                     alt={'project-img'}

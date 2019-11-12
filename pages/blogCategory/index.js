@@ -6,20 +6,17 @@ import Pagination from "react-js-pagination";
 import fetch from 'isomorphic-unfetch'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-import {convertMonth} from '../../../../lib/date'
-import Layout from '../../../../components/layouts/base'
-import LayoutBlog from '../../../../components/layouts/blog/lang/menu'
-import withLocale from '../../../../hocs/withLocale'
-import useTranslation from '../../../../hooks/useTranslation'
+import {convertMonth} from '../../lib/date'
+import Layout from '../../components/layouts/base'
+import LayoutBlog from '../../components/layouts/blog/base/menu'
 
 const BlogCa = ({dataBlog,category}) => {
-        const {locale,t} = useTranslation()
 
         function handlePageChange (pageNumber){
             if(pageNumber === 1) {
                 Router.push(`/blogCategory?category=${category}`, `/blog/${category}`);
             } else {
-                Router.push(`/[langs]/[blogcat]/[category]/[pagenumbercat]`, `/${locale}/blog/${category}/${pageNumber}`);
+                Router.push(`/blogCategoryPage?category=${category}&pagenumbercat=${pageNumber}`, `/blog/${category}/${pageNumber}`);
             }
         }
 
@@ -35,7 +32,7 @@ const BlogCa = ({dataBlog,category}) => {
             <Layout title={`${title}`} canonical={`blog/${category}`} >
                 <section className="section_first-blog">
                     <h1 className="mb-5">{`${category}`}</h1>
-                    <p>Business to entrepreneurship and marketing tips, Dignite announcements,<br/> and the occasional musings of our digital world. </p>
+                    <p>Business to entrepreneurship and marketing tips, Dignite announcements,<br/> and the occasional musings of our digital world.</p>
                 </section>
                 <LayoutBlog activeCategory={category}>
                 {dataBlog.currPage.map(item=>{
@@ -45,7 +42,7 @@ const BlogCa = ({dataBlog,category}) => {
                     let tMonth = convertMonth(month)
 
                         return (
-                            <Link href={`/[langs]/blog/[blogdetail]`} as={`/${locale}/blog/${item.slug}`} key={item.idblog}>
+                            <Link href={`/blog/[blogdetail]`} as={`/blog/${item.slug}`} key={item.idblog}>
                                 <section className="blog_contents__box">
                                     <Row>
                                         <Col xs={{span:12,order:2}} md={{span:8,order:1}} >
@@ -72,7 +69,7 @@ const BlogCa = ({dataBlog,category}) => {
                                 </section>
                             </Link>
                         )
-                    })}
+                })}
 
                     <Pagination
                         activePage={1}
@@ -88,11 +85,10 @@ const BlogCa = ({dataBlog,category}) => {
 }
 
 BlogCa.getInitialProps = async (ctx)=>{
-        const {category,langs} = ctx.query
-        // console.log( ctx.query);
+        const {category} = ctx.query
         const res = await fetch(`https://api.dignitestudio.com/api/blogCategoryPage/1/${category}`)
         const dataBlog = await res.json()
         return {dataBlog,category}
 }
 
-export default withLocale(BlogCa)
+export default BlogCa

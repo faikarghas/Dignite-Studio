@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Container,Row,Col,InputGroup,FormControl } from 'react-bootstrap'
 import Link from 'next/link'
 import Router from 'next/router'
-import useTranslation from '../../hooks/useTranslation'
+import useTranslation from '../../../../hooks/useTranslation'
 
 
 function withMyHook(Component) {
@@ -39,19 +39,16 @@ class Menu extends Component {
     }
 
     render() {
-        let active,activeA,activeB,activeD,activeT = ''
+        let active,activeB,activeD = ''
         const {locale} = this.props
         if(this.props.activeCategory === 'business'){
             activeB = 'active'
         } else if (this.props.activeCategory === 'design'){
             activeD = 'active'
-        } else if (this.props.activeCategory === 'tech'){
-            activeT = 'active'
-        } else if (this.props.activeCategory === 'announcement') {
-            activeA = 'active'
         } else {
             active = 'active'
         }
+
         return (
             <React.Fragment>
                 <section className="menu_blog">

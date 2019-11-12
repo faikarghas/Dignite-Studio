@@ -5,8 +5,8 @@ import Pagination from "react-js-pagination";
 import fetch from 'isomorphic-unfetch'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-import Layout from '../../../../components/layouts'
-import LayoutBlog from '../../../../components/layouts-blog'
+import Layout from '../../../../components/layouts/base'
+import LayoutBlog from '../../../../components/layouts/blog/lang/menu'
 import {convertMonth} from '../../../../lib/date'
 import withLocale from '../../../../hocs/withLocale'
 
@@ -68,9 +68,8 @@ class BlogPage extends React.Component {
         return (
             <Layout title={'Blog'}>
                 <section className="section_first-blog">
-                    <h2 className="mb-5">BLOGfff</h2>
+                    <h2 className="mb-5">BLOG</h2>
                     <p>Business to entrepreneurship and marketing tips, Dignite announcements,<br/> and the occasional musings of our digital world. </p>
-                    <p>page </p>
                 </section>
                 <LayoutBlog activeCategory={activeCategory}>
                     {this.props.dataBlog.currPage.map(item=>{

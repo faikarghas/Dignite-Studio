@@ -6,7 +6,7 @@ const ButtonViewAllProjects = () => {
     const {locale,t} = useTranslation()
     return (
         <div className="view_allpr">
-            <Link  href="/[langs]/work" as={`/${locale}/work`}><a>View all our projects</a></Link>
+            <Link  href="/work" as={`/work`}><a>View all our projects</a></Link>
         </div>
     )
 }

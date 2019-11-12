@@ -41,6 +41,31 @@ app.prepare()
     // if( process.env.NODE_ENV === 'production' ) server.use(enforce.HTTPS({ trustProtoHeader: true }))
 
 
+
+    server.get('/blog/business', (req, res) => {
+        const actualPage = '/blogCategory'
+        const queryParams = { category: 'business' }
+        return app.render( req, res, actualPage, queryParams )
+    })
+
+    server.get('/blog/design', (req, res) => {
+        const actualPage = '/blogCategory'
+        const queryParams = { category: 'design' }
+        return app.render( req, res, actualPage, queryParams )
+    })
+
+    server.get('/blog/design/:pagenumbercat', (req, res) => {
+        const actualPage = '/blogCategory/[category]/[pagenumbercat]'
+        const queryParams = { pagenumbercat: req.params.pagenumbercat, category: 'design' }
+        return app.render( req, res, actualPage, queryParams )
+    })
+
+    server.get('/blog/business/:pagenumbercat', (req, res) => {
+        const actualPage = '/blogCategory/[category]/[pagenumbercat]'
+        const queryParams = { pagenumbercat: req.params.pagenumbercat, category: 'business' }
+        return app.render( req, res, actualPage, queryParams )
+    })
+
     server.get('/:langs/blog/business', (req, res) => {
         const actualPage = '/[langs]/[blogcat]/[category]'
         const queryParams = { category: 'business',langs: `${req.params.langs}` }

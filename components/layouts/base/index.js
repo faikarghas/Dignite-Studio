@@ -2,18 +2,18 @@ import Head from 'next/head'
 import Link from 'next/link'
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux'
-import * as action from '../../redux/actionIndex'
+import * as action from '../../../redux/actionIndex'
 
-import ModalHire from '../presentational/modalHire'
-import Header from '../layouts/header'
-import Footer from '../layouts/footer'
-import ThemeButton from '../presentational/themeButton'
-import useTranslation from '../../hooks/useTranslation'
+import ModalHire from '../../presentational/modalHire'
+import Header from '../../presentational/header'
+import Footer from '../../presentational/footer'
+import ThemeButton from '../../presentational/themeButton'
+import useTranslation from '../../../hooks/useTranslation'
 
-import { initGA, logPageView, modalView, logEvent } from '../../lib/analytics'
+import { initGA, logPageView, modalView, logEvent } from '../../../lib/analytics'
 
 // Style
-import '../../sass/main.scss'
+import '../../../sass/main.scss'
 
 function withMyHook(Component) {
   return function WrappedComponent(props) {
@@ -155,7 +155,7 @@ class Layout extends React.Component{
               } else {
                 return(
                   <li key={item.id} ref={div => this.users[i] = div}>
-                    <Link href={`/[langs]/${item.link}`} as={`/${locale}/${item.link}`}>
+                    <Link href={`/${item.link}`} as={`/${item.link}`}>
                       <a>{item.nama}</a>
                     </Link>
                   </li>

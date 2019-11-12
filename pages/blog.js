@@ -6,19 +6,17 @@ import Pagination from "react-js-pagination";
 import fetch from 'isomorphic-unfetch'
 
 import {convertMonth} from '../lib/date'
-import Layout from '../components/layouts'
-import LayoutBlog from '../components/layouts-blog'
-import useTranslation from '../hooks/useTranslation'
+import Layout from '../components/layouts/base'
+import LayoutBlog from '../components/layouts/blog/base/menu'
 
 const Blog = ({dataBlog}) => {
     const [activePage, setActivePage] = useState(1)
-    const {locale,t} = useTranslation()
 
     function handlePageChange(pageNumber) {
         if(pageNumber === 1) {
-            Router.push(`/[langs]/blog`,`/${locale}/blog`);
+            Router.push(`/blog`,`/blog`);
         } else {
-            Router.push(`/[langs]/blog/page/[pagenumber]`, `/${locale}/blog/page/${pageNumber}`);
+            Router.push(`/blog/page/[pagenumber]`, `/blog/page/${pageNumber}`);
         }
     }
 
@@ -36,8 +34,7 @@ const Blog = ({dataBlog}) => {
                     let year = new Date(item.created_at).getFullYear()
                     let tMonth = convertMonth(month)
                     return (
-                        <Link href={`/[langs]/blog/[blogdetail]`} as={`/${locale}/blog/${item.slug}`} key={item.idblog}>
-                        {/* <Link href={`/blogDetail?category=${categoryLowerCase}&slug=${item.slug}`} as={`/blog/${categoryLowerCase}/${item.slug}`} key={item.idblog}> */}
+                        <Link href={`/blog/[blogdetail]`} as={`/blog/${item.slug}`} key={item.idblog}>
                             <section className="blog_contents__box" >
                                 <Row>
                                     <Col xs={{span:12,order:2}} md={{span:8,order:1}} className="content-blog">

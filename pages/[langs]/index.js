@@ -9,7 +9,7 @@ import useTranslation from '../../hooks/useTranslation'
 
 import TextHeaderHome from '../../components/presentational/textHeaderHome'
 import ButtonViewAllProjects from '../../components/presentational/buttonViewAllProjects'
-import Layout from '../../components/layouts'
+import Layout from '../../components/layouts/base'
 import data from '../../lib/copywriting/data.js'
 
 const Project = ({trans}) => {

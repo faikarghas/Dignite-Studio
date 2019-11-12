@@ -5,10 +5,9 @@ import Pagination from "react-js-pagination";
 import fetch from 'isomorphic-unfetch'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-import Layout from '../../../../components/layouts/base'
-import LayoutBlog from '../../../../components/layouts/blog/lang/menu'
-import {convertMonth} from '../../../../lib/date'
-import withLocale from '../../../../hocs/withLocale'
+import Layout from '../../../components/layouts/base'
+import LayoutBlog from '../../../components/layouts/blog/base/menu'
+import {convertMonth} from '../../../lib/date'
 
 class BlogPage extends React.Component {
 
@@ -28,9 +27,9 @@ class BlogPage extends React.Component {
             activePage:pageNumber
         })
         if(pageNumber === 1) {
-            Router.push(`/[langs]/blog`,`/${this.props.langs}/blog`);
+            Router.push(`/blog`,`/blog`);
         } else {
-            Router.push(`/[langs]/blog/page/[pagenumber]`, `/${this.props.langs}/blog/page/${pageNumber}`);
+            Router.push(`/blog/page/[pagenumber]`, `/blog/page/${pageNumber}`);
         }
     }
 
@@ -51,7 +50,7 @@ class BlogPage extends React.Component {
                         // let categoryLowerCase = item.category.toLowerCase()
 
                         return (
-                            <Link href={`/[langs]/blog/[blogdetail]`} as={`/${this.props.langs}/blog/${item.slug}`} key={item.idblog}>
+                            <Link href={`/blog/[blogdetail]`} as={`/blog/${item.slug}`} key={item.idblog}>
                                 <section className="blog_contents__box">
                                     <Row>
                                         <Col xs={{span:12,order:2}} md={{span:8,order:1}} >
@@ -94,4 +93,4 @@ class BlogPage extends React.Component {
 
 }
 
-export default withLocale(BlogPage)
+export default BlogPage

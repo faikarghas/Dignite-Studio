@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import TextHeader from '../../components/presentational/textHeader'
-import Layout from '../../components/layouts'
+import Layout from '../../components/layouts/base'
 import withLocale from '../../hocs/withLocale'
 import data from '../../lib/copywriting/data.js'
 import useTranslation from '../../hooks/useTranslation'

@@ -5,18 +5,17 @@ import Pagination from "react-js-pagination";
 import fetch from 'isomorphic-unfetch'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-import Layout from '../../../../components/layouts/base'
-import LayoutBlog from '../../../../components/layouts/blog/lang/menu'
-import {convertMonth} from '../../../../lib/date'
-import withLocale from '../../../../hocs/withLocale'
+import Layout from '../../../components/layouts/base'
+import LayoutBlog from '../../../components/layouts/blog/base/menu'
+import {convertMonth} from '../../../lib/date'
 
 class BlogPage extends React.Component {
 
     static async getInitialProps(ctx){
-        const {pagenumber,langs} = ctx.query
-        const res = await fetch(`https://api.dignitestudio.com/api/blogCategoryPage/${pagenumber}/all`)
+        const {pagenumbercat,category} = ctx.query
+        const res = await fetch(`https://api.dignitestudio.com/api/blogCategoryPage/${pagenumbercat}/${category}`)
         const dataBlog = await res.json()
-        return {dataBlog,pagenumber,langs}
+        return {dataBlog,pagenumbercat,category}
     }
 
     state = {
@@ -28,30 +27,58 @@ class BlogPage extends React.Component {
             activePage:pageNumber
         })
         if(pageNumber === 1) {
-            Router.push(`/[langs]/blog`,`/${this.props.langs}/blog`);
+            Router.push(`/blog/[category]`,`/blog/${this.props.category}`);
         } else {
-            Router.push(`/[langs]/blog/page/[pagenumber]`, `/${this.props.langs}/blog/page/${pageNumber}`);
+            Router.push(`/blogCategory/[category]/[pagenumbercat]`, `/blog/${this.props.category}/${pageNumber}`);
         }
     }
 
 
     render(){
+        let activeCategory
+        if(this.props.category === 'business'){
+            activeCategory = 'business'
+        } else if (this.props.category === 'design'){
+            activeCategory = 'design'
+        } else if (this.props.category === 'tech'){
+            activeCategory = 'tech'
+        } else if (this.props.category === 'announcement') {
+            activeCategory = 'announcement'
+        }
+
+        let category = this.props.category
+        let splitTitle =   category.split('')
+        let arrTitle = []
+
+        for (let i = 0; i < splitTitle.length; i++) {
+            if (i === 0) {
+                arrTitle.push(splitTitle[i].toUpperCase())
+            } else {
+                arrTitle.push(splitTitle[i])
+            }
+        }
+
+        let resTitle = arrTitle.join('')
+        let title = `${resTitle} Blog`
+
+        if(this.props.category === 'announcement'){
+            title = `${resTitle}`
+        }
         return (
             <Layout title={'Blog'}>
                 <section className="section_first-blog">
                     <h2 className="mb-5">BLOG</h2>
                     <p>Business to entrepreneurship and marketing tips, Dignite announcements,<br/> and the occasional musings of our digital world. </p>
                 </section>
-                <LayoutBlog allTopics={'active'}>
+                <LayoutBlog activeCategory={activeCategory}>
                     {this.props.dataBlog.currPage.map(item=>{
                         let month = new Date(item.created_at).getMonth() + 1
                         let date = new Date(item.created_at).getDate() 
                         let year = new Date(item.created_at).getFullYear() 
                         let tMonth = convertMonth(month)
-                        // let categoryLowerCase = item.category.toLowerCase()
 
                         return (
-                            <Link href={`/[langs]/blog/[blogdetail]`} as={`/${this.props.langs}/blog/${item.slug}`} key={item.idblog}>
+                            <Link href={`/blog/[blogdetail]`} as={`/blog/${item.slug}`} key={item.idblog}>
                                 <section className="blog_contents__box">
                                     <Row>
                                         <Col xs={{span:12,order:2}} md={{span:8,order:1}} >
@@ -81,7 +108,7 @@ class BlogPage extends React.Component {
                     })}
 
                     <Pagination
-                        activePage={Number(this.props.pagenumber)}
+                        activePage={Number(this.props.pagenumbercat)}
                         itemsCountPerPage={4}
                         totalItemsCount={this.props.dataBlog.totalPage}
                         pageRangeDisplayed={5}
@@ -94,4 +121,4 @@ class BlogPage extends React.Component {
 
 }
 
-export default withLocale(BlogPage)
+export default BlogPage

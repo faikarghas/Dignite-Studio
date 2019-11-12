@@ -1,4 +1,4 @@
-import Layout from '../../components/layouts'
+import Layout from '../../components/layouts/base'
 import TextHeader from '../../components/presentational/textHeader'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 

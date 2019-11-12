@@ -3,13 +3,12 @@ import Link from 'next/link'
 import parse from 'html-react-parser'
 import fetch from 'isomorphic-unfetch'
 import commentBox from 'commentbox.io';
-import {convertMonth} from '../../../../lib/date'
+import {convertMonth} from '../../../lib/date'
 
 
-import Layout from '../../../../components/layouts/base'
-import ButtonToTop from '../../../../components/presentational/buttonToTop'
-import ShareIcon from '../../../../components/presentational/shareIcon'
-import withLocale from '../../../../hocs/withLocale'
+import Layout from '../../../components/layouts/base'
+import ButtonToTop from '../../../components/presentational/buttonToTop'
+import ShareIcon from '../../../components/presentational/shareIcon'
 
 
 
@@ -89,8 +88,8 @@ class BlogDetail extends React.Component {
                         <Row className="mb-5 justify-content-center">
                             <Col xs={12} md={8} xl={12} className="bread">
                                 <Breadcrumb>
-                                    <li className="breadcrumb-item"><Link href="/[langs]" as={`/${this.props.langs}`}><a>Home</a></Link></li>
-                                    <li className="breadcrumb-item"><Link href="/[langs]/blog" as={`/${this.props.langs}/blog`}><a>Blog</a></Link></li>
+                                    <li className="breadcrumb-item"><Link href="/"><a>Home</a></Link></li>
+                                    <li className="breadcrumb-item"><Link href="/blog" as={`/blog`}><a>Blog</a></Link></li>
                                     <li className="breadcrumb-item active">{title}</li>
                                 </Breadcrumb>
                             </Col>
@@ -148,4 +147,4 @@ class BlogDetail extends React.Component {
 
 }
 
-export default withLocale(BlogDetail)
+export default BlogDetail

@@ -25,7 +25,7 @@ const headerLy = props => {
             <Container className="header_menu">
                 <ul>
                     <li style={{cursor:'pointer',zIndex:2}}>
-                        <Link href="/[langs]" as={`/${locale}`}>
+                        <Link href="/" >
                             <img src='https://image-dignite.s3-ap-southeast-1.amazonaws.com/logo-dignite-kuning.png' width="60px" height="60px" alt="logo-dignite" ></img>
                         </Link>
                     </li>

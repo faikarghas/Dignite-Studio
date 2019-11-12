@@ -6,8 +6,8 @@ import Pagination from "react-js-pagination";
 import fetch from 'isomorphic-unfetch'
 
 import {convertMonth} from '../../lib/date'
-import Layout from '../../components/layouts'
-import LayoutBlog from '../../components/layouts-blog'
+import Layout from '../../components/layouts/base'
+import LayoutBlog from '../../components/layouts/blog/lang/menu'
 import withLocale from '../../hocs/withLocale'
 import useTranslation from '../../hooks/useTranslation'
 

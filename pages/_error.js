@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from '../components/layouts'
+import Layout from '../components/layouts/base'
 import { Container,Row,Col } from 'react-bootstrap';
 
 function Error({statusCode}) {

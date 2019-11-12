@@ -3,9 +3,9 @@ import { Container,Row,Col,InputGroup,FormControl,Button } from 'react-bootstrap
 import Router from 'next/router'
 import fetch from 'isomorphic-unfetch'
 
-import SearchResult from '../../../components/presentational/searchResult'
-import Layout from '../../../components/layouts/base'
-import useTranslation from '../../../hooks/useTranslation'
+import SearchResult from '../../components/presentational/searchResult'
+import Layout from '../../components/layouts/base'
+import useTranslation from '../../hooks/useTranslation'
 
 const Search = props => {
     const [modal, setModal] = useState("")

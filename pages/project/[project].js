@@ -4,11 +4,10 @@ import Slider from "react-slick";
 // import { Player, BigPlayButton } from 'video-react';
 import { Container,Row,Col } from 'react-bootstrap';
 
-import Layout from '../../../components/layouts/base'
-import ButtonToTop from '../../../components/presentational/buttonToTop'
-import ButtonSeeLive from '../../../components/presentational/buttonSeeLive'
-import data from '../../../lib/copywriting/data.js'
-import withLocale from '../../../hocs/withLocale'
+import Layout from '../../components/layouts/base'
+import ButtonToTop from '../../components/presentational/buttonToTop'
+import ButtonSeeLive from '../../components/presentational/buttonSeeLive'
+import data from '../../lib/copywriting/data.js'
 
 // import 'video-react/styles/scss/video-react.scss'
 
@@ -196,7 +195,7 @@ class Project extends React.Component {
                         <Row>
                             <Col xs={12} style={{display:'flex',justifyContent:'space-between'}}>
                                 <p className="m-0">Next Project</p>
-                                <Link href="/[langs]/project/[slug]" as={`/${this.props.langs}/project/${nextProjectSlug}`}>
+                                <Link href="/project/[slug]" as={`/project/${nextProjectSlug}`}>
                                     <a style={{display:'flex',alignItems:'center'}}  className="toOtherProject">
                                         <ul>
                                             <li><p>{nextProjectName}</p></li>
@@ -214,4 +213,4 @@ class Project extends React.Component {
     }
 }
 
-export default withLocale(Project)
+export default Project

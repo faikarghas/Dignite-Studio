@@ -8,7 +8,7 @@ import useTranslation from '../hooks/useTranslation'
 
 import TextHeaderHome from '../components/presentational/textHeaderHome'
 import ButtonViewAllProjects from '../components/presentational/buttonViewAllProjects'
-import Layout from '../components/layouts'
+import Layout from '../components/layouts/base'
 import data from '../lib/copywriting/data.js'
 
 const Project = ({trans}) => {
@@ -21,7 +21,7 @@ const Project = ({trans}) => {
         <Row>
         {data.home.Project.map(item=>{
             return (
-                <Link href="/[langs]/project/[project]" as={`/${locale}/project/${item.slug}`} key={item.id}>
+                <Link href="/project/[project]" as={`/project/${item.slug}`} key={item.id}>
                     <Col className="box1 p-0 placeholder" xs={4} key={item.id} data-large={item.imgUrl}>
                         <LazyLoadImage
                             alt={item.slug}
@@ -57,7 +57,7 @@ const Index = () => {
   }
 
   useEffect(() => {
-    window.location.replace(`/${getInitialLocale()}`)
+    // window.location.replace(`/${getInitialLocale()}`)
 
     function watchScroll() {
       window.addEventListener("scroll", handleScroll);
