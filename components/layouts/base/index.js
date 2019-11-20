@@ -105,9 +105,9 @@ class Layout extends React.Component{
     let canUrl = `https://www.dignitestudio.com/${canonical}`
 
     if (canonical === 'home') {
-        canUrl = `https://www.dignitestudio.com/${locale}`
+        canUrl = `https://www.dignitestudio.com`
     } else {
-        canUrl = `https://www.dignitestudio.com/${locale}/${canonical}`
+        canUrl = `https://www.dignitestudio.com/${canonical}`
     }
 
     return(

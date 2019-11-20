@@ -7,13 +7,17 @@
     "dev": "node server.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
-    "idb": "npm run build"
+    "idb": "npm run build",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "author": "Faikar & Mayesta",
   "license": "ISC",
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
+    "@zeit/next-typescript": "^1.1.1",
     "autoprefixer": "^9.6.0",
     "bootstrap": "^4.3.1",
     "cacheable-response": "^1.7.3",
@@ -62,11 +66,12 @@
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
-    "babel-jest": "^24.8.0",
+    "babel-jest": "^24.9.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
-    "jest": "^24.8.0"
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.9.0"
   }
 }
