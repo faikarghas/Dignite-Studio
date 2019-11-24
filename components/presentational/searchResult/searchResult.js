@@ -15,7 +15,8 @@ const searchResult = ({dataSearch,showModal}) => {
                 let categoryLowerCase = item.category.toLowerCase()
 
                 return (
-                    <Link href={`/blogDetail?category=${categoryLowerCase}&slug=${item.slug}`} as={`/blog/${categoryLowerCase}/${item.slug}`} key={item.idblog}>
+                    <Link href={`/blog/[blogdetail]`} as={`/blog/${item.slug}`} key={item.idblog}>
+                    {/* <Link href={`/blogDetail?category=${categoryLowerCase}&slug=${item.slug}`} as={`/blog/${categoryLowerCase}/${item.slug}`} key={item.idblog}> */}
                         <section className="blog_contents__box">
                             <Row>
                                 <Col xs={{span:12,order:2}} md={{span:9,order:1}} >

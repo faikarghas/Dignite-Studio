@@ -3,7 +3,6 @@ import Link from 'next/link'
 import Router from 'next/router'
 import Pagination from "react-js-pagination";
 import fetch from 'isomorphic-unfetch'
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import Layout from '../../../../components/layouts/base'
 import LayoutBlog from '../../../../components/layouts/blog/lang/menu'
@@ -95,10 +94,9 @@ class BlogPage extends React.Component {
                                             </section>
                                         </Col>
                                         <Col xs={{span:12,order:1}} md={{span:4,order:2}} className="img-blog">
-                                            <LazyLoadImage
+                                            <img 
                                                 alt={'gambar artikel'}
                                                 src={`https://api.dignitestudio.com/images/image/artikel/${item.imgThumbnail}.jpg`}
-                                                effect="blur"
                                                 width={'100%'} 
                                                 height={"100%"}
                                             />

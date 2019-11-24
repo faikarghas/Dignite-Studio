@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Container,Row,Col } from 'react-bootstrap';
 import Link from 'next/link'
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 import useTranslation from '../hooks/useTranslation'
 import { useAmp } from 'next/amp'
 
@@ -10,7 +9,6 @@ import ButtonViewAllProjects from '../components/presentational/buttonViewAllPro
 import Layout from '../components/layouts/base'
 import data from '../lib/copywriting/data.js'
 
-export const config = { amp: 'hybrid' }
 
 export const Project = ({trans}) => {
   return (
@@ -22,13 +20,6 @@ export const Project = ({trans}) => {
             return (
                 <Link href="/project/[project]" as={`/project/${item.slug}`} key={item.id}>
                     <Col className="box1 p-0 placeholder" xs={4} key={item.id} data-large={item.imgUrl}>
-                        {/* <LazyLoadImage
-                            alt={item.slug}
-                            src={item.imgUrl}
-                            effect="blur"
-                            width={'100%'}
-                            height={"100%"}
-                        /> */}
                         {useAmp() ? (
                           <amp-img
                             width="100%"
@@ -88,5 +79,7 @@ const Index = () => {
     </Layout>
   );
 }
+
+export const config = { amp: 'hybrid' }
 
 export default Index

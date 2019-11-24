@@ -1,4 +1,3 @@
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Container,Row,Col } from 'react-bootstrap';
 
 import { getInitialLocale } from '../translations/getInitialLocale'
@@ -53,12 +52,7 @@ const OurTeam = () => (
                     <Row>
                         {data.about.team.map((item,i)=>(
                             <Col className="box-photo p-0" xs={5}>
-                                <LazyLoadImage
-                                    alt={item.alt}
-                                    src={item.LinkPhoto}
-                                    effect="blur"
-                                    width={'100%'}
-                                />
+                                <img src={item.LinkPhoto} width="100%" alt={item.alt}/>
                                 <div className="overlay-yellow">
                                     <p>{item.name}</p>
                                     <p style={{fontSize:'1.5rem'}}>{item.job}</p>

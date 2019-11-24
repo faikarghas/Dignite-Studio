@@ -129,7 +129,7 @@ class BlogDetail extends React.Component {
                                             <div className="box-img">
                                                 <img src={`https://api.dignitestudio.com/images/image/artikel/${item.imgThumbnail}.jpg`} width="100%"></img>
                                             </div>
-                                            <Link href={`/blogDetail?category=${categoryLowerCase}&slug=${item.slug}`} as={`/blog/${categoryLowerCase}/${item.slug}`} key={item.idblog}>
+                                            <Link href={`/blog/[blogdetail]`} as={`/blog/${item.slug}`} key={item.idblog}>
                                                 <a><h3>{item.title}</h3></a>
                                             </Link>
                                             <p className="category">{item.category}</p>

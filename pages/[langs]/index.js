@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Container,Row,Col } from 'react-bootstrap';
 import Link from 'next/link'
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import withLocale from '../../hocs/withLocale'
 import useTranslation from '../../hooks/useTranslation'
@@ -25,10 +24,9 @@ const Project = ({trans}) => {
             return (
                 <Link href="/[langs]/project/[project]" as={`/${locale}/project/${item.slug}`} key={item.id}>
                     <Col className="box1 p-0 placeholder" xs={4} key={item.id} data-large={item.imgUrl}>
-                        <LazyLoadImage
+                        <img
                             alt={item.slug}
                             src={item.imgUrl}
-                            effect="blur"
                             width={'100%'}
                             height={"100%"}
                         />

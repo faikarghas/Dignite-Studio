@@ -1,6 +1,5 @@
 import Layout from '../../components/layouts/base'
 import TextHeader from '../../components/presentational/textHeader'
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import data from '../../lib/copywriting/data.js'
 import withLocale from '../../hocs/withLocale'
@@ -54,12 +53,7 @@ const OurTeam = () => (
                     <Row>
                         {data.about.team.map((item,i)=>(
                             <Col className="box-photo p-0" xs={5}>
-                                <LazyLoadImage
-                                    alt={item.alt}
-                                    src={item.LinkPhoto}
-                                    effect="blur"
-                                    width={'100%'}
-                                />
+                                <img src={item.LinkPhoto} alt={item.alt} width={'100%'} />
                                 <div className="overlay-yellow">
                                     <p>{item.name}</p>
                                     <p style={{fontSize:'1.5rem'}}>{item.job}</p>

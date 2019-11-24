@@ -17,7 +17,7 @@ class Project extends React.Component {
     static async getInitialProps(ctx){
         let { project,langs } = ctx.query
         const res = await data.home
-
+        console.log(langs)
         return {slug: project, dataProject: res,langs}
     }
 
@@ -27,7 +27,6 @@ class Project extends React.Component {
 
     componentDidMount(){
         window.addEventListener('scroll', this.handleScroll);
-        console.log('trigger');
         this.loadImgAndAppend()
     }
 

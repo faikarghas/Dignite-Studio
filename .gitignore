@@ -126,3 +126,8 @@ package-lock.json
 
 # Next.js static build files
 out/
+
+
+## unit testing ##
+__mocks__
+__test__
