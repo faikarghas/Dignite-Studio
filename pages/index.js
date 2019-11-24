@@ -73,7 +73,7 @@ const Index = () => {
   });
 
   return (
-    <Layout title={'Creative Digital Agency Indonesia | Dignite Studio'} canonical="home" metaDesc="Dignite Studio crafts experiences for your digital needs.">
+    <Layout title={'Home | Dignite Studio'} canonical="home" metaDesc="Dignite Studio crafts experiences for your digital needs.">
         <TextHeaderHome text={data.home.title} />
         <Project trans={trans} />
     </Layout>

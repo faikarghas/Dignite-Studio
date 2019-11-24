@@ -18,7 +18,6 @@
   "author": "Faikar & Mayesta",
   "license": "ISC",
   "dependencies": {
-    "@next/bundle-analyzer": "^9.1.4",
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
     "@zeit/next-typescript": "^1.1.1",
@@ -69,6 +68,7 @@
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^24.9.0"
+    "jest": "^24.9.0",
+    "@next/bundle-analyzer": "^9.1.4"
   }
 }
