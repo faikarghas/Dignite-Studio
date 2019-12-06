@@ -1,6 +1,5 @@
 import React from 'react'
 import { Container } from 'react-bootstrap';
-import Fade from 'react-reveal/Fade';
 
 
 const textHeader = props => {
