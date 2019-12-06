@@ -1,3 +1,6 @@
+@import "~bootstrap/scss/bootstrap";
+
+
 @import "abstracts/_mixins";
 @import "abstracts/_variables";
 
@@ -10,10 +13,11 @@
 @import "components/_modal-hireus";
 @import "components/_pagination";
 @import "components/_nprogress";
+@import "components/_menu";
 
 
 @import "layout/_header";
-@import "layout/_menu";
+// @import "layout/_menu";
 @import "layout/_footer";
 @import "layout/_menuBlog";
 
@@ -26,4 +30,3 @@
 @import "pages/_blogDetail";
 @import "pages/_search";
 
-@import "~bootstrap/scss/bootstrap";

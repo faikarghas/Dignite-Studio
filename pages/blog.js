@@ -13,8 +13,7 @@ import LayoutBlog from '../components/layouts/blog/base/menu'
 
 const Blog = ({dataBlog}) => {
     const [activePage, setActivePage] = useState(1)
-    console.log(useAmp());
-    
+
     function handlePageChange(pageNumber) {
         if(pageNumber === 1) {
             Router.push(`/blog`,`/blog`);
@@ -61,10 +60,10 @@ const Blog = ({dataBlog}) => {
                                             layout="responsive"
                                         />
                                         ) : (
-                                        <img 
-                                            width="100%" 
-                                            height="100%" 
-                                            src={`https://api.dignitestudio.com/images/image/artikel/${item.imgThumbnail}.jpg`} 
+                                        <img
+                                            width="100%"
+                                            height="100%"
+                                            src={`https://api.dignitestudio.com/images/image/artikel/${item.imgThumbnail}.jpg`}
                                             alt={item.imgThumbnail} />
                                     )}
                                     </Col>

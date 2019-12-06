@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import PropTypes from 'prop-types';
+import {motion} from 'framer-motion'
 import { connect } from 'react-redux'
 import * as action from '../../../redux/actionIndex'
 
@@ -30,14 +31,6 @@ class Layout extends React.Component{
 
     this.state={
       modal:'',
-      listMenu : [
-        {id:1,nama:'ABOUT',link:'about'},
-        {id:2,nama:'WORK',link:'work'},
-        {id:3,nama:'HIRE US',link:'',klik:true},
-        {id:4,nama:'BLOG',link:'blog'},
-        {id:5,nama:'STORE',link:'',linkweb:true},
-        {id:6,nama:'BUTTON',link:'',button:true},
-      ],
       menu: false,
     }
 
@@ -53,36 +46,6 @@ class Layout extends React.Component{
   }
 
 
-  openMenu = () => {
-    this.setState({ menu: true })
-
-    let refData = {
-      svg1: this.svgElement1,
-      svg2: this.svgElement2,
-      svg3: this.svgElement3,
-      navbar: this.navbar,
-      hEl: this.headerElement,
-      usersRef: this.users,
-      color: this.props.colour
-    }
-    this.props.openMenuHandler(refData)
-  }
-
-  closeMenu = () => {
-    this.setState({ menu: false })
-
-    let refData = {
-      svg1: this.svgElement1,
-      svg2: this.svgElement2,
-      svg3: this.svgElement3,
-      navbar: this.navbar,
-      hEl: this.headerElement,
-      usersRef: this.users,
-      color: this.props.colour
-
-    }
-    this.props.closeMenuHandler(refData)
-  }
 
   showModal = (category,action,label,modalName) => {
     modalView(modalName)
@@ -120,50 +83,9 @@ class Layout extends React.Component{
         </Head>
 
         <div>
-          <Header openMenu={this.openMenu} closeMenu={this.closeMenu} menu={menu}
-            headerRef={el => this.headerElement = el}
-            svgRef1={el => this.svgElement1 = el}
-            svgRef2={el => this.svgElement2 = el}
-            svgRef3={el => this.svgElement3 = el}
-            menuButtonColour={this.state.menuButtonColour}
-          />
+          <Header openMenu={this.openMenu} closeMenu={this.closeMenu} menu={menu} headerRef={el => this.headerElement = el}/>
             {this.props.children}
           <Footer showModal={this.showModal} />
-        </div>
-
-        <div className="menu" ref={nav => this.navbar = nav} >
-          <ul className="list-item">
-            {this.state.listMenu.map((item,i)=>{
-              if(item.klik){
-                return(
-                  <li key={item.id} ref={div => this.users[i] = div}><a onClick={this.showModal}>HIRE US</a></li>
-                )
-              } else if (item.linkweb){
-                return (
-                  <li key={item.id} ref={div => this.users[i] = div}><a href="https://store.dignitestudio.com/" target="_blank" rel="noopener">STORE</a></li>
-                )
-              } else if(item.button){
-                return (
-                  <li key={item.id} style={{opacity:1}} ref={div => this.users[i] = div} className="mt-5">
-                    <ThemeButton
-                      svgRef1={el => this.svgElement1 = el}
-                      svgRef2={el => this.svgElement2 = el}
-                      svgRef3={el => this.svgElement3 = el}
-                    />
-                  </li>
-                )
-              } else {
-                return(
-                  <li key={item.id} ref={div => this.users[i] = div}>
-                    <Link href={`/${item.link}`} as={`/${item.link}`}>
-                      <a>{item.nama}</a>
-                    </Link>
-                  </li>
-                )
-              }
-            })}
-
-          </ul>
         </div>
 
         <ModalHire modal={modal} closeModal={this.closeModal} showModal2={this.props.showModal2} closeModal2={this.props.closeModal2}/>
@@ -180,7 +102,7 @@ Layout.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    colour: state.theme.theme_colour,
+    color: state.theme.theme_colour,
     theme: state.theme.theme,
   }
 }
@@ -188,8 +110,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
   return {
     initilizeThemeHandler : (bs,theme,colour) => dispatch(action.initilizeThemeHandler(bs,theme,colour)),
-    openMenuHandler: (data) => dispatch(action.openMenuHandler(data)),
-    closeMenuHandler: (data) => dispatch(action.closeMenuHandler(data))
   }
 }
 

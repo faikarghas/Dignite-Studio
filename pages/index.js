@@ -13,32 +13,31 @@ import data from '../lib/copywriting/data.js'
 export const Project = ({trans}) => {
   return (
     <section className="section_second-home width100 homeku">
-      {/* <h1>unit testing</h1> for testing purpose */}
       <Container className="box_allprojects" style={{WebkitTransform:`translate(-50%,${-trans}px)`,msTransform:`translate(-50%,${-trans}px)`,transform:`translate(-50%,${-trans}px)`}}>
         <Row>
-        {data.home.Project.map(item=>{
-            return (
-                <Link href="/project/[project]" as={`/project/${item.slug}`} key={item.id}>
-                    <Col className="box1 p-0 placeholder" xs={4} key={item.id} data-large={item.imgUrl}>
-                        {useAmp() ? (
-                          <amp-img
-                            width="100%"
-                            height="100%"
-                            src={item.imgUrl}
-                            alt={item.slug}
-                            layout="responsive"
-                          />
-                        ) : (
-                          <img width="100%" height="100%" src={item.imgUrl} alt={item.slug} />
-                        )}
-                        <div className="box-hover">
-                            <h2>{item.title}</h2>
-                            <h2>{item.Category}</h2>
-                        </div>
-                    </Col>
-                </Link>
-            )
-        })}
+          {data.home.Project.map(item=>{
+              return (
+                  <Link href="/project/[project]" as={`/project/${item.slug}`} key={item.id}>
+                      <Col className="box1 p-0 placeholder" xs={4} key={item.id} data-large={item.imgUrl}>
+                          {useAmp() ? (
+                            <amp-img
+                              width="100%"
+                              height="100%"
+                              src={item.imgUrl}
+                              alt={item.slug}
+                              layout="responsive"
+                            />
+                          ) : (
+                            <img width="100%" height="100%" src={item.imgUrl} alt={item.slug} />
+                          )}
+                          <div className="box-hover">
+                              <h2>{item.title}</h2>
+                              <h2>{item.Category}</h2>
+                          </div>
+                      </Col>
+                  </Link>
+              )
+          })}
         </Row>
         <ButtonViewAllProjects/>
       </Container>
