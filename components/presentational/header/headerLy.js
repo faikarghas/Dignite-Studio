@@ -2,7 +2,7 @@ import Link from 'next/link'
 import PropTypes from 'prop-types';
 import { Container,Row,Col } from 'react-bootstrap';
 import React, { useState } from 'react'
-import {motion,AnimatePresence} from 'framer-motion'
+import {motion} from 'framer-motion'
 import Menu from '../menu'
 
 import * as action from '../../../redux/actionIndex'
@@ -10,10 +10,12 @@ import {connect} from 'react-redux'
 import useTranslation from '../../../hooks/useTranslation'
 
 
-const postVariants = {
-    closed: { right:'-110%',transition: { duration: .5,delay: 0.5}},
-    open: { right:"-20%", transition: { duration: .5} },
-    exit: { right:"-110%", transition: { duration: .5,delay: 0.5} }
+const variants = {
+    initial: {left:"-110%"},
+    enter: { left:"0%", transition: { duration: 0.5} },
+    exit: { left:"-110%",transition: { duration: 0.5,delay: 0.5} },
+    logo: {opacity:1},
+    logo1: {opacity:1}
 };
 
 
@@ -23,22 +25,25 @@ const headerLy = props => {
 
     function addOverflowHide(params) {
         setAnim(!anim)
-        // if (!anim) {
-        //     document.body.style.overflowY = 'hidden'
-        // } else {
-        //     document.body.style.overflowY = 'auto'
-        // }
+        if (!anim) {
+            document.body.style.overflowY = 'hidden'
+        } else {
+            document.body.style.overflowY = 'auto'
+        }
     }
-
     return (
         <React.Fragment>
             <header id="top" >
                 <div className="hd_bg" ref={props.headerRef}></div>
                 <Container className="header_menu">
                     <ul>
-                        <li style={{cursor:'pointer',zIndex:2}}>
+                        <li style={{cursor:'pointer'}}>
                             <Link href="/" >
-                                <img src='https://image-dignite.s3-ap-southeast-1.amazonaws.com/logo-dignite-kuning.png' width="60px" height="60px" alt="logo-dignite" ></img>
+                                <motion.img
+                                animate={anim ? 'logo' : 'logo1'}
+                                exit="exit"
+                                variants={variants}
+                                src={anim ? 'https://image-dignite.s3-ap-southeast-1.amazonaws.com/logo-dignitestudio-white.png':'https://image-dignite.s3-ap-southeast-1.amazonaws.com/logo-dignitestudio-yellow.png'} width="120px" height="100%" style={{objectFit:'contain'}} alt="logo-dignite" ></motion.img>
                             </Link>
                         </li>
 
@@ -61,9 +66,10 @@ const headerLy = props => {
                 </Container>
             </header>
             <motion.div
+            key="menu"
             initial={false}
-            animate={anim ? 'open' : 'closed'}
-            variants={postVariants}
+            animate={anim ? 'enter' : 'exit'}
+            variants={variants}
             exit="exit"
             style={{
                 backgroundColor: "#ffba00",
@@ -72,8 +78,7 @@ const headerLy = props => {
                 width: "100%",
                 height: '100%',
                 zIndex: "2",
-                right: '-100%',
-                top: "0"
+                top:'0'
             }}
             >
                 <Menu/>

@@ -96,7 +96,7 @@ class Project extends React.Component{
                                     <Form.Control as="textarea"  id="message" placeholder="Your Message" name="message" value={message} onChange={this.inputHandler} required/>
                                 </Form.Group>
                                 <Button type="submit">
-                                    {this.state.Loading ? <div class="lds-ring"><div></div><div></div><div></div><div></div></div>: 'Start Conversation'}
+                                    {this.state.Loading ? <div class="lds-ring"><div></div><div></div><div></div><div></div></div>: <h2>Start Conversation</h2>}
                                 </Button>
                             </Form>
                         </Col>

@@ -2,7 +2,7 @@ import { Container,Row,Col } from 'react-bootstrap';
 
 import { getInitialLocale } from '../translations/getInitialLocale'
 import data from '../lib/copywriting/data.js'
-import TextHeader from '../components/presentational/textHeader'
+import TextHeader from '../components/presentational/textHeaderHome'
 import Layout from '../components/layouts/base'
 
 
@@ -67,15 +67,14 @@ const OurTeam = () => (
 )
 
 const about = () =>  {
-    React.useEffect(() => {
-    //   window.location.replace(`/${getInitialLocale()}/about`)
-    })
     return(
+      <div className="main_wrapper">
       <Layout title={'Solution for Your Creative Digital Needs | Dignite Studio'} canonical="about" metaDesc="Supported by different backgrounds of the founders, Dignite Studio specializes in crafting digital experiences for brands that are ready to make an impact.">
           <TextHeader text={data.about.title} />
           <Process/>
           <WhatWeDo/>
       </Layout>
+      </div>
     )
 }
 

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react"
 import { Container,Row,Col } from 'react-bootstrap';
 import Link from 'next/link'
 import useTranslation from '../hooks/useTranslation'
-import { useAmp } from 'next/amp'
 
 import TextHeaderHome from '../components/presentational/textHeaderHome'
 import ButtonViewAllProjects from '../components/presentational/buttonViewAllProjects'
@@ -19,17 +18,7 @@ export const Project = ({trans}) => {
               return (
                   <Link href="/project/[project]" as={`/project/${item.slug}`} key={item.id}>
                       <Col className="box1 p-0 placeholder" xs={4} key={item.id} data-large={item.imgUrl}>
-                          {useAmp() ? (
-                            <amp-img
-                              width="100%"
-                              height="100%"
-                              src={item.imgUrl}
-                              alt={item.slug}
-                              layout="responsive"
-                            />
-                          ) : (
-                            <img width="100%" height="100%" src={item.imgUrl} alt={item.slug} />
-                          )}
+                          <img width="100%" height="100%" src={item.imgUrl} alt={item.slug} />
                           <div className="box-hover">
                               <h2>{item.title}</h2>
                               <h2>{item.Category}</h2>
@@ -52,7 +41,7 @@ const Index = () => {
   function handleScroll() {
     let valueScroll = window.scrollY
     if(valueScroll){
-        setTrans(valueScroll/7)
+        setTrans(valueScroll/5)
     }
   }
 
@@ -72,13 +61,14 @@ const Index = () => {
   });
 
   return (
+    <div className="main_wrapper">
     <Layout title={'Home | Dignite Studio'} canonical="home" metaDesc="Dignite Studio crafts experiences for your digital needs.">
         <TextHeaderHome text={data.home.title} />
         <Project trans={trans} />
     </Layout>
+    </div>
   );
 }
 
-export const config = { amp: 'hybrid' }
 
 export default Index

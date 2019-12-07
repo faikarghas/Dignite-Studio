@@ -2,19 +2,20 @@
     padding: 10rem 0 10rem 0;
     text-align: center;
     position: relative;
-    background-color: white;
+    // background-color: white;
     @include respond (phone){
         padding: 10rem 4rem;
     }
     h1,h2{
-        font-family: "Brandon-grotesque-black";
+        font-family: "FaktPro-Normal";
+        font-weight: 700;
         font-size: 4.5rem;
         text-transform: uppercase;
     }
 }
 
 .blog_contents{
-    background-color: white;
+    // background-color: white;
     position: relative;
     .featured{
         list-style: none;
@@ -31,7 +32,8 @@
         &-p{
             h2{
                 font-size: 3rem;
-                font-family: "Brandon-grotesque-black";
+                // font-family: "Brandon-grotesque-black";
+                font-family: "FaktPro-semiBold";
             }
             p{
                 text-align: justify;

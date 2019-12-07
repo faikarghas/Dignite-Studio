@@ -7,23 +7,26 @@ p{
 
 li,a{
     font-size: 1.6rem;
-    font-family: "Brandon-grotesque-regular";
+    // font-family: "FaktPro-Blond";
+    font-family: "FaktPro-Normal";
 }
 
-p,li{
-    font-family: "Brandon-grotesque-regular";
+p{
+    font-family: "FaktPro-Normal";
 }
 
 h1,h2,h3,h4,h5,th,td{
-    font-family: 'Brandon-grotesque-regular', sans-serif;
+    font-family: "FaktPro-SemiBold";
+    // font-family: 'FaktPro-SemiBold', sans-serif;
 }
 
 label,button{
-    font-family: 'Brandon-grotesque-regular', sans-serif;
+    // font-family: 'Brandon-grotesque-regular', sans-serif;
+    font-family: "FaktPro-Normal";
 }
 
 input{
-    font-family: "Brandon-grotesque-regular", sans-serif;
+    font-family: "FaktPro-Normal";
     font-size: 1.6rem;
     padding-left: 1rem;
     &:focus{
@@ -31,33 +34,52 @@ input{
     }
 }
 
+// @font-face {
+//     font-family: "Brandon-grotesque-black";
+//     src:
+//         url('../static/fonts/Brandon-grotesque-black.woff') format('woff'),
+//         // url('../static/fonts/Brandon-grotesque-black.otf') format('otf'),
+//         // url('../static/fonts/Brandon-grotesque-black.ttf') format('ttf');
+// }
+// @font-face {
+//     font-family: "Brandon-grotesque-light";
+//     src:
+//         url('../static/fonts/Brandon-grotesque-light.woff') format('woff'),
+//         // url('../static/fonts/Brandon-grotesque-light.otf') format('otf'),
+//         // url('../static/fonts/Brandon-grotesque-light.ttf') format('ttf');
+// }
+
+// @font-face {
+//     font-family: "Brandon-grotesque-medium";
+//     src:
+//         url('../static/fonts/Brandon-grotesque-medium.woff') format('woff'),
+//         // url('../static/fonts/Brandon-grotesque-medium.otf') format('otf'),
+//         // url('../static/fonts/Brandon-grotesque-medium.ttf') format('ttf');
+// }
+
+// @font-face {
+//     font-family: "Brandon-grotesque-regular";
+//     src:
+//         url('../static/fonts/Brandon-grotesque-regular.woff') format('woff'),
+//         // url('../static/fonts/Brandon-grotesque-regular.otf') format('otf'),
+//         // url('../static/fonts/Brandon-grotesque-regular.ttf') format('ttf');
+// }
+
+
 @font-face {
-    font-family: "Brandon-grotesque-black";
+    font-family: "FaktPro-Blond";
     src:
-        url('../static/fonts/Brandon-grotesque-black.woff') format('woff'),
-        // url('../static/fonts/Brandon-grotesque-black.otf') format('otf'),
-        // url('../static/fonts/Brandon-grotesque-black.ttf') format('ttf');
-}
-@font-face {
-    font-family: "Brandon-grotesque-light";
-    src:
-        url('../static/fonts/Brandon-grotesque-light.woff') format('woff'),
-        // url('../static/fonts/Brandon-grotesque-light.otf') format('otf'),
-        // url('../static/fonts/Brandon-grotesque-light.ttf') format('ttf');
+        url('../static/fonts/FaktPro-Blond.woff') format('woff'),
 }
 
 @font-face {
-    font-family: "Brandon-grotesque-medium";
+    font-family: "FaktPro-Normal";
     src:
-        url('../static/fonts/Brandon-grotesque-medium.woff') format('woff'),
-        // url('../static/fonts/Brandon-grotesque-medium.otf') format('otf'),
-        // url('../static/fonts/Brandon-grotesque-medium.ttf') format('ttf');
+        url('../static/fonts/FaktPro-Normal.woff') format('woff'),
 }
 
 @font-face {
-    font-family: "Brandon-grotesque-regular";
+    font-family: "FaktPro-SemiBold";
     src:
-        url('../static/fonts/Brandon-grotesque-regular.woff') format('woff'),
-        // url('../static/fonts/Brandon-grotesque-regular.otf') format('otf'),
-        // url('../static/fonts/Brandon-grotesque-regular.ttf') format('ttf');
+        url('../static/fonts/FaktPro-SemiBold.woff') format('woff'),
 }

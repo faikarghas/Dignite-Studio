@@ -3,7 +3,7 @@ import Slider from "react-slick"
 import { Container,Row,Col } from 'react-bootstrap'
 import Link from 'next/link'
 
-import TextHeader from '../components/presentational/textHeader'
+import TextHeader from '../components/presentational/textHeaderHome'
 import Layout from '../components/layouts/base'
 import data from '../lib/copywriting/data.js'
 import useTranslation from '../hooks/useTranslation'
@@ -22,6 +22,7 @@ const work = props =>  {
     })
 
     return (
+        <div className="main_wrapper">
         <Layout title={'Website, App, Graphic Design & Branding Portfolio | Dignite Studio'} canonical="work" metaDesc="Digital products for all kind of clients and audiences">
             <TextHeader text={data.work.title} />
             <section className="section_second-work">
@@ -30,7 +31,7 @@ const work = props =>  {
                         <Row style={{display:'flex !important'}}>
                             {data.home.Project.map(item=>{
                                 return (
-                                    <Link href="/project/[slug]" as={`/project/${item.slug}`} key={item.id}>
+                                    <Link href="/project/[project]" as={`/project/${item.slug}`} key={item.id}>
                                         <Col className="box" xs={4} md={4} lg={4}  >
                                                 <img src={item.imgUrl} alt={'project-img'}/>
                                                 <div className="box-hover">
@@ -46,6 +47,7 @@ const work = props =>  {
                 </Container>
             </section>
         </Layout>
+        </div>
     )
 
 }

@@ -43,6 +43,7 @@ class Layout extends React.Component{
     }
     logPageView()
     this.props.initilizeThemeHandler()
+    document.body.style.overflowY = 'auto'
   }
 
 
@@ -114,3 +115,8 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(withMyHook(Layout))
+
+
+// Record type: CNAME, Value: DIGNITE.STUDIO.
+
+// Record type: A, Value: 184.168.221.63

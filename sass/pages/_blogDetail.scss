@@ -1,7 +1,7 @@
 .section_first-blogDetail{
     padding: 10rem 0 5rem;
     position: relative;
-    background-color: white;
+    // background-color: white;
     @include respond(phone){
         padding: 10rem 4rem;
     }
@@ -80,7 +80,7 @@
         }
         h1{
             font-size: 4rem;
-            font-family: "Brandon-grotesque-black" !important;
+            font-family: "FaktPro-SemiBold";
             margin-bottom: 6rem;
         }
         p{
@@ -112,7 +112,7 @@
             }
             h2{
                 font-size: 3rem;
-                font-family: "Brandon-grotesque-medium" !important;
+                font-family: "FaktPro-SemiBold";
             }
             p{
                 margin-bottom: 2rem;

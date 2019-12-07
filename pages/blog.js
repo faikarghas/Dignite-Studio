@@ -4,12 +4,21 @@ import Link from 'next/link'
 import Router from 'next/router'
 import Pagination from "react-js-pagination";
 import fetch from 'isomorphic-unfetch'
-import { useAmp } from 'next/amp'
+import {motion} from 'framer-motion'
 
 import {convertMonth} from '../lib/date'
 import Layout from '../components/layouts/base'
 import LayoutBlog from '../components/layouts/blog/base/menu'
 
+
+const variants = {
+    initial:{scale:0.95,opacity:1},
+    enter: { scale: 1, y: 0, opacity: 1 },
+    exit: {
+      scale: 0.9,
+      opacity: 0,
+    }
+};
 
 const Blog = ({dataBlog}) => {
     const [activePage, setActivePage] = useState(1)
@@ -24,10 +33,16 @@ const Blog = ({dataBlog}) => {
 
     return (
         <Layout title={'Business, Marketing, Design | Dignite Studio'} canonical="blog" metaDesc="Business to entrepreneurship, marketing tips and the occasional musings of our digital world.">
-            <section className="section_first-blog">
+            <motion.section 
+            key="textblog"
+            initial="initial"
+            exit="exit"
+            animate="enter"
+            variants={variants}
+            className="section_first-blog">
                 <h1 className="mb-5">BLOG</h1>
                 <p>Business to entrepreneurship and marketing tips, Dignite announcements,<br/> and the occasional musings of our digital world. </p>
-            </section>
+            </motion.section>
             <LayoutBlog allTopics={'active'}>
                 {dataBlog.currPage.map(item=>{
 
@@ -51,21 +66,11 @@ const Blog = ({dataBlog}) => {
                                         </section>
                                     </Col>
                                     <Col xs={{span:12,order:1}} md={{span:4,order:2}} className="img-blog">
-                                    {useAmp() ? (
-                                        <amp-img
-                                            width="100%"
-                                            height="100%"
-                                            src={`https://api.dignitestudio.com/images/image/artikel/${item.imgThumbnail}.jpg`}
-                                            alt={item.imgThumbnail}
-                                            layout="responsive"
-                                        />
-                                        ) : (
                                         <img
                                             width="100%"
                                             height="100%"
                                             src={`https://api.dignitestudio.com/images/image/artikel/${item.imgThumbnail}.jpg`}
                                             alt={item.imgThumbnail} />
-                                    )}
                                     </Col>
                                 </Row>
                             </section>
@@ -94,6 +99,5 @@ Blog.getInitialProps = async ({ req }) => {
     return {dataBlog}
 }
 
-export const config = { amp: 'hybrid' }
 
 export default Blog
