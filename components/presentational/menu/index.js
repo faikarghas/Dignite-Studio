@@ -48,7 +48,7 @@ const index = () => {
             <Col md={5}>
               <motion.ul className="nav_ul" variants={variants} key="nav">
                   <motion.li variants={variants2} key="nav-list1"><Link href={`/about`}><a>About<span>.</span></a></Link><div className="linecross"></div></motion.li>
-                  <motion.li variants={variants2} key="nav-list2"><Link href={`/work`}><a>Projects<span>.</span></a></Link></motion.li>
+                  <motion.li variants={variants2} key="nav-list2"><Link href={`/projects`}><a>Projects<span>.</span></a></Link></motion.li>
               </motion.ul>
             </Col>
             <Col md={7}>
@@ -68,12 +68,17 @@ const index = () => {
             </Col>
             <Col md={12} lg={3} className="mt-5rem d-flex justify-conter-end">
               <motion.div variants={variants} key="phone" className="contact_menu">
-                <motion.a variants={variants2} href="https://api.whatsapp.com/send?phone=6281316100044&text=Halo Dignite, saya ingin bertanya mengenai pembuatan website/desain/digital marketing."><p>(+62) 813 1610 0044</p></motion.a>
+                <motion.a variants={variants2} href="https://api.whatsapp.com/send?phone=6281316100044&text=Halo Dignite, saya ingin bertanya mengenai pembuatan website/desain/digital marketing.">
+                  <p className="half_color">
+                  <span>(+62) 813 1610 0044</span>
+                  (+62) 813 1610 0044
+                  </p>
+                </motion.a>
               </motion.div>
             </Col>
             <Col md={12} lg={4} className=" d-flex justify-conter-end">
               <motion.div variants={variants} key="email" className="contact_menu">
-                <motion.a variants={variants2} href="mailto:hello@dignitestudio.com"><p>hello@dignitestudio.com</p></motion.a>
+                <motion.a variants={variants2} href="mailto:hello@dignitestudio.com"><p className="half_color"><span>hello@dignitestudio.com</span>hello@dignitestudio.com</p></motion.a>
               </motion.div>
             </Col>
           </Row>

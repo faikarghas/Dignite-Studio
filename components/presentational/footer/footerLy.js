@@ -15,7 +15,7 @@ const footer = props => {
                             <Col xs={12} md={6}>
                                 <ul className="mb-5 for-lg-sc">
                                     <li><Link href="/about" ><a>About</a></Link></li>
-                                    <li><Link href="/work" ><a>Work</a></Link></li>
+                                    <li><Link href="/projects" ><a>Projects</a></Link></li>
                                     <li><Link href="/blog" ><a>Blog</a></Link></li>
                                     <li> <a href="https://store.dignitestudio.com/" target="_blank" rel="noopener">Store</a></li>
                                 </ul>

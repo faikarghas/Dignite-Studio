@@ -33,11 +33,11 @@ const work = props =>  {
                                 return (
                                     <Link href="/project/[project]" as={`/project/${item.slug}`} key={item.id}>
                                         <Col className="box" xs={4} md={4} lg={4}  >
-                                                <img src={item.imgUrl} alt={'project-img'}/>
-                                                <div className="box-hover">
-                                                    <h2>{item.title}</h2>
-                                                    <h2>{item.Category}</h2>
-                                                </div>
+                                            <img src={item.imgUrl} alt={'project-img'}/>
+                                            <div className="box-hover">
+                                                <h2>{item.title}</h2>
+                                                <h2>{item.Category}</h2>
+                                            </div>
                                         </Col>
                                     </Link>
                                 )

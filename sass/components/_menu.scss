@@ -72,6 +72,35 @@
             color: #222;
         }
     }
+    .half_color{
+        position: relative;
+        color: #222;
+        &::after{
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            left: 0;
+            bottom: 0;
+            background-color: #222;
+            transition: .5s width;
+        }
+        span{
+            height: 0%;
+            position: absolute;
+            color: white;
+            overflow: hidden;
+            transition: .5s height;
+        }
+        &:hover{
+            span{
+                height: 100%;
+            }
+            &::after{
+                width: 100%;
+            }
+        }
+    }
 }
 
 .linecross{
