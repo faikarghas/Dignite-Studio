@@ -44,7 +44,7 @@ const variants2 = {
 const index = () => {
     return (
         <Container className="container nav_wrapper">
-          <Row>
+          <Row className="mb-5">
             <Col md={5}>
               <motion.ul className="nav_ul" variants={variants} key="nav">
                   <motion.li variants={variants2} key="nav-list1"><Link href={`/about`}><a>About<span>.</span></a></Link><div className="linecross"></div></motion.li>
@@ -71,7 +71,7 @@ const index = () => {
                 <motion.a variants={variants2} href="https://api.whatsapp.com/send?phone=6281316100044&text=Halo Dignite, saya ingin bertanya mengenai pembuatan website/desain/digital marketing."><p>(+62) 813 1610 0044</p></motion.a>
               </motion.div>
             </Col>
-            <Col md={12} lg={4} className="mt-5rem d-flex justify-conter-end">
+            <Col md={12} lg={4} className=" d-flex justify-conter-end">
               <motion.div variants={variants} key="email" className="contact_menu">
                 <motion.a variants={variants2} href="mailto:hello@dignitestudio.com"><p>hello@dignitestudio.com</p></motion.a>
               </motion.div>
