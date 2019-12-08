@@ -71,8 +71,8 @@ class Project extends React.Component{
                             <h3>Have a project in mind? <br/>Let's talk.</h3>
                             <br/>
                             <br/>
-                            <p>hello@dignitestudio.com</p>
-                            <p>(+62) 813 1610 0044</p>
+                            <a href="mailto:hello@dignitestudio.com">hello@dignitestudio.com</a><br/>
+                            <a href="https://api.whatsapp.com/send?phone=6281316100044&text=Halo Dignite, saya ingin bertanya mengenai pembuatan website/desain/digital marketing.">(+62) 813 1610 0044</a>
                         </Col>
                         <Col xs={7}>
                             <Form onSubmit={this.onSubmitHandler}>

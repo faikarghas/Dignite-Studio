@@ -68,7 +68,7 @@ const index = () => {
             </Col>
             <Col md={12} lg={3} className="mt-5rem d-flex justify-conter-end">
               <motion.div variants={variants} key="phone" className="contact_menu">
-                <motion.a variants={variants2} href="tel:+6281316100044"><p>(+62) 813 1610 0044</p></motion.a>
+                <motion.a variants={variants2} href="https://api.whatsapp.com/send?phone=6281316100044&text=Halo Dignite, saya ingin bertanya mengenai pembuatan website/desain/digital marketing."><p>(+62) 813 1610 0044</p></motion.a>
               </motion.div>
             </Col>
             <Col md={12} lg={4} className="mt-5rem d-flex justify-conter-end">

@@ -17,6 +17,7 @@
     .button_seeLive{
         color: white;
         cursor: pointer;
+        text-decoration: none;
         &:hover{
             text-decoration: none;
             color: #222222;
@@ -72,7 +73,7 @@
     }
     h2{
         // font-family: 'Brandon-grotesque-black';
-        font-family: "FaktPro-Normal";
+        font-family: "FaktPro-Semibold";
         font-size: 4.5rem;
         margin-bottom: 4rem;
     }
@@ -119,7 +120,7 @@
     }
     h2{
         // font-family: 'Brandon-grotesque-black';
-        font-family: "FaktPro-Normal";
+        font-family: "FaktPro-Semibold";
         font-size: 4.5rem;
         margin-bottom: 4rem;
     }
@@ -180,7 +181,7 @@
     }
     .quotes{
         // font-family: 'Brandon-grotesque-regular';
-        font-family: "FaktPro-Normal";
+        font-family: "FaktPro-Semibold";
         font-style: italic;
     }
     ul{

@@ -8,8 +8,9 @@
     box-shadow: 0 19px 42px -12px rgba(255, 187, 0, 0.35);
     border: none;
     cursor: pointer;
-    color: #222222;
+    color: white;
     &:hover{
+        color: #222222;
         animation: color-change-2x .5s linear infinite alternate both;
     }
     h2{

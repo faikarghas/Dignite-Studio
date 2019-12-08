@@ -21,11 +21,11 @@ const footer = props => {
                                 </ul>
                                 <p>Jl. Raya Rawabuntu</p>
                                 <p>Ruko Golden Vienna</p>
-                                <p>Blok BB No.11 Lt.2</p>
+                                <p>Blok BB No. 11 Lt. 2</p>
                                 <p>Serpong, Tangerang Selatan</p>
                                 <br/>
-                                <p>hello@dignitestudio.com</p>
-                                <a href="tel:+6281316100044">(+62) 813 1610 0044</a>
+                                <p href="mailto:hello@dignitestudio.com">hello@dignitestudio.com</p>
+                                <a href="https://api.whatsapp.com/send?phone=6281316100044&text=Halo Dignite, saya ingin bertanya mengenai pembuatan website/desain/digital marketing.">(+62) 813 1610 0044</a>
                                 <ul className="mt-5 contact">
                                     <li><a href="https://www.instagram.com/dignitestudio/?hl=en" target="_blank"><img src='../../../static/image/SocialIcon/Instagram.png' alt="icon-ig"/></a></li>
                                     <li><a href="https://api.whatsapp.com/send?phone=6281316100044&text=Halo Dignite, saya ingin bertanya mengenai pembuatan website/desain/digital marketing." target="_blank"><img src='../../../static/image/SocialIcon/Whatsapp.png' alt="icon-wa"/></a></li>
@@ -34,8 +34,7 @@ const footer = props => {
                         </Row>
                     </Col>
                     <Col xs={5}>
-                        <button className="button_hire" onClick={ () => props.showModal('button','click','hire','modal-hire')}><h2>HIRE US</h2></button>
-                        {/* <LocaleSwitcher/> */}
+                        <button className="button_hire" onClick={ () => props.showModal('button','click','hire','modal-hire')}><h2>Hire Us</h2></button>
                     </Col>
                 </Row>
             </Container>

@@ -1,5 +1,4 @@
 footer{
-    // background-color: white;
     position: relative;
     padding: 10rem;
     @include respond(phone){
@@ -20,7 +19,7 @@ footer{
         font-size: 1.6rem;
         margin: 0;
         @include respond(phone){
-            font-size: 14px;
+            font-size: 12px;
         }
         @include respond(phone320){
             font-size: 12px;
@@ -32,7 +31,7 @@ footer{
             color: #222222;
         }
         @include respond(phone){
-            font-size: 14px;
+            font-size: 12px;
         }
         @include respond(phone320){
             font-size: 12px;
@@ -61,6 +60,9 @@ footer{
             margin-right: 1.5rem;
             a{
                 font-size: 2rem;
+                @include respond(phone){
+                    font-size: 12px;
+                }
                 &:hover{
                     color: #222222;
                 }
