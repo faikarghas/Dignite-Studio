@@ -17,7 +17,6 @@ class Project extends React.Component {
     static async getInitialProps(ctx){
         let { project,langs } = ctx.query
         const res = await data.home
-        console.log(langs)
         return {slug: project, dataProject: res,langs}
     }
 
