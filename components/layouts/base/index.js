@@ -1,14 +1,12 @@
 import Head from 'next/head'
-import Link from 'next/link'
 import PropTypes from 'prop-types';
-import {motion} from 'framer-motion'
-import { connect } from 'react-redux'
-import * as action from '../../../redux/actionIndex'
+// import { connect } from 'react-redux'
+// import * as action from '../../../redux/actionIndex'
 
 import ModalHire from '../../presentational/modalHire'
 import Header from '../../presentational/header'
 import Footer from '../../presentational/footer'
-import ThemeButton from '../../presentational/themeButton'
+// import ThemeButton from '../../presentational/themeButton'
 import useTranslation from '../../../hooks/useTranslation'
 
 import { initGA, logPageView, modalView, logEvent } from '../../../lib/analytics'
@@ -42,7 +40,7 @@ class Layout extends React.Component{
       window.GA_INITIALIZED = true
     }
     logPageView()
-    this.props.initilizeThemeHandler()
+    // this.props.initilizeThemeHandler()
     document.body.style.overflowY = 'auto'
   }
 
@@ -114,7 +112,7 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(withMyHook(Layout))
+export default Layout
 
 
 // Record type: CNAME, Value: DIGNITE.STUDIO.

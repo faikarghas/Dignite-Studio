@@ -34,6 +34,7 @@ const variants = {
     },
 };
 
+
 const WhatWeDo = () => {
     const [showImg1, setShowImage1] = useState(false)
     const [showImg2, setShowImage2] = useState(false)
@@ -46,24 +47,24 @@ const WhatWeDo = () => {
                 <Row>
                     <Col className="box" xs={12} lg={8}>
                         <ul className="text-left">
-                            <li ><motion.a onHoverStart={() => setShowImage1(true)} onHoverEnd={() => setShowImage1(false)} exit="exit" whileHover={{ scale: 1.2 }} className="half_color"><span>Web & App Development</span>Web & App Development</motion.a></li>
-                            <li ><motion.a onHoverStart={() => setShowImage2(true)} onHoverEnd={() => setShowImage2(false)} exit="exit" whileHover={{ scale: 1.2 }} className="half_color"><span>UX Design</span>UX Design</motion.a></li>
-                            <li ><motion.a onHoverStart={() => setShowImage3(true)} onHoverEnd={() => setShowImage3(false)} exit="exit" whileHover={{ scale: 1.2 }} className="half_color"><span>Web Design</span>Web Design</motion.a></li>
-                            <li ><motion.a onHoverStart={() => setShowImage4(true)} onHoverEnd={() => setShowImage4(false)} exit="exit" whileHover={{ scale: 1.2 }} className="half_color"><span>Graphic Design</span>Graphic Design</motion.a></li>
+                            <li><motion.a onHoverStart={() => setShowImage1(true)} onHoverEnd={() => setShowImage1(false)} exit="exit" whileHover={{ scale: 1.2 }} className="half_color"><span>Web & App Development</span>Web & App Development</motion.a></li>
+                            <li><motion.a onHoverStart={() => setShowImage2(true)} onHoverEnd={() => setShowImage2(false)} exit="exit" whileHover={{ scale: 1.2 }} className="half_color"><span>UX Design</span>UX Design</motion.a></li>
+                            <li><motion.a onHoverStart={() => setShowImage3(true)} onHoverEnd={() => setShowImage3(false)} exit="exit" whileHover={{ scale: 1.2 }} className="half_color"><span>Web Design</span>Web Design</motion.a></li>
+                            <li><motion.a onHoverStart={() => setShowImage4(true)} onHoverEnd={() => setShowImage4(false)} exit="exit" whileHover={{ scale: 1.2 }} className="half_color"><span>Graphic Design</span>Graphic Design</motion.a></li>
                         </ul>
                     </Col>
                     <Col className="box image-desktop" xs={12} lg={4}>
                         <motion.div variants={variants} initial="initialImg" animate={showImg1?'enter':'initial'} exit="exit" className="box-image">
-                            <img src="https://source.unsplash.com/random/300x500"/>
+                            <img src="https://api.dignitestudio.com/images/image/services/web-app-dev-services.png"/>
                         </motion.div>
                         <motion.div variants={variants} initial="initialImg" animate={showImg2?'enter':'initial'} exit="exit" className="box-image">
-                            <img src="https://source.unsplash.com/random/300x501"/>
+                            <img src="https://api.dignitestudio.com/images/image/services/uiux-services.png"/>
                         </motion.div>
                         <motion.div variants={variants} initial="initialImg" animate={showImg3?'enter':'initial'} exit="exit" className="box-image">
-                            <img src="https://source.unsplash.com/random/300x503"/>
+                            <img src="https://api.dignitestudio.com/images/image/services/web-design-services.png"/>
                         </motion.div>
                         <motion.div variants={variants} initial="initialImg" animate={showImg4?'enter':'initial'} exit="exit" className="box-image">
-                            <img src="https://source.unsplash.com/random/300x505"/>
+                            <img src="https://api.dignitestudio.com/images/image/services/graphic-design-services.png"/>
                         </motion.div>
                     </Col>
                 </Row>

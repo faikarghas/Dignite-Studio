@@ -5,8 +5,8 @@ import React, { useState } from 'react'
 import {motion} from 'framer-motion'
 import Menu from '../menu'
 
-import * as action from '../../../redux/actionIndex'
-import {connect} from 'react-redux'
+// import * as action from '../../../redux/actionIndex'
+// import {connect} from 'react-redux'
 import useTranslation from '../../../hooks/useTranslation'
 
 
@@ -31,6 +31,9 @@ const headerLy = props => {
             document.body.style.overflowY = 'auto'
         }
     }
+
+    console.log(anim);
+    
     return (
         <React.Fragment>
             <header id="top" >
@@ -49,8 +52,8 @@ const headerLy = props => {
 
                         <li className="menu-button" onClick={addOverflowHide}>
                             <button className="nav">
-                                <motion.span exit={{opacity:0}}  animate={anim ? {width:'80%'} :{width:'100%'}}></motion.span>
-                                <motion.span exit={{opacity:0}}  animate={anim ? {width:'100%'} :{width:'80%'}}></motion.span>
+                                <motion.span exit={{opacity:0}}  animate={anim ? {width:'80%',transition:{duration:0}} :{width:'100%',transition:{duration:0}}}></motion.span>
+                                <motion.span exit={{opacity:0}}  animate={anim ? {width:'100%',transition:{duration:0}} :{width:'80%',transition:{duration:0}}}></motion.span>
                             </button>
                         </li>
                     </ul>
@@ -85,17 +88,17 @@ headerLy.propTypes = {
     closeMenu: PropTypes.func
 }
 
-const mapStateToProps = (state) => {
-    return {
-        colour: state.theme.theme_colour
-    }
-}
+// const mapStateToProps = (state) => {
+//     return {
+//         colour: state.theme.theme_colour
+//     }
+// }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        // switchThemeHandler : (bs,theme,colour,button_colour) => dispatch(action.switchThemeHandler(bs,theme,colour,button_colour))
-    }
-}
+// const mapDispatchToProps = dispatch => {
+//     return {
+//         // switchThemeHandler : (bs,theme,colour,button_colour) => dispatch(action.switchThemeHandler(bs,theme,colour,button_colour))
+//     }
+// }
 
 
-export default connect(mapStateToProps,mapDispatchToProps)(headerLy)
+export default headerLy

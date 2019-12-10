@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Container,Row,Col } from 'react-bootstrap';
 import Link from 'next/link'
 import useTranslation from '../hooks/useTranslation'
+import {motion} from 'framer-motion';
 
 import TextHeaderHome from '../components/presentational/textHeaderHome'
 import ButtonViewAllProjects from '../components/presentational/buttonViewAllProjects'
@@ -34,6 +35,7 @@ export const Project = ({trans}) => {
   )
 }
 
+
 const Index = () => {
   const [trans, setTrans] = useState(0);
   const {locale,t} = useTranslation()
@@ -62,13 +64,14 @@ const Index = () => {
 
   return (
     <div className="main_wrapper">
-    <Layout title={'Home | Dignite Studio'} canonical="home" metaDesc="Dignite Studio crafts experiences for your digital needs.">
-        <TextHeaderHome text={data.home.title} />
-        <Project trans={trans} />
-    </Layout>
+      <Layout title={'Home | Dignite Studio'} canonical="home" metaDesc="Dignite Studio crafts experiences for your digital needs.">
+          <TextHeaderHome text={data.home.title} />
+          <Project trans={trans} />
+      </Layout>
     </div>
   );
 }
+
 
 
 export default Index
