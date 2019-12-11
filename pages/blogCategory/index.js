@@ -84,7 +84,7 @@ const BlogCa = ({dataBlog,category}) => {
 
 BlogCa.getInitialProps = async (ctx)=>{
         const {category} = ctx.query
-        const res = await fetch(`https://api.dignitestudio.com/api/blogCategoryPage/1/${category}`)
+        const res = await fetch(`http://api.dignite.studio/api/blogCategoryPage/1/${category}`)
         const dataBlog = await res.json()
         return {dataBlog,category}
 }
