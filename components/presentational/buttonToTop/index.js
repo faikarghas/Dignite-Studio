@@ -3,14 +3,14 @@ import * as Scroll from 'react-scroll'
 
 const index = () => {
 
-    const [imgUrl, setImgUrl] = useState('https://api.dignitestudio.com/images/image/totopw.png');
+    const [imgUrl, setImgUrl] = useState('http://api.dignite.studio/images/image/totopw.png');
 
     function enter(params) {
-        setImgUrl('https://api.dignitestudio.com/images/image/totop.png')
+        setImgUrl('http://api.dignite.studio/images/image/totop.png')
     }
 
     function leave(params) {
-        setImgUrl('https://api.dignitestudio.com/images/image/totopw.png')
+        setImgUrl('http://api.dignite.studio/images/image/totopw.png')
     }
 
     return (

@@ -64,12 +64,12 @@ class Layout extends React.Component{
     const {modal,menu} = this.state
     const {canonical,title,locale,metaDesc} = this.props
 
-    let canUrl = `https://www.dignitestudio.com/${canonical}`
+    let canUrl = `http://www.dignite.studio/${canonical}`
 
     if (canonical === 'home') {
-        canUrl = `https://www.dignitestudio.com`
+        canUrl = `http://www.dignite.studio`
     } else {
-        canUrl = `https://www.dignitestudio.com/${canonical}`
+        canUrl = `http://www.dignite.studio/${canonical}`
     }
 
     return(
@@ -114,7 +114,3 @@ const mapDispatchToProps = dispatch => {
 
 export default Layout
 
-
-// Record type: CNAME, Value: DIGNITE.STUDIO.
-
-// Record type: A, Value: 184.168.221.63

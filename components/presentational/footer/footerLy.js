@@ -17,7 +17,7 @@ const footer = props => {
                                     <li><Link href="/about" ><a>About</a></Link></li>
                                     <li><Link href="/projects" ><a>Projects</a></Link></li>
                                     <li><Link href="/blog" ><a>Blog</a></Link></li>
-                                    <li> <a href="https://store.dignitestudio.com/" target="_blank" rel="noopener">Store</a></li>
+                                    <li> <a href="http://store.dignite.studio.com/" target="_blank" rel="noopener">Store</a></li>
                                 </ul>
                                 <p>Jl. Raya Rawabuntu</p>
                                 <p>Ruko Golden Vienna</p>

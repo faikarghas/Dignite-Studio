@@ -50,7 +50,7 @@ const Search = props => {
                                 />
                                 <InputGroup.Append>
                                     <Button variant="outline-secondary" onClick={searchButton}>
-                                        <img src="https://api.dignitestudio.com/images/image/Icons/search_black.svg" alt="icon-search"/>
+                                        <img src="http://api.dignite.studio/images/image/Icons/search_black.svg" alt="icon-search"/>
                                     </Button>
                                 </InputGroup.Append>
                             </InputGroup>
@@ -67,7 +67,7 @@ const Search = props => {
 
 Search.getInitialProps = async (ctx) => {
         const {search} = ctx.query
-        const res = await fetch(`https://api.dignitestudio.com/api/search/${search}`)
+        const res = await fetch(`http://api.dignite.studio/api/search/${search}`)
         const dataSearch = await res.json()
         return {dataSearch,search}
 }

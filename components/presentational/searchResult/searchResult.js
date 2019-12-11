@@ -31,7 +31,7 @@ const searchResult = ({dataSearch,showModal}) => {
                                     </section>
                                 </Col>
                                 <Col xs={{span:12,order:1}} md={{span:3,order:2}} className="img-blog">
-                                    <img src={`https://api.dignitestudio.com/images/image/artikel/${item.imgThumbnail}.jpg`} alt="gambar artikel" width="100%" height="100%"/>
+                                    <img src={`http://api.dignite.studio/images/image/artikel/${item.imgThumbnail}.jpg`} alt="gambar artikel" width="100%" height="100%"/>
                                 </Col>
                             </Row>
                         </section>

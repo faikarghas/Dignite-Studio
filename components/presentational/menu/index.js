@@ -54,7 +54,7 @@ const index = () => {
             <Col md={7}>
               <motion.ul className="nav_ul" variants={variants} key="nav">
                   <motion.li variants={variants2} key="nav-list3"><Link href={`/blog`}><a>Blog<span>.</span></a></Link></motion.li>
-                  <motion.li variants={variants2} key="nav-list4"><a href="https://store.dignitestudio.com/" target="_blank" rel="noopener">Store<span>.</span></a></motion.li>
+                  <motion.li variants={variants2} key="nav-list4"><a href="http://store.dignite.studio/" target="_blank" rel="noopener">Store<span>.</span></a></motion.li>
               </motion.ul>
             </Col>
             <Col md={5} className="mt-5rem d-flex justify-conter-end">

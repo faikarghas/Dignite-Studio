@@ -16,7 +16,7 @@ import withLocale from '../../../../hocs/withLocale'
 class BlogDetail extends React.Component {
     static async getInitialProps (ctx){
         const {langs,blogdetail} = ctx.query
-        const res = await fetch(`https://api.dignitestudio.com/api/blogDetail/${blogdetail}`)
+        const res = await fetch(`http://api.dignite.studio/api/blogDetail/${blogdetail}`)
         const dataBlog = await res.json()
         return {dataBlog,langs,blogdetail}
     }
@@ -128,7 +128,7 @@ class BlogDetail extends React.Component {
                                     <Col xs={12} md={4} className="xs-p-0 mb-5" key={item.idblog}>
                                         <div className="box">
                                             <div className="box-img">
-                                                <img src={`https://api.dignitestudio.com/images/image/artikel/${item.imgThumbnail}.jpg`} width="100%"></img>
+                                                <img src={`http://api.dignite.studio/images/image/artikel/${item.imgThumbnail}.jpg`} width="100%"></img>
                                             </div>
                                             <Link href={`/blogDetail?category=${categoryLowerCase}&slug=${item.slug}`} as={`/blog/${categoryLowerCase}/${item.slug}`} key={item.idblog}>
                                                 <a><h3>{item.title}</h3></a>

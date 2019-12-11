@@ -197,7 +197,7 @@ class Project extends React.Component {
                                     <a style={{display:'flex',alignItems:'center'}}  className="toOtherProject">
                                         <ul>
                                             <li><p>{nextProjectName}</p></li>
-                                            <li><img src="https://api.dignitestudio.com/images/image/right-arrow.png" width="20px" height="100%"/></li>
+                                            <li><img src="http://api.dignite.studio/images/image/right-arrow.png" width="20px" height="100%"/></li>
                                         </ul>
                                     </a>
                                 </Link>

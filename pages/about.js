@@ -55,16 +55,16 @@ const WhatWeDo = () => {
                     </Col>
                     <Col className="box image-desktop" xs={12} lg={4}>
                         <motion.div variants={variants} initial="initialImg" animate={showImg1?'enter':'initial'} exit="exit" className="box-image">
-                            <img src="https://api.dignitestudio.com/images/image/services/web-app-dev-services.png"/>
+                            <img src="http://api.dignite.studio/images/image/services/web-app-dev-services.png"/>
                         </motion.div>
                         <motion.div variants={variants} initial="initialImg" animate={showImg2?'enter':'initial'} exit="exit" className="box-image">
-                            <img src="https://api.dignitestudio.com/images/image/services/uiux-services.png"/>
+                            <img src="http://api.dignite.studio/images/image/services/uiux-services.png"/>
                         </motion.div>
                         <motion.div variants={variants} initial="initialImg" animate={showImg3?'enter':'initial'} exit="exit" className="box-image">
-                            <img src="https://api.dignitestudio.com/images/image/services/web-design-services.png"/>
+                            <img src="http://api.dignite.studio/images/image/services/web-design-services.png"/>
                         </motion.div>
                         <motion.div variants={variants} initial="initialImg" animate={showImg4?'enter':'initial'} exit="exit" className="box-image">
-                            <img src="https://api.dignitestudio.com/images/image/services/graphic-design-services.png"/>
+                            <img src="http://api.dignite.studio/images/image/services/graphic-design-services.png"/>
                         </motion.div>
                     </Col>
                 </Row>
@@ -112,5 +112,6 @@ const about = () =>  {
 }
 
 export default about
+
 
 

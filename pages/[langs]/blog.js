@@ -54,7 +54,7 @@ const Blog = ({dataBlog}) => {
                                         </section>
                                     </Col>
                                     <Col xs={{span:12,order:1}} md={{span:4,order:2}} className="img-blog">
-                                        <img width="100%" height="100%" alt={item.imgThumbnail} src={`https://api.dignitestudio.com/images/image/artikel/${item.imgThumbnail}.jpg`}/>
+                                        <img width="100%" height="100%" alt={item.imgThumbnail} src={`http://api.dignite.studio/images/image/artikel/${item.imgThumbnail}.jpg`}/>
                                     </Col>
                                 </Row>
                             </section>
@@ -77,7 +77,7 @@ const Blog = ({dataBlog}) => {
 }
 
 Blog.getInitialProps = async ({ req }) => {
-    const res = await fetch(`https://api.dignitestudio.com/api/blog/1`)
+    const res = await fetch(`http://api.dignite.studio/api/blog/1`)
     const dataBlog = await res.json()
 
     return {dataBlog}
