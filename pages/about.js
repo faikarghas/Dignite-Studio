@@ -55,16 +55,16 @@ const WhatWeDo = () => {
                     </Col>
                     <Col className="box image-desktop" xs={12} lg={4}>
                         <motion.div variants={variants} initial="initialImg" animate={showImg1?'enter':'initial'} exit="exit" className="box-image">
-                            <img src="http://api.dignite.studio/images/image/services/web-app-dev-services.png"/>
+                            <img src="https://image-dignite.s3-ap-southeast-1.amazonaws.com/About/services/web-app-dev.png"/>
                         </motion.div>
                         <motion.div variants={variants} initial="initialImg" animate={showImg2?'enter':'initial'} exit="exit" className="box-image">
-                            <img src="http://api.dignite.studio/images/image/services/uiux-services.png"/>
+                            <img src="https://image-dignite.s3-ap-southeast-1.amazonaws.com/About/services/uiux.png"/>
                         </motion.div>
                         <motion.div variants={variants} initial="initialImg" animate={showImg3?'enter':'initial'} exit="exit" className="box-image">
-                            <img src="http://api.dignite.studio/images/image/services/web-design-services.png"/>
+                            <img src="https://image-dignite.s3-ap-southeast-1.amazonaws.com/About/services/web-design.png"/>
                         </motion.div>
                         <motion.div variants={variants} initial="initialImg" animate={showImg4?'enter':'initial'} exit="exit" className="box-image">
-                            <img src="http://api.dignite.studio/images/image/services/graphic-design-services.png"/>
+                            <img src="https://image-dignite.s3-ap-southeast-1.amazonaws.com/About/services/graphic-design.png"/>
                         </motion.div>
                     </Col>
                 </Row>

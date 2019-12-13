@@ -10,7 +10,7 @@ import Layout from '../components/layouts/base'
 import data from '../lib/copywriting/data.js'
 
 
-export const Project = ({trans}) => {
+export const Project = ({trans,dataku}) => {
   return (
     <section className="section_second-home width100 homeku">
       <Container className="box_allprojects" style={{WebkitTransform:`translate(-50%,${-trans}px)`,msTransform:`translate(-50%,${-trans}px)`,transform:`translate(-50%,${-trans}px)`}}>
@@ -34,6 +34,7 @@ export const Project = ({trans}) => {
     </section>
   )
 }
+
 
 
 const Index = () => {

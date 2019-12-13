@@ -15,7 +15,7 @@ import ShareIcon from '../../../components/presentational/shareIcon'
 class BlogDetail extends React.Component {
     static async getInitialProps (ctx){
         const {langs,blogdetail} = ctx.query
-        const res = await fetch(`http://api.dignite.studio/api/blogDetail/${blogdetail}`)
+        const res = await fetch(`https://api.dignite.studio/api/blogDetail/${blogdetail}`)
         const dataBlog = await res.json()
         return {dataBlog,langs,blogdetail}
     }
@@ -127,7 +127,7 @@ class BlogDetail extends React.Component {
                                     <Col xs={12} md={4} className="xs-p-0 mb-5" key={item.idblog}>
                                         <div className="box">
                                             <div className="box-img">
-                                                <img src={`http://api.dignite.studio/images/image/artikel/${item.imgThumbnail}.jpg`} width="100%"></img>
+                                                <img src={`https://api.dignite.studio/images/image/artikel/${item.imgThumbnail}.jpg`} width="100%"></img>
                                             </div>
                                             <Link href={`/blog/[blogdetail]`} as={`/blog/${item.slug}`} key={item.idblog}>
                                                 <a><h3>{item.title}</h3></a>
