@@ -6,7 +6,7 @@ import withLocale from '../../hocs/withLocale'
 import useTranslation from '../../hooks/useTranslation'
 
 
-import TextHeaderHome from '../../components/presentational/textHeaderHome'
+import TextHeaderHome from '../../components/presentational/textHeader'
 import ButtonViewAllProjects from '../../components/presentational/buttonViewAllProjects'
 import Layout from '../../components/layouts/base'
 import data from '../../lib/copywriting/data.js'

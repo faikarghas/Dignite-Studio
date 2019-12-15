@@ -3,7 +3,7 @@ import Slider from "react-slick"
 import { Container,Row,Col } from 'react-bootstrap'
 import Link from 'next/link'
 
-import TextHeader from '../components/presentational/textHeaderHome'
+import TextHeader from '../components/presentational/textHeader'
 import Layout from '../components/layouts/base'
 import data from '../lib/copywriting/data.js'
 import useTranslation from '../hooks/useTranslation'

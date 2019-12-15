@@ -27,9 +27,9 @@ class MyApp extends App {
         const { Component, pageProps, reduxStore, router } = this.props
         return (
             <Provider store={reduxStore}>
-                <AnimatePresence exitBeforeEnter>
+                {/* <AnimatePresence exitBeforeEnter> */}
                   <Component {...pageProps} key={router.route}/>
-                </AnimatePresence>
+                {/* </AnimatePresence> */}
             </Provider>
 
         )
@@ -37,3 +37,7 @@ class MyApp extends App {
 }
 
 export default withReduxStore(MyApp)
+
+
+
+

@@ -9,12 +9,12 @@ export default class MyDocument extends Document {
         return (
             <Html lang="id">
                 <Head>
-                    {/* <meta charSet="UTF-8" /> */}
+                    <meta charSet="UTF-8" />
                     <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
+                    <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
 
-                    {/* <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" /> */}
                     {/* OPEN GRAP */}
-                    <meta name="keywords" content="dignite,dignite studio, dignitestudio,Agensi digital, Website bisnis, Desain website,Aplikasi android, Aplikasi IOS, Website e-commerce, Website bisnis, Jasa pembuatan website, Jasa desain website, Buku tahunan sekolah, jasa desain grafis, Agensi digital jakarta, jasa bikin aplikasi" />
+                    <meta name="keywords" content="dignite,dignite.studio,dignite studio,dignitestudio,Agensi digital,Website bisnis,Desain website,Aplikasi android,Aplikasi IOS,Website e-commerce,Website bisnis,Jasa pembuatan website,Jasa desain website,Buku tahunan sekolah,jasa desain grafis,Agensi digital jakarta,jasa bikin aplikasi" />
                     <meta name="author" content="Dignite Studio"/>
                     <meta name="copyright" content="Dignite Studio" />
                     <meta name="creator" content="Dignite Studio" /> 
@@ -32,7 +32,7 @@ export default class MyDocument extends Document {
                             {
                                 "@context": "https://schema.org",
                                 "@type": "Organization",
-                                "url": "http://www.dignitestudio.com",
+                                "url": "https://www.dignite.studio",
                                 "contactPoint": [
                                 { "@type": "ContactPoint",
                                     "telephone" : "+62 813 1610 0044",

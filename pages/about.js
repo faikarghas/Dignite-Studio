@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import { getInitialLocale } from '../translations/getInitialLocale'
 import data from '../lib/copywriting/data.js'
-import TextHeader from '../components/presentational/textHeaderHome'
+import TextHeader from '../components/presentational/textHeader'
 import Layout from '../components/layouts/base'
 import { useState } from 'react';
 
@@ -112,6 +112,17 @@ const about = () =>  {
 }
 
 export default about
+
+
+
+
+
+
+
+
+
+
+
 
 
 

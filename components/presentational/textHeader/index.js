@@ -1,1 +1,1 @@
-export {default} from './textHeader.js'
+export {default} from './textHeaderHome'
