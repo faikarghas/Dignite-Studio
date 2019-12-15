@@ -15,7 +15,7 @@ import ShareIcon from '../../../components/presentational/shareIcon'
 class BlogDetail extends React.Component {
     static async getInitialProps (ctx){
         const {langs,blogdetail} = ctx.query
-        const res = await fetch(`https://api.dignite.studio/api/blogDetail/${blogdetail}`)
+        const res = await fetch(`${process.env.API_HOST_API}/blogDetail/${blogdetail}`)
         const dataBlog = await res.json()
         return {dataBlog,langs,blogdetail}
     }

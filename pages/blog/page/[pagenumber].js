@@ -12,7 +12,7 @@ class BlogPage extends React.Component {
 
     static async getInitialProps(ctx){
         const {pagenumber,langs} = ctx.query
-        const res = await fetch(`https://api.dignite.studio/api/blogCategoryPage/${pagenumber}/all`)
+        const res = await fetch(`${process.env.API_HOST_API}/blogCategoryPage/${pagenumber}/all`)
         const dataBlog = await res.json()
         return {dataBlog,pagenumber,langs}
     }
@@ -66,7 +66,7 @@ class BlogPage extends React.Component {
                                         <Col xs={{span:12,order:1}} md={{span:4,order:2}} className="img-blog">
                                             <img
                                                 alt={'gambar artikel'}
-                                                src={`https://api.dignite.studio/images/image/artikel/${item.imgThumbnail}.jpg`}
+                                                src={`${process.env.API_HOST_IMG}/artikel/${item.imgThumbnail}.jpg`}
                                                 width={'100%'} 
                                                 height={"100%"}
                                             />

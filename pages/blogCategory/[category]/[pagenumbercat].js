@@ -12,7 +12,7 @@ class BlogPage extends React.Component {
 
     static async getInitialProps(ctx){
         const {pagenumbercat,category} = ctx.query
-        const res = await fetch(`https://api.dignite.studio/api/blogCategoryPage/${pagenumbercat}/${category}`)
+        const res = await fetch(`${process.env.API_HOST_API}/blogCategoryPage/${pagenumbercat}/${category}`)
         const dataBlog = await res.json()
         return {dataBlog,pagenumbercat,category}
     }

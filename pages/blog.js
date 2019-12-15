@@ -93,7 +93,7 @@ const Blog = ({dataBlog}) => {
 }
 
 Blog.getInitialProps = async ({ req }) => {
-    const res = await fetch(`https://api.dignite.studio/api/blog/1`)
+    const res = await fetch(`${process.env.API_HOST_API}/blog/1`)
     const dataBlog = await res.json()
 
     return {dataBlog}

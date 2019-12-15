@@ -50,7 +50,7 @@ const Search = props => {
                                 />
                                 <InputGroup.Append>
                                     <Button variant="outline-secondary" onClick={searchButton}>
-                                        <img src="https://api.dignite.studio/images/image/Icons/search_black.svg" alt="icon-search"/>
+                                        <img src={`${process.env.API_HOST_IMG}/Icons/search_black.svg`} alt="icon-search"/>
                                     </Button>
                                 </InputGroup.Append>
                             </InputGroup>
