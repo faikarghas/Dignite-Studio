@@ -3,7 +3,6 @@ import Link from 'next/link'
 import Slider from "react-slick";
 // import { Player, BigPlayButton } from 'video-react';
 import { Container,Row,Col } from 'react-bootstrap';
-
 import Layout from '../../components/layouts/base'
 import ButtonToTop from '../../components/presentational/buttonToTop'
 import ButtonSeeLive from '../../components/presentational/buttonSeeLive'

@@ -1,5 +1,10 @@
 # Created by https://www.gitignore.io/api/node,macos,visualstudiocode
 
+
+## unit testing ##
+__mocks__
+__test__
+
 ### macOS ###
 # General
 .DS_Store
@@ -127,7 +132,3 @@ package-lock.json
 # Next.js static build files
 out/
 
-
-## unit testing ##
-__mocks__
-__test__

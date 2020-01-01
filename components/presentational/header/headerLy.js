@@ -32,8 +32,6 @@ const headerLy = props => {
         }
     }
 
-    console.log(anim);
-    
     return (
         <React.Fragment>
             <header id="top" >
@@ -46,7 +44,7 @@ const headerLy = props => {
                                 animate={anim ? 'logo' : 'logo1'}
                                 exit="exit"
                                 variants={variants}
-                                src={anim ? 'https://image-dignite.s3-ap-southeast-1.amazonaws.com/logo-dignitestudio-white.png':'https://image-dignite.s3-ap-southeast-1.amazonaws.com/logo-dignitestudio-yellow.png'} width="120px" height="100%" style={{objectFit:'contain'}} alt="logo-dignite" ></motion.img>
+                                src={anim ? '../static/image/logo-dignitestudio-white.png':'../static/image/logo-dignitestudio-yellow.png'} width="120px" height="100%" style={{objectFit:'contain'}} alt="logo-dignite" ></motion.img>
                             </Link>
                         </li>
 
