@@ -1,17 +1,22 @@
 .initloading_wrapper{
     animation: toTop 2s ease forwards;
-    animation-delay: 6s;
+    animation-delay: 6.4s;
+    svg{
+        @include respond(phone){
+            width: 280px;
+        }
+        path{
+            stroke-dasharray: 5000;
+            stroke-dashoffset: 5000;
+            fill: transparent;
+            stroke: black;
+            stroke-width: 10px;
+            animation: dash 5s linear forwards;
+            animation-delay: 1s;
+        }
+    }
 }
 
-path{
-    stroke-dasharray: 5000;
-    stroke-dashoffset: 5000;
-    fill: transparent;
-    stroke: black;
-    stroke-width: 10px;
-    animation: dash 5s linear forwards;
-    animation-delay: 1.5s;
-}
 
 @keyframes dash{
     to {
