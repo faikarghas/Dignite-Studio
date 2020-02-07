@@ -23,7 +23,7 @@ class Project extends React.Component{
         evt.preventDefault()
         const {name,email,companyName,phoneNumber,message} = this.state
         this.setState({Loading:true})
-        fetch('https://api.dignitestudio.com/api/posthire',{
+        fetch('https://api.dignite.studio/api/posthire',{
             method:'post',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify( {

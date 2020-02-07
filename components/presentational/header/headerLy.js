@@ -5,10 +5,6 @@ import React, { useState } from 'react'
 import {motion} from 'framer-motion'
 import Menu from '../menu'
 
-// import * as action from '../../../redux/actionIndex'
-// import {connect} from 'react-redux'
-import useTranslation from '../../../hooks/useTranslation'
-
 
 const variants = {
     initial: {left:"-110%"},
@@ -20,7 +16,6 @@ const variants = {
 
 
 const headerLy = props => {
-    const { locale, t } = useTranslation()
     const [ anim , setAnim ] = useState(false)
 
     function addOverflowHide(params) {
@@ -44,7 +39,7 @@ const headerLy = props => {
                                 animate={anim ? 'logo' : 'logo1'}
                                 exit="exit"
                                 variants={variants}
-                                src={anim ? '../static/image/logo-dignitestudio-white.png':'../static/image/logo-dignitestudio-yellow.png'} width="120px" height="100%" style={{objectFit:'contain'}} alt="logo-dignite" ></motion.img>
+                                src={anim ? '/image/logo-dignitestudio-white.png':'/image/logo-dignitestudio-yellow.png'} width="120px" height="100%" style={{objectFit:'contain'}} alt="logo-dignite" ></motion.img>
                             </Link>
                         </li>
 
@@ -85,18 +80,6 @@ headerLy.propTypes = {
     openMenu: PropTypes.func,
     closeMenu: PropTypes.func
 }
-
-// const mapStateToProps = (state) => {
-//     return {
-//         colour: state.theme.theme_colour
-//     }
-// }
-
-// const mapDispatchToProps = dispatch => {
-//     return {
-//         // switchThemeHandler : (bs,theme,colour,button_colour) => dispatch(action.switchThemeHandler(bs,theme,colour,button_colour))
-//     }
-// }
 
 
 export default headerLy

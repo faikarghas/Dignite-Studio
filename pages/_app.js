@@ -27,9 +27,7 @@ class MyApp extends App {
         const { Component, pageProps, reduxStore, router } = this.props
         return (
             <Provider store={reduxStore}>
-                {/* <AnimatePresence exitBeforeEnter> */}
                   <Component {...pageProps} key={router.route}/>
-                {/* </AnimatePresence> */}
             </Provider>
 
         )

@@ -18,12 +18,12 @@ const Search = props => {
 
     function searchEnter(e) {
         if(e.key === 'Enter'){
-            Router.push('/[lang]/search/[slug]',`/${locale}/search/${inputValue}`)
+            Router.push('/search/[slug]',`/search/${inputValue}`)
         }
     }
 
     function searchButton() {
-        Router.push('/[lang]/search/[slug]',`/${locale}/search/${inputValue}`)
+        Router.push('/search/[slug]',`/search/${inputValue}`)
     }
 
     function showModal() {

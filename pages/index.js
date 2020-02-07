@@ -49,8 +49,6 @@ const Index = () => {
   }
 
   useEffect(() => {
-    // window.location.replace(`/${getInitialLocale()}`)
-
     function watchScroll() {
       window.addEventListener("scroll", handleScroll);
     }
@@ -69,8 +67,8 @@ const Index = () => {
           <TextHeaderHome text={data.home.title} />
           <Project trans={trans} />
       </Layout>
-      <div class="initloading_wrapper" style={{position:"fixed",top:0,left:0,width:"100%",height:"100%",backgroundColor:"#ffba00",zIndex:100}}>
-      <svg style={{position:"absolute",top:"50%",left:"50%",transform:"translate(-50%,-50%)"}} version="1.0" xmlns="http://www.w3.org/2000/svg"
+      <div className="initloading_wrapper" style={{position:"fixed",top:0,left:0,width:"100%",height:"100%",backgroundColor:"#ffba00",zIndex:100}}>
+        <svg style={{position:"absolute",top:"50%",left:"50%",transform:"translate(-50%,-50%)"}} version="1.0" xmlns="http://www.w3.org/2000/svg"
       width="289.000000pt" height="180.000000pt" viewBox="0 0 289.000000 180.000000"
       preserveAspectRatio="xMidYMid meet">
       <g transform="translate(0.000000,180.000000) scale(0.100000,-0.100000)"
@@ -120,8 +118,6 @@ const Index = () => {
       <path d="M1820 480 l0 -210 70 0 70 0 0 210 0 210 -70 0 -70 0 0 -210z"/>
       </g>
       </svg>
-
-
       </div>
     </div>
   );
