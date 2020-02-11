@@ -104,6 +104,29 @@
                 }
             }
         }
+
+        table{
+            border: 1px solid black;
+            &:nth-child(0){
+                background-color: black;
+            }
+            tr{
+                p{
+                    margin: 0;
+                }
+                &:nth-child(1){
+                    background-color: rgb(236, 236, 236);
+                }
+                td{
+                    border: 1px solid black;
+
+                    padding: 1rem 2rem;
+                    p{
+                        font-size: 1.8rem;
+                    }
+                }
+            }
+        }
         .ads{
             margin-top: 6rem;
             background-color: #222;
