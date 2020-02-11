@@ -62,7 +62,7 @@ class Project extends React.Component{
         return (
             <div className={`modal-hireus ${modal} ${showModal2}`}>
                 <div className="close-contact">
-                    <img onClick={()=>this.closeModal(closeModal2, closeModal)} src='../../../static/image/Icon/Close-Contact.png' alt="icon-close"/>
+                    <img onClick={()=>this.closeModal(closeModal2, closeModal)} src='/image/Icon/Close-Contact.png' alt="icon-close"/>
                 </div>
                 <Container>
                     <Row>
@@ -71,7 +71,7 @@ class Project extends React.Component{
                             <h3>Have a project in mind? <br/>Let's talk.</h3>
                             <br/>
                             <br/>
-                            <a href="mailto:hello@dignitestudio.com">hello@dignitestudio.com</a><br/>
+                            <a href="mailto:hello@dignite.studio">hello@dignite.studio</a><br/>
                             <a href="https://api.whatsapp.com/send?phone=6281316100044&text=Halo Dignite, saya ingin bertanya mengenai pembuatan website/desain/digital marketing.">(+62) 813 1610 0044</a>
                         </Col>
                         <Col xs={7}>

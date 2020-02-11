@@ -55,16 +55,16 @@ const WhatWeDo = () => {
                     </Col>
                     <Col className="box image-desktop" xs={12} lg={4}>
                         <motion.div variants={variants} initial="initialImg" animate={showImg1?'enter':'initial'} exit="exit" className="box-image">
-                            <img src="https://image-dignite.s3-ap-southeast-1.amazonaws.com/About/services/web-app-dev.png"/>
+                            <img src="/image/services/web-app-dev.png" alt="web app dev"/>
                         </motion.div>
                         <motion.div variants={variants} initial="initialImg" animate={showImg2?'enter':'initial'} exit="exit" className="box-image">
-                            <img src="https://image-dignite.s3-ap-southeast-1.amazonaws.com/About/services/uiux.png"/>
+                            <img src="/image/services/uiux.png" alt="uiux"/>
                         </motion.div>
                         <motion.div variants={variants} initial="initialImg" animate={showImg3?'enter':'initial'} exit="exit" className="box-image">
-                            <img src="https://image-dignite.s3-ap-southeast-1.amazonaws.com/About/services/web-design.png"/>
+                            <img src="/image/services/web-design.png" alt="web design"/>
                         </motion.div>
                         <motion.div variants={variants} initial="initialImg" animate={showImg4?'enter':'initial'} exit="exit" className="box-image">
-                            <img src="https://image-dignite.s3-ap-southeast-1.amazonaws.com/About/services/graphic-design.png"/>
+                            <img src="/image/services/graphic-design.png" alt="graphic design"/>
                         </motion.div>
                     </Col>
                 </Row>
