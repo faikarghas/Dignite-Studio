@@ -53,12 +53,12 @@ class Layout extends React.Component{
     const {modal,menu} = this.state
     const {canonical,title,locale,metaDesc} = this.props
 
-    let canUrl = `http://www.dignite.studio/${canonical}`
+    let canUrl = `https://www.dignite.studio/${canonical}`
 
     if (canonical === 'home') {
-        canUrl = `http://www.dignite.studio`
+        canUrl = `https://www.dignite.studio`
     } else {
-        canUrl = `http://www.dignite.studio/${canonical}`
+        canUrl = `https://www.dignite.studio/${canonical}`
     }
 
     return(

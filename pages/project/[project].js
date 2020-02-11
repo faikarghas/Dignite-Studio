@@ -127,7 +127,7 @@ class Project extends React.Component {
         // ambil nama project sekarang
         const nextProjectName = dataProject.Project[idnext].title
         return (
-            <Layout title={`${data[0].title}`}>
+            <Layout title={`${data[0].title}`} canonical={`project/${data[0].title}`}>
                 <section className="section_first-project text-center">
                     <h1 className="text-center mb-5">{data[0].title}</h1>
                     <p className="">{data[0].about}</p>

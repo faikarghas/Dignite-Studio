@@ -35,7 +35,7 @@ const Search = props => {
     }
 
     return(
-        <Layout showModal2={modal} closeModal2={closeModal} title={'Search'}>
+        <Layout showModal2={modal} closeModal2={closeModal} title={'Search'} canonical={'search'}>
             <section className="section_first-search">
                 <Container>
                     <Row>
