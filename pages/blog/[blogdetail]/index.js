@@ -82,7 +82,7 @@ class BlogDetail extends React.Component {
         let url = this.state.url
 
         return (
-            <Layout title={title} canonical={title}>
+            <Layout title={title} canonical={this.props.blogdetail}>
                 <section className="section_first-blogDetail">
                     <Container>
                         <Row className="mb-5 justify-content-center">
