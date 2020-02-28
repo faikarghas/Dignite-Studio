@@ -36,9 +36,6 @@
                 // font-family: "FaktPro-semiBold";
                 font-family: "times-new-roman-bold";
             }
-            p{
-                text-align: justify;
-            }
         }
         .content-blog{
             @include respond(phone){
