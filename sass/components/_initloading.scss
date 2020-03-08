@@ -1,17 +1,27 @@
 .initloading_wrapper{
-    animation: toTop 2s ease forwards;
-    animation-delay: 6.4s;
+    animation: toTop 1.5s ease forwards;
+    animation-delay: 4.4s;
     svg{
+        width: 30rem;
         @include respond(phone){
             width: 280px;
         }
         path{
-            stroke-dasharray: 5000;
-            stroke-dashoffset: 5000;
+            stroke-dasharray: 5600;
+            stroke-dashoffset: 5600;
             fill: transparent;
-            stroke: black;
-            stroke-width: 10px;
-            animation: dash 5s linear forwards;
+            stroke: rgb(0, 0, 0);
+            stroke-width: 1.5px;
+            animation: dash 30s linear forwards,fillColor 3s linear forwards;
+            animation-delay: 1s;
+        }
+        rect{
+            stroke-dasharray: 5600;
+            stroke-dashoffset: 5600;
+            fill: transparent;
+            stroke: rgb(0, 0, 0);
+            stroke-width: 1.5px;
+            animation: dash 30s linear forwards,fillColor 3s linear forwards;
             animation-delay: 1s;
         }
     }
@@ -21,9 +31,17 @@
 @keyframes dash{
     to {
         stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fillColor{
+    to {
         fill: black;
     }
 }
+
+
+
 
 @keyframes toTop{
     to {

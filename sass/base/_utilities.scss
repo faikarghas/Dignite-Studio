@@ -245,7 +245,13 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-
-.main_wrapper{
-    // background-image: url(https://image-dignite.s3-ap-southeast-1.amazonaws.com/Background.png);
+.svg-logo{
+  .a {
+    fill-rule: evenodd;
+  }
+ position:absolute;
+ top:50%;
+ left:50%;
+ transform:translate(-50%,-50%)
 }
+
