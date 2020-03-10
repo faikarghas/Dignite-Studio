@@ -28,7 +28,7 @@ const footer = props => {
                                 <a href="https://api.whatsapp.com/send?phone=6287777711044&text=Halo Dignite, saya ingin bertanya mengenai pembuatan website/desain/digital marketing.">(+62) 877-777-1044</a>
                                 <ul className="mt-5 contact">
                                     <li><a href="https://www.instagram.com/dignitestudio/?hl=en" target="_blank"><img src='../../../image/SocialIcon/Instagram.png' alt="icon-ig"/></a></li>
-                                    <li><a href="https://api.whatsapp.com/send?phone=6281316100044&text=Halo Dignite, saya ingin bertanya mengenai pembuatan website/desain/digital marketing." target="_blank"><img src='../../../image/SocialIcon/Whatsapp.png' alt="icon-wa"/></a></li>
+                                    <li><a href="https://api.whatsapp.com/send?phone=6287777711044&text=Halo Dignite, saya ingin bertanya mengenai pembuatan website/desain/digital marketing." target="_blank"><img src='../../../image/SocialIcon/Whatsapp.png' alt="icon-wa"/></a></li>
                                 </ul>
                             </Col>
                         </Row>

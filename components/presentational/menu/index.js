@@ -68,10 +68,10 @@ const index = () => {
             </Col>
             <Col md={12} lg={3} className="mt-5rem d-flex justify-conter-end">
               <motion.div variants={variants} key="phone" className="contact_menu">
-                <motion.a variants={variants2} href="https://api.whatsapp.com/send?phone=6281316100044&text=Halo Dignite, saya ingin bertanya mengenai pembuatan website/desain/digital marketing.">
+                <motion.a variants={variants2} href="https://api.whatsapp.com/send?phone=6287777711044&text=Halo Dignite, saya ingin bertanya mengenai pembuatan website/desain/digital marketing.">
                   <p className="half_color">
-                  <span>(+62) 813 1610 0044</span>
-                  (+62) 813 1610 0044
+                  <span>(+62) 877-777-1044</span>
+                  (+62) 877-777-1044
                   </p>
                 </motion.a>
               </motion.div>
