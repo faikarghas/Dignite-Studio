@@ -29,7 +29,7 @@ const work = props =>  {
                 <Container>
                     <Slider {...settings}>
                         <Row style={{display:'flex !important'}}>
-                            {data.home.Project.map(item=>{
+                            {data.home.ProjectAll.map(item=>{
                                 return (
                                     <Link href="/project/[project]" as={`/project/${item.slug}`} key={item.id}>
                                         <Col className="box" xs={4} md={4} lg={4}  >
