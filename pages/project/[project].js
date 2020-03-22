@@ -102,10 +102,10 @@ class Project extends React.Component {
             autoplaySpeed: 3000,
             pauseOnHover: false
         };
-        const data = dataProject.Project.filter((item)=>{
+        const data = dataProject.ProjectAll.filter((item)=>{
             return item.slug === slug
         })
-        const getid = dataProject.Project.filter((item)=>{
+        const getid = dataProject.ProjectAll.filter((item)=>{
             if (item.slug === slug) {
                 return item.id
             }
@@ -116,16 +116,16 @@ class Project extends React.Component {
 
         // cek total data
         let idnext = id
-        if(id === 6){
+        if(id === dataProject.ProjectAll.length){
             idnext = 0
         } else {
             // ambil id project selanjutnya dan data
             idnext = id++;
         }
         // ambil slug project selanjutnya
-        const nextProjectSlug = dataProject.Project[idnext].slug
+        const nextProjectSlug = dataProject.ProjectAll[idnext].slug
         // ambil nama project sekarang
-        const nextProjectName = dataProject.Project[idnext].title
+        const nextProjectName = dataProject.ProjectAll[idnext].title
         return (
             <Layout title={`${data[0].title}`} canonical={`project/${data[0].title}`}>
                 <section className="section_first-project text-center">

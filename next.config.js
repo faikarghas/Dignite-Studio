@@ -15,10 +15,20 @@ let withEnv = {
 	}
 }
 
+let exportsConfig = {
+	exportTrailingSlash: true,
+	exportPathMap: function() {
+	  return {
+		'/': { page: '/' }
+	  };
+	}
+}
+
 module.exports = withPlugins([
 	withCSS,
 	withSass,
 	withImages,
 	withBundleAnalyzer,
-	withEnv
+	withEnv,
+	exportsConfig
 ])

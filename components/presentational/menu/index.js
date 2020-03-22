@@ -70,8 +70,8 @@ const index = () => {
               <motion.div variants={variants} key="phone" className="contact_menu">
                 <motion.a variants={variants2} href="https://api.whatsapp.com/send?phone=6287777711044&text=Halo Dignite, saya ingin bertanya mengenai pembuatan website/desain/digital marketing.">
                   <p className="half_color">
-                  <span>(+62) 877-777-1044</span>
-                  (+62) 877-777-1044
+                  <span>(+62) 877-7771-1044</span>
+                  (+62) 877-7771-1044
                   </p>
                 </motion.a>
               </motion.div>
