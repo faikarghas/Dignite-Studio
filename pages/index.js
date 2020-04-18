@@ -92,10 +92,5 @@ const Index = () => {
   );
 }
 
-Index.getInitialProps = async ({ req }) => {
-
-  return {}
-}
-
 
 export default Index
