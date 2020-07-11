@@ -66,7 +66,7 @@ app.prepare()
         return app.render( req, res, actualPage, queryParams )
     })
 
-    server.get('/sitemap.xml', (req, res) => res.status(200).sendFile('sitemap.xml', sitemapOptions));
+    // server.get('/sitemap.xml', (req, res) => res.status(200).sendFile('sitemap.xml', sitemapOptions));
     server.get('/robots.txt', (req, res) => res.status(200).sendFile('robots.txt', robotsOptions));
     server.get('/favicon.ico', (req, res) => res.status(200).sendFile('favicon.ico',faviconOptions));
 
