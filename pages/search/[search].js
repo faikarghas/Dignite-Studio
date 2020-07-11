@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import { Container,Row,Col,InputGroup,FormControl,Button } from 'react-bootstrap'
 import Router from 'next/router'
-import fetch from 'isomorphic-unfetch'
 
 import SearchResult from '../../components/presentational/searchResult'
 import Layout from '../../components/layouts/base'

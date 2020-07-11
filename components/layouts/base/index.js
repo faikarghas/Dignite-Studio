@@ -7,7 +7,6 @@ import Footer from '../../presentational/footer'
 import { initGA, logPageView, modalView, logEvent } from '../../../lib/analytics'
 
 // Style
-import '../../../sass/main.scss'
 
 
 

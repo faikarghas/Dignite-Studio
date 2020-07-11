@@ -6,13 +6,15 @@ import withReduxStore from '../lib/with-redux-store';
 import { Provider } from 'react-redux';
 import {AnimatePresence} from 'framer-motion'
 
+
+import '../sass/main.scss'
+
 // NProgress
 Router.events.on('routeChangeStart', url => {
   NProgress.start()
 })
 Router.events.on('routeChangeComplete', () => NProgress.done())
 Router.events.on('routeChangeError', () => NProgress.done())
-
 
 
 class MyApp extends App {

@@ -3,7 +3,6 @@ import { Row,Col } from 'react-bootstrap'
 import Link from 'next/link'
 import Router from 'next/router'
 import Pagination from "react-js-pagination";
-import fetch from 'isomorphic-unfetch'
 import {motion} from 'framer-motion'
 
 import {convertMonth} from '../lib/date'
@@ -92,11 +91,16 @@ const Blog = ({dataBlog}) => {
     )
 }
 
-Blog.getInitialProps = async ({ req }) => {
+
+export async function getStaticProps() {
     const res = await fetch(`${process.env.API_HOST_API}/blog/1`)
     const dataBlog = await res.json()
 
-    return {dataBlog}
+    return {
+      props: {
+        dataBlog,
+      },
+    }
 }
 
 

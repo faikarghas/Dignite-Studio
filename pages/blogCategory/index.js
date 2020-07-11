@@ -3,7 +3,6 @@ import { Row,Col } from 'react-bootstrap'
 import Link from 'next/link'
 import Router from 'next/router'
 import Pagination from "react-js-pagination";
-import fetch from 'isomorphic-unfetch'
 
 import {convertMonth} from '../../lib/date'
 import Layout from '../../components/layouts/base'

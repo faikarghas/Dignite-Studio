@@ -1,7 +1,6 @@
 import { Container,Row,Col,Breadcrumb } from 'react-bootstrap'
 import Link from 'next/link'
 import parse from 'html-react-parser'
-import fetch from 'isomorphic-unfetch'
 import commentBox from 'commentbox.io';
 import {convertMonth} from '../../../lib/date'
 
@@ -13,12 +12,6 @@ import ShareIcon from '../../../components/presentational/shareIcon'
 
 
 class BlogDetail extends React.Component {
-    static async getInitialProps (ctx){
-        const {langs,blogdetail} = ctx.query
-        const res = await fetch(`${process.env.API_HOST_API}/blogDetail/${blogdetail}`)
-        const dataBlog = await res.json()
-        return {dataBlog,langs,blogdetail}
-    }
 
     state = {
         url : '',
@@ -143,6 +136,32 @@ class BlogDetail extends React.Component {
                 <ButtonToTop/>
             </Layout>
         )
+    }
+
+}
+
+export async function getStaticPaths() {
+    const res = await fetch(`${process.env.API_HOST_API}/allBlog`)
+    const posts = await res.json()
+
+    const paths = posts.allBlog.map((post) => ({
+      params: { blogdetail: post.slug },
+    }))
+
+    return {
+      paths,
+      fallback: false
+     }
+}
+
+export async function getStaticProps({params}) {
+
+    const {blogdetail} = params
+    const res = await fetch(`${process.env.API_HOST_API}/blogDetail/${blogdetail}`)
+    const dataBlog = await res.json()
+
+    return {
+        props:{ dataBlog, blogdetail }
     }
 
 }

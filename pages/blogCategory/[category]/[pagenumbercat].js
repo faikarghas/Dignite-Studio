@@ -2,7 +2,6 @@ import { Container,Row,Col } from 'react-bootstrap'
 import Link from 'next/link'
 import Router from 'next/router'
 import Pagination from "react-js-pagination";
-import fetch from 'isomorphic-unfetch'
 
 import Layout from '../../../components/layouts/base'
 import LayoutBlog from '../../../components/layouts/blog/base/menu'

@@ -2,7 +2,6 @@ import { Container,Row,Col } from 'react-bootstrap'
 import Link from 'next/link'
 import Router from 'next/router'
 import Pagination from "react-js-pagination";
-import fetch from 'isomorphic-unfetch'
 
 import Layout from '../../../components/layouts/base'
 import LayoutBlog from '../../../components/layouts/blog/base/menu'
@@ -10,12 +9,6 @@ import {convertMonth} from '../../../lib/date'
 
 class BlogPage extends React.Component {
 
-    static async getInitialProps(ctx){
-        const {pagenumber,langs} = ctx.query
-        const res = await fetch(`${process.env.API_HOST_API}/blogCategoryPage/${pagenumber}/all`)
-        const dataBlog = await res.json()
-        return {dataBlog,pagenumber,langs}
-    }
 
     state = {
         activePage : 0
@@ -43,8 +36,8 @@ class BlogPage extends React.Component {
                 <LayoutBlog allTopics={'active'}>
                     {this.props.dataBlog.currPage.map(item=>{
                         let month = new Date(item.created_at).getMonth() + 1
-                        let date = new Date(item.created_at).getDate() 
-                        let year = new Date(item.created_at).getFullYear() 
+                        let date = new Date(item.created_at).getDate()
+                        let year = new Date(item.created_at).getFullYear()
                         let tMonth = convertMonth(month)
                         // let categoryLowerCase = item.category.toLowerCase()
 
@@ -67,7 +60,7 @@ class BlogPage extends React.Component {
                                             <img
                                                 alt={'gambar artikel'}
                                                 src={`${process.env.API_HOST_IMG}/artikel/${item.imgThumbnail}.jpg`}
-                                                width={'100%'} 
+                                                width={'100%'}
                                                 height={"100%"}
                                             />
                                         </Col>
@@ -89,6 +82,36 @@ class BlogPage extends React.Component {
         )
     }
 
+}
+
+export async function getStaticPaths() {
+    // Call an external API endpoint to get posts
+    const res = await fetch(`${process.env.API_HOST_API}/allBlog`)
+    const posts = await res.json()
+
+    // Get the paths we want to pre-render based on posts
+    let paths = []
+
+    for (let i = 1; i <= posts.totalPage; i++) {
+        paths.push({params: { pagenumber: i.toString()}})
+    }
+
+    // We'll pre-render only these paths at build time.
+    // { fallback: false } means other routes should 404.
+    return {
+      paths,
+      fallback: false
+     }
+}
+
+export async function getStaticProps({params}) {
+
+    const {pagenumber} = params
+    const res = await fetch(`${process.env.API_HOST_API}/blogCategoryPage/${pagenumber}/all`)
+    const dataBlog = await res.json()
+    return {
+        props:{ dataBlog, pagenumber }
+    }
 }
 
 export default BlogPage
