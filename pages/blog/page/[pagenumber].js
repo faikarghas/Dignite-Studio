@@ -9,6 +9,14 @@ import {convertMonth} from '../../../lib/date'
 
 class BlogPage extends React.Component {
 
+    static async getInitialProps(ctx){
+        const {pagenumber,category} = ctx.query
+
+        const res = await fetch(`${process.env.API_HOST_API}/blogCategoryPage/${pagenumber}/all`)
+        const dataBlog = await res.json()
+        return {dataBlog,pagenumber,category}
+    }
+
 
     state = {
         activePage : 0
@@ -84,34 +92,34 @@ class BlogPage extends React.Component {
 
 }
 
-export async function getStaticPaths() {
-    // Call an external API endpoint to get posts
-    const res = await fetch(`${process.env.API_HOST_API}/allBlog`)
-    const posts = await res.json()
+// export async function getStaticPaths() {
+//     // Call an external API endpoint to get posts
+//     const res = await fetch(`${process.env.API_HOST_API}/allBlog`)
+//     const posts = await res.json()
 
-    // Get the paths we want to pre-render based on posts
-    let paths = []
+//     // Get the paths we want to pre-render based on posts
+//     let paths = []
 
-    for (let i = 1; i <= posts.totalPage; i++) {
-        paths.push({params: { pagenumber: i.toString()}})
-    }
+//     for (let i = 1; i <= posts.totalPage; i++) {
+//         paths.push({params: { pagenumber: i.toString()}})
+//     }
 
-    // We'll pre-render only these paths at build time.
-    // { fallback: false } means other routes should 404.
-    return {
-      paths,
-      fallback: false
-     }
-}
+//     // We'll pre-render only these paths at build time.
+//     // { fallback: false } means other routes should 404.
+//     return {
+//       paths,
+//       fallback: false
+//      }
+// }
 
-export async function getStaticProps({params}) {
+// export async function getStaticProps({params}) {
 
-    const {pagenumber} = params
-    const res = await fetch(`${process.env.API_HOST_API}/blogCategoryPage/${pagenumber}/all`)
-    const dataBlog = await res.json()
-    return {
-        props:{ dataBlog, pagenumber }
-    }
-}
+//     const {pagenumber} = params
+//     const res = await fetch(`${process.env.API_HOST_API}/blogCategoryPage/${pagenumber}/all`)
+//     const dataBlog = await res.json()
+//     return {
+//         props:{ dataBlog, pagenumber }
+//     }
+// }
 
 export default BlogPage

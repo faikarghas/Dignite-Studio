@@ -91,8 +91,7 @@ const Blog = ({dataBlog}) => {
     )
 }
 
-
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const res = await fetch(`${process.env.API_HOST_API}/blog/1`)
     const dataBlog = await res.json()
 
