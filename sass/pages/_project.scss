@@ -86,6 +86,7 @@
     // background-color: white;
     background: linear-gradient(#ffffff 50%,#464646 0);
     height: 60rem;
+    overflow: hidden;
     @include respond(phone){
         background: linear-gradient(#fff 35%,#464646 0);
         height: 45rem;
