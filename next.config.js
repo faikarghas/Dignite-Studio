@@ -13,18 +13,18 @@ let withEnv = {
 	}
 }
 
-let exportsConfig = {
-	exportTrailingSlash: true,
-	exportPathMap: function() {
-	  return {
-		'/': { page: '/' }
-	  };
-	}
-}
+// let exportsConfig = {
+// 	exportTrailingSlash: true,
+// 	exportPathMap: function() {
+// 	  return {
+// 		'/': { page: '/' }
+// 	  };
+// 	}
+// }
 
 module.exports = withPlugins([
 	withImages,
 	withBundleAnalyzer,
-	withEnv,
-	exportsConfig
+	withEnv
+	// exportsConfig
 ])
