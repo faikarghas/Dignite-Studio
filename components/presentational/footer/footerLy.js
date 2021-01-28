@@ -24,7 +24,7 @@ const footer = props => {
                                 <p>Blok BB No. 11 Lt. 2</p>
                                 <p>Serpong, Tangerang Selatan</p>
                                 <br/>
-                                <a href="mailto:hello@dignite.studio">hello@dignite.studio</a><br/>
+                                <a href="mailto:hello@dignitestudio.com">hello@dignitestudio.com</a><br/>
                                 <a href="https://api.whatsapp.com/send?phone=6287777711044&text=Halo Dignite, saya ingin bertanya mengenai pembuatan website/desain/digital marketing.">(+62) 877-7771-1044</a>
                                 <ul className="mt-5 contact">
                                     <li><a href="https://www.instagram.com/dignitestudio/?hl=en" target="_blank"><img src='../../../image/SocialIcon/Instagram.png' alt="icon-ig"/></a></li>
