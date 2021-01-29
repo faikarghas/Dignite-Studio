@@ -142,7 +142,7 @@ class BlogDetail extends React.Component {
 }
 
 export async function getStaticPaths() {
-    const res = await fetch(`https://api.dignite.studio/api/allBlog`)
+    const res = await fetch(`https://api.dignitestudio.com/api/allBlog`)
     const posts = await res.json()
 
     const paths = posts.allBlog.map((post) => ({
@@ -158,7 +158,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({params}) {
 
     const {blogdetail} = params
-    const res = await fetch(`https://api.dignite.studio/api/blogDetail/${blogdetail}`)
+    const res = await fetch(`https://api.dignitestudio.com/api/blogDetail/${blogdetail}`)
     const dataBlog = await res.json()
 
     return {
