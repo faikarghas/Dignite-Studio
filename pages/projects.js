@@ -1,3 +1,4 @@
+import React from 'react'
 import { getInitialLocale } from '../translations/getInitialLocale'
 import Slider from "react-slick"
 import { Container,Row,Col } from 'react-bootstrap'
