@@ -121,7 +121,7 @@ class BlogDetail extends React.Component {
                                     <Col xs={12} md={4} className="xs-p-0 mb-5" key={item.idblog}>
                                         <div className="box">
                                             <div className="box-img">
-                                                <img src={`https://api.dignite.studio/images/image/artikel/${item.imgThumbnail}.jpg`} width="100%"></img>
+                                                <img src={`https://api.dignitestudio.com/images/image/artikel/${item.imgThumbnail}.jpg`} width="100%"></img>
                                             </div>
                                             <Link href={`/blog/[blogdetail]`} as={`/blog/${item.slug}`} key={item.idblog}>
                                                 <a><h3>{item.title}</h3></a>

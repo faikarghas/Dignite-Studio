@@ -57,7 +57,7 @@ const BlogCa = ({dataBlog,category}) => {
                                         <Col xs={{span:12,order:1}} md={{span:4,order:2}} className="img-blog">
                                             <img
                                                 alt={'gambar artikel'}
-                                                src={`https://api.dignite.studio/images/image/artikel/${item.imgThumbnail}.jpg`}
+                                                src={`https://api.dignitestudio.com/images/image/artikel/${item.imgThumbnail}.jpg`}
                                                 width={'100%'}
                                                 height={"100%"}
                                             />
