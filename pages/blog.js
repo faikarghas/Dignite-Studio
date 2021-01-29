@@ -68,7 +68,7 @@ const Blog = ({dataBlog}) => {
                                         <img
                                             width="100%"
                                             height="100%"
-                                            src={`https://api.dignite.studio/images/image/artikel/${item.imgThumbnail}.jpg`}
+                                            src={`https://api.dignitestudio.com/images/image/artikel/${item.imgThumbnail}.jpg`}
                                             alt={item.imgThumbnail} />
                                     </Col>
                                 </Row>

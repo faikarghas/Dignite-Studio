@@ -59,7 +59,7 @@ class Menu extends Component {
                                             onChange={this.handleChangeSearch}
                                             />
                                             <InputGroup.Append onClick={this.searchButton} style={{cursor:'pointer'}}>
-                                                <InputGroup.Text id="basic-addon2"><img src='https://api.dignite.studio/images/image/Icons/search_white.svg'  alt="icon search" width="20px"/></InputGroup.Text>
+                                                <InputGroup.Text id="basic-addon2"><img src='https://api.dignitestudio.com/images/image/Icons/search_white.svg'  alt="icon search" width="20px"/></InputGroup.Text>
                                             </InputGroup.Append>
                                         </InputGroup>
                                     </li>
