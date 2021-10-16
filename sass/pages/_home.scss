@@ -94,5 +94,62 @@
     }
 }
 
+.section_rox{
+    background-color: black;
+    height: 100vh;
+    padding: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img{
+        width: 350px;
+        object-fit: contain;
+        margin-bottom: 8rem;
+        @include respond(phone375){
+            width: 250px;
+        }
+    }
+    .box1{
+        display: flex;
+        justify-content: center;
+        @include respond(tab-port){
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .link{
+            line-height: 1em;
+            width: 200px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            color: white;
+            font-size: 1.4rem;
+            text-decoration: none;
+            font-family: "FaktPro-SemiBold";
+            border-radius: 10px;
+            padding-top: 3px;
+            &:nth-child(1){
+                margin-right: 2rem;
+                @include respond(tab-port){
+                    margin-right: 0rem;
+                    margin-bottom: 4rem;
+                }
+            }
+            &:hover{
+                color: white;
+            }
+        }
+        .dc{
+            background-color: #7289da;
+        }
+        .wa{
+            background-color: #25D366;
+        }
+    }
+}
+
 
 
